@@ -11,26 +11,26 @@
  *
  * @link https://roots.io/bedrock/
  *
- * @package WordPress
- * @subpackage Brocooly
+ * @package Brocooly
  * @since 0.1.0
  */
 
 use Roots\WPConfig\Config;
 use function Env\env;
 
-defined( 'BRO_APP_PATH' ) || define( 'BRO_APP_PATH', dirname( __DIR__ ) );
+defined( 'APP_PATH' ) || define( 'APP_PATH', dirname( __DIR__ ) );
+defined( 'CORE_PATH' ) || define( 'CORE_PATH', dirname( __DIR__ ) . '/czernika/brocooly/core' );
 
 /**
  * Document Root
  */
-$webroot_dir = BRO_APP_PATH . '/web';
+$webroot_dir = APP_PATH . '/web';
 
 /**
  * Use Dotenv to set required environment variables and load .env file in root
  */
-$dotenv = Dotenv\Dotenv::createUnsafeImmutable( BRO_APP_PATH );
-if ( file_exists( BRO_APP_PATH . '/.env' ) ) {
+$dotenv = Dotenv\Dotenv::createUnsafeImmutable( APP_PATH );
+if ( file_exists( APP_PATH . '/.env' ) ) {
 	$dotenv->load();
 	$dotenv->required( [ 'WP_HOME', 'WP_SITEURL' ] );
 	if ( ! env( 'DATABASE_URL' ) ) {

@@ -6,8 +6,7 @@
  *
  * @link https://roots.io/bedrock/
  *
- * @package WordPress
- * @subpackage Brocooly
+ * @package Brocooly
  * @since 0.1.0
  */
 

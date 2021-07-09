@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html class="no-js" {{ site.language_attributes }}>
+<head>
+	<!-- Basic -->
+    <meta charset="{{ site.charset }}">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+
+	<meta name="msapplication-tap-highlight" content="no">
+	<!-- Phones Link Detection -->
+	<meta name="format-detection" content="telephone=no">
+
+	<title>{% block title %} {{ site.name }} | {{ site.description }} {% endblock %}</title>
+
+	{% block head %}{% endblock %}
+
+	{{ fn('wp_head') }}
+</head>
+<body
+	class="overflow-x-hidden text-base antialiased min-h-screen flex flex-col {{ body_class }}"
+	itemscope itemtype="http://schema.org/WebPage"
+>
+
+	{% block header %}
+
+	{% endblock %}
+
+    <main
+        id="content"
+        role="main"
+        class="flex-grow w-full h-auto outline-none content"
+		tabindex="-1"
+    >
+        {% block layout %}
+			<h1>{{ __('Hello World', 'brocooly') }}</h1>
+		{% endblock %}
+    </main>
+
+	{% block footer %}
+
+	{% endblock %}
+
+	{{ fn('wp_footer') }}
+
+	{% block scripts %}{% endblock %}
+</body>
+</html>

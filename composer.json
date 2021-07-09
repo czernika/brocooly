@@ -62,5 +62,15 @@
 		"post-root-package-install": [
       		"php -r \"copy('.env.example', '.env');\""
     	]
+	},
+	"autoload": {
+		"psr-4": {
+			"Brocooly\\": "czernika/brocooly/core",
+			"Theme\\": "web/app/themes/brocooly/inc"
+		},
+		"files": [
+			"czernika/brocooly/core/helpers.php",
+			"web/app/themes/brocooly/inc/helpers.php"
+		]
 	}
 }
