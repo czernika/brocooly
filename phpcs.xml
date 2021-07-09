@@ -1,0 +1,60 @@
+<?xml version="0.1" ?>
+<ruleset name="Brocooly">
+    <description>The coding standard for Timber-based WordPress theme.</description>
+
+    <config name="installed_paths" value="vendor/wp-coding-standards/wpcs/" />
+
+    <file>.</file>
+
+    <config name="minimum_supported_wp_version" value="5.6"/>
+
+    <!-- Exclude WP Core folders and files from being checked -->
+	<exclude-pattern>*/docroot/web/wp/wp-admin/*</exclude-pattern>
+	<exclude-pattern>*/docroot/web/wp/wp-includes/*</exclude-pattern>
+	<exclude-pattern>*/docroot/web/wp/wp-*.php</exclude-pattern>
+	<exclude-pattern>*/docroot/web/index.php</exclude-pattern>
+	<exclude-pattern>*/docroot/web/wp/xmlrpc.php</exclude-pattern>
+	<exclude-pattern>*/docroot/web/app/plugins/*</exclude-pattern>
+
+	<!-- Exclude the Composer Vendor directory -->
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+
+	<!-- Exclude the Node Modules directory -->
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+
+    <!-- Enable colors in report -->
+    <arg name="colors"/>
+
+    <!-- Add source codes in the report -->
+    <arg value="s"/>
+
+    <!-- Default tab width for indentation fixes and such -->
+	<arg name="tab-width" value="4"/>
+
+    <!-- Best practices beyond core WordPress Coding Standards -->
+    <rule ref="WordPress-Extra">
+        <!-- Allow PascalCase -->
+        <exclude name="WordPress.Files.FileName"></exclude>
+
+        <!-- Open brace on a next line -->
+        <exclude name="Generic.Classes.OpeningBraceSameLine"></exclude>
+
+        <!-- Allow short array syntax -->
+        <exclude name="Generic.Arrays.DisallowShortArraySyntax"></exclude>
+
+        <!-- Function syntax -->
+        <exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie"></exclude>
+
+        <!-- Allow varaibles to be named in camelCase -->
+        <exclude name="WordPress.NamingConventions.ValidVariableName"></exclude>
+
+        <!-- Allow short ternaries operator -->
+        <exclude name="WordPress.PHP.DisallowShortTernary"/>
+    </rule>
+
+    <!-- WordPress Coding Standards for Inline Documentation and Comments -->
+    <rule ref="WordPress-Docs">
+        <exclude name="Squiz.Commenting.ClassComment"></exclude>
+    </rule>
+
+</ruleset>

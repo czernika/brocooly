@@ -1,0 +1,7 @@
+path: web/wp
+server:
+  docroot: web
+disabled_commands:
+  - db drop
+  - plugin install
+  - user create
