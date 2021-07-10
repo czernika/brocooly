@@ -5,13 +5,14 @@ declare(strict_types=1);
 namespace Brocooly\Router;
 
 use Timber\Timber;
+use Brocooly\Storage\Context;
 
 class View
 {
     private static array $renderData = [];
 
     public static function make( $views, array $ctx = [] ) {
-		$timberContext = Timber::context();
+		$timberContext = Context::get();
 		$ctx           = array_merge( $timberContext, $ctx );
 
 		self::$renderData['context'] = $ctx;

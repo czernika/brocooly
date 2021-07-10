@@ -7,6 +7,7 @@
  */
 
 use Brocooly\App;
+use Brocooly\Storage\Config;
 
 if ( ! function_exists( 'app' ) ) {
 
@@ -17,5 +18,11 @@ if ( ! function_exists( 'app' ) ) {
 	 */
 	function app() {
 		return App::getApp();
+	}
+}
+
+if ( ! function_exists( 'config' ) ) {
+	function config( $key = null ) {
+		return Config::get( $key );
 	}
 }

@@ -10,7 +10,10 @@ declare(strict_types=1);
 
 namespace Brocooly;
 
+use Brocooly\Loaders\AssetsLoader;
 use Brocooly\Loaders\BootProvider;
+use Brocooly\Loaders\ConfigLoader;
+use Brocooly\Loaders\ContextLoader;
 use Brocooly\Loaders\DebuggerLoader;
 use Brocooly\Loaders\RegisterProvider;
 
@@ -31,8 +34,11 @@ class Bootstrap
 	 * @var array
 	 */
 	private array $loaders = [
-		RegisterProvider::class,
 		DebuggerLoader::class,
+		ContextLoader::class,
+		ConfigLoader::class,
+		RegisterProvider::class,
+		AssetsLoader::class,
 		BootProvider::class,
 	];
 

@@ -7,7 +7,7 @@ namespace Brocooly\Providers;
 class TimberServiceProvider extends AbstractService
 {
 	public function register() {
-		$this->app->set( 'views', 'resources/views' );
+		$this->app->set( 'views', config( 'app.views', 'resources/views' ) );
 	}
 
 	public function boot() {
