@@ -2,11 +2,11 @@
 /**
  * Helper methods
  *
- * @package Czernika
+ * @package Brocooly
  * @since 0.1.0
  */
 
-use App\Brocooly;
+use Brocooly\App;
 
 if ( ! function_exists( 'app' ) ) {
 
@@ -16,6 +16,6 @@ if ( ! function_exists( 'app' ) ) {
 	 * @return App\Brocooly
 	 */
 	function app() {
-		return Brocooly::getApp();
+		return App::getApp();
 	}
 }

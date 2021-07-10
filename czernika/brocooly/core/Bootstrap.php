@@ -2,7 +2,7 @@
 /**
  * Load main app features
  *
- * @package Czernika
+ * @package Brocooly
  * @since 0.1.0
  */
 
@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace Brocooly;
 
 use Brocooly\Loaders\BootProvider;
+use Brocooly\Loaders\DebuggerLoader;
 use Brocooly\Loaders\RegisterProvider;
 
 class Bootstrap
@@ -31,6 +32,7 @@ class Bootstrap
 	 */
 	private array $loaders = [
 		RegisterProvider::class,
+		DebuggerLoader::class,
 		BootProvider::class,
 	];
 

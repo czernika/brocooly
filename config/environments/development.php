@@ -10,7 +10,9 @@
  * @since 0.1.0
  */
 
+use Whoops\Run;
 use Roots\WPConfig\Config;
+use Whoops\Handler\PrettyPageHandler;
 
 Config::define( 'SAVEQUERIES', true );
 Config::define( 'WP_DEBUG', true );

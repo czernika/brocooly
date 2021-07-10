@@ -22,13 +22,22 @@ return [
 	| Main Application instances
 	|--------------------------------------------------------------------------
 	|
-	| Application itself and Timber class. As Forester depends on Timber
+	| Application itself and Timber class. As Brocooly depends on Timber
 	| this is a core of application.
 	|
 	*/
 	'bootstrap' => create( Bootstrap::class )
 						->constructor( get( App::class ) ),
 	'timber'    => create( Timber::class ),
+
+	/*
+	|--------------------------------------------------------------------------
+	| Debug helpers
+	|--------------------------------------------------------------------------
+	|
+	| Classes to handle errors and exceptions
+	|
+	*/
 	'dump'      => create( DumpExtension::class ),
 	'handler'   => create( PrettyPageHandler::class ),
 
