@@ -111,12 +111,15 @@ class AssetsLoader
 	/**
 	 * Get assets array from manifest file
 	 *
-	 * @return array
+	 * @return array|null
 	 */
 	private function getAssetsFromManifest() {
 		$manifest       = wp_normalize_path( BROCOOLY_THEME_PATH . $this->publicFolder . $this->manifest );
 
-		$manifestAssets = (array) json_decode( file_get_contents( $manifest, true ) );
+		$manifestAssets = null;
+		if ( file_exists( $manifest ) ) {
+			$manifestAssets = (array) json_decode( file_get_contents( $manifest, true ) );
+		}
 
 		return $manifestAssets;
 	}
@@ -158,7 +161,12 @@ class AssetsLoader
 	 */
 	public function asset( string $key ) {
 		$manifestAssets = $this->getAssetsFromManifest();
-		return $manifestAssets[ $key ];
+
+		if ( isset( $manifestAssets ) ) {
+			return $manifestAssets[ $key ];
+		}
+
+		return null;
 	}
 
 	/**
