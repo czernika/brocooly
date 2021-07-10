@@ -1,5 +1,12 @@
 <?php
 
-use Timber\Timber;
+use Brocooly\Router\Route;
+use Theme\Controllers\FrontPageController;
 
-Timber::render( 'index.twig', Timber::context() );
+// Route::get( 'is_front_page', [ FrontPageController::class, 'index' ] );
+Route::get( 'is_front_page', FrontPageController::class );
+
+/**
+ *
+ */
+Route::resolve();

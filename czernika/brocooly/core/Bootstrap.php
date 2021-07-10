@@ -22,7 +22,7 @@ class Bootstrap
 	 *
 	 * @var instanceof Brocooly\App
 	 */
-	public App $app;
+	private App $app;
 
 	/**
 	 * Array of Application loaders
