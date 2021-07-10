@@ -1,4 +1,10 @@
 <?php
+/**
+ * Register Service Provider
+ *
+ * @package Brocooly
+ * @since 0.1.0
+ */
 
 declare(strict_types=1);
 
@@ -8,9 +14,7 @@ class RegisterProvider extends ProviderLoader
 {
 
 	/**
-	 * Register Service Provider
-	 *
-	 * @return void
+	 * Call register method
 	 */
     public function call() {
 		$this->run( 'register' );

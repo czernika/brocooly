@@ -1,4 +1,10 @@
 <?php
+/**
+ * Boot Context instance
+ *
+ * @package Brocooly
+ * @since 0.1.0
+ */
 
 declare(strict_types=1);
 
@@ -20,6 +26,9 @@ class ContextLoader
 		$this->app       = $app;
 	}
 
+	/**
+	 * Instantiate context
+	 */
 	public function call() {
 		Context::instantiate();
 	}

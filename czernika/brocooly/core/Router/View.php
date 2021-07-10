@@ -1,4 +1,10 @@
 <?php
+/**
+ * Render views
+ *
+ * @package Brocooly
+ * @since 0.1.0
+ */
 
 declare(strict_types=1);
 
@@ -9,19 +15,29 @@ use Brocooly\Storage\Context;
 
 class View
 {
-    private static array $renderData = [];
 
-    public static function make( $views, array $ctx = [] ) {
+	/**
+	 * The only render function
+	 *
+	 * @param string $views | view file to be rendered.
+	 * @param array  $ctx | context to pass with
+	 * @return void
+	 */
+    public static function make( string $views, array $ctx = [] ) {
 		$timberContext = Context::get();
 		$ctx           = array_merge( $timberContext, $ctx );
 
-		self::$renderData['context'] = $ctx;
-		self::$renderData['views']   = $views;
-
-		return Timber::render( self::$renderData['views'], self::$renderData['context'] );
+		return Timber::render( $views, $ctx );
 	}
 
-	public static function __callStatic( $name, $arguments ) {
+	/**
+	 * If no method exists mean we're call Timber methods
+	 *
+	 * @param string $name | method name.
+	 * @param array  $arguments | arguments.
+	 * @return void
+	 */
+	public static function __callStatic( string $name, array $arguments ) {
 		return Timber::$name( ...$arguments );
 	}
 }

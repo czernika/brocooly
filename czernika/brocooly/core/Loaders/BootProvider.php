@@ -1,4 +1,10 @@
 <?php
+/**
+ * Boot Service Provider
+ *
+ * @package Brocooly
+ * @since 0.1.0
+ */
 
 declare(strict_types=1);
 
@@ -8,9 +14,7 @@ class BootProvider extends ProviderLoader
 {
 
 	/**
-	 * Boot Service Provider
-	 *
-	 * @return void
+	 * Call boot method
 	 */
     public function call() {
 		$this->run( 'boot' );

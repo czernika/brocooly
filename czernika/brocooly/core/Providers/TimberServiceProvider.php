@@ -1,17 +1,26 @@
 <?php
+/**
+ * Timber Service Provider
+ *
+ * @package Brocooly
+ * @since 0.1.0
+ */
 
 declare(strict_types=1);
 
 namespace Brocooly\Providers;
 
-use Brocooly\Storage\Context;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
+use Brocooly\Storage\Context;
 
 class TimberServiceProvider extends AbstractService
 {
-	public function register() {
 
+	/**
+	 * Register Timber config
+	 */
+	public function register() {
 		$keys = [
 			'views'            => config( 'views.views' ) ?? 'resources/views',
 			'views_namespaces' => config( 'views.namespaces' ) ?? [],
@@ -23,6 +32,9 @@ class TimberServiceProvider extends AbstractService
 		}
 	}
 
+	/**
+	 * Boot Timber options
+	 */
 	public function boot() {
 		$this->app->timber::$dirname = $this->app->get( 'views' );
 
@@ -31,6 +43,9 @@ class TimberServiceProvider extends AbstractService
 		$this->setLoader();
 	}
 
+	/**
+	 * Set Timber context
+	 */
 	private function setContext() {
 		add_filter(
 			'timber/context',
@@ -43,6 +58,9 @@ class TimberServiceProvider extends AbstractService
 		);
 	}
 
+	/**
+	 * Add custom filters and function to Twig
+	 */
 	private function addToTwig() {
 		$functions = $this->app->get( 'timber_functions' );
 		$filters   = $this->app->get( 'timber_filters' );
@@ -67,6 +85,9 @@ class TimberServiceProvider extends AbstractService
 		);
 	}
 
+	/**
+	 * Set custom Twig namespaces
+	 */
 	private function setLoader() {
 		$namespaces = $this->app->get( 'views_namespaces' );
 		add_filter(

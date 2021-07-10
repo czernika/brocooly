@@ -9,7 +9,10 @@
  */
 
 /**
+ *--------------------------------------------------------------------------
  * Ensure compatible version of PHP is used
+ *--------------------------------------------------------------------------
+ * 
  */
 $minimumRequiredPHPVersion = '7.4';
 if ( version_compare( $minimumRequiredPHPVersion, phpversion(), '>=' ) ) {
@@ -23,22 +26,23 @@ if ( version_compare( $minimumRequiredPHPVersion, phpversion(), '>=' ) ) {
 	);
 }
 
-/*
-|--------------------------------------------------------------------------
-| Check if Composer is installed
-|--------------------------------------------------------------------------
-|
-| Brocooly STRONGLY requires Composer to be installed.
-| If it's not got to https://getcomposer.org/
-|
-*/
+/**
+ *--------------------------------------------------------------------------
+ * Check if Composer is installed
+ *--------------------------------------------------------------------------
+ *
+ * Brocooly STRONGLY requires Composer to be installed.
+ * If it's not got to
+ * @link https://getcomposer.org/
+ *
+ */
 $autoload = APP_PATH . '/vendor/autoload.php';
 
 if ( ! file_exists( $autoload ) ) {
 	wp_die(
-		/* translators: root directory */
+		/* translators: 1: root directory, 2: link to Composer website. */
 		sprintf(
-			'<h1>Forester Framework requires composer to be installed!</h1><p>Maybe you forget to run "<code>composer update</code>" in the root folder: <strong>"%s"</strong> or %s it</p>',
+			'<h1>Forester Framework requires composer to be installed!</h1><p>Maybe you forget to run "<code>composer update</code>" in the root folder: <strong>"%1$s"</strong> or %2$s it</p>',
 			esc_html( APP_PATH ),
 			'<a href="https://getcomposer.org/" target="_blank">install</a>'
 		),
@@ -47,14 +51,14 @@ if ( ! file_exists( $autoload ) ) {
 
 require_once $autoload;
 
-/*
-|--------------------------------------------------------------------------
-| Let's start
-|--------------------------------------------------------------------------
-|
-| If Composer installed boot application
-|
-*/
+/**
+ *--------------------------------------------------------------------------
+ * Let's start
+ *--------------------------------------------------------------------------
+ *
+ * If Composer installed boot application
+ *
+ */
 require_once __DIR__ . '/bootstrap/app.php';
 
 /****************************************************

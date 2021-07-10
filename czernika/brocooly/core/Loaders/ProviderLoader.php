@@ -1,4 +1,10 @@
 <?php
+/**
+ * Load all Service Providers.
+ *
+ * @package Brocooly
+ * @since 0.1.0
+ */
 
 declare(strict_types=1);
 
@@ -39,7 +45,12 @@ class ProviderLoader
 		$this->providers = $this->appProviders;
 	}
 
-	public function run( $method ) {
+	/**
+	 * Run Service Provider method
+	 *
+	 * @param string $method | method to run.
+	 */
+	public function run( string $method ) {
 		if ( ! empty( $this->providers ) ) {
 			foreach ( $this->providers as $provider ) {
 				if ( method_exists( $provider, $method ) ) {

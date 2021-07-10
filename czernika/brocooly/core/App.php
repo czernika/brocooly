@@ -47,6 +47,7 @@ class App
 		$this->timber    = $this->container->get( 'timber' );
 
 		defined( 'BROCOOLY_THEME_PATH' ) || define( 'BROCOOLY_THEME_PATH', trailingslashit( get_template_directory() ) );
+		
 		defined( 'BROCOOLY_THEME_URI' ) || define( 'BROCOOLY_THEME_URI', trailingslashit( get_template_directory_uri() ) );
 	}
 

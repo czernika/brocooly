@@ -1,4 +1,10 @@
 <?php
+/**
+ * Abstract Service Provider instance
+ *
+ * @package Brocooly
+ * @since 0.1.0
+ */
 
 declare(strict_types=1);
 

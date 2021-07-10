@@ -1,6 +1,8 @@
 require('dotenv').config();
 
-const themeName = 'brocooly';
+const {
+	THEME: themeName = 'brocooly',
+} = process.env;
 const themeFolder = `web/app/themes/${themeName}`;
 
 module.exports = {

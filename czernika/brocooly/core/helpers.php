@@ -21,12 +21,27 @@ if ( ! function_exists( 'app' ) ) {
 }
 
 if ( ! function_exists( 'config' ) ) {
-	function config( $key = null ) {
-		return Config::get( $key );
+
+	/**
+	 * Return configuration object or provided default value
+	 */
+	function config( $key = null, $default = null ) {
+		if ( Config::get( $key ) || $default === null ) {
+			return Config::get( $key );
+		}
+		
+		return $default;
 	}
 }
 
 if ( ! function_exists( 'dd' ) ) {
+
+	/**
+	 * Dump and die helper
+	 *
+	 * @param mixed $val | value to check.
+	 * @return void
+	 */
 	function dd( $val ) {
 		echo '<pre>';
 		print_r( $val );
@@ -36,6 +51,13 @@ if ( ! function_exists( 'dd' ) ) {
 }
 
 if ( ! function_exists( 'dump' ) ) {
+
+	/**
+	 * Dump helper
+	 *
+	 * @param mixed $val | value to check.
+	 * @return void
+	 */
 	function dump( $val ) {
 		echo '<pre>';
 		print_r( $val );
@@ -44,9 +66,16 @@ if ( ! function_exists( 'dump' ) ) {
 }
 
 if ( ! function_exists( 'asset' ) ) {
+
+	/**
+	 * Get asset path from manifest file
+	 *
+	 * @param mixed $val | value to check.
+	 * @return void
+	 */
 	function asset( $filePath ) {
 		$asset          = ( new AssetsLoader( app() ) )->asset( $filePath );
-		$public         = trailingslashit( config( 'assets.public' ) ) ?? 'public/';
+		$public         = trailingslashit( config( 'assets.public', 'public/' ) );
 		$publicFilePath = BROCOOLY_THEME_URI . $public . $asset;
 		return $publicFilePath;
 	}

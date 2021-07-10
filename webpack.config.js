@@ -26,10 +26,9 @@ const CaseSensitivePathsPlugin    = require('case-sensitive-paths-webpack-plugin
 
 const { merge }                   = require('webpack-merge');
 
-const themeName = 'brocooly';
-
 const {
 	NODE_ENV: mode,
+	THEME: themeName = 'brocooly',
 	WP_HOME,
 	BROWSER = 'firefox',
 	PUBLIC_FOLDER: publicFolder = 'public',

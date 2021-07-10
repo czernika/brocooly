@@ -1,4 +1,10 @@
 <?php
+/**
+ * App Context singleton
+ *
+ * @package Brocooly
+ * @since 0.1.0
+ */
 
 declare(strict_types=1);
 
@@ -23,33 +29,64 @@ class Context
 	 */
 	private static array $registry = [];
 
+	/**
+	 * Instantiate Context object
+	 */
 	public static function instantiate() {
+		$timberContext  = self::getTimberContext();
+		self::$registry = array_merge( self::$registry, $timberContext );
+		
 		return self::$instance ?? new self();
 	}
 
-	private function __construct() {}
+	/**
+	 * Set context value
+	 *
+	 * @param string $key | key name.
+	 * @param mixed $value | key value.
+	 * @return void
+	 */
+	public static function set( string $key, $value ) {
+		self::$registry[ $key ] = $value;
+	}
 
-	private function __clone() {}
+	/**
+	 * Get key from Context data
+	 *
+	 * @param string|null $key | key name.
+	 * @return array|mixed
+	 */
+	public static function get( $key = null ) {
+		if ( isset( self::$registry[ $key ] ) ) {
+			return self::$registry[ $key ];
+		}
 
-	private function __wakeup() {}
+		return self::$registry;
+	}
 
+	/**
+	 * Remove key from context
+	 *
+	 * @param string $key
+	 * @return void
+	 */
+	public static function delete( string $key ) {
+		unset( self::$registry[ $key ] );
+	}
+
+	/**
+	 * Get Timber context
+	 *
+	 * @return array
+	 */
 	private static function getTimberContext() {
 		return Timber::context();
 	}
 
-	public static function set( $key, $value ) {
-		self::$registry[ $key ] = $value;
-	}
-
-	public static function get( $key = null ) {
-		$registry      = self::$registry;
-		$timberContext = self::getTimberContext();
-		$context       = array_merge( $registry, $timberContext );
-
-		if ( isset( $key ) ) {
-			return $context[ $key ];
-		}
-
-		return $context;
-	}
+	/**
+	 * Capsulate singleton
+	 */
+	private function __construct() {}
+	private function __clone() {}
+	private function __wakeup() {}
 }

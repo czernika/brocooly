@@ -1,4 +1,10 @@
 <?php
+/**
+ * Set Debuggers for Application
+ *
+ * @package Brocooly
+ * @since 0.1.0
+ */
 
 declare(strict_types=1);
 
@@ -22,11 +28,13 @@ class DebuggerLoader
 
 	/**
 	 * Register Debuggers for both views and backend
-	 *
-	 * @return void
 	 */
     public function call() {
 		if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+
+			/**
+			 * Twig debugger
+			 */
 			add_filter(
 				'timber/loader/twig',
 				function( $twig ) {
@@ -34,7 +42,10 @@ class DebuggerLoader
 					return $twig;
 				}
 			);
-
+			
+			/**
+			 * Application debugger
+			 */
 			$whoops = $this->app->get( Run::class );
 			$whoops->pushHandler( $this->app->get( 'handler' ) );
 			$whoops->register();

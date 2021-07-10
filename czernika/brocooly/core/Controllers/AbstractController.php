@@ -1,4 +1,10 @@
 <?php
+/**
+ * AbstractController instance
+ *
+ * @package Brocooly
+ * @since 0.1.0
+ */
 
 declare(strict_types=1);
 
@@ -9,6 +15,11 @@ use Brocooly\App;
 abstract class AbstractController
 {
 
+	/**
+	 * Application instance
+	 *
+	 * @var instanceof Brocooly\App
+	 */
 	protected $app;
 
 	public function __construct( App $app ) {
