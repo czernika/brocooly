@@ -2,6 +2,4 @@
 
 return [
 
-	'views' => 'resources/views',
-
 ];

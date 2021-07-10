@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const { THEME: themeName } = process.env;
+const themeName = 'brocooly';
 const themeFolder = `web/app/themes/${themeName}`;
 
 module.exports = {
@@ -23,6 +23,10 @@ module.exports = {
 			}
 		},
 		extend: {
+			colors: {
+				primary: '#56B300',
+				secondary: '#9AD166',
+			},
 			fontFamily: {
 				body: ['Montserrat', 'sans-serif'],
 			},
