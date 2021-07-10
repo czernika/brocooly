@@ -10,6 +10,6 @@ use Brocooly\Controllers\AbstractController;
 class FrontPageController extends AbstractController
 {
     public function __invoke() {
-		View::make( 'index.twig' );
+		View::make( 'content/front-page.twig' );
 	}
 }
