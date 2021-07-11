@@ -37,8 +37,8 @@ class Bootstrap
 	private array $loaders = [
 		DefinitionLoader::class,
 		DebuggerLoader::class,
-		ContextLoader::class,
 		ConfigLoader::class,
+		ContextLoader::class,
 		RegisterProvider::class,
 		AssetsLoader::class,
 		BootProvider::class,

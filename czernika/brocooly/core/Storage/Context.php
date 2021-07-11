@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace Brocooly\Storage;
 
+use Theme\Context as ThemeContext;
 use Timber\Timber;
 
 class Context
@@ -33,8 +34,8 @@ class Context
 	 * Instantiate Context object
 	 */
 	public static function instantiate() {
-		$timberContext  = self::getTimberContext();
-		self::$registry = array_merge( self::$registry, $timberContext );
+		$context        = self::getTimberContext();
+		self::$registry = $context;
 		
 		return self::$instance ?? new self();
 	}
@@ -48,6 +49,16 @@ class Context
 	 */
 	public static function set( string $key, $value ) {
 		self::$registry[ $key ] = $value;
+	}
+
+	/**
+	 * Set context value
+	 *
+	 * @param array $ctx | custom context array.
+	 * @return void
+	 */
+	public static function merge( array $ctx ) {
+		self::$registry = array_merge( self::$registry, $ctx );
 	}
 
 	/**
