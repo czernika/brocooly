@@ -29,7 +29,7 @@ if ( ! function_exists( 'config' ) ) {
 		if ( Config::get( $key ) || $default === null ) {
 			return Config::get( $key );
 		}
-		
+
 		return $default;
 	}
 }
@@ -74,9 +74,14 @@ if ( ! function_exists( 'asset' ) ) {
 	 * @return void
 	 */
 	function asset( $filePath ) {
-		$asset          = ( new AssetsLoader( app() ) )->asset( $filePath );
-		$public         = trailingslashit( config( 'assets.public', 'public/' ) );
-		$publicFilePath = BROCOOLY_THEME_URI . $public . $asset;
-		return $publicFilePath;
+		$asset = ( new AssetsLoader( app() ) )->asset( $filePath );
+
+		if ( $asset ) {
+			$public         = trailingslashit( config( 'assets.public', 'public/' ) );
+			$publicFilePath = BROCOOLY_THEME_URI . $public . $asset;
+			return $publicFilePath;
+		}
+
+		return BROCOOLY_THEME_URI . 'resources/' . $filePath;
 	}
 }

@@ -35,6 +35,13 @@ class AssetsLoader
 	private string $manifest = 'manifest.json';
 
 	/**
+	 * Manifest file path
+	 *
+	 * @var string
+	 */
+	private string  $manifestPath;
+
+	/**
 	 * Assets array
 	 *
 	 * @var array
@@ -43,8 +50,8 @@ class AssetsLoader
 
 	public function __construct( App $app ) {
 		$this->app          = $app;
-		$this->publicFolder = trailingslashit( config( 'assets.public' ) ) ?? 'public';
-		$this->manifest     = untrailingslashit( config( 'assets.manifest' ) ) ?? 'manifest.json';
+		$this->publicFolder = trailingslashit( config( 'assets.public', 'public' ) );
+		$this->manifest     = untrailingslashit( config( 'assets.manifest', 'manifest.json' ) );
 		$this->assets       = $this->getAssets();
 	}
 
@@ -111,14 +118,17 @@ class AssetsLoader
 	/**
 	 * Get assets array from manifest file
 	 *
-	 * @return array
+	 * @return array|null
 	 */
 	private function getAssetsFromManifest() {
-		$manifest       = wp_normalize_path( BROCOOLY_THEME_PATH . $this->publicFolder . $this->manifest );
+		$this->manifestPath = wp_normalize_path( BROCOOLY_THEME_PATH . $this->publicFolder . $this->manifest );
 
-		$manifestAssets = (array) json_decode( file_get_contents( $manifest, true ) );
+		if ( file_exists( $this->manifestPath ) ) {
+			$manifestAssets = (array) json_decode( file_get_contents( $manifest, true ) );
+			return $manifestAssets;
+		}
 
-		return $manifestAssets;
+		return null;
 	}
 
 	/**
@@ -157,8 +167,12 @@ class AssetsLoader
 	 * @return string
 	 */
 	public function asset( string $key ) {
-		$manifestAssets = $this->getAssetsFromManifest();
-		return $manifestAssets[ $key ];
+		if ( file_exists( $this->manifestPath ) ) {
+			$manifestAssets = $this->getAssetsFromManifest();
+			return $manifestAssets[ $key ];
+		}
+
+		return null;
 	}
 
 	/**
