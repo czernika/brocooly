@@ -15,6 +15,7 @@ use Brocooly\Loaders\BootProvider;
 use Brocooly\Loaders\ConfigLoader;
 use Brocooly\Loaders\ContextLoader;
 use Brocooly\Loaders\DebuggerLoader;
+use Brocooly\Loaders\DefinitionLoader;
 use Brocooly\Loaders\RegisterProvider;
 
 class Bootstrap
@@ -34,6 +35,7 @@ class Bootstrap
 	 * @var array
 	 */
 	private array $loaders = [
+		DefinitionLoader::class,
 		DebuggerLoader::class,
 		ContextLoader::class,
 		ConfigLoader::class,
