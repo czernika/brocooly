@@ -1,0 +1,32 @@
+<?php
+/**
+ * Navigation menu
+ *
+ * @package Brocooly
+ * @since 0.1.2
+ */
+
+declare(strict_types=1);
+
+namespace Theme\Menus;
+
+class {{ NAME }}Menu
+{
+
+	/**
+	 * Menu name
+	 * Will be available in twig files as `{{ LC_NAME }}_menu`
+	 *
+	 * @var string
+	 */
+    public string $name = '{{ LC_NAME }}';
+
+	/**
+	 * Get menu label in admin area
+	 *
+	 * @return string
+	 */
+	public function label() {
+		return esc_html__( '{{ NAME }} menu', 'brocooly' );
+	}
+}

@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace Brocooly\Loaders;
 
 use Brocooly\App;
+use Brocooly\Providers\MenuServiceProvider;
 use Brocooly\Providers\TimberServiceProvider;
 
 class ProviderLoader
@@ -30,6 +31,7 @@ class ProviderLoader
 	 */
 	private array $appProviders = [
 		TimberServiceProvider::class,
+		MenuServiceProvider::class,
 	];
 
 	/**

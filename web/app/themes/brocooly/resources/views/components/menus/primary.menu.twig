@@ -1,0 +1,22 @@
+{% if menu and menu.items|length %}
+
+	<ul class="flex space-x-3">
+
+		{% for item in menu.items %}
+
+			<li class="{{ item.classes|join(' ') }}" itemprop="name">
+				{% include '@menus/primary.item.twig' %}
+			</li>
+
+		{% endfor %}
+
+	</ul>
+
+{% else %}
+
+	{# Add link to a menus for administrator #}
+	<a class="duration-200 hover:text-secondary" href="{{ site.url ~ '/wp-admin/nav-menus.php?' }}" target="_blank">
+		{{ __('Set up menu', 'brocooly') }}
+	</a>
+
+{% endif %}

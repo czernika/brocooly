@@ -2,10 +2,10 @@
 
 {% block layout %}
 
-	<div class="container">
-		{% block content %}
+	{% block content %}
+		<div class="container">
 			<h1>{{ __( 'This page is currently empty', 'brocooly' ) }}</h1>
-		{% endblock %}
-	</div>
+		</div>
+	{% endblock %}
 
 {% endblock %}

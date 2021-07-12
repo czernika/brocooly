@@ -1,0 +1,18 @@
+{% if item.current %}
+
+	<span class="duration-200 text-secondary hover:text-primary">
+		{{ item.title }}
+	</span>
+
+{% else %}
+
+	<a
+		href="{{ item.link }}"
+		target="{{ item.target }}"
+		itemprop="url"
+		class="duration-200 hover:text-secondary"
+	>
+		{{ item.title }}
+	</a>
+
+{% endif %}

@@ -124,7 +124,7 @@ class AssetsLoader
 		$this->manifestPath = wp_normalize_path( BROCOOLY_THEME_PATH . $this->publicFolder . $this->manifest );
 
 		if ( file_exists( $this->manifestPath ) ) {
-			$manifestAssets = (array) json_decode( file_get_contents( $manifest, true ) );
+			$manifestAssets = (array) json_decode( file_get_contents( $this->manifestPath, true ) );
 			return $manifestAssets;
 		}
 

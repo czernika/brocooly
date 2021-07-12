@@ -1,0 +1,21 @@
+<header
+	class="w-full"
+	id="header"
+	role="banner"
+	itemscope
+	itemtype="http://schema.org/WPHeader"
+>
+
+	<a class="sr-only skip-link focus:not-sr-only" href="#content">
+		{{ __('Skip to the content', 'brocooly') }}
+	</a>
+
+	<nav class="py-2 bg-white border-b border-gray-200">
+		<div class="container">
+			{% include '@menus/primary.menu.twig' with {
+				menu: primary_menu
+			} %}
+		</div>
+	</nav>
+
+</header>
