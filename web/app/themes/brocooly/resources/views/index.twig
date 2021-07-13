@@ -29,11 +29,12 @@
 	{{ fn('wp_head') }}
 </head>
 <body
-	class="overflow-x-hidden text-base antialiased min-h-screen flex flex-col font-body {{ body_class }}"
+	class="overflow-x-hidden text-base antialiased min-h-screen flex flex-col font-body bg-gray-50 {{ body_class }}"
 	itemscope itemtype="http://schema.org/WebPage"
 >
 
 	{% block header %}
+		{% include '@components/header.twig' %}
 	{% endblock %}
 
     <main
@@ -47,6 +48,7 @@
     </main>
 
 	{% block footer %}
+		{% include '@components/footer.twig' %}
 	{% endblock %}
 
 	{{ fn('wp_footer') }}

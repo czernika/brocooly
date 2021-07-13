@@ -12,7 +12,6 @@ namespace Brocooly\Providers;
 
 use Twig\TwigFilter;
 use Twig\TwigFunction;
-use Brocooly\Storage\Context;
 
 class TimberServiceProvider extends AbstractService
 {
@@ -22,10 +21,10 @@ class TimberServiceProvider extends AbstractService
 	 */
 	public function register() {
 		$keys = [
-			'views'            => config( 'views.views' ) ?? 'resources/views',
-			'views_namespaces' => config( 'views.namespaces' ) ?? [],
-			'timber_filters'   => config( 'timber.filters' ) ?? [],
-			'timber_functions' => config( 'timber.functions' ) ?? [],
+			'views'            => config( 'views.views', 'resources/views' ),
+			'views_namespaces' => config( 'views.namespaces', [] ),
+			'timber_filters'   => config( 'timber.filters', [] ),
+			'timber_functions' => config( 'timber.functions', [] ),
 		];
 		foreach ( $keys as $key => $value ) {
 			$this->app->set( $key, $value );
@@ -38,24 +37,8 @@ class TimberServiceProvider extends AbstractService
 	public function boot() {
 		$this->app->timber::$dirname = $this->app->get( 'views' );
 
-		$this->setContext();
 		$this->addToTwig();
 		$this->setLoader();
-	}
-
-	/**
-	 * Set Timber context
-	 */
-	private function setContext() {
-		add_filter(
-			'timber/context',
-			function( $context ) {
-				$ctx = Context::get();
-
-				$context = array_merge( $ctx, $context );
-				return $context;
-			}
-		);
 	}
 
 	/**

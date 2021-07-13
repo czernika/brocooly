@@ -11,6 +11,9 @@ declare(strict_types=1);
 namespace Brocooly\Loaders;
 
 use Brocooly\App;
+use Brocooly\Providers\CarbonFieldsServiceProvider;
+use Brocooly\Providers\MenuServiceProvider;
+use Brocooly\Providers\PostTypeServiceProvider;
 use Brocooly\Providers\TimberServiceProvider;
 
 class ProviderLoader
@@ -29,7 +32,10 @@ class ProviderLoader
 	 * @var array
 	 */
 	private array $appProviders = [
+		CarbonFieldsServiceProvider::class,
 		TimberServiceProvider::class,
+		PostTypeServiceProvider::class,
+		MenuServiceProvider::class,
 	];
 
 	/**

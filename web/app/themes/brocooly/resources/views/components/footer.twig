@@ -1,0 +1,23 @@
+<footer
+	class="w-full h-auto footer"
+	id="colophon"
+	role="contentinfo"
+	itemscope itemtype="http://schema.org/WPFooter"
+>
+
+	<div class="py-2 text-xs text-gray-600 footer__copyrights copyrights">
+		<div class="container flex justify-between">
+			<span>
+				&copy; {{ 'now'|date('Y') }} | Brocooly Framework
+			</span>
+
+			<span>
+				{{ __( 'PHP %s', 'brocooly' )|format(fn('phpversion')) }}
+				<span role="separator" class="inline-block mx-1">|</span>
+				{{ __( 'WordPress %s', 'brocooly' )|format(fn('get_bloginfo', 'version')) }}
+				<span role="separator" class="inline-block mx-1">|</span>
+				{{ __( 'Version %s', 'brocooly' )|format(theme.version) }}
+			</span>
+		</div>
+	</div>
+</footer>

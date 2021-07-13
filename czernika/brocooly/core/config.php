@@ -9,6 +9,8 @@
 use Brocooly\App;
 use Timber\Timber;
 use Brocooly\Bootstrap;
+use Brocooly\Factories\FacadeFactory;
+use Brocooly\Factories\MetaFactory;
 use HelloNico\Twig\DumpExtension;
 use Whoops\Handler\PrettyPageHandler;
 
@@ -40,5 +42,14 @@ return [
 	 */
 	'dump'      => create( DumpExtension::class ),
 	'handler'   => create( PrettyPageHandler::class ),
+
+	/**
+	 *--------------------------------------------------------------------------
+	 * App Facades
+	 *--------------------------------------------------------------------------
+	 *
+	 */
+	'facade'     => create( FacadeFactory::class ),
+	'meta'       => create( MetaFactory::class ),
 
 ];
