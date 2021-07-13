@@ -34,6 +34,14 @@ class PostTypeServiceProvider extends AbstractService
 				$cpt = $this->app->make( $postType );
 
 				if ( in_array( $cpt->getName(), $this->protectedPostTypes, true ) ) {
+
+					if ( method_exists( $cpt, 'fields' ) ) {
+						add_action(
+							'carbon_fields_register_fields',
+							[ $cpt, 'fields' ],
+						);
+					}
+
 					continue;
 				}
 

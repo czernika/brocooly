@@ -6,8 +6,8 @@
  * @since 0.1.0
  */
 
+use Theme\Models\WP\Post;
 use Theme\Menus\PrimaryMenu;
-use Theme\Models\News;
 
 return [
 
@@ -18,8 +18,11 @@ return [
 	 *
 	 * Register any custom post type here
 	 *
+	 * @since 0.2.0
 	 */
-	'post_types' => [],
+	'post_types' => [
+		Post::class,
+	],
 
 	/**
 	 *--------------------------------------------------------------------------
