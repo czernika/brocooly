@@ -7,8 +7,20 @@
  */
 
 use Brocooly\App;
-use Brocooly\Loaders\AssetsLoader;
+use Timber\Timber;
+use Brocooly\Router\View;
 use Brocooly\Storage\Config;
+use Brocooly\Loaders\AssetsLoader;
+
+if ( ! function_exists( 'isTimberNext' ) ) {
+
+	/**
+	 * Return application instance
+	 */
+	function isTimberNext() {
+		return version_compare( Timber::$version, '2', '>=' );
+	}
+}
 
 if ( ! function_exists( 'app' ) ) {
 
@@ -24,6 +36,10 @@ if ( ! function_exists( 'config' ) ) {
 
 	/**
 	 * Return configuration object or provided default value
+	 * @param $key | key value.
+	 * @param $default | default value if key was set and not found
+	 *
+	 * @return mixed
 	 */
 	function config( $key = null, $default = null ) {
 		if ( Config::get( $key ) || $default === null ) {
@@ -40,7 +56,6 @@ if ( ! function_exists( 'dd' ) ) {
 	 * Dump and die helper
 	 *
 	 * @param mixed $val | value to check.
-	 * @return void
 	 */
 	function dd( $val ) {
 		echo '<pre>';
@@ -56,7 +71,6 @@ if ( ! function_exists( 'dump' ) ) {
 	 * Dump helper
 	 *
 	 * @param mixed $val | value to check.
-	 * @return void
 	 */
 	function dump( $val ) {
 		echo '<pre>';
@@ -71,7 +85,7 @@ if ( ! function_exists( 'asset' ) ) {
 	 * Get asset path from manifest file
 	 *
 	 * @param mixed $val | value to check.
-	 * @return void
+	 * @return string
 	 */
 	function asset( $filePath ) {
 		$asset = ( new AssetsLoader( app() ) )->asset( $filePath );
@@ -83,5 +97,20 @@ if ( ! function_exists( 'asset' ) ) {
 		}
 
 		return BROCOOLY_THEME_URI . 'resources/' . $filePath;
+	}
+}
+
+if ( ! function_exists( 'view' ) ) {
+
+	/**
+	 * Render helper
+	 *
+	 * @param string $views | view file to be rendered.
+	 * @param array  $ctx | context to pass with
+	 * @return void
+	 */
+
+	function view( string $views, array $ctx = [] ) {
+		return View::make( $views, $ctx );
 	}
 }

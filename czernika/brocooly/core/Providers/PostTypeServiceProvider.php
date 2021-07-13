@@ -21,11 +21,27 @@ class PostTypeServiceProvider extends AbstractService
 	 */
 	private array $protectedPostTypes = [ 'post', 'page' ];
 
+	/**
+	 * Values reserved by WordPress
+	 *
+	 * @var array
+	 */
+	private array $protectedTaxonomies = [ 'category', 'post_tag' ];
+
 	public function register() {
 		$this->app->set( 'custom_post_types', config( 'app.post_types', [] ) );
+		$this->app->set( 'custom_taxonomies', config( 'app.taxonomies', [] ) );
 	}
 
 	public function boot() {
+		$this->registerTaxonomies();
+		$this->registerPostTypes();
+	}
+
+	/**
+	 * Register post types
+	 */
+	private function registerPostTypes() {
 		$postTypes = $this->app->get( 'custom_post_types' );
 
 		if ( ! empty( $postTypes ) ) {
@@ -53,6 +69,45 @@ class PostTypeServiceProvider extends AbstractService
 						register_post_type(
 							$cpt->getName(),
 							$cpt->getOptions(),
+						);
+					}
+				);
+			}
+		}
+	}
+
+	/**
+	 * Register taxonomies
+	 */
+	private function registerTaxonomies() {
+		$taxonomies = $this->app->get( 'custom_taxonomies' );
+
+		if ( ! empty( $taxonomies ) ) {
+			foreach ( $taxonomies as $taxonomy ) {
+
+				$tax = $this->app->make( $taxonomy );
+
+				if ( in_array( $tax->getName(), $this->protectedTaxonomies, true ) ) {
+
+					if ( method_exists( $tax, 'fields' ) ) {
+						add_action(
+							'carbon_fields_register_fields',
+							[ $tax, 'fields' ],
+						);
+					}
+
+					continue;
+				}
+
+				$tax->setOptions( $tax->options() );
+
+				add_action(
+					'init',
+					function() use ( $tax ) {
+						register_taxonomy(
+							$tax->getName(),
+							$tax->getPostTypes(),
+							$tax->getOptions(),
 						);
 					}
 				);

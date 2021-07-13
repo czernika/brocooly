@@ -1,0 +1,71 @@
+{% if pagination.pages is not empty %}
+    <nav class="grid w-full my-4 place-items-center">
+        <h4 class="sr-only">{{ __( 'Pagination', 'brocooly' ) }}</h4>
+        <ul class="flex center">
+
+            {# First #}
+            {% if pagination.pages|first and pagination.pages|first.current != true %}
+                <li class="mx-1">
+                    <a class="block w-full h-full px-6 py-2 duration-150 border border-main hover:bg-main hover:text-light-txt" href="{{ pagination.pages | first.link }}">{{ __('First', 'brocooly') }}</a>
+                </li>
+            {% else %}
+                <li class="mx-1">
+                    <button class="px-6 py-2 bg-gray-200 border border-gray-300 cursor-not-allowed" type="button" disabled>{{ __('First', 'brocooly') }}</button>
+                </li>
+            {% endif %}
+
+            {# Previous #}
+            {% if pagination.prev %}
+                <li class="mx-1">
+                    <a class="block w-full h-full px-6 py-2 duration-150 border border-main hover:bg-main hover:text-light-txt" href="{{ pagination.prev.link }}">{{ __('Previous', 'brocooly') }}</a>
+                </li>
+            {% else %}
+                <li class="mx-1">
+                    <button class="px-6 py-2 bg-gray-200 border border-gray-300 cursor-not-allowed" type="button" disabled>{{ __('Previous', 'brocooly') }}</button>
+                </li>
+            {% endif %}
+
+            {# Pages #}
+            {% for page in pagination.pages %}
+                {% if page.link %}
+                    <li class="mx-1">
+                        <a class="block w-full h-full px-6 py-2 duration-150 border border-main hover:bg-main hover:text-light-txt {{ page.class }}" href="{{ page.link }}">{{ page.title }}</a>
+                    </li>
+                {% else %}
+                    {% if page.class is same as 'dots' %}
+                        <li class="mx-1">
+                            <span class="block w-full h-full px-6 py-2 border border-main {{ page.class }}">{{ page.title }}</span>
+                        </li>
+                    {% else %}
+                        <li class="mx-1">
+                            <span class="block w-full h-full px-6 py-2 border border-cta bg-cta text-light-txt {{ page.class }}" aria-current="page">{{ page.title }}</span>
+                        </li>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+
+            {# Next #}
+            {% if pagination.next %}
+                <li class="mx-1">
+                    <a class="block w-full h-full px-6 py-2 duration-150 border border-main hover:bg-main hover:text-light-txt" href="{{ pagination.next.link }}">{{ __('Next', 'brocooly') }}</a>
+                </li>
+            {% else %}
+                <li class="mx-1">
+                    <button class="px-6 py-2 bg-gray-200 border border-gray-300 cursor-not-allowed" type="button" disabled>{{ __('Next', 'brocooly') }}</button>
+                </li>
+            {% endif %}
+
+            {# Last #}
+            {% if pagination.pages|last and pagination.pages|last.current != true %}
+                <li class="mx-1">
+                    <a class="block w-full h-full px-6 py-2 duration-150 border border-main hover:bg-main hover:text-light-txt" href="{{ pagination.pages | last.link }}">{{ __('Last', 'brocooly') }}</a>
+                </li>
+            {% else %}
+                <li class="mx-1">
+                    <button class="px-6 py-2 bg-gray-200 border border-gray-300 cursor-not-allowed" type="button" disabled>{{ __('Last', 'brocooly') }}</button>
+                </li>
+            {% endif %}
+
+        </ul>
+    </nav>
+{% endif %}

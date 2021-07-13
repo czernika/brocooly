@@ -10,13 +10,12 @@ declare(strict_types=1);
 
 namespace Theme\Controllers;
 
-use Brocooly\Router\View;
 use Brocooly\Controllers\AbstractController;
 
 class FrontPageController extends AbstractController
 {
     public function __invoke() {
 		$hello = esc_html__( 'Welcome to Brocooly Framework', 'brocooly' );
-		View::make( 'content/front-page.twig', compact( 'hello' ) );
+		view( 'content/front-page.twig', compact( 'hello' ) );
 	}
 }

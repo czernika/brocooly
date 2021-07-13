@@ -1,0 +1,23 @@
+{% extends 'layouts/app.twig' %}
+
+{% block content %}
+
+	<div class="container">
+
+		<h1>{{ __('Blog', 'brocooly') }}</h1>
+
+		<div class="">
+			{% for post in posts %}
+				{% include 'content/post/preview.twig' %}
+			{% else %}
+				{{ __('There is nothing has been published yet', 'brocooly') }}
+			{% endfor %}
+		</div>
+
+		{% include '@components/pagination.twig' with {
+			pagination: posts.pagination
+		} %}
+
+	</div>
+
+{% endblock %}

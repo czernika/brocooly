@@ -12,7 +12,7 @@
  *--------------------------------------------------------------------------
  * Ensure compatible version of PHP is used
  *--------------------------------------------------------------------------
- * 
+ *
  */
 $minimumRequiredPHPVersion = '7.4';
 if ( version_compare( $minimumRequiredPHPVersion, phpversion(), '>=' ) ) {

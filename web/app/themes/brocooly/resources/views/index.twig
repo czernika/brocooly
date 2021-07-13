@@ -24,12 +24,15 @@
 		WebFont.load({ google: { families: families } });
 	</script>
 
-	{% block head %}{% endblock %}
+	{% block head %}
+		<!-- Prebuild Styles -->
+		<link rel="stylesheet" href="{{ theme.link }}/style.css">
+	{% endblock %}
 
 	{{ fn('wp_head') }}
 </head>
 <body
-	class="overflow-x-hidden text-base antialiased min-h-screen flex flex-col font-body bg-gray-50 {{ body_class }}"
+	class="overflow-x-hidden text-base antialiased h-screen flex flex-col font-body bg-gray-50 {{ body_class }}"
 	itemscope itemtype="http://schema.org/WebPage"
 >
 
@@ -43,7 +46,7 @@
         class="flex-grow w-full h-auto outline-none content"
 		tabindex="-1"
     >
-        {% block layout %}	
+        {% block layout %}
 		{% endblock %}
     </main>
 
