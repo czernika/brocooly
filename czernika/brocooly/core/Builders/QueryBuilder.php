@@ -36,7 +36,7 @@ class QueryBuilder
 			'post_type' => $name,
 		];
 		$query = array_merge( $query, $postQuery, self::$queryParams );
-		$posts = Timber::get_posts( $query );
+		$posts = static::getQuery( $query );
 
 		return $posts;
 	}
@@ -53,8 +53,56 @@ class QueryBuilder
 			'posts_per_page' => -1,
 		];
 		$query = array_merge( $postQuery, self::$queryParams );
-		$posts = Timber::get_posts( $query );
+		$posts = static::getQuery( $query );
 
 		return $posts;
+	}
+
+	/**
+	 * Get posts with pagination
+	 *
+	 * @param int $postsPerPage | post type name.
+	 * @param string $name | post type name.
+	 *
+	 * @return array|null
+	 */
+	public static function paginate( int $postsPerPage, string $name = '' ) {
+
+		$postQuery = [
+			'post_type'      => $name,
+			'posts_per_page' => $postsPerPage,
+			'paged'          => max( 1, get_query_var( 'paged' ) ),
+		];
+		$query = array_merge( $postQuery, self::$queryParams );
+		$posts = static::getQuery( $query );
+
+		return $posts;
+	}
+
+	/**
+	 * Get current post object
+	 *
+	 * @return object
+	 */
+	public static function current() {
+		if ( isTimberNext() ) {
+			return Timber::get_post();
+		}
+
+		return new \Timber\Post();
+	}
+
+	/**
+	 * Get query depends on version
+	 *
+	 * @param array $query | query.
+	 * @return array|null
+	 */
+	private static function getQuery( array $query ) {
+		if ( isTimberNext() ) {
+			return Timber::get_posts( $query );
+		}
+
+		return new \Timber\PostQuery( $query );
 	}
 }

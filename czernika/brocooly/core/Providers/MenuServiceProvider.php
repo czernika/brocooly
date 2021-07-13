@@ -84,7 +84,7 @@ class MenuServiceProvider extends AbstractService
 	 * @return object|false
 	 */
 	private function getMenuObject( string $location ) {
-		if ( version_compare( Timber::class, '2', '>=' ) ) {
+		if ( isTimberNext() ) {
 			return Timber::get_menu( $location );
 		}
 

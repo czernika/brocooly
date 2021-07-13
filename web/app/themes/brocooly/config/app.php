@@ -8,12 +8,26 @@
 
 use Theme\Models\WP\Post;
 use Theme\Menus\PrimaryMenu;
+use Theme\Models\WP\Category;
+use Theme\Providers\AppServiceProvider;
 
 return [
 
 	/**
 	 *--------------------------------------------------------------------------
-	 * Custom post types
+	 * Providers
+	 *--------------------------------------------------------------------------
+	 *
+	 * Custom service providers
+	 *
+	 */
+	'providers' => [
+		AppServiceProvider::class,
+	],
+
+	/**
+	 *--------------------------------------------------------------------------
+	 * Custom post types and taxonomies
 	 *--------------------------------------------------------------------------
 	 *
 	 * Register any custom post type here
@@ -22,6 +36,10 @@ return [
 	 */
 	'post_types' => [
 		Post::class,
+	],
+
+	'taxonomies' => [
+		Category::class,
 	],
 
 	/**

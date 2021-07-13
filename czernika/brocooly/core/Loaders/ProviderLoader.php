@@ -48,7 +48,8 @@ class ProviderLoader
 
 	public function __construct( App $app ) {
 		$this->app       = $app;
-		$this->providers = $this->appProviders;
+		$themeProviders  = config( 'app.providers', [] );
+		$this->providers = array_merge( $themeProviders, $this->appProviders );
 	}
 
 	/**

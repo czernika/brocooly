@@ -13,7 +13,7 @@ namespace Brocooly\Router;
 use Brocooly\Controllers\AbstractController;
 
 class Route
-{	
+{
 	/**
 	 * Routes array
 	 *
@@ -58,13 +58,31 @@ class Route
 	}
 
 	/**
+	 * Handle simple view request
+	 *
+	 * @param array $options | passed options.
+	 * @return void
+	 */
+	private static function handleViewMethod( array $options ) {
+		foreach ( $options as $condition => $view ) {
+			if ( call_user_func( $condition ) ) {
+				return view( $view );
+				break;
+			}
+		}
+	}
+
+	/**
 	 * Resolve which view to render
 	 */
 	public static function resolve() {
 		foreach ( static::$routes as $request => $options ) {
 			if ( 'get' === $request ) {
 				self::handleGetRequest( $options );
-				break;
+			}
+
+			if ( 'view' === $request ) {
+				self::handleViewMethod( $options );
 			}
 		}
 	}
@@ -103,7 +121,7 @@ class Route
 	 * @return object
 	 */
 	private static function callController( string $instance ) {
-		$class = app()->injectOn( app()->make( $instance ) );
+		$class = app()->make( $instance );
 		return $class;
 	}
 }

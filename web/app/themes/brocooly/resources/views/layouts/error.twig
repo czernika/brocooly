@@ -1,5 +1,29 @@
 {% extends 'index.twig' %}
 
 {% block layout %}
-	{% block content %}{% endblock %}
+
+	{% block content %}
+		<div class="container h-full">
+			<div class="flex flex-col items-center justify-center h-full px-4 py-12">
+
+				<div class="w-32 h-32 mb-2">
+					<img class="object-contain w-full h-full" src="{{ asset('static/404.svg') }}" alt="{{ __('Page not found', 'brocooly') }}">
+				</div>
+
+				<h1 class="mb-6 text-3xl font-semibold text-gray-300">
+					{{ __( '404 | Not found', 'brocooly' ) }}
+				</h1>
+
+				<p class="max-w-lg mx-auto mb-12 text-center">
+					{{ __( 'The page you were looking for could not be found. It might have been removed, renamed, or did not exist in the first place.', 'brocooly' ) }}
+				</p>
+
+				<a href="{{ site.link }}" class="inline-block px-4 py-2 duration-200 bg-white border border-gray-200 hover:text-white hover:bg-secondary">
+					{{ __( 'Back to home page', 'brocooly' ) }}
+				</a>
+
+			</div>
+		</div>
+	{% endblock %}
+
 {% endblock %}

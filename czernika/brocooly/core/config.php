@@ -12,6 +12,8 @@ use Brocooly\Bootstrap;
 use Brocooly\Factories\FacadeFactory;
 use Brocooly\Factories\MetaFactory;
 use HelloNico\Twig\DumpExtension;
+use Theme\Contracts\PostServiceContract;
+use Theme\Services\PostService;
 use Whoops\Handler\PrettyPageHandler;
 
 use function DI\get;
