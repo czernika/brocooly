@@ -10,10 +10,10 @@ declare(strict_types=1);
 
 namespace Brocooly;
 
+use Brocooly\Loaders\HookLoader;
 use Brocooly\Loaders\AssetsLoader;
 use Brocooly\Loaders\BootProvider;
 use Brocooly\Loaders\ConfigLoader;
-use Brocooly\Loaders\ContextLoader;
 use Brocooly\Loaders\DebuggerLoader;
 use Brocooly\Loaders\DefinitionLoader;
 use Brocooly\Loaders\RegisterProvider;
@@ -38,8 +38,8 @@ class Bootstrap
 		DefinitionLoader::class,
 		DebuggerLoader::class,
 		ConfigLoader::class,
-		ContextLoader::class,
 		RegisterProvider::class,
+		HookLoader::class,
 		AssetsLoader::class,
 		BootProvider::class,
 	];
@@ -54,8 +54,6 @@ class Bootstrap
 	 * @return void
 	 */
 	public function run() {
-		foreach ( $this->loaders as $loader ) {
-			$this->app->make( $loader )->call();
-		}
+		$this->app->bootLoaders( $this->loaders );
 	}
 }

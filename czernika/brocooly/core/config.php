@@ -9,12 +9,11 @@
 use Brocooly\App;
 use Timber\Timber;
 use Brocooly\Bootstrap;
-use Brocooly\Factories\FacadeFactory;
-use Brocooly\Factories\MetaFactory;
 use HelloNico\Twig\DumpExtension;
-use Theme\Contracts\PostServiceContract;
-use Theme\Services\PostService;
+use Brocooly\Factories\MetaFactory;
 use Whoops\Handler\PrettyPageHandler;
+use Brocooly\Factories\FacadeFactory;
+use Brocooly\Factories\CustomizerFactory;
 
 use function DI\get;
 use function DI\create;
@@ -53,5 +52,6 @@ return [
 	 */
 	'facade'     => create( FacadeFactory::class ),
 	'meta'       => create( MetaFactory::class ),
+	'mod'        => create( CustomizerFactory::class ),
 
 ];

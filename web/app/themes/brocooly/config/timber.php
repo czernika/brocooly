@@ -25,6 +25,16 @@ return [
 		 * Help to include correct production bundle accordingly to manifest file
 		 */
 		'asset'  => 'asset',
+
+		/**
+		 * Get theme mod without prefix
+		 */
+		'mod'    => 'mod',
+
+		/**
+		 * Get theme mod
+		 */
+		'rawmod' => 'get_theme_mod',
 	],
 
 	/**

@@ -35,7 +35,7 @@ class TimberServiceProvider extends AbstractService
 	 * Boot Timber options
 	 */
 	public function boot() {
-		$this->app->timber::$dirname = $this->app->get( 'views' );
+		$this->app->get( 'timber' )::$dirname = $this->app->get( 'views' );
 
 		$this->addToTwig();
 		$this->setLoader();

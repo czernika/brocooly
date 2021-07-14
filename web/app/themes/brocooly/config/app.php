@@ -9,6 +9,9 @@
 use Theme\Models\WP\Post;
 use Theme\Menus\PrimaryMenu;
 use Theme\Models\WP\Category;
+use Theme\Hooks\DisableEmoji;
+use Theme\Hooks\DisableBlockStyles;
+use Theme\Hooks\RemoveMetaGenerator;
 use Theme\Providers\AppServiceProvider;
 
 return [
@@ -53,6 +56,22 @@ return [
 	 */
 	'menus' => [
 		PrimaryMenu::class,
+	],
+
+	/**
+	 *--------------------------------------------------------------------------
+	 * Custom hooks
+	 *--------------------------------------------------------------------------
+	 *
+	 * Register hooks which will be used in your theme.
+	 * You hook class requires to implement `load` method which will handle hook itself.
+	 *
+	 * @since 0.3.0
+	 */
+	'hooks'     => [
+		DisableEmoji::class,
+		RemoveMetaGenerator::class,
+		DisableBlockStyles::class,
 	],
 
 ];

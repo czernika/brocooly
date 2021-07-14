@@ -21,15 +21,17 @@ class View
 	 * The only render function
 	 *
 	 * @param string $views | view file to be rendered.
-	 * @param array  $ctx | context to pass with
+	 * @param array  $localContext | context to pass with.
 	 * @return void
 	 */
-    public static function make( string $views, array $ctx = [] ) {
-		$timberContext = Context::get();
+    public static function make( string $views, array $localContext = [] ) {
+		$timberContext = Timber::context();
 		$themeContext  = ThemeContext::get();
-		$ctx           = array_merge( $timberContext, $themeContext, $ctx );
+		$ctx           = array_merge( $timberContext, $themeContext, $localContext );
 
-		return Timber::render( $views, $ctx );
+		Context::merge( $ctx );
+
+		return Timber::render( $views, Context::get() );;
 	}
 
 	/**

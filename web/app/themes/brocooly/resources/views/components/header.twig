@@ -11,10 +11,14 @@
 	</a>
 
 	<nav class="py-2 bg-white border-b border-gray-200">
-		<div class="container">
+		<div class="container flex items-center justify-between">
 			{% include '@menus/primary.menu.twig' with {
 				menu: primary_menu
 			} %}
+
+			<a href="mailto:{{ mod('email', 'aliha.devs@gmail.com')|antispambot }}">
+				{{ mod('email', 'aliha.devs@gmail.com')|antispambot }}
+			</a>
 		</div>
 	</nav>
 

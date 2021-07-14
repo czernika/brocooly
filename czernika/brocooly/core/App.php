@@ -44,7 +44,7 @@ class App
 	public function __construct( Container $container ) {
 		self::$app       = $this;
 		$this->container = $container;
-		$this->timber    = $this->container->get( 'timber' );
+		$this->timber    = $this->container->make( 'timber' );
 	}
 
 	/**
@@ -54,6 +54,17 @@ class App
 	 */
 	public static function getApp() {
 		return self::$app;
+	}
+
+	/**
+	 * Boot loaders
+	 *
+	 * @param array $loaders
+	 */
+	public function bootLoaders( array $loaders ) {
+		foreach ( $loaders as $loader ) {
+			$this->make( $loader )->call();
+		}
 	}
 
 	/**

@@ -12,6 +12,7 @@ namespace Brocooly\Loaders;
 
 use Brocooly\App;
 use Brocooly\Providers\CarbonFieldsServiceProvider;
+use Brocooly\Providers\KirkiServiceProvider;
 use Brocooly\Providers\MenuServiceProvider;
 use Brocooly\Providers\PostTypeServiceProvider;
 use Brocooly\Providers\TimberServiceProvider;
@@ -32,10 +33,11 @@ class ProviderLoader
 	 * @var array
 	 */
 	private array $appProviders = [
-		CarbonFieldsServiceProvider::class,
 		TimberServiceProvider::class,
 		PostTypeServiceProvider::class,
+		CarbonFieldsServiceProvider::class,
 		MenuServiceProvider::class,
+		KirkiServiceProvider::class,
 	];
 
 	/**
@@ -49,7 +51,7 @@ class ProviderLoader
 	public function __construct( App $app ) {
 		$this->app       = $app;
 		$themeProviders  = config( 'app.providers', [] );
-		$this->providers = array_merge( $themeProviders, $this->appProviders );
+		$this->providers = array_merge( $this->appProviders, $themeProviders );
 	}
 
 	/**
@@ -61,7 +63,7 @@ class ProviderLoader
 		if ( ! empty( $this->providers ) ) {
 			foreach ( $this->providers as $provider ) {
 				if ( method_exists( $provider, $method ) ) {
-					$provider = $this->app->get( $provider );
+					$provider = $this->app->make( $provider );
 					$provider->$method();
 				}
 			}

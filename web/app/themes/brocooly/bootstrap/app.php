@@ -39,3 +39,17 @@ $brocooly = $container->get( 'bootstrap' );
  *
  */
 $brocooly->run();
+
+/**
+ *--------------------------------------------------------------------------
+ * Include Kirki Customizer installer
+ *--------------------------------------------------------------------------
+ *
+ * As Kirki is a WordPress plugin
+ * it is depends on user actions
+ * So we include installer section
+ *
+ * @see https://kirki.org/docs/setup/integration/
+ * @since 0.3.0
+ */
+require_once __DIR__ . '/kirki-installer.php';

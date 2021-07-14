@@ -1,17 +1,8 @@
 <?php
-/**
- * App Context singleton
- *
- * @package Brocooly
- * @since 0.1.0
- */
 
 declare(strict_types=1);
 
 namespace Brocooly\Storage;
-
-use Theme\Context as ThemeContext;
-use Timber\Timber;
 
 class Context
 {
@@ -29,16 +20,6 @@ class Context
 	 * @var array
 	 */
 	private static array $registry = [];
-
-	/**
-	 * Instantiate Context object
-	 */
-	public static function instantiate() {
-		$context        = self::getTimberContext();
-		self::$registry = $context;
-		
-		return self::$instance ?? new self();
-	}
 
 	/**
 	 * Set context value
@@ -83,15 +64,6 @@ class Context
 	 */
 	public static function delete( string $key ) {
 		unset( self::$registry[ $key ] );
-	}
-
-	/**
-	 * Get Timber context
-	 *
-	 * @return array
-	 */
-	private static function getTimberContext() {
-		return Timber::context();
 	}
 
 	/**

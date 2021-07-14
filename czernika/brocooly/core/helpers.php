@@ -114,3 +114,20 @@ if ( ! function_exists( 'view' ) ) {
 		return View::make( $views, $ctx );
 	}
 }
+
+if ( ! function_exists( 'mod' ) ) {
+
+	/**
+	 * Theme mod wrapper
+	 *
+	 * @param string $key | theme mod helper.
+	 * @param mixed  $default | default value.
+	 * @return void
+	 */
+
+	function mod( string $key, $default = null ) {
+		$prefix   = app()->get( 'customizer_prefix' );
+		$themeMod = $prefix . $key;
+		return get_theme_mod( $themeMod, $default );
+	}
+}
