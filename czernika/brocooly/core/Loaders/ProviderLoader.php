@@ -13,6 +13,7 @@ namespace Brocooly\Loaders;
 use Brocooly\App;
 use Brocooly\Providers\MenuServiceProvider;
 use Brocooly\Providers\KirkiServiceProvider;
+use Brocooly\Providers\WidgetServiceProvider;
 use Brocooly\Providers\TimberServiceProvider;
 use Brocooly\Providers\PostTypeServiceProvider;
 use Brocooly\Providers\ShortcodeServiceProvider;
@@ -39,6 +40,7 @@ class ProviderLoader
 		CarbonFieldsServiceProvider::class,
 		MenuServiceProvider::class,
 		KirkiServiceProvider::class,
+		WidgetServiceProvider::class,
 		ShortcodeServiceProvider::class,
 	];
 

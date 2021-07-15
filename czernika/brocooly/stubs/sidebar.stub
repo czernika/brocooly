@@ -1,0 +1,40 @@
+<?php
+/**
+ * Custom theme sidebar
+ *
+ * @package Brocooly
+ * @since 0.4.0
+ */
+
+declare(strict_types=1);
+
+namespace Theme\Widgets;
+
+use Brocooly\Widgets\AbstractSidebar;
+
+class {{ SIDEBAR }}Sidebar extends AbstractSidebar
+{
+
+	/**
+	 * Will be available as {{ {{ LC_SIDEBAR }}_sidebar }}
+     *
+     * @var string
+	 */
+	public string $id = '{{ LC_SIDEBAR }}';
+
+    /**
+	 * Get sidebar options
+	 *
+	 * @return array
+	 */
+	public function options() {
+		return [
+			'name'          => esc_html__( 'Example sidebar', 'brocooly' ),
+			'description'   => esc_html__( 'Example description', 'brocooly' ),
+			'before_widget' => '<li id="%1$s" class="widget %2$s">',
+			'after_widget'  => "</li>\n",
+			'before_title'  => '<h2 class="widgettitle">',
+			'after_title'   => "</h2>\n",
+		];
+	}
+}

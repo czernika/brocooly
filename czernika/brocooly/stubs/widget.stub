@@ -1,0 +1,61 @@
+<?php
+/**
+ * Custom Widget
+ *
+ * @package Brocooly
+ * @since 0.4.0
+ */
+
+declare(strict_types=1);
+
+namespace Theme\Widgets;
+
+use Brocooly\Facades\Meta;
+use Brocooly\Widgets\AbstractWidget;
+
+class {{ WIDGET }}Widget extends AbstractWidget
+{
+
+	/**
+	 * Widget id
+	 *
+	 * @var string
+	 */
+	protected string $widgetId = '{{ LC_WIDGET }}';
+
+	/**
+	 * Widget title
+	 *
+	 * @return string
+	 */
+	protected function title() {
+		return esc_html__( 'Brocooly | {{ WIDGET }}', 'brocooly' );
+	}
+
+	/**
+	 * Widget description
+	 *
+	 * @return string
+	 */
+	protected function description() {
+		return esc_html__( 'Widget description', 'brocooly' );
+	}
+
+	/**
+	 * Widget options
+	 *
+	 * @return array
+	 */
+	protected function options() {
+		// return [ Meta::text( 'example_text_field', esc_html__( 'Example Field title', 'brocooly' ) ) ];
+	}
+
+	/**
+	 * Widget view instance
+	 *
+	 * @return string
+	 */
+	protected function view() {
+		return 'widgets/widget-file.twig';
+	}
+}

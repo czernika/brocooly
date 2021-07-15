@@ -10,7 +10,7 @@
 
 		<div class="">
 			{% for post in posts %}
-				{% include 'content/post/preview.twig' %}
+				{% include '@post/preview.twig' %}
 			{% else %}
 				{{ __('There is nothing has been published yet', 'brocooly') }}
 			{% endfor %}

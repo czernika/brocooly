@@ -33,7 +33,9 @@ return [
 	'namespaces' => [
 		'components' => 'components',
 		'menus'      => 'components/menus',
+		'post'       => 'content/post',
 		'shortcodes' => 'shortcodes',
+		'widgets'    => 'widgets',
 	],
 
 ];
