@@ -1,0 +1,46 @@
+{% for comment in comments %}
+
+	<li class="{{ comment.comment_type }} byuser comment-author-{{ comment.author.ID }} {% if post.author.ID == comment.author.ID %}bypostauthor{% endif %} depth-{{ comment.depth }} bg-white border-l-2 comment-body border-l-secondary mb-4 py-4 px-10 shadow" id="comment-{{ comment.ID }}">
+
+		<div class="flex mb-1 space-x-3 text-sm text-gray-400 comment-meta">
+
+			<time datetime="{{ comment.date|date('d.F.Y') }}">
+				{{ comment.date|date('d M, Y') }}
+			</time>
+
+			<h5 class="comment-author">
+				{{ __('%s says', 'brocooly')|format(comment.author.name) }}
+			</h5>
+
+		</div>
+
+		<article id="div-comment-{{ comment.ID }}" class="">
+
+			<div class="pb-4 border-b border-gray-300 comment-content">
+				{{ comment.content|wpautop }}
+			</div>
+
+			<div class="mb-4" id="reply-to-{{ comment.ID }}">
+				<button
+					type="button"
+					class="duration-200 reply text-secondary hover:text-primary comment-reply-link" data-commentid="{{ comment.ID }}"
+					data-postid="{{ post.ID }}"
+					data-belowelement="reply-to-{{ comment.ID }}" data-respondelement="respond"
+					data-replyto="{{ __( 'Reply to %s', 'brocooly' )|format(comment.author.name) }}"
+					aria-label="{{ __( 'Reply to %s', 'brocooly' )|format(comment.author.name) }}"
+				>
+					{{ __( 'Reply', 'brocooly' ) }}
+				</button>
+			</div>
+
+			{% if comment.children %}
+				{% include '@post/comments.twig' with {
+					comments: comment.children
+				} %}
+			{% endif %}
+
+		</article>
+
+	</li>
+
+{% endfor %}

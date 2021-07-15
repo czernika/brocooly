@@ -46,10 +46,39 @@
 			{{ post.content|e('wp_kses_post') }}
 		</div>
 
+		{% if post.comments %}
+			<section class="max-w-4xl mx-auto mb-10 comments-area" id="comments">
+				<h3 class="mb-2 text-xl font-bold comments-title">
+					{{ __('Comments', 'brocooly') }}
+				</h3>
+
+				{% if post.comment_status is same as 'closed' %}
+					<p class="text-red-600">
+						{{ __('Comments for this post are closed', 'brocooly') }}
+					</p>
+				{% else %}
+
+					<ol class="comments-list">
+						{% include '@post/comments.twig' with {
+							comments: post.comments
+						} %}
+					</ol>
+
+					<section class="comment-box">
+						{% include '@forms/comments.twig' %}
+					</section>
+				{% endif %}
+			</section>
+		{% endif %}
+
 		<footer class="entry-footer">
 			{% include '@components/navigation.twig' %}
 		</footer>
 
 	</article>
 
+{% endblock %}
+
+{% block scripts %}
+	<script src="{{ asset('comments-reply.js') }}"></script>
 {% endblock %}

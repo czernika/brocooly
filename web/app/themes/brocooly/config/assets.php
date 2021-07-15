@@ -18,7 +18,7 @@ return [
 	 * If set to true all generated custom scripts and styles
 	 * will be generated on every page.
 	 *
-	 * Useful for development but in a production it is recommended to load assets on separate pages 
+	 * Useful for development but in a production it is recommended to load assets on separate pages
 	 *
 	 */
 	'autoload'       => env( 'WP_ENV' ) != 'production',
@@ -28,7 +28,7 @@ return [
 	 * Public folder
 	 *--------------------------------------------------------------------------
 	 *
-	 * Where all assets will compiled 
+	 * Where all assets will compiled
 	 *
 	 */
 	'public'         => env( 'PUBLIC_FOLDER' ) ?? 'public',
@@ -60,6 +60,8 @@ return [
 	 *
 	 * TODO: improve functionality
 	 */
-	'excludeScripts' => [],
+	'excludeScripts' => [
+		'comments-reply.js',
+	],
 
 ];

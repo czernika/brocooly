@@ -26,11 +26,11 @@ class SearchForm
 	/**
 	 * Get form markup
 	 *
-	 * @param $form | form markup.
-	 * @return void
+	 * @param string $form | form markup.
+	 * @return string
 	 */
-	public function hook( $form ) {
-		$form = View::compile( '@components/forms/search.twig', [ 's' => get_search_query() ] );
+	public function hook( string $form ) {
+		$form = View::compile( '@forms/search.twig', [ 's' => get_search_query() ] );
 		return $form;
 	}
 }
