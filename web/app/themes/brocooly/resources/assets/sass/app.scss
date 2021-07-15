@@ -1,10 +1,12 @@
 /**
- *
+ * Includes
  */
+@import 'libs/wordpress';
 @import 'libs/tailwind';
 
 
 /**
- *
+ * Components
  */
 @import 'components/icons';
+@import 'components/widgets';

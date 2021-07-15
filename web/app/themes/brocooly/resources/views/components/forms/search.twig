@@ -1,0 +1,12 @@
+<form role="search" method="get" class="flex search-form" action="/">
+
+	<label class="block">
+		<span class="screen-reader-text">{{ __('Search for:', 'brocooly') }}</span>
+
+		<input type="search" class="w-full h-10 px-4 py-2 border border-gray-300 search-field focus:border-secondary" placeholder="" value="{{ s }}" name="s" aria-label="{{ __('Search for:', 'brocooly') }}">
+	</label>
+
+	<button type="submit" class="px-4 text-white duration-200 search-submit border-secondary bg-secondary hover:bg-primary hover:border-primary">
+		{{ __('Search', 'brocooly') }}
+	</button>
+</form>

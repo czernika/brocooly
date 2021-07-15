@@ -1,0 +1,26 @@
+{% extends 'index.twig' %}
+
+{% block layout %}
+
+	<div class="container grid grid-cols-4 gap-8 py-16">
+
+		{% block content %}
+
+		{% endblock %}
+
+		{% block sidebar %}
+			<aside id="secondary" class="p-6 border-l border-gray-200">
+
+				<h1 class="mb-4 text-2xl font-bold">
+					{{ __('Widgets', 'brocooly') }}
+				</h1>
+
+				<ul class="flex flex-col w-full space-y-8">
+					{{ blog_sidebar }}
+				</ul>
+			</aside>
+		{% endblock %}
+
+	</div>
+
+{% endblock %}

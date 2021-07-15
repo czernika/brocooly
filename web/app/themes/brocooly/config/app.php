@@ -7,6 +7,7 @@
  */
 
 use Theme\Models\WP\Post;
+use Theme\Hooks\SearchForm;
 use Theme\Menus\PrimaryMenu;
 use Theme\Models\WP\Category;
 use Theme\Hooks\DisableEmoji;
@@ -24,9 +25,8 @@ return [
 	 *--------------------------------------------------------------------------
 	 *
 	 * Custom service providers
-	 *
 	 */
-	'providers' => [
+	'providers'  => [
 		AppServiceProvider::class,
 		ThemeServiceProvider::class,
 		GutenbergServiceProvider::class,
@@ -56,9 +56,8 @@ return [
 	 *
 	 * Register theme menu location
 	 * and add it to global context
-	 *
 	 */
-	'menus' => [
+	'menus'      => [
 		PrimaryMenu::class,
 	],
 
@@ -72,10 +71,11 @@ return [
 	 *
 	 * @since 0.3.0
 	 */
-	'hooks'     => [
+	'hooks'      => [
 		DisableEmoji::class,
 		RemoveMetaGenerator::class,
 		DisableBlockStyles::class,
+		SearchForm::class,
 	],
 
 	/**
@@ -84,7 +84,6 @@ return [
 	 *--------------------------------------------------------------------------
 	 *
 	 * Register shortcodes
-	 *
 	 */
 	'shortcodes' => [],
 

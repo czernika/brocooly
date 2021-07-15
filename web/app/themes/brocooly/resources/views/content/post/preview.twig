@@ -1,24 +1,46 @@
 <!-- Post-{{ post.ID }}  -->
 <article
-	class="{{ post.post_class }} w-full h-auto"
+	class="{{ post.post_class }} w-full h-auto flex duration-200 bg-white rounded shadow preview hover:shadow-md border border-gray-200 overflow-hidden"
 	id="post-{{ post.ID }}"
 	itemscope itemtype="http://schema.org/Article"
 >
 
-	<header class="entry-header">
-		<h2 class="entry-title" itemprop="headline name">
-			<a href="{{ post.link }}" itemprop="url">
-				{{ post.title }}
+	{% if post.thumbnail %}
+		<figure class="flex-shrink-0 w-2/5">
+			<img src="{{ post.thumbnail.src|resize(300, 300) }}" alt="{{ post.thumbnail.alt }}" class="object-cover w-full h-full">
+		</figure>
+	{% endif %}
+
+	<div class="flex flex-col w-full p-6">
+
+		<header class="entry-header">
+			<h2 class="entry-title" itemprop="headline name">
+				<a href="{{ post.link }}" itemprop="url" class="text-lg font-bold duration-200 hover:text-secondary">
+					{{ post.title }}
+				</a>
+			</h2>
+
+			<div class="flex space-x-3 text-sm text-gray-400">
+				<time pubdate datetime="{{ post.date|date('d.F.Y') }}">
+					{{ post.date|date('d M, Y') }}
+				</time>
+
+				<span>
+					{{ post.author }}
+				</span>
+			</div>
+		</header>
+
+		<div class="flex-grow py-4 entry-preview" itemprop="description">
+			{{ post.preview.length(50).force.read_more(__('Continue Reading', 'brocooly'))|e('wp_kses_post') }}
+		</div>
+
+		<footer class="pt-2 border-t border-gray-200 entry-footer">
+			<a href="{{ post.link }}" class="duration-200 hover:text-secondary">
+				{{ __('Read more', 'brocooly') }}
 			</a>
-		</h2>
-	</header>
+		</footer>
 
-	<div class="entry-preview" itemprop="description">
-		{{ post.preview.length(50).force.read_more(__('Continue Reading', 'brocooly'))|e('wp_kses_post') }}
 	</div>
-
-	<footer class="entry-footer">
-		<a href="{{ post.link }}">{{ __('Read more', 'brocooly') }}</a>
-	</footer>
 
 </article><!-- #post-{{ post.ID }} -->

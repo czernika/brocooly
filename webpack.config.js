@@ -125,6 +125,7 @@ const plugins = [
 		exclude: [
 			'/node_modules/',
 			path.resolve(themeFolder, publicFolder, 'css'), // compiled css files
+			path.resolve(themeFolder, 'style.css'), // style.css
 		],
 		failOnError: false,
 	}),

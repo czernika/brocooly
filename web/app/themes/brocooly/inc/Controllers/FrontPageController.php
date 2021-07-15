@@ -14,7 +14,7 @@ use Brocooly\Controllers\AbstractController;
 
 class FrontPageController extends AbstractController
 {
-    public function __invoke() {
+	public function __invoke() {
 		$hello = esc_html__( 'Welcome to Brocooly Framework', 'brocooly' );
 		view( 'content/front-page.twig', compact( 'hello' ) );
 	}

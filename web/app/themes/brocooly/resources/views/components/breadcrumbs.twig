@@ -1,0 +1,47 @@
+{% set separator = '<li role="separator">|</li>' %}
+
+<ul
+	class="flex w-full h-auto space-x-2 overflow-x-auto breadcrumbs"
+	itemscope itemtype="http://schema.org/BreadcrumbList"
+	id="breadcrumbs"
+	aria-label="{{ __('Breadcrumbs', 'brocooly') }}"
+>
+
+	{# Home #}
+	<li class="breadcrumbs__item whitespace-nowrap" itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+		<a
+			rel="nofollow"
+			itemprop="item"
+			class="duration-200 hover:text-secondary"
+			href="{{ site.link }}"
+		>
+			{{ __('Home', 'brocooly') }}
+		</a>
+	</li>
+
+	{{ separator }}
+
+	{# Inner #}
+	{% for parent in ancestors %}
+		<li class="breadcrumbs__item whitespace-nowrap" itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+			<a
+				class="duration-200 hover:text-secondary"
+				rel="nofollow"
+				itemprop="item"
+				href="{{ parent.link }}"
+			>
+				{{ parent.title|e('wp_kses_post') }}
+			</a>
+		</li>
+
+		{{ separator }}
+	{% endfor %}
+
+	{# Current #}
+	<li class="breadcrumbs__item_current breadcrumbs__item whitespace-nowrap" itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+		<span aria-current="page" class="text-gray-400">
+			{{ current_title|e('wp_kses_post') }}
+		</span>
+	</li>
+
+</ul>

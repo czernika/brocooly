@@ -30,7 +30,7 @@ class PostsController extends AbstractController
 	/**
 	 * Load archive page
 	 */
-    public function index() {
+	public function index() {
 		$posts = $this->posts->all();
 		view( 'content/post/index.twig', compact( 'posts' ) );
 	}
@@ -39,7 +39,13 @@ class PostsController extends AbstractController
 	 * Load singular page
 	 */
 	public function single() {
-		$post = $this->posts->current();
-		view( 'content/post/single.twig', compact( 'post' ) );
+		$post      = $this->posts->current();
+		$ancestors = [
+			[
+				'title' => esc_html__( 'Blog', 'brocooly' ),
+				'link'  => get_post_type_archive_link( 'post' ),
+			],
+		];
+		view( 'content/post/single.twig', compact( 'post', 'ancestors' ) );
 	}
 }

@@ -3,23 +3,15 @@
  * Post Service interface
  *
  * @package Brocooly
- * @since 0.2.1
+ * @since 0.4.1
  */
 
 declare(strict_types=1);
 
 namespace Theme\Contracts;
 
-interface PostServiceContract
+interface PageServiceContract
 {
-
-	/**
-	 * Get all posts
-	 *
-	 * @return array
-	 */
-	public function all();
-
 	/**
 	 * Get current post
 	 *

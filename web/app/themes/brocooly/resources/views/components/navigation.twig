@@ -1,0 +1,24 @@
+<nav id="post-navigation">
+    <h4 class="sr-only">{{ __('Post navigation', 'brocooly') }}</h4>
+    <ul class="flex items-center justify-between">
+
+        {% if post.next %}
+            <li>
+                <a href="{{ post.next.link }}" class="block w-full h-full px-6 py-2 duration-200 border border-secondary hover:bg-secondary hover:text-white">
+                    <span class="sr-only">{{ __('Next post', 'brocooly') }}</span>
+                    {{ post.next.title }}
+                </a>
+            </li>
+        {% endif %}
+
+        {% if post.prev %}
+            <li>
+                <a href="{{ post.prev.link }}" class="block w-full h-full px-6 py-2 duration-200 border border-secondary hover:bg-secondary hover:text-white">
+                    <span class="sr-only">{{ __('Previous post', 'brocooly') }}</span>
+                    {{ post.prev.title }}
+                </a>
+            </li>
+        {% endif %}
+
+    </ul>
+</nav><!-- #post-navigation -->

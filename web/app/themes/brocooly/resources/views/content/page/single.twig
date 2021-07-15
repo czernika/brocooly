@@ -32,23 +32,9 @@
 			</figure>
 		{% endif %}
 
-		<div class="flex mb-6 space-x-3 text-sm text-gray-400">
-			<time pubdate datetime="{{ post.date|date('d.F.Y') }}">
-				{{ post.date|date('d M, Y') }}
-			</time>
-
-			<span>
-				{{ post.author }}
-			</span>
-		</div>
-
 		<div class="mb-10 entry-content" itemprop="articleBody">
 			{{ post.content|e('wp_kses_post') }}
 		</div>
-
-		<footer class="entry-footer">
-			{% include '@components/navigation.twig' %}
-		</footer>
 
 	</article>
 
