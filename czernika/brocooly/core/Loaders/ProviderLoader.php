@@ -11,11 +11,12 @@ declare(strict_types=1);
 namespace Brocooly\Loaders;
 
 use Brocooly\App;
-use Brocooly\Providers\CarbonFieldsServiceProvider;
-use Brocooly\Providers\KirkiServiceProvider;
 use Brocooly\Providers\MenuServiceProvider;
-use Brocooly\Providers\PostTypeServiceProvider;
+use Brocooly\Providers\KirkiServiceProvider;
 use Brocooly\Providers\TimberServiceProvider;
+use Brocooly\Providers\PostTypeServiceProvider;
+use Brocooly\Providers\ShortcodeServiceProvider;
+use Brocooly\Providers\CarbonFieldsServiceProvider;
 
 class ProviderLoader
 {
@@ -38,6 +39,7 @@ class ProviderLoader
 		CarbonFieldsServiceProvider::class,
 		MenuServiceProvider::class,
 		KirkiServiceProvider::class,
+		ShortcodeServiceProvider::class,
 	];
 
 	/**

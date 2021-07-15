@@ -1,0 +1,40 @@
+<?php
+/**
+ * Create Hello World shortcode
+ *
+ * @package Brocooly
+ * @since 0.4.0
+ */
+
+declare(strict_types=1);
+
+namespace Theme\Shortcodes;
+
+use Brocooly\Router\View;
+use Brocooly\Shortcodes\AbstractShortcode;
+
+class {{ SHORTCODE }} extends AbstractShortcode
+{
+	/**
+	 * Shortcode name
+	 *
+	 * @var string
+	 */
+	public string $id = '{{ LC_SHORTCODE }}';
+
+	/**
+	 * Render shortcode
+	 *
+	 * @var array $atts | shortocde attributes.
+	 * @throws Exception
+	 */
+	public function render( array $atts ) {
+		$example = false;
+		if ( isset( $atts['example'] ) ) {
+			$example = sanitize_text_field( $atts['example'] );
+		}
+        
+        // shortcodes HAVE TO return something
+		return View::compile( '@shortcodes/{{ LC_SHORTCODE }}.twig', compact( 'example' ) );
+	}
+}

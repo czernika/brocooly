@@ -33,6 +33,7 @@ return [
 	'namespaces' => [
 		'components' => 'components',
 		'menus'      => 'components/menus',
+		'shortcodes' => 'shortcodes',
 	],
 
 ];
