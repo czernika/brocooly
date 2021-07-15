@@ -1,6 +1,6 @@
 <?php
 /**
- * Disable wp-block-library styles
+ * Custom action
  *
  * @package Brocooly
  * @since 0.3.0
@@ -8,16 +8,16 @@
 
 namespace Theme\Hooks;
 
-class DisableBlockStyles
+class {{ ACTION }}
 {
 
-	/**
+    /**
 	 * Action name
 	 *
 	 * @return string
 	 */
 	public function action() {
-		return 'wp_enqueue_scripts';
+		return 'action_name';
 	}
 
 	/**
@@ -26,7 +26,6 @@ class DisableBlockStyles
 	 * @return void
 	 */
 	public function hook() {
-		wp_dequeue_style( 'wp-block-library' );
-		wp_dequeue_style( 'wp-block-library-theme' );
+		//...
 	}
 }

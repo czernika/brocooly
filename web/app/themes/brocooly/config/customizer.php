@@ -21,6 +21,8 @@ return [
 	 *
 	 * Options for Kirki config
 	 *
+	 * TODO: add more configs
+	 *
 	 * @see https://kirki.org/docs/setup/config/
 	 *
 	 */

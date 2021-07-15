@@ -13,6 +13,8 @@ use Theme\Hooks\DisableEmoji;
 use Theme\Hooks\DisableBlockStyles;
 use Theme\Hooks\RemoveMetaGenerator;
 use Theme\Providers\AppServiceProvider;
+use Theme\Providers\ThemeServiceProvider;
+use Theme\Providers\GutenbergServiceProvider;
 
 return [
 
@@ -26,6 +28,8 @@ return [
 	 */
 	'providers' => [
 		AppServiceProvider::class,
+		ThemeServiceProvider::class,
+		GutenbergServiceProvider::class,
 	],
 
 	/**

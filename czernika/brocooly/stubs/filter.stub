@@ -1,0 +1,31 @@
+<?php
+/**
+ * Custom filter
+ *
+ * @package Brocooly
+ * @since 0.3.0
+ */
+
+namespace Theme\Hooks;
+
+class {{ FILTER }}
+{
+
+    /**
+	 * Filter name
+	 *
+	 * @return string
+	 */
+	public function filter() {
+		return 'filter_name';
+	}
+
+	/**
+	 * Filter callback
+	 *
+	 * @return void
+	 */
+	public function hook() {
+		//...
+	}
+}

@@ -1,0 +1,43 @@
+<?php
+/**
+ * {{ TAX }} model
+ *
+ * @package Brocooly
+ * @since 0.2.1
+ */
+
+declare(strict_types=1);
+
+namespace Theme\Models\WP;
+
+use Brocooly\Facades\Meta;
+use Brocooly\Models\Taxonomy;
+
+class {{ TAX }} extends Taxonomy
+{
+    /**
+	 * Taxonomy slug
+	 * Must be unique
+	 *
+	 * @var string
+	 */
+	protected static string $taxName = '{{ LC_TAX }}';
+
+    /**
+	 * Post type related to taxonomy
+	 * Same as for `register_taxonomy`
+	 *
+	 * @var array|string
+	 */
+	protected static $postTypes = 'post';
+
+    /**
+	 * Taxonomy options
+	 * Same as for `register_taxonomy`
+	 *
+	 * @return array
+	 */
+	protected function options() {
+        // return [];
+    }
+}

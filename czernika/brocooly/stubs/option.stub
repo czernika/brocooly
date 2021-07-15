@@ -1,0 +1,27 @@
+<?php
+/**
+ * Customizer option
+ *
+ * @package Brocooly
+ * @since 0.3.0
+ */
+
+declare(strict_types=1);
+
+namespace Theme\Customizer;
+
+use Brocooly\Facades\Mod;
+use Brocooly\Customizer\AbstractOption;
+
+class {{ OPTION }} extends AbstractOption
+{
+
+	/**
+	 * Create option instance
+	 *
+	 * @return array
+	 */
+	public function options() {
+		// Mod::text([ 'settings' => 'text_example', 'label' => esc_html__( 'Example option', 'brocooly' ), ]);
+	}
+}

@@ -1,6 +1,6 @@
 <?php
 /**
- * Create Contact panel
+ * Create {{ PANEL }} panel
  *
  * @package Brocooly
  * @since 0.3.0
@@ -12,7 +12,7 @@ namespace Theme\Customizer\Panels;
 
 use Brocooly\Customizer\AbstractPanel;
 
-class ContactPanel extends AbstractPanel
+class {{ PANEL }}Panel extends AbstractPanel
 {
 
 	/**
@@ -20,7 +20,7 @@ class ContactPanel extends AbstractPanel
 	 *
 	 * @var string
 	 */
-	public static string $id = 'contact_panel';
+	public static string $id = '{{ LC_PANEL }}';
 
 	/**
 	 * Panel settings
@@ -29,7 +29,7 @@ class ContactPanel extends AbstractPanel
 	 */
 	public function options() {
 		return [
-			'title' => esc_html__( 'Contact data', 'brocooly' ),
+			'title' => esc_html__( '{{ PANEL }}', 'brocooly' ),
 		];
 	}
 }

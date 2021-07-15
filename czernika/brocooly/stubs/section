@@ -1,0 +1,49 @@
+<?php
+/**
+ * Create {{ SECT }} section
+ *
+ * @package Brocooly
+ * @since 0.3.0
+ */
+
+declare(strict_types=1);
+
+namespace Theme\Customizer\Sections;
+
+use Brocooly\Facades\Mod;
+use Brocooly\Customizer\AbstractSection;
+
+class {{ SECT }}Section extends AbstractSection
+{
+
+	/**
+	 * Section id
+	 *
+	 * @var string
+	 */
+	public static string $id = '{{ LC_SECT }}';
+
+	/**
+	 * Section settings
+	 *
+	 * @return array
+	 */
+	public function options() {
+		return [
+			'title' => esc_html__( '{{ SECT }}', 'brocooly' ),
+			// 'panel' => Panel::$id,
+		];
+	}
+
+	/**
+	 * Section controls
+	 *
+	 * @return array
+	 */
+	public function controls() {
+		return [
+			// Mod::text([ 'settings' => 'example_setting', 'label' => esc_html__( 'Example setting', 'brocooly'  ) ]),
+		];
+	}
+
+}

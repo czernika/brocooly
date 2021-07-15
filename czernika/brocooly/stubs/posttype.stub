@@ -1,0 +1,35 @@
+<?php
+/**
+ * {{ POST }} model
+ *
+ * @package Brocooly
+ * @since 0.2.0
+ */
+
+declare(strict_types=1);
+
+namespace Theme\Models\WP;
+
+use Brocooly\Facades\Meta;
+use Brocooly\Models\PostType;
+
+class {{ POST }} extends PostType
+{
+    /**
+	 * Post type slug
+	 * Must be unique
+	 *
+	 * @var string
+	 */
+	protected static string $taxName = '{{ LC_POST }}';
+
+    /**
+	 * Post type options
+	 * Same as for `register_post_type`
+	 *
+	 * @return array
+	 */
+	protected function options() {
+        // return [];
+    }
+}

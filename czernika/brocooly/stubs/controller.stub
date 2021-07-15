@@ -1,0 +1,31 @@
+<?php
+/**
+ * Controller
+ *
+ * @package Brocooly
+ * @since 0.2.1
+ */
+
+declare(strict_types=1);
+
+namespace Theme\Controllers;
+
+use Brocooly\Controllers\AbstractController;
+
+class {{ MODEL }}Controller extends AbstractController
+{
+
+	/**
+	 * Load archive page
+	 */
+    public function index() {
+		// ...
+	}
+
+	/**
+	 * Load singular page
+	 */
+	public function single() {
+		// ...
+	}
+}
