@@ -13,12 +13,11 @@
  */
 
 /**
- *--------------------------------------------------------------------------
+ * --------------------------------------------------------------------------
  * Include app routes
- *--------------------------------------------------------------------------
+ * --------------------------------------------------------------------------
  *
  * Brocooly handle requests with Route class - no other files except for functions.php required.
  * But you may use any of them according to hierarchy (like singular.php) - it has higher priority
- *
  */
 require_once __DIR__ . '/routes/web.php';

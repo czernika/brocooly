@@ -9,10 +9,9 @@
  */
 
 /**
- *--------------------------------------------------------------------------
+ * --------------------------------------------------------------------------
  * Ensure compatible version of PHP is used
- *--------------------------------------------------------------------------
- *
+ * --------------------------------------------------------------------------
  */
 $minimumRequiredPHPVersion = '7.4';
 if ( version_compare( $minimumRequiredPHPVersion, phpversion(), '>=' ) ) {
@@ -27,14 +26,14 @@ if ( version_compare( $minimumRequiredPHPVersion, phpversion(), '>=' ) ) {
 }
 
 /**
- *--------------------------------------------------------------------------
+ * --------------------------------------------------------------------------
  * Check if Composer is installed
- *--------------------------------------------------------------------------
+ * --------------------------------------------------------------------------
  *
  * Brocooly STRONGLY requires Composer to be installed.
- * If it's not got to
- * @link https://getcomposer.org/
+ * If it's not got to.
  *
+ * @link https://getcomposer.org/
  */
 $autoload = APP_PATH . '/vendor/autoload.php';
 
@@ -57,7 +56,6 @@ require_once $autoload;
  *--------------------------------------------------------------------------
  *
  * If Composer installed boot application
- *
  */
 require_once __DIR__ . '/bootstrap/app.php';
 

@@ -1,5 +1,5 @@
-<?xml version="0.1" ?>
-<ruleset name="Brocooly">
+<?xml version="1.0" ?>
+<ruleset name="brocooly">
     <description>The coding standard for Timber-based WordPress theme.</description>
 
     <config name="installed_paths" value="vendor/wp-coding-standards/wpcs/" />
