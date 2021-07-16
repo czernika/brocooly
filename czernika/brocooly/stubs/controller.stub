@@ -10,9 +10,9 @@ declare(strict_types=1);
 
 namespace Theme\Controllers;
 
-use Brocooly\Controllers\AbstractController;
+use Brocooly\Controllers\BaseController;
 
-class {{ MODEL }}Controller extends AbstractController
+class {{ MODEL }}Controller extends BaseController
 {
 
 	/**

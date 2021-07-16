@@ -11,6 +11,8 @@ declare(strict_types=1);
 
 namespace Brocooly\Providers;
 
+use Theme\Models\WP\Comment;
+
 class PostTypeServiceProvider extends AbstractService
 {
 
@@ -36,6 +38,7 @@ class PostTypeServiceProvider extends AbstractService
 	public function boot() {
 		$this->registerTaxonomies();
 		$this->registerPostTypes();
+		$this->registerComments();
 	}
 
 	/**
@@ -110,6 +113,23 @@ class PostTypeServiceProvider extends AbstractService
 							$tax->getOptions(),
 						);
 					}
+				);
+			}
+		}
+	}
+
+	/**
+	 * Register comment container
+	 */
+	private function registerComments() {
+		$commentClass = Comment::class;
+
+		if ( class_exists( $commentClass ) ) {
+			$comment = $this->app->get( $commentClass );
+			if ( method_exists( $comment, 'fields' ) ) {
+				add_action(
+					'carbon_fields_register_fields',
+					[ $comment, 'fields' ],
 				);
 			}
 		}

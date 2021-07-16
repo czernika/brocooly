@@ -9,7 +9,7 @@
 			</time>
 
 			<h5 class="comment-author">
-				{{ __('%s says', 'brocooly')|format(comment.author.name) }}
+				{{ __('%s says', 'brocooly')|format(comment.comment_author) }}
 			</h5>
 
 		</div>
@@ -26,8 +26,8 @@
 					class="duration-200 reply text-secondary hover:text-primary comment-reply-link" data-commentid="{{ comment.ID }}"
 					data-postid="{{ post.ID }}"
 					data-belowelement="reply-to-{{ comment.ID }}" data-respondelement="respond"
-					data-replyto="{{ __( 'Reply to %s', 'brocooly' )|format(comment.author.name) }}"
-					aria-label="{{ __( 'Reply to %s', 'brocooly' )|format(comment.author.name) }}"
+					data-replyto="{{ __( 'Reply to %s', 'brocooly' )|format(comment.comment_author) }}"
+					aria-label="{{ __( 'Reply to %s', 'brocooly' )|format(comment.comment_author) }}"
 				>
 					{{ __( 'Reply', 'brocooly' ) }}
 				</button>

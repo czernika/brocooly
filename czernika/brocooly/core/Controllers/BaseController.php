@@ -1,6 +1,6 @@
 <?php
 /**
- * AbstractController instance
+ * BaseController instance
  *
  * @package Brocooly
  * @since 0.1.0
@@ -12,7 +12,7 @@ namespace Brocooly\Controllers;
 
 use Brocooly\App;
 
-abstract class AbstractController
+abstract class BaseController
 {
 
 	/**

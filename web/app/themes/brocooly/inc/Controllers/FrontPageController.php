@@ -10,9 +10,9 @@ declare(strict_types=1);
 
 namespace Theme\Controllers;
 
-use Brocooly\Controllers\AbstractController;
+use Brocooly\Controllers\BaseController;
 
-class FrontPageController extends AbstractController
+class FrontPageController extends BaseController
 {
 	public function __invoke() {
 		$hello = esc_html__( 'Welcome to Brocooly Framework', 'brocooly' );

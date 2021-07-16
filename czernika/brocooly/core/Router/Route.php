@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 namespace Brocooly\Router;
 
-use Brocooly\Controllers\AbstractController;
+use Brocooly\Controllers\BaseController;
 
 class Route
 {
@@ -45,7 +45,7 @@ class Route
 				if ( is_array( $callback ) ) {
 					return self::dispatchControllerMethod( $callback );
 				} else {
-					if ( is_subclass_of( $callback, AbstractController::class ) ) {
+					if ( is_subclass_of( $callback, BaseController::class ) ) {
 						$class = self::callController( $callback );
 						return call_user_func_array( $class, func_get_args() );
 					}
