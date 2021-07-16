@@ -7,8 +7,6 @@
  * @since 0.1.0
  */
 
-use Theme\Templates\AboutTemplate;
-
 return [
 
 	/**
@@ -57,8 +55,6 @@ return [
 	 *
 	 * Register custom templates
 	 */
-	'templates' => [
-		AboutTemplate::class,
-	],
+	'templates' => [],
 
 ];
