@@ -26,7 +26,9 @@ class DisableBlockStyles
 	 * @return void
 	 */
 	public function hook() {
-		wp_dequeue_style( 'wp-block-library' );
-		wp_dequeue_style( 'wp-block-library-theme' );
+		if ( ! is_singular() || is_front_page() ) {
+			wp_dequeue_style( 'wp-block-library' );
+			wp_dequeue_style( 'wp-block-library-theme' );
+		}
 	}
 }
