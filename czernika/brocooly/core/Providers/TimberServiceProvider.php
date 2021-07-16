@@ -22,6 +22,7 @@ class TimberServiceProvider extends AbstractService
 	public function register() {
 		$keys = [
 			'views'            => config( 'views.views', 'resources/views' ),
+			'cache_path'       => config( 'views.cache' ) ? wp_normalize_path( config( 'views.cache' ) ) : false,
 			'views_namespaces' => config( 'views.namespaces', [] ),
 			'timber_filters'   => config( 'timber.filters', [] ),
 			'timber_functions' => config( 'timber.functions', [] ),
@@ -39,6 +40,7 @@ class TimberServiceProvider extends AbstractService
 
 		$this->addToTwig();
 		$this->setLoader();
+		$this->setCachePath();
 	}
 
 	/**
@@ -87,5 +89,22 @@ class TimberServiceProvider extends AbstractService
 				return $loader;
 			}
 		);
+	}
+
+	/**
+	 * Set cache path
+	 */
+	private function setCachePath() {
+		$cache = $this->app->get( 'cache_path' );
+
+		if ( (bool) $cache ) {
+			add_filter(
+				'timber/twig/environment/options',
+				function( $options ) use ( $cache ) {
+					$options['cache'] = $cache;
+					return $options;
+				}
+			);
+		}
 	}
 }

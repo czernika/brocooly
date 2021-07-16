@@ -14,6 +14,8 @@ use Timber\Timber;
 use Brocooly\Storage\Context;
 use Theme\Context as ThemeContext;
 
+use function Env\env;
+
 class View
 {
 
@@ -22,16 +24,16 @@ class View
 	 *
 	 * @param string $views | view file to be rendered.
 	 * @param array  $localContext | context to pass with.
-	 * @return void
 	 */
-    public static function make( string $views, array $localContext = [] ) {
+	public static function make( string $views, array $localContext = [] ) {
 		$timberContext = Timber::context();
 		$themeContext  = ThemeContext::get();
 		$ctx           = array_merge( $timberContext, $themeContext, $localContext );
+		$expire        = env( 'WP_ENV' ) === 'production' ? 600 : false;
 
 		Context::merge( $ctx );
 
-		return Timber::render( $views, Context::get() );;
+		return Timber::render( $views, Context::get(), $expire );
 	}
 
 	/**

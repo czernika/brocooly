@@ -16,15 +16,28 @@ use Theme\Controllers\PostsController;
 use Theme\Controllers\SearchController;
 use Theme\Controllers\FrontPageController;
 
+/**
+ *--------------------------------------------------------------------------
+ * Singular
+ *--------------------------------------------------------------------------
+ */
 Route::get( 'is_front_page', FrontPageController::class );
-
-Route::get( 'is_search', SearchController::class );
-
-Route::get( 'is_home', [ PostsController::class, 'index' ] );
+Route::get( 'is_page', [ PageController::class, 'single' ] );
 Route::get( 'is_single', [ PostsController::class, 'single' ] );
 
-Route::get( 'is_page', [ PageController::class, 'single' ] );
+/**
+ *--------------------------------------------------------------------------
+ * Archives
+ *--------------------------------------------------------------------------
+ */
+Route::get( 'is_search', SearchController::class );
+Route::get( 'is_home', [ PostsController::class, 'index' ] );
 
+/**
+ *--------------------------------------------------------------------------
+ * 404 Template
+ *--------------------------------------------------------------------------
+ */
 Route::view( 'is_404', 'content/404.twig' );
 
 /**

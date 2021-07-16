@@ -1,0 +1,40 @@
+<?php
+/**
+ * Custom template
+ *
+ * @package Brocooly
+ * @since 0.6.0
+ */
+
+declare(strict_types=1);
+
+namespace Theme\Templates;
+
+use Brocooly\Templates\AbstractTemplate;
+
+class {{ TEMPLATE }}Template extends AbstractTemplate
+{
+
+	/**
+	 * Template post type
+	 *
+	 * @var array
+	 */
+	public array $postTypes = [ 'page', 'post' ];
+
+	/**
+	 * Template slug
+	 *
+	 * @var string
+	 */
+	public string $slug = '{{ LC_TEMPLATE }}';
+
+	/**
+	 * Get template label
+	 *
+	 * @return string
+	 */
+	public function label() {
+		return esc_html__( 'Template {{ TEMPLATE }}', 'brocooly' );
+	}
+}

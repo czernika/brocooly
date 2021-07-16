@@ -33,10 +33,13 @@ class QueryBuilder
 	 */
 	public static function query( array $query, string $name = '' ) {
 		$postQuery = [
-			'post_type' => $name,
+			'post_type'              => $name,
+			'no_found_rows'          => true,
+			'update_post_meta_cache' => false,
+			'update_post_term_cache' => false,
 		];
-		$query = array_merge( $query, $postQuery, self::$queryParams );
-		$posts = static::getQuery( $query );
+		$query     = array_merge( $query, $postQuery, self::$queryParams );
+		$posts     = static::getQuery( $query );
 
 		return $posts;
 	}
@@ -49,11 +52,14 @@ class QueryBuilder
 	 */
 	public static function all( string $name = '' ) {
 		$postQuery = [
-			'post_type'      => $name,
-			'posts_per_page' => -1,
+			'post_type'              => $name,
+			'posts_per_page'         => -1,
+			'no_found_rows'          => true,
+			'update_post_meta_cache' => false,
+			'update_post_term_cache' => false,
 		];
-		$query = array_merge( $postQuery, self::$queryParams );
-		$posts = static::getQuery( $query );
+		$query     = array_merge( $postQuery, self::$queryParams );
+		$posts     = static::getQuery( $query );
 
 		return $posts;
 	}
@@ -67,7 +73,6 @@ class QueryBuilder
 	 * @return array|null
 	 */
 	public static function paginate( int $postsPerPage, string $name = '' ) {
-
 		$postQuery = [
 			'post_type'      => $name,
 			'posts_per_page' => $postsPerPage,

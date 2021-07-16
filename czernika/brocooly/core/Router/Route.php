@@ -29,28 +29,33 @@ class Route
 	 * @return void
 	 */
 	public static function __callStatic( string $name, array $arguments ) {
-		[ $condition, $callback ]              = $arguments;
-		static::$routes[ $name ][ $condition ] = $callback;
+		[ $condition, $callback ]             = $arguments;
+
+		$id = uniqid();
+		static::$routes[ $name ][ $id ]['condition'] = $condition;
+		static::$routes[ $name ][ $id ]['callback']  = $callback;
 	}
 
 	/**
 	 * Handle GET request
 	 *
 	 * @param array $options | passed options.
-	 * @return void
 	 */
 	private static function handleGetRequest( array $options ) {
-		foreach ( $options as $condition => $callback ) {
-			if ( call_user_func( $condition ) ) {
-				if ( is_array( $callback ) ) {
-					return self::dispatchControllerMethod( $callback );
+		foreach ( $options as $id => $option ) {
+
+			$condition = static::setCondition( $option['condition'] );
+
+			if ( call_user_func( ...$condition ) ) {
+				if ( is_array( $option['callback'] ) ) {
+					return static::dispatchControllerMethod( $option['callback'] );
 				} else {
-					if ( is_subclass_of( $callback, BaseController::class ) ) {
-						$class = self::callController( $callback );
+					if ( is_subclass_of( $option['callback'], BaseController::class ) ) {
+						$class = static::callController( $option['callback'] );
 						return call_user_func_array( $class, func_get_args() );
 					}
 
-					return call_user_func_array( $callback, func_get_args() );
+					return call_user_func_array( $option['callback'], func_get_args() );
 				}
 				break;
 			}
@@ -61,12 +66,11 @@ class Route
 	 * Handle simple view request
 	 *
 	 * @param array $options | passed options.
-	 * @return void
 	 */
 	private static function handleViewMethod( array $options ) {
-		foreach ( $options as $condition => $view ) {
-			if ( call_user_func( $condition ) ) {
-				return view( $view );
+		foreach ( $options as $id => $option ) {
+			if ( call_user_func( $option['condition'] ) ) {
+				return view( $option['callback'] );
 				break;
 			}
 		}
@@ -78,11 +82,11 @@ class Route
 	public static function resolve() {
 		foreach ( static::$routes as $request => $options ) {
 			if ( 'get' === $request ) {
-				self::handleGetRequest( $options );
+				static::handleGetRequest( $options );
 			}
 
 			if ( 'view' === $request ) {
-				self::handleViewMethod( $options );
+				static::handleViewMethod( $options );
 			}
 		}
 	}
@@ -110,7 +114,7 @@ class Route
 	 */
 	private static function dispatchControllerMethod( array $callback ) {
 		[ $class, $method ] = $callback;
-		$class              = self::callController( $class );
+		$class              = static::callController( $class );
 		return call_user_func_array( [ $class, $method ], func_get_args() );
 	}
 
@@ -123,5 +127,19 @@ class Route
 	private static function callController( string $instance ) {
 		$class = app()->make( $instance );
 		return $class;
+	}
+
+	/**
+	 * Set condition to array format
+	 *
+	 * @param array|string $condition | condition.
+	 * @return array
+	 */
+	private static function setCondition( $condition ) {
+		if ( is_string( $condition ) ) {
+			return [ $condition ];
+		}
+
+		return $condition;
 	}
 }

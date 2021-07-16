@@ -19,7 +19,7 @@ class PostService implements PostServiceContract
 	 * Get all posts with pagination
 	 */
 	public function all() {
-		$posts = Post::paginate( 10 );
+		$posts = Post::all();
 		return $posts;
 	}
 

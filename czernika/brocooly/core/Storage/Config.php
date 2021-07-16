@@ -20,7 +20,7 @@ class Config
 	 *
 	 * @var array
 	 */
-    public static array $data = [];
+	public static array $data = [];
 
 	/**
 	 * Set config value
@@ -37,18 +37,18 @@ class Config
 	 * Get configuration value by key
 	 * If no key passed return whole array
 	 *
-	 * @param string|null $key
+	 * @param string|null $key | key to get.
 	 * @return array|mixed
 	 */
-	public static function get( $key = null ) {
+	public static function get( string $key = null ) {
 
-		if ( $key === null ) {
+		if ( null === $key ) {
 			return static::$data;
 		}
 
 		/**
-		 * string $file - basename of file inside config directory
-		 * string $data - array key to get inside $file
+		 * String $file - basename of file inside config directory
+		 * String $data - array key to get inside $file
 		 */
 		[ $file, $data ] = explode( '.', $key );
 
@@ -76,7 +76,7 @@ class Config
 	/**
 	 * Remove key from data
 	 *
-	 * @param string $key
+	 * @param string $key | key to delete.
 	 * @return void
 	 */
 	public static function delete( string $key ) {

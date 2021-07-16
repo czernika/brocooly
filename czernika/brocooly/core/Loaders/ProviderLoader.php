@@ -16,6 +16,7 @@ use Brocooly\Providers\KirkiServiceProvider;
 use Brocooly\Providers\BlockServiceProvider;
 use Brocooly\Providers\WidgetServiceProvider;
 use Brocooly\Providers\TimberServiceProvider;
+use Brocooly\Providers\TemplateServiceProvider;
 use Brocooly\Providers\PostTypeServiceProvider;
 use Brocooly\Providers\ShortcodeServiceProvider;
 use Brocooly\Providers\CarbonFieldsServiceProvider;
@@ -38,6 +39,7 @@ class ProviderLoader
 	private array $appProviders = [
 		TimberServiceProvider::class,
 		PostTypeServiceProvider::class,
+		TemplateServiceProvider::class,
 		CarbonFieldsServiceProvider::class,
 		MenuServiceProvider::class,
 		KirkiServiceProvider::class,
