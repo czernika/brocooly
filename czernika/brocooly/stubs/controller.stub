@@ -12,7 +12,7 @@ namespace Theme\Controllers;
 
 use Brocooly\Controllers\BaseController;
 
-class {{ MODEL }}Controller extends BaseController
+class {{ CONTROLLER }}Controller extends BaseController
 {
 
 	/**

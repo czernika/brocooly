@@ -3,17 +3,13 @@
 require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . './web/wp/wp-load.php';
 
-use Brocooly\Console\MakeMenu;
-use Brocooly\Console\MakeShortcode;
+use Brocooly\Commands;
 use Symfony\Component\Console\Application;
 
 $app = new Application();
 
 # add your commands
-$commands = [
-    MakeShortcode::class,
-    MakeMenu::class,
-];
+$commands = Commands::get();
 
 foreach ( $commands as $command ) {
 	$app->add( new $command() );
