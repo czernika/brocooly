@@ -6,6 +6,8 @@
  * A shortcode is written inside two square brackets.
  * For example, the [gallery] shortcode can be used to add a photo gallery of images to any page or post.
  *
+ * ! Don't forget to register this class inside `app.php` file
+ *
  * @see https://developer.wordpress.org/reference/functions/add_shortcode/
  * @package Brocooly
  * @since 0.4.0
@@ -13,40 +15,42 @@
 
 declare(strict_types=1);
 
-namespace Brocooly\Shortcodes;
+namespace Theme\Shortcodes;
 
-abstract class AbstractShortcode
+use Brocooly\Router\View;
+use Brocooly\Shortcodes\AbstractShortcode;
+
+class HelloWorldShortcode extends AbstractShortcode
 {
-
 	/**
 	 * Shortcode tag to be searched in post content
 	 *
 	 * @var string
 	 */
-	public string $id = '';
+	public string $id = 'hello-world';
 
 	/**
 	 * Render shortcode
 	 *
 	 * The callback function to run when the shortcode is found.
+	 * ! Function called by the shortcode should never produce output of any kind. 
 	 *
-	 * @param array $atts | shortocde attributes.
-	 *
+	 * @var array $atts | shortocde attributes.
 	 * @example available on front as:
 	 * ```
 	 * {% apply shortcodes %}
-	 *   [shortcode_id example_atts="value"]
+	 *   [hello-world example="value"]
 	 * {% endapply %}
 	 * ```
 	 * @throws Exception
 	 */
-	public function render( array $atts = [] ) {
-		throw new \Exception(
-			sprintf(
-				'No render callback was set for "%s" shortcode!',
-				$this->id,
-			),
-			true,
-		);
+	public function render( array $atts ) {
+		$example = false;
+		if ( isset( $atts['example'] ) ) {
+			$example = sanitize_text_field( $atts['example'] );
+		}
+
+		// ! shortcodes HAVE TO return something
+		return View::compile( '@shortcodes/hello-world.twig', compact( 'example' ) );
 	}
 }

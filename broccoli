@@ -1,0 +1,20 @@
+#!/usr/bin/env php
+<?php
+require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . './web/wp/wp-load.php';
+
+use Brocooly\Console\MakeShortcode;
+use Symfony\Component\Console\Application;
+
+$app = new Application();
+
+# add your commands
+$commands = [
+    MakeShortcode::class,
+];
+
+foreach ( $commands as $command ) {
+	$app->add( new $command() );
+}
+
+$app->run();

@@ -15,7 +15,6 @@ use Theme\Hooks\DisableBlockStyles;
 use Theme\Hooks\RemoveMetaGenerator;
 use Theme\Providers\AppServiceProvider;
 use Theme\Providers\ThemeServiceProvider;
-use Theme\Providers\TemplateServiceProvider;
 use Theme\Providers\GutenbergServiceProvider;
 
 return [

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<phpunit
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	bootstrap="./tests/bootstrap.php"
+	backupGlobals="false"
+	colors="true"
+	convertErrorsToExceptions="true"
+	convertNoticesToExceptions="true"
+	convertWarningsToExceptions="true"
+	beStrictAboutTestsThatDoNotTestAnything="false"
+	xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd"
+	cacheResult="false"
+>
+
+	<coverage>
+		<include>
+			<directory suffix=".php">web</directory>
+			<directory suffix=".php">czernika</directory>
+		</include>
+		<exclude>
+			<directory>./tests/</directory>
+			<directory>./vendor/</directory>
+		</exclude>
+	</coverage>
+
+	<testsuites>
+		<testsuite name="Brocooly-config">
+			<directory suffix=".php">./tests/</directory>
+		</testsuite>
+	</testsuites>
+
+</phpunit>

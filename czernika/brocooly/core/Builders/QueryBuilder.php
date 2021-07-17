@@ -21,7 +21,7 @@ class QueryBuilder
 	 * @var array
 	 */
 	private static array $queryParams = [
-		'merge_default' => true,
+		'merge_default' => false,
 	];
 
 	/**
