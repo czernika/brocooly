@@ -1,8 +1,9 @@
 <?php
 /**
  * Menu Service Provider
- * Register nav menus and add them into global context
+ * Registers a navigation menu location for a theme.
  *
+ * @see https://developer.wordpress.org/reference/functions/register_nav_menu/
  * @package Brocooly
  * @since 0.1.2
  */
@@ -12,23 +13,18 @@ declare(strict_types=1);
 namespace Brocooly\Providers;
 
 use Timber\Timber;
+use Webmozart\Assert\Assert;
 use Brocooly\Storage\Context;
 
 class MenuServiceProvider extends AbstractService
 {
 
 	/**
-	 * Menu prefix
-	 *
-	 * @var string
-	 */
-	private string $prefix = '_menu';
-
-	/**
 	 * Register menus
 	 */
 	public function register() {
-		$this->app->set( 'menus', config( 'app.menus', [] ) );
+		$this->app->set( 'menus', config( 'menus.menus' ) );
+		$this->app->set( 'menus_postfix', config( 'menus.postfix' ) );
 	}
 
 	/**
@@ -37,9 +33,37 @@ class MenuServiceProvider extends AbstractService
 	public function boot() {
 		$menus = $this->app->get( 'menus' );
 
+		Assert::isArray(
+			$menus,
+			/* translators: type of variable */
+			sprintf(
+				'`app.menus` key must be an array, %s given',
+				gettype( $menus )
+			)
+		);
+
 		if ( ! empty( $menus ) ) {
 			foreach ( $menus as $menuClass ) {
-				$menu = $this->app->make( $menuClass );
+				$menu = $this->app->get( $menuClass );
+
+				Assert::stringNotEmpty(
+					$menu->name,
+					/* translators: menu class */
+					sprintf(
+						'Name property was not provided for %s menu',
+						$menuClass
+					)
+				);
+
+				Assert::methodExists(
+					$menu,
+					'label',
+					/* translators: menu class */
+					sprintf(
+						'%s menu must have `label()` method which should return string',
+						$menuClass
+					)
+				);
 
 				/**
 				 * Register menu in WordPress
@@ -66,13 +90,16 @@ class MenuServiceProvider extends AbstractService
 
 	/**
 	 * Get Timber menu name
-	 * @example {{ primary_menu }} will be available on front
 	 *
-	 * @param string $location | menu id.
+	 * @example
+	 * ```
+	 * {{ primary_menu }} will be available on front
+	 * ```
+	 * @param string $location | Menu location identifier, like a slug.
 	 * @return string
 	 */
 	private function getMenuName( string $location ) {
-		$menuName = $location . $this->prefix;
+		$menuName = $location . $this->app->get( 'menus_postfix' );
 		return $menuName;
 	}
 
@@ -94,10 +121,16 @@ class MenuServiceProvider extends AbstractService
 	/**
 	 * Check if menu was set in admin area
 	 *
-	 * @param string $location
-	 * @return void
+	 * @see https://developer.wordpress.org/reference/functions/get_nav_menu_locations/
+	 * @param string $location | Menu location to check.
+	 * @return bool
 	 */
 	private function locationWasSetInAdminArea( string $location ) {
-		return in_array( $location, array_keys( get_nav_menu_locations() ), true );
+
+		/**
+		 * Retrieve all registered navigation menu locations and the menus assigned to them
+		 */
+		$menuLocations = get_nav_menu_locations();
+		return in_array( $location, array_keys( $menuLocations ), true );
 	}
 }

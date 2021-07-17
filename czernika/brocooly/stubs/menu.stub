@@ -10,16 +10,18 @@ declare(strict_types=1);
 
 namespace Theme\Menus;
 
-class {{ NAME }}Menu
+use Brocooly\Menus\AbstractMenu;
+
+class {{ MENU }}Menu extends AbstractMenu
 {
 
 	/**
 	 * Menu name
-	 * Will be available in twig files as `{{ LC_NAME }}_menu`
+	 * Will be available in twig files as `{{ PREFIXED_MENU }}`
 	 *
 	 * @var string
 	 */
-    public string $name = '{{ LC_NAME }}';
+    public string $name = '{{ LC_MENU }}';
 
 	/**
 	 * Get menu label in admin area
@@ -27,6 +29,6 @@ class {{ NAME }}Menu
 	 * @return string
 	 */
 	public function label() {
-		return esc_html__( '{{ NAME }} menu', 'brocooly' );
+		return esc_html__( '{{ MENU }} menu', 'brocooly' );
 	}
 }

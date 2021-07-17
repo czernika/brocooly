@@ -34,7 +34,7 @@ abstract class CreateFileConsoleCommand extends Command
 	 *
 	 * @var string
 	 */
-	protected string $stubModelViewName;
+	protected string $stubModelViewName = '';
 
 	/**
 	 * Stub file view template path
@@ -48,7 +48,7 @@ abstract class CreateFileConsoleCommand extends Command
 
 		$this->stubModelPath = wp_normalize_path( dirname( CORE_PATH ) . '/stubs/' . $this->stubModelName );
 
-		$this->stubModelViewPath = wp_normalize_path( dirname( CORE_PATH ) . '/stubs/' . $this->stubModelViewName );
+		$this->stubModelViewPath = strlen( $this->stubModelViewName ) ? wp_normalize_path( dirname( CORE_PATH ) . '/stubs/' . $this->stubModelViewName ) : '';
 
 	}
 

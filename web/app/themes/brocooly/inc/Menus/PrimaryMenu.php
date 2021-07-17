@@ -10,7 +10,9 @@ declare(strict_types=1);
 
 namespace Theme\Menus;
 
-class PrimaryMenu
+use Brocooly\Menus\AbstractMenu;
+
+class PrimaryMenu extends AbstractMenu
 {
 
 	/**
@@ -19,7 +21,7 @@ class PrimaryMenu
 	 *
 	 * @var string
 	 */
-    public string $name = 'primary';
+	public string $name = 'primary';
 
 	/**
 	 * Get menu label in admin area

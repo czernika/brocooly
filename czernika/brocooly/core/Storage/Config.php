@@ -56,7 +56,7 @@ class Config
 			BROCOOLY_THEME_PATH . 'config/' . $file . '.php',
 			sprintf(
 				'File %s not exists',
-				esc_html( '/config/' . $file . '.php' )
+				esc_html( $file . '.php' )
 			),
 		);
 
@@ -66,7 +66,7 @@ class Config
 			sprintf(
 				'Key "%1$s" not exists in %2$s file',
 				esc_html( $data ),
-				esc_html( '/config/' . $file . '.php' )
+				esc_html( $file . '.php' )
 			),
 		);
 

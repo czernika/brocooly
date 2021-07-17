@@ -35,16 +35,16 @@ class ShortcodeTest extends TestCase
 	}
 
 	/**
-	 * AbstractShortcode have render method
+	 * AbstractShortcode have `render()` method
 	 */
-	public function testShortcodeHaveRenderMethod() {
+	public function testShortcodeHasRenderMethod() {
 		$this->assertTrue( method_exists( $this->shortcode, 'render' ) );
 	}
 
 	/**
 	 * AbstractShortcode render method has only $attributes param
 	 */
-	public function testShortcodeRenderMethodHaveOnlyOneProperty() {
+	public function testShortcodeRenderMethodHasOnlyOneProperty() {
 		$method = new \ReflectionMethod( $this->shortcode, 'render' );
 		$this->assertTrue( 1 === $method->getNumberOfParameters() );
 	}
@@ -52,7 +52,7 @@ class ShortcodeTest extends TestCase
 	/**
 	 * AbstractShortcode have id property
 	 */
-	public function testShortcodeHaveIdProperty() {
+	public function testShortcodeHasIdProperty() {
 		$this->assertTrue( property_exists( $this->shortcode, 'id' ) );
 	}
 
