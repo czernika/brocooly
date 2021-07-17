@@ -23,34 +23,11 @@ abstract class CreateFileConsoleCommand extends Command
 	protected string $stubModelName;
 
 	/**
-	 * Stub file model path
-	 *
-	 * @var string
-	 */
-	private string $stubModelPath;
-
-	/**
 	 * Stub file view template
 	 *
 	 * @var string
 	 */
 	protected string $stubModelViewName = '';
-
-	/**
-	 * Stub file view template path
-	 *
-	 * @var string
-	 */
-	private string $stubModelViewPath;
-
-	public function __construct() {
-		parent::__construct();
-
-		$this->stubModelPath = wp_normalize_path( dirname( CORE_PATH ) . '/stubs/' . $this->stubModelName );
-
-		$this->stubModelViewPath = strlen( $this->stubModelViewName ) ? wp_normalize_path( dirname( CORE_PATH ) . '/stubs/' . $this->stubModelViewName ) : '';
-
-	}
 
 	/**
 	 * Set arguments for `configure()` method
@@ -70,7 +47,7 @@ abstract class CreateFileConsoleCommand extends Command
 	 * @param string $extension | file extension.
 	 * @return string
 	 */
-	private function setFileModelName( string $outputFolder, string $modelName, string $extension = '.php' ) {
+	private function setFileModelName( string $outputFolder, string $modelName, string $extension ) {
 		return wp_normalize_path( get_template_directory() . $outputFolder . $modelName . $extension );
 	}
 
@@ -101,7 +78,7 @@ abstract class CreateFileConsoleCommand extends Command
 	 * @param string          $type | stub type.
 	 * @param boolean         $kebab | write file in a kebab-case.
 	 */
-	protected function createFile( OutputInterface $output, string $name, string $folder, string $extension, string $type = 'model', bool $kebab = false ) {
+	protected function createFile( OutputInterface $output, string $name, string $folder, string $extension = '.php', string $type = 'model', bool $kebab = false ) {
 		if ( ! $this->lettersOnly( $name ) ) {
 			return $this->failure( $output, 'Only Latin letters allowed' );
 		}
@@ -114,11 +91,11 @@ abstract class CreateFileConsoleCommand extends Command
 		$stub = $this->getStubByType( $type );
 
 		if ( file_exists( $ModelFile ) ) {
-			return $this->failure( $output, sprintf( 'Model file with %s name already exists', $name ) );
+			return $this->failure( $output, sprintf( 'File %s already exists', $ModelFile ) );
 		}
 
 		if ( ! file_exists( $stub ) || ! copy( $stub, $ModelFile ) ) {
-			return $this->failure( $output, 'Unable to create model file' );
+			return $this->failure( $output, sprintf( 'Unable to create file %s', $ModelFile ) );
 		}
 
 		$this->createFileContent( $ModelFile, array_keys( $this->searchAndReplace( $name ) ), array_values( $this->searchAndReplace( $name ) ) );
@@ -131,17 +108,20 @@ abstract class CreateFileConsoleCommand extends Command
 	 * @return string
 	 */
 	private function getStubByType( string $type ) {
+		$stubModelPath = wp_normalize_path( dirname( CORE_PATH ) . '/stubs/' . $this->stubModelName );
+		$stubModelViewPath = strlen( $this->stubModelViewName ) ? wp_normalize_path( dirname( CORE_PATH ) . '/stubs/' . $this->stubModelViewName ) : '';
+
 		switch ( $type ) {
 			case 'model':
-				$stub = $this->stubModelPath;
+				$stub = $stubModelPath;
 				break;
 
 			case 'view':
-				$stub = $this->stubModelViewPath;
+				$stub = $stubModelViewPath;
 				break;
 
 			default:
-				$stub = $this->stubModelPath; // PHP model.
+				$stub = $stubModelPath; // PHP model.
 				break;
 		}
 

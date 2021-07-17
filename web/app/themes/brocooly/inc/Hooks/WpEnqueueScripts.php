@@ -1,6 +1,6 @@
 <?php
 /**
- * Disable wp-block-library styles
+ * Custom action
  *
  * @package Brocooly
  * @since 0.3.0
@@ -8,7 +8,7 @@
 
 namespace Theme\Hooks;
 
-class DisableBlockStyles
+class WpEnqueueScripts
 {
 
 	/**
@@ -21,7 +21,7 @@ class DisableBlockStyles
 	}
 
 	/**
-	 * Action callback
+	 * Dequeue wp-block styles as we don't use them on non-singular pages
 	 *
 	 * @return void
 	 */

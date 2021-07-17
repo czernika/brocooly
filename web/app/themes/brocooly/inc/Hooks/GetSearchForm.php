@@ -11,7 +11,7 @@ namespace Theme\Hooks;
 
 use Brocooly\Router\View;
 
-class SearchForm
+class GetSearchForm
 {
 
 	/**

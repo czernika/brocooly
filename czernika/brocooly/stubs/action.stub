@@ -8,16 +8,16 @@
 
 namespace Theme\Hooks;
 
-class {{ ACTION }}
+class {{ HOOK }}
 {
 
-    /**
+	/**
 	 * Action name
 	 *
 	 * @return string
 	 */
 	public function action() {
-		return 'action_name';
+		return '{{ SNAKE_HOOK }}';
 	}
 
 	/**
@@ -26,6 +26,6 @@ class {{ ACTION }}
 	 * @return void
 	 */
 	public function hook() {
-		//...
+		// ...
 	}
 }

@@ -8,7 +8,7 @@
 
 namespace Theme\Hooks;
 
-class {{ FILTER }}
+class {{ HOOK }}
 {
 
     /**
@@ -17,7 +17,7 @@ class {{ FILTER }}
 	 * @return string
 	 */
 	public function filter() {
-		return 'filter_name';
+		return '{{ SNAKE_HOOK }}';
 	}
 
 	/**
@@ -26,6 +26,6 @@ class {{ FILTER }}
 	 * @return void
 	 */
 	public function hook() {
-		//...
+		// ...
 	}
 }

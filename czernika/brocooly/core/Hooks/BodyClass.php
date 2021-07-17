@@ -11,7 +11,12 @@ namespace Brocooly\Hooks;
 class BodyClass
 {
 
-	public $params = 2;
+	/**
+	 * Filter params
+	 *
+	 * @var int
+	 */
+	public int $params = 2;
 
 	/**
 	 * Filter name
@@ -25,7 +30,7 @@ class BodyClass
 	/**
 	 * Add classes to body
 	 *
-	 * @param array $classes | classlist
+	 * @param array $classes | classlist.
 	 * @return array
 	 */
 	public function hook( array $classes ) {

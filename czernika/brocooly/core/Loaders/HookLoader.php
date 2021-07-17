@@ -10,6 +10,7 @@ namespace Brocooly\Loaders;
 
 use Brocooly\App;
 use Brocooly\Hooks\BodyClass;
+use Webmozart\Assert\Assert;
 
 class HookLoader
 {
@@ -19,7 +20,7 @@ class HookLoader
 	 *
 	 * @var instanceof Brocooly\App
 	 */
-    protected App $app;
+	protected App $app;
 
 	/**
 	 * Default app hooks
@@ -38,24 +39,75 @@ class HookLoader
 		$this->setHooks();
 	}
 
+	/**
+	 * Call hooks
+	 *
+	 * @return void
+	 */
 	private function setHooks() {
 		$themeHooks = config( 'app.hooks' );
 
 		$hooks = array_merge( $this->hooks, $themeHooks );
 
-		foreach ( $hooks as $hook ) {
-			$hookClass = new $hook();
+		foreach ( $hooks as $hookClass ) {
+			$hook = $this->app->get( $hookClass );
 
 			if ( method_exists( $hookClass, 'load' ) ) {
-				$hookClass->load();
+				$hook->load();
 			}
 
-			if ( method_exists( $hookClass, 'filter' ) ) {
-				add_filter( $hookClass->filter(), [ $hookClass, 'hook' ] );
+			if ( method_exists( $hook, 'filter' ) ) {
+				Assert::methodExists(
+					$hook,
+					'hook',
+					sprintf(
+						'Hook() method is not present at %s hook',
+						$hookClass
+					),
+				);
+
+				Assert::methodNotExists(
+					$hook,
+					'action',
+					sprintf(
+						'action() method could not be used inside %s filter',
+						$hookClass
+					),
+				);
+
+				add_filter(
+					$hook->filter(),
+					[ $hook, 'hook' ],
+					$hook->priority ?? 10,
+					$hook->params ?? 1,
+				);
 			}
 
-			if ( method_exists( $hookClass, 'action' ) ) {
-				add_action( $hookClass->action(), [ $hookClass, 'hook' ] );
+			if ( method_exists( $hook, 'action' ) ) {
+				Assert::methodExists(
+					$hook,
+					'hook',
+					sprintf(
+						'Hook() method is not present at %s hook',
+						$hookClass
+					),
+				);
+
+				Assert::methodNotExists(
+					$hook,
+					'filter',
+					sprintf(
+						'filter() method could not be used inside %s action',
+						$hookClass
+					),
+				);
+
+				add_action(
+					$hook->action(),
+					[ $hook, 'hook' ],
+					$hook->priority ?? 10,
+					$hook->params ?? 1,
+				);
 			}
 		}
 	}

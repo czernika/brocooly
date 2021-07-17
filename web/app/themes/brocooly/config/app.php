@@ -7,12 +7,11 @@
  */
 
 use Theme\Models\WP\Post;
-use Theme\Hooks\SearchForm;
-use Theme\Menus\PrimaryMenu;
-use Theme\Models\WP\Category;
 use Theme\Hooks\DisableEmoji;
-use Theme\Hooks\DisableBlockStyles;
+use Theme\Models\WP\Category;
+use Theme\Hooks\GetSearchForm;
 use Theme\Hooks\RemoveMetaGenerator;
+use Theme\Hooks\WpEnqueueScripts;
 use Theme\Providers\AppServiceProvider;
 use Theme\Providers\ThemeServiceProvider;
 use Theme\Providers\GutenbergServiceProvider;
@@ -61,9 +60,9 @@ return [
 	 */
 	'hooks'      => [
 		DisableEmoji::class,
+		GetSearchForm::class,
+		WpEnqueueScripts::class,
 		RemoveMetaGenerator::class,
-		DisableBlockStyles::class,
-		SearchForm::class,
 	],
 
 	/**
