@@ -4,16 +4,16 @@
 
 {% block content %}
 
-	<div class="grid gap-6 xl:grid-cols-2 xl:col-span-3">
+	<div class="grid gap-6 xl:grid-cols-2">
 
 		<div class="col-span-full">
 
 			<h1 class="mb-4 text-2xl font-bold">
-				{{ __('Blog', 'brocooly') }}
+				{{ title }}
 			</h1>
 
 			{% include '@components/breadcrumbs.twig' with {
-				current_title: __('Blog', 'brocooly')
+				current_title: title
 			} %}
 		</div>
 

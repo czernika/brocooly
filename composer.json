@@ -64,7 +64,13 @@
 	"scripts": {
 		"post-root-package-install": [
       		"php -r \"copy('.env.example', '.env');\""
-    	]
+    	],
+		"plugins-activate": [
+			"wp plugin activate --all"
+		],
+		"db-create": [
+			"wp db create"
+		]
 	},
 	"autoload": {
 		"psr-4": {

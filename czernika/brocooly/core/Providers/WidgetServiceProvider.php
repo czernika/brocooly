@@ -63,14 +63,16 @@ class WidgetServiceProvider extends AbstractService
 					}
 				);
 
-				add_filter(
-					'timber/context',
-					function ( $context ) use ( $sidebar ) {
-						$sidebarCaller             = str_replace( '-', '_', $sidebar->id ) . '_sidebar';
-						$context[ $sidebarCaller ] = Timber::get_widgets( $sidebar->id );
-						return $context;
-					}
-				);
+				if ( is_active_sidebar( $sidebar->id ) ) {
+					add_filter(
+						'timber/context',
+						function ( $context ) use ( $sidebar ) {
+							$sidebarCaller             = str_replace( '-', '_', $sidebar->id ) . '_sidebar';
+							$context[ $sidebarCaller ] = Timber::get_widgets( $sidebar->id );
+							return $context;
+						}
+					);
+				}
 			}
 		}
 	}

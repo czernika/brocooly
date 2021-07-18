@@ -10,8 +10,9 @@ use Theme\Models\WP\Post;
 use Theme\Hooks\DisableEmoji;
 use Theme\Models\WP\Category;
 use Theme\Hooks\GetSearchForm;
-use Theme\Hooks\RemoveMetaGenerator;
 use Theme\Hooks\WpEnqueueScripts;
+use Theme\Middleware\UserLoggedIn;
+use Theme\Hooks\RemoveMetaGenerator;
 use Theme\Providers\AppServiceProvider;
 use Theme\Providers\ThemeServiceProvider;
 use Theme\Providers\GutenbergServiceProvider;
@@ -29,6 +30,19 @@ return [
 		AppServiceProvider::class,
 		ThemeServiceProvider::class,
 		GutenbergServiceProvider::class,
+	],
+
+	/**
+	 *--------------------------------------------------------------------------
+	 * Middleware
+	 *--------------------------------------------------------------------------
+	 *
+	 * Custom middleware
+	 *
+	 * @since 0.8.0
+	 */
+	'middleware' => [
+		'auth' => UserLoggedIn::class,
 	],
 
 	/**

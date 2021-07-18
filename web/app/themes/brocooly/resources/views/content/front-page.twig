@@ -7,7 +7,7 @@
 		{% include '@components/logo.twig' %}
 
 		<h1 class="mb-8 text-3xl font-semibold text-center">
-			{{ hello }}
+			{{ __( '%s v%s', 'brocooly' )|format(hello, theme.version) }}
 		</h1>
 
 		<ul class="grid grid-rows-2 gap-6 sm:grid-cols-2">

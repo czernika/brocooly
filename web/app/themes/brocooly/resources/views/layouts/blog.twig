@@ -4,21 +4,25 @@
 
 	<div class="container grid gap-8 py-16 sm:grid-cols-2 xl:grid-cols-4">
 
-		{% block content %}
-
-		{% endblock %}
+		<div class="{% if is_sidebar_active %} xl:col-span-3 {% else %} col-span-full {% endif %}">
+			{% block content %}
+				{{ __('No posts', 'brocooly') }}
+			{% endblock %}
+		</div>
 
 		{% block sidebar %}
-			<aside id="secondary" class="p-6 border-l border-gray-200">
+			{% if is_sidebar_active %}
+				<aside id="secondary" class="p-6 border-l border-gray-200">
 
-				<h1 class="mb-4 text-2xl font-bold">
-					{{ __('Widgets', 'brocooly') }}
-				</h1>
+					<h1 class="mb-4 text-2xl font-bold">
+						{{ __('Widgets', 'brocooly') }}
+					</h1>
 
-				<ul class="flex flex-col w-full space-y-8">
-					{{ blog_sidebar }}
-				</ul>
-			</aside>
+					<ul class="flex flex-col w-full space-y-8">
+						{{ blog_sidebar }}
+					</ul>
+				</aside>
+			{% endif %}
 		{% endblock %}
 
 	</div>

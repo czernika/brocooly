@@ -22,6 +22,9 @@ web/app/vendor
 # Uploads directory
 web/app/uploads
 
+# Uploads directory
+web/app/languages
+
 # End of https://www.toptal.com/developers/gitignore/api/wordpress
 
 # Lighthouse report

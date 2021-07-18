@@ -12,6 +12,7 @@ namespace Theme\Controllers;
 
 use Theme\Contracts\PostServiceContract;
 use Brocooly\Controllers\BaseController;
+use Brocooly\Middleware\UserLoggedIn;
 
 class PostsController extends BaseController
 {
@@ -31,8 +32,10 @@ class PostsController extends BaseController
 	 * Load archive page
 	 */
 	public function index() {
-		$posts = $this->posts->all();
-		view( 'content/post/index.twig', compact( 'posts' ) );
+		$posts             = $this->posts->all();
+		$is_sidebar_active = is_active_sidebar( 1 );
+		$title             = get_the_title( get_option( 'page_for_posts' ) );
+		view( 'content/post/index.twig', compact( 'posts', 'is_sidebar_active', 'title' ) );
 	}
 
 	/**
@@ -42,7 +45,7 @@ class PostsController extends BaseController
 		$post      = $this->posts->current();
 		$ancestors = [
 			[
-				'title' => esc_html__( 'Blog', 'brocooly' ),
+				'title' => get_the_title( get_option( 'page_for_posts' ) ),
 				'link'  => get_post_type_archive_link( 'post' ),
 			],
 		];
