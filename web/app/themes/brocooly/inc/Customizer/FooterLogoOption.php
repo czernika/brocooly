@@ -10,8 +10,8 @@ declare(strict_types=1);
 
 namespace Theme\Customizer;
 
-use Brocooly\Customizer\AbstractOption;
 use Brocooly\Facades\Mod;
+use Brocooly\Customizer\AbstractOption;
 
 class FooterLogoOption extends AbstractOption
 {
@@ -20,18 +20,23 @@ class FooterLogoOption extends AbstractOption
 	 * Create footer logo instance
 	 *
 	 * Will be available as `get_theme_mod( 'brocooly_footer_logo )`
-	 * under `Site identity` WordPress section
 	 *
+	 * You need to specify WordPress section id
+	 * For `Site Title & Tagline` it's `title_tagline`
+	 *
+	 * @see https://developer.wordpress.org/themes/customize-api/customizer-objects/#sections
 	 * @return array
 	 */
-	public function options() {
-		return Mod::image([
-			'settings'    => 'footer_logo',
-			'section'     => 'title_tagline',
-			'label'       => esc_html__( 'Footer logo', 'brocooly' ),
-			'choices'     => [
-				'save_as' => 'id',
-			],
-		]);
+	public function settings() {
+		return Mod::image(
+			[
+				'settings' => 'footer_logo',
+				'section'  => 'title_tagline',
+				'label'    => esc_html__( 'Footer logo', 'brocooly' ),
+				'choices'  => [
+					'save_as' => 'id',
+				],
+			]
+		);
 	}
 }

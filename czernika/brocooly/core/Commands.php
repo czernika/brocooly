@@ -12,6 +12,7 @@ namespace Brocooly;
 
 use Brocooly\Console\MakeMenu;
 use Brocooly\Console\MakeHook;
+use Brocooly\Console\MakeOption;
 use Brocooly\Console\MakeShortcode;
 use Brocooly\Console\MakeController;
 
@@ -25,6 +26,7 @@ class Commands
 	private static array $commands = [
 		MakeMenu::class,
 		MakeHook::class,
+		MakeOption::class,
 		MakeShortcode::class,
 		MakeController::class,
 	];

@@ -1,6 +1,7 @@
 <?php
 /**
  * Register theme customizer options
+ * We're using Kirki Framework plugin under MIT license
  *
  * @package Brocooly
  * @since 0.3.0
@@ -19,24 +20,11 @@ class KirkiServiceProvider extends AbstractService
 	 * Register customizer configuration
 	 */
 	public function register() {
-		$this->app->set(
-			'customizer_config',
-			config(
-				'customizer.config',
-				[
-					'brocooly_admin_config' => [
-						'capability'  => 'edit_theme_options',
-						'option_type' => 'theme_mod',
-					],
-				],
-			)
-		);
-
-		$this->app->set( 'customizer_prefix', config( 'customizer.prefix', 'brocooly_' ) );
-
-		$this->app->set( 'customizer_panels', config( 'customizer.panels', [] ) );
-		$this->app->set( 'customizer_sections', config( 'customizer.sections', [] ) );
-		$this->app->set( 'customizer_options', config( 'customizer.options', [] ) );
+		$this->app->set( 'customizer_config', config( 'customizer.config' ) );
+		$this->app->set( 'customizer_prefix', config( 'customizer.prefix' ) );
+		$this->app->set( 'customizer_panels', config( 'customizer.panels' ) );
+		$this->app->set( 'customizer_sections', config( 'customizer.sections' ) );
+		$this->app->set( 'customizer_options', config( 'customizer.options' ) );
 	}
 
 	/**
@@ -51,6 +39,8 @@ class KirkiServiceProvider extends AbstractService
 
 	/**
 	 * Init Kirki configuration
+	 *
+	 * NOTE: currently there is only one config supported
 	 */
 	private function initConfig() {
 		$configs = $this->app->get( 'customizer_config' );
@@ -66,12 +56,11 @@ class KirkiServiceProvider extends AbstractService
 	 * Init customizer panel
 	 */
 	private function initPanels() {
-		$panels   = $this->app->get( 'customizer_panels' );
+		$panels = $this->app->get( 'customizer_panels' );
 
 		if ( ! empty( $panels ) ) {
-			foreach ( $panels as $panel ) {
-
-				$panel = $this->app->make( $panel );
+			foreach ( $panels as $panelClass ) {
+				$panel = $this->app->get( $panelClass );
 
 				Kirki::add_panel(
 					$panel::$id,
@@ -90,17 +79,16 @@ class KirkiServiceProvider extends AbstractService
 		$config   = $this->getConfig();
 
 		if ( ! empty( $sections ) ) {
-			foreach ( $sections as $section ) {
-
-				$section = $this->app->make( $section );
+			foreach ( $sections as $sectionClass ) {
+				$section = $this->app->get( $sectionClass );
 
 				Kirki::add_section(
 					$section::$id,
 					$section->options(),
 				);
 
-				foreach( $section->controls() as $controls ) {
-					$controls['section'] = $section::$id;
+				foreach ( $section->controls() as $controls ) {
+					$controls['section']  = $section::$id;
 					$controls['settings'] = $prefix . $controls['settings'];
 					Kirki::add_field( $config, $controls );
 				}
@@ -118,8 +106,8 @@ class KirkiServiceProvider extends AbstractService
 
 		if ( ! empty( $options ) ) {
 			foreach ( $options as $option ) {
-				$option = $this->app->make( $option );
-				$settings = $option->options();
+				$option               = $this->app->make( $option );
+				$settings             = $option->settings();
 				$settings['settings'] = $prefix . $settings['settings'];
 				Kirki::add_field( $config, $settings );
 			}
@@ -127,15 +115,12 @@ class KirkiServiceProvider extends AbstractService
 	}
 
 	/**
-	 * Get customizer config id
+	 * Get customizer config
+	 * TODO: refactor
 	 *
 	 * @return string
 	 */
 	private function getConfig() {
-
-		/**
-		 * TODO: refactor
-		 */
 		$config = array_keys( $this->app->get( 'customizer_config' ) )[0];
 		return $config;
 	}

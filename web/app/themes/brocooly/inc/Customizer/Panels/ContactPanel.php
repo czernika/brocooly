@@ -2,6 +2,7 @@
 /**
  * Create Contact panel
  *
+ * @see https://kirki.org/docs/setup/panels-sections/
  * @package Brocooly
  * @since 0.3.0
  */

@@ -1,6 +1,6 @@
 <?php
 /**
- * Customizer option
+ * Create option for WordPress Customizer section
  *
  * @package Brocooly
  * @since 0.3.0
@@ -13,15 +13,25 @@ namespace Theme\Customizer;
 use Brocooly\Facades\Mod;
 use Brocooly\Customizer\AbstractOption;
 
-class {{ OPTION }} extends AbstractOption
+class {{ OPTION }}Option extends AbstractOption
 {
 
 	/**
 	 * Create option instance
 	 *
+	 * You need to specify WordPress section id
+	 * For `Site Title & Tagline` it's `title_tagline`
+	 *
+	 * @see https://developer.wordpress.org/themes/customize-api/customizer-objects/#sections
 	 * @return array
 	 */
-	public function options() {
-		// Mod::text([ 'settings' => 'text_example', 'label' => esc_html__( 'Example option', 'brocooly' ), ]);
+	public function settings() {
+		return Mod::text(
+			[
+				'settings' => '{{ SNAKE_OPTION }}',
+				// 'section'  => 'title_tagline',
+				'label'    => esc_html__( '{{ OPTION }}', 'brocooly' ),
+			]
+		);
 	}
 }

@@ -18,7 +18,7 @@ class AbstractOption
 	 *
 	 * @throws Exception
 	 */
-	public function options() {
+	public function settings() {
 		throw new \Exception(
 			'Controls settings was not defined',
 			true,

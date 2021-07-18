@@ -17,7 +17,7 @@ namespace Theme\Customizer\Sections;
 use Brocooly\Facades\Mod;
 use Brocooly\Customizer\AbstractSection;
 
-class {{ OPTION }}Section extends AbstractSection
+class ContactsSection extends AbstractSection
 {
 
 	/**
@@ -26,7 +26,7 @@ class {{ OPTION }}Section extends AbstractSection
 	 *
 	 * @var string
 	 */
-	public static string $id = '{{ SNAKE_OPTION }}';
+	public static string $id = 'contacts';
 
 	/**
 	 * Section settings
@@ -36,7 +36,7 @@ class {{ OPTION }}Section extends AbstractSection
 	 */
 	public function options() {
 		return [
-			'title' => esc_html__( '{{ OPTION }}', 'brocooly' ),
+			'title' => esc_html__( 'Contacts', 'brocooly' ),
 			// 'panel' => Panel::$id,
 		];
 	}

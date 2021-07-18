@@ -18,7 +18,7 @@ abstract class AbstractPanel
 	 *
 	 * @var string
 	 */
-    public static string $id = 'unknown';
+	public static string $id = 'unknown';
 
 	/**
 	 * Panel settings
