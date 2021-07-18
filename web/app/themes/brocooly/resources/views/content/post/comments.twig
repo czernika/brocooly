@@ -1,6 +1,6 @@
 {% for comment in comments %}
 
-	<li class="{{ comment.comment_type }} byuser comment-author-{{ comment.author.ID }} {% if post.author.ID == comment.author.ID %}bypostauthor{% endif %} depth-{{ comment.depth }} bg-white border-l-2 comment-body border-l-secondary mb-4 py-4 px-10 shadow" id="comment-{{ comment.ID }}">
+	<li class="{{ comment.comment_type }} byuser comment-author-{{ comment.author.ID }} {% if post.author.ID == comment.author.ID %}bypostauthor{% endif %} depth-{{ comment.depth }} bg-white border-l-2 comment-body border-l-secondary mb-4 py-4 px-4 sm:px-10 shadow" id="comment-{{ comment.ID }}">
 
 		<div class="flex mb-1 space-x-3 text-sm text-gray-400 comment-meta">
 

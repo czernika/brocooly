@@ -69,7 +69,7 @@ abstract class CreateFileConsoleCommand extends Command
 	}
 
 	/**
-	 * Undocumented function
+	 * Create file from stubs
 	 *
 	 * @param OutputInterface $output | Symfony output
 	 * @param string          $name | filename.
@@ -80,7 +80,8 @@ abstract class CreateFileConsoleCommand extends Command
 	 */
 	protected function createFile( OutputInterface $output, string $name, string $folder, string $extension = '.php', string $type = 'model', bool $kebab = false ) {
 		if ( ! $this->lettersOnly( $name ) ) {
-			return $this->failure( $output, 'Only Latin letters allowed' );
+			$this->failure( $output, 'Only Latin letters allowed' );
+			die();
 		}
 
 		if ( $kebab ) {
@@ -91,11 +92,13 @@ abstract class CreateFileConsoleCommand extends Command
 		$stub = $this->getStubByType( $type );
 
 		if ( file_exists( $ModelFile ) ) {
-			return $this->failure( $output, sprintf( 'File %s already exists', $ModelFile ) );
+			$this->failure( $output, sprintf( 'File %s already exists', $ModelFile ) );
+			die();
 		}
 
 		if ( ! file_exists( $stub ) || ! copy( $stub, $ModelFile ) ) {
-			return $this->failure( $output, sprintf( 'Unable to create file %s', $ModelFile ) );
+			$this->failure( $output, sprintf( 'Unable to create file %s', $ModelFile ) );
+			die();
 		}
 
 		$this->createFileContent( $ModelFile, array_keys( $this->searchAndReplace( $name ) ), array_values( $this->searchAndReplace( $name ) ) );
@@ -108,7 +111,7 @@ abstract class CreateFileConsoleCommand extends Command
 	 * @return string
 	 */
 	private function getStubByType( string $type ) {
-		$stubModelPath = wp_normalize_path( dirname( CORE_PATH ) . '/stubs/' . $this->stubModelName );
+		$stubModelPath     = wp_normalize_path( dirname( CORE_PATH ) . '/stubs/' . $this->stubModelName );
 		$stubModelViewPath = strlen( $this->stubModelViewName ) ? wp_normalize_path( dirname( CORE_PATH ) . '/stubs/' . $this->stubModelViewName ) : '';
 
 		switch ( $type ) {
@@ -140,16 +143,24 @@ abstract class CreateFileConsoleCommand extends Command
 
 	/**
 	 * Return success
+	 *
+	 * @param OutputInterface $output | Symfony output
+	 * @param string          $message | message to output.
+	 * @return int
 	 */
-	protected function success( $output, string $message ) {
+	protected function success( OutputInterface $output, string $message ) {
 		$output->writeln( '<info>' . $message . '</info>' );
 		return Command::SUCCESS;
 	}
 
 	/**
 	 * Return failure
+	 *
+	 * @param OutputInterface $output | Symfony output
+	 * @param string          $message | message to output.
+	 * @return int
 	 */
-	protected function failure( $output, string $message ) {
+	protected function failure( OutputInterface $output, string $message ) {
 		$output->writeln( '<error>' . $message . '</error>' );
 		return Command::FAILURE;
 	}

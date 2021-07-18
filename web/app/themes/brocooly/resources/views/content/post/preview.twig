@@ -1,12 +1,12 @@
 <!-- Post-{{ post.ID }}  -->
 <article
-	class="{{ post.post_class }} w-full h-auto flex duration-200 bg-white rounded shadow preview hover:shadow-md border border-gray-200 overflow-hidden"
+	class="{{ post.post_class }} w-full h-auto lg:flex duration-200 bg-white rounded shadow preview hover:shadow-md border border-gray-200 overflow-hidden"
 	id="post-{{ post.ID }}"
 	itemscope itemtype="http://schema.org/Article"
 >
 
 	{% if post.thumbnail %}
-		<figure class="flex-shrink-0 w-2/5">
+		<figure class="flex-shrink-0 w-full lg:w-2/5 h-72">
 			<img src="{{ post.thumbnail.src|resize(300, 300) }}" alt="{{ post.thumbnail.alt }}" class="object-cover w-full h-full">
 		</figure>
 	{% endif %}

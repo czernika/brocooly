@@ -44,24 +44,30 @@ class WidgetServiceProvider extends AbstractService
 		$sidebars = $this->app->get( 'sidebars' );
 
 		if ( ! empty( $sidebars ) ) {
-			foreach ( $sidebars as $sidebar ) {
+			foreach ( $sidebars as $sidebarClass ) {
 
-				$sidebarClass = $this->app->make( $sidebar );
+				$sidebar = $this->app->make( $sidebarClass );
 
 				add_action(
 					'widgets_init',
-					function() use ( $sidebarClass ) {
-						$options = $sidebarClass->options();
-						$options['id'] = $sidebarClass->id;
+					function() use ( $sidebar ) {
+						$defaults      = [
+							'before_widget' => '<li id="%1$s" class="widget %2$s">',
+							'after_widget'  => '</li>',
+							'before_title'  => '<h2 class="widgettitle">',
+							'after_title'   => '</h2>',
+						];
+						$options       = array_merge( $sidebar->options(), $defaults );
+						$options['id'] = $sidebar->id;
 						register_sidebar( $options );
 					}
 				);
 
 				add_filter(
 					'timber/context',
-					function ( $context ) use ( $sidebarClass ) {
-						$sidebarCaller             = str_replace( '-', '_', $sidebarClass->id ) . '_sidebar';
-						$context[ $sidebarCaller ] = Timber::get_widgets( $sidebarClass->id );
+					function ( $context ) use ( $sidebar ) {
+						$sidebarCaller             = str_replace( '-', '_', $sidebar->id ) . '_sidebar';
+						$context[ $sidebarCaller ] = Timber::get_widgets( $sidebar->id );
 						return $context;
 					}
 				);
@@ -73,7 +79,7 @@ class WidgetServiceProvider extends AbstractService
 	 * Register widgets
 	 */
 	private function bootWidgets() {
-		$widgets  = $this->app->get( 'widgets' );
+		$widgets = $this->app->get( 'widgets' );
 
 		if ( ! empty( $widgets ) ) {
 			foreach ( $widgets as $widget ) {

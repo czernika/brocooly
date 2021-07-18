@@ -16,11 +16,11 @@ class {{ SIDEBAR }}Sidebar extends AbstractSidebar
 {
 
 	/**
-	 * Will be available as {{ {{ LC_SIDEBAR }}_sidebar }}
+	 * Will be available as {{ {{ SNAKE_SIDEBAR }}_sidebar }}
      *
      * @var string
 	 */
-	public string $id = '{{ LC_SIDEBAR }}';
+	public string $id = '{{ SNAKE_SIDEBAR }}';
 
     /**
 	 * Get sidebar options
@@ -29,12 +29,8 @@ class {{ SIDEBAR }}Sidebar extends AbstractSidebar
 	 */
 	public function options() {
 		return [
-			'name'          => esc_html__( 'Example sidebar', 'brocooly' ),
-			'description'   => esc_html__( 'Example description', 'brocooly' ),
-			'before_widget' => '<li id="%1$s" class="widget %2$s">',
-			'after_widget'  => "</li>\n",
-			'before_title'  => '<h2 class="widgettitle">',
-			'after_title'   => "</h2>\n",
+			'name'        => esc_html__( '{{ SIDEBAR }} sidebar', 'brocooly' ),
+			'description' => esc_html__( '{{ SIDEBAR }} description', 'brocooly' ),
 		];
 	}
 }

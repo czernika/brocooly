@@ -21,7 +21,7 @@ class {{ TAX }} extends Taxonomy
 	 *
 	 * @var string
 	 */
-	protected static string $taxName = '{{ LC_TAX }}';
+	protected static string $taxName = '{{ SNAKE_TAX }}';
 
     /**
 	 * Post type related to taxonomy
