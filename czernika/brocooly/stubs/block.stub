@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 namespace Theme\Blocks;
 
-use Brocooly\Facades\Meta;
+use Brocooly\Support\Facades\Meta;
 use Brocooly\Blocks\AbstractBlock;
 
 class {{ BLOCK }}Block extends AbstractBlock

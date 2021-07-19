@@ -21,6 +21,7 @@ use Brocooly\Providers\PostTypeServiceProvider;
 use Brocooly\Providers\ShortcodeServiceProvider;
 use Brocooly\Providers\MiddlewareServiceProvider;
 use Brocooly\Providers\CarbonFieldsServiceProvider;
+use Brocooly\Providers\UserServiceProvider;
 
 class ProviderLoader
 {
@@ -38,6 +39,7 @@ class ProviderLoader
 	 * @var array
 	 */
 	private array $appProviders = [
+		UserServiceProvider::class,
 		TimberServiceProvider::class,
 		MiddlewareServiceProvider::class,
 		PostTypeServiceProvider::class,

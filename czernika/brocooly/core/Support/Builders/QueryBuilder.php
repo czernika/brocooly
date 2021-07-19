@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-namespace Brocooly\Builders;
+namespace Brocooly\Support\Builders;
 
 use Timber\Timber;
 
@@ -21,22 +21,20 @@ class QueryBuilder
 	 * @var array
 	 */
 	private static array $queryParams = [
-		'merge_default' => false,
+		'merge_default' => true,
 	];
 
 	/**
 	 * Get posts by custom query
 	 *
-	 * @param string $name | post type name.
 	 * @param array  $query | query array.
+	 * @param string $name | post type name.
 	 * @return array|null
 	 */
 	public static function query( array $query, string $name = '' ) {
 		$postQuery = [
-			'post_type'              => $name,
-			'no_found_rows'          => true,
-			'update_post_meta_cache' => false,
-			'update_post_term_cache' => false,
+			'post_type'     => $name,
+			'no_found_rows' => true,
 		];
 		$query     = array_merge( $query, $postQuery, self::$queryParams );
 		$posts     = static::getQuery( $query );
@@ -52,11 +50,9 @@ class QueryBuilder
 	 */
 	public static function all( string $name = '' ) {
 		$postQuery = [
-			'post_type'              => $name,
-			'posts_per_page'         => -1,
-			'no_found_rows'          => true,
-			'update_post_meta_cache' => false,
-			'update_post_term_cache' => false,
+			'post_type'      => $name,
+			'posts_per_page' => -1,
+			'no_found_rows'  => true,
 		];
 		$query     = array_merge( $postQuery, self::$queryParams );
 		$posts     = static::getQuery( $query );
@@ -67,7 +63,7 @@ class QueryBuilder
 	/**
 	 * Get posts with pagination
 	 *
-	 * @param int $postsPerPage | post type name.
+	 * @param int    $postsPerPage | post type name.
 	 * @param string $name | post type name.
 	 *
 	 * @return array|null
@@ -78,8 +74,8 @@ class QueryBuilder
 			'posts_per_page' => $postsPerPage,
 			'paged'          => max( 1, get_query_var( 'paged' ) ),
 		];
-		$query = array_merge( $postQuery, self::$queryParams );
-		$posts = static::getQuery( $query );
+		$query     = array_merge( $postQuery, self::$queryParams );
+		$posts     = static::getQuery( $query );
 
 		return $posts;
 	}

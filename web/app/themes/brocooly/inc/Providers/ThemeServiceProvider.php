@@ -43,10 +43,6 @@ class ThemeServiceProvider extends AbstractService
 	 * Register main theme features
 	 */
 	public function registerFeatures() {
-
-		// Add support for post thumbnails
-		add_theme_support( 'post-thumbnails' );
-
 		// Add custom logo
 		add_theme_support(
 			'custom-logo',

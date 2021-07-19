@@ -4,7 +4,7 @@
  *
  * @example
  * ```
- * php broccoli new:menu <MenuLocation>
+ * php broccoli new:role <RoleName>
  * ```
  *
  * @package Brocooly
@@ -21,38 +21,38 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class MakePostType extends CreateFileConsoleCommand
+class MakeRole extends CreateFileConsoleCommand
 {
 
 	/**
 	 * The name of the command
 	 */
-	protected static $defaultName = 'new:model';
+	protected static $defaultName = 'new:role';
 
 	/**
 	 * Menu name
 	 *
 	 * @var string
 	 */
-	private string $model;
+	private string $role;
 
 	/**
 	 * Shortcode stub file model
 	 *
 	 * @var string
 	 */
-	protected string $stubModelName = 'posttype.stub';
+	protected string $stubModelName = 'role.stub';
 
 	/**
 	 * Set arguments for `configure()` method
 	 */
 	protected function setArguments() {
 		$this
-			->setDescription( 'Allows you to create new post type model' )
+			->setDescription( 'Allows you to create new role' )
 			->addArgument(
-				'model',
+				'role',
 				InputArgument::REQUIRED,
-				'Model name'
+				'Role id'
 			);
 	}
 
@@ -60,15 +60,16 @@ class MakePostType extends CreateFileConsoleCommand
 	 * Set arguments for `execute()` method
 	 */
 	protected function preexecute( InputInterface $input, OutputInterface $output ) {
-		$this->model = $input->getArgument( 'model' );
+		$this->role = $input->getArgument( 'role' );
 
 		$this->createFile(
 			$output,
-			$this->model,
-			'/inc/Models/',
+			$this->role,
+			'/inc/Models/Users/',
+			'Role.php',
 		);
 
-		return $this->success( $output, 'Model was successfully created' );
+		return $this->success( $output, 'Role was successfully created' );
 	}
 
 	/**
@@ -79,8 +80,8 @@ class MakePostType extends CreateFileConsoleCommand
 	 */
 	protected function searchAndReplace( string $value ) {
 		return [
-			'{{ MODEL }}'       => Str::ucfirst( $value ),
-			'{{ SNAKE_MODEL }}' => Str::snake( $value ),
+			'{{ ROLE }}'       => Str::ucfirst( $value ),
+			'{{ SNAKE_ROLE }}' => Str::snake( $value ),
 		];
 	}
 }

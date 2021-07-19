@@ -5,9 +5,9 @@
 	itemscope itemtype="http://schema.org/Article"
 >
 
-	{% if post.thumbnail %}
+	{% if post.meta('_thumbnail_url') %}
 		<figure class="flex-shrink-0 w-full lg:w-2/5 h-72">
-			<img src="{{ post.thumbnail.src|resize(300, 300) }}" alt="{{ post.thumbnail.alt }}" class="object-cover w-full h-full">
+			<img loading="lazy" src="{{ post.meta('_thumbnail_url') }}" alt="{{ post.meta('_thumbnail_alt') }}" class="object-cover w-full h-full">
 		</figure>
 	{% endif %}
 

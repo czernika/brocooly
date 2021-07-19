@@ -54,12 +54,10 @@ class PostTypeServiceProvider extends AbstractService
 
 				if ( in_array( $cpt->getName(), $this->protectedPostTypes, true ) ) {
 
-					if ( method_exists( $cpt, 'fields' ) ) {
-						add_action(
-							'carbon_fields_register_fields',
-							[ $cpt, 'fields' ],
-						);
-					}
+					$this->callMetaFields( $cpt, 'fields' );
+
+					// thumbnail trait.
+					$this->callMetaFields( $cpt, 'thumbnail' );
 
 					continue;
 				}
@@ -76,6 +74,15 @@ class PostTypeServiceProvider extends AbstractService
 					}
 				);
 			}
+		}
+	}
+
+	private function callMetaFields( object $cpt, string $method ) {
+		if ( method_exists( $cpt, $method ) ) {
+			add_action(
+				'carbon_fields_register_fields',
+				[ $cpt, $method ],
+			);
 		}
 	}
 

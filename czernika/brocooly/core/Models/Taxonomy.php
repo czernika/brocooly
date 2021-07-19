@@ -12,7 +12,7 @@ namespace Brocooly\Models;
 
 use Timber\Term;
 use Carbon_Fields\Container;
-use Brocooly\Builders\QueryBuilder;
+use Brocooly\Support\Builders\QueryBuilder;
 
 abstract class Taxonomy extends Term
 {

@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 namespace Theme\Customizer\Sections;
 
-use Brocooly\Facades\Mod;
+use Brocooly\Support\Facades\Mod;
 use Brocooly\Customizer\AbstractSection;
 
 class {{ OPTION }}Section extends AbstractSection

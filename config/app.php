@@ -43,6 +43,7 @@ if ( file_exists( APP_PATH . '/.env' ) ) {
  * Default: production
  */
 define( 'WP_ENV', env( 'WP_ENV' ) ?: 'production' );
+Config::define( 'WP_ENVIRONMENT_TYPE', WP_ENV );
 
 /**
  * URLs

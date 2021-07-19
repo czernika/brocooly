@@ -10,8 +10,8 @@ declare(strict_types=1);
 
 namespace Theme\Models\WP;
 
-use Brocooly\Facades\Meta;
 use Brocooly\Models\PostType;
+use Brocooly\Support\Facades\Meta;
 
 class {{ MODEL }} extends PostType
 {
@@ -25,11 +25,10 @@ class {{ MODEL }} extends PostType
 
     /**
 	 * Post type options
-	 * Same as for `register_post_type`
 	 *
-	 * @return array
+	 * @return void
 	 */
 	protected function options() {
-        // return [];
+        // $this->createFields( ... );
     }
 }

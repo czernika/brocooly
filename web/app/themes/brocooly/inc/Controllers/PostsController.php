@@ -18,6 +18,13 @@ class PostsController extends BaseController
 {
 
 	/**
+	 * Blog page title
+	 *
+	 * @var string
+	 */
+	private string $title;
+
+	/**
 	 * Posts object
 	 *
 	 * @var object
@@ -26,16 +33,16 @@ class PostsController extends BaseController
 
 	public function __construct( PostServiceContract $postServiceContract ) {
 		$this->posts = $postServiceContract;
+		$this->title = get_the_title( get_option( 'page_for_posts' ) );
 	}
 
 	/**
 	 * Load archive page
 	 */
 	public function index() {
-		$posts             = $this->posts->all();
 		$is_sidebar_active = is_active_sidebar( 1 );
-		$title             = get_the_title( get_option( 'page_for_posts' ) );
-		view( 'content/post/index.twig', compact( 'posts', 'is_sidebar_active', 'title' ) );
+		$title             = $this->title;
+		view( 'content/post/index.twig', compact( 'is_sidebar_active', 'title' ) );
 	}
 
 	/**
@@ -45,10 +52,10 @@ class PostsController extends BaseController
 		$post      = $this->posts->current();
 		$ancestors = [
 			[
-				'title' => get_the_title( get_option( 'page_for_posts' ) ),
+				'title' => $this->title,
 				'link'  => get_post_type_archive_link( 'post' ),
 			],
 		];
-		view( 'content/post/single.twig', compact( 'post', 'ancestors' ) );
+		view( 'content/post/single.twig', compact( 'ancestors', 'post' ) );
 	}
 }

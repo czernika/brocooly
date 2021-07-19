@@ -1,6 +1,6 @@
 <?php
 /**
- * Request handler
+ * Redirect handler
  *
  * @package Brocooly
  * @since 0.8.0
@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 namespace Brocooly\Router;
 
-class Request
+class Redirect
 {
 
 	public static function to( string $to ) {

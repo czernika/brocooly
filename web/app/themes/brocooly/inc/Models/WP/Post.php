@@ -10,10 +10,11 @@ declare(strict_types=1);
 
 namespace Theme\Models\WP;
 
-use Brocooly\Facades\Meta;
 use Brocooly\Models\PostType;
+use Brocooly\Support\Facades\Meta;
+use Brocooly\Support\Traits\Thumbnail;
 
 class Post extends PostType
 {
-    
+	use Thumbnail;
 }

@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-namespace Brocooly\Facades;
+namespace Brocooly\Support\Facades;
 
 class AbstractFacade
 {

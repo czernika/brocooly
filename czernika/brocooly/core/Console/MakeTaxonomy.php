@@ -48,7 +48,7 @@ class MakeTaxonomy extends CreateFileConsoleCommand
 	 */
 	protected function setArguments() {
 		$this
-			->setDescription( 'Allows you to create new menu taxonomy model' )
+			->setDescription( 'Allows you to create new taxonomy model' )
 			->addArgument(
 				'taxonomy',
 				InputArgument::REQUIRED,

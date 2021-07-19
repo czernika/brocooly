@@ -12,7 +12,7 @@ namespace Brocooly\Models;
 
 use Timber\Post;
 use Carbon_Fields\Container;
-use Brocooly\Builders\QueryBuilder;
+use Brocooly\Support\Builders\QueryBuilder;
 
 abstract class PostType extends Post
 {
@@ -71,11 +71,13 @@ abstract class PostType extends Post
 	 * @param string $id | container id.
 	 * @param string $label | container label.
 	 * @param array  $fields | array of custom fields.
+	 * @param string $context | The part of the page where the container should be shown.
 	 * @return void
 	 */
-	protected function createFields( string $id, string $label, array $fields ) {
+	protected function createFields( string $id, string $label, array $fields, string $context = 'normal' ) {
 		$this->setContainer( $id, $label )
-			->add_fields( $fields );
+			->add_fields( $fields )
+			->set_context( $context );
 	}
 
 	/**

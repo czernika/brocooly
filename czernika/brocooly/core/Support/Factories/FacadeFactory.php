@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-namespace Brocooly\Factories;
+namespace Brocooly\Support\Factories;
 
 class FacadeFactory extends AbstractFactory
 {

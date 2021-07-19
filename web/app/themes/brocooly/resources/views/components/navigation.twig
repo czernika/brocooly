@@ -4,7 +4,10 @@
 
         {% if post.next %}
             <li>
-                <a href="{{ post.next.link }}" class="block w-full h-full px-6 py-2 duration-200 border border-secondary hover:bg-secondary hover:text-white">
+                <a
+					href="{{ post.next.link }}"
+					class="block w-full h-full px-6 py-2 duration-200 border border-secondary hover:bg-secondary hover:text-white"
+				>
                     <span class="sr-only">{{ __('Next post', 'brocooly') }}</span>
                     {{ post.next.title }}
                 </a>
@@ -13,7 +16,10 @@
 
         {% if post.prev %}
             <li>
-                <a href="{{ post.prev.link }}" class="block w-full h-full px-6 py-2 duration-200 border border-secondary hover:bg-secondary hover:text-white">
+                <a
+					href="{{ post.prev.link }}"
+					class="block w-full h-full px-6 py-2 duration-200 border border-secondary hover:bg-secondary hover:text-white"
+				>
                     <span class="sr-only">{{ __('Previous post', 'brocooly') }}</span>
                     {{ post.prev.title }}
                 </a>

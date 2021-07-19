@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 namespace Theme\Customizer;
 
-use Brocooly\Facades\Mod;
+use Brocooly\Support\Facades\Mod;
 use Brocooly\Customizer\AbstractOption;
 
 class {{ OPTION }}Option extends AbstractOption

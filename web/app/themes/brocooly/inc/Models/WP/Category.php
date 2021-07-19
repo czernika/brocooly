@@ -10,8 +10,8 @@ declare(strict_types=1);
 
 namespace Theme\Models\WP;
 
-use Brocooly\Facades\Meta;
 use Brocooly\Models\Taxonomy;
+use Brocooly\Support\Facades\Meta;
 
 class Category extends Taxonomy
 {
