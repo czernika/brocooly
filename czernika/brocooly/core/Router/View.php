@@ -29,7 +29,7 @@ class View
 		$timberContext = Timber::context();
 		$themeContext  = ThemeContext::get();
 		$ctx           = array_merge( $timberContext, $themeContext, $localContext );
-		$expire        = env( 'WP_ENV' ) === 'production' ? 600 : false;
+		$expire        = isProduction() ? 600 : false;
 
 		Context::merge( $ctx );
 

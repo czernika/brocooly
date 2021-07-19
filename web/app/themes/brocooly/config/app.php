@@ -13,7 +13,6 @@ use Theme\Hooks\GetSearchForm;
 use Theme\Hooks\WpEnqueueScripts;
 use Theme\Middleware\UserLoggedIn;
 use Theme\Hooks\RemoveMetaGenerator;
-use Theme\Providers\AppServiceProvider;
 use Theme\Providers\ThemeServiceProvider;
 use Theme\Providers\GutenbergServiceProvider;
 
@@ -27,7 +26,6 @@ return [
 	 * Custom service providers
 	 */
 	'providers'  => [
-		AppServiceProvider::class,
 		ThemeServiceProvider::class,
 		GutenbergServiceProvider::class,
 	],
@@ -42,7 +40,7 @@ return [
 	 * @since 0.8.0
 	 */
 	'middleware' => [
-		'auth' => UserLoggedIn::class,
+		UserLoggedIn::class,
 	],
 
 	/**

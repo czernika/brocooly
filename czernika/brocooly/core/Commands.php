@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 namespace Brocooly;
 
+use Brocooly\Console\ClearCache;
 use Brocooly\Console\MakeRole;
 use Brocooly\Console\MakeHook;
 use Brocooly\Console\MakeMenu;
@@ -43,6 +44,7 @@ class Commands
 		MakePostType::class,
 		MakeShortcode::class,
 		MakeController::class,
+		ClearCache::class,
 	];
 
 	/**

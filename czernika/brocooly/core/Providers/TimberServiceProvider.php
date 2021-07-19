@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace Brocooly\Providers;
 
+use Timber\Timber;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
 
@@ -97,14 +98,24 @@ class TimberServiceProvider extends AbstractService
 	private function setCachePath() {
 		$cache = $this->app->get( 'cache_path' );
 
-		if ( (bool) $cache ) {
-			add_filter(
-				'timber/twig/environment/options',
-				function( $options ) use ( $cache ) {
-					$options['cache'] = $cache;
-					return $options;
-				}
-			);
+		if ( (bool) $cache && isProduction() ) {
+			if ( isTimberNext() ) {
+				add_filter(
+					'timber/twig/environment/options',
+					function( $options ) use ( $cache ) {
+						$options['cache'] = $cache;
+						return $options;
+					},
+				);
+			} else {
+				$this->app->timber::$cache = true;
+				add_filter(
+					'timber/cache/location',
+					function( $twig_cache ) use ( $cache ) {
+						return untrailingslashit( $cache ) . '/views/';
+					},
+				);
+			}
 		}
 	}
 }

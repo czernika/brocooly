@@ -46,6 +46,11 @@ define( 'WP_ENV', env( 'WP_ENV' ) ?: 'production' );
 Config::define( 'WP_ENVIRONMENT_TYPE', WP_ENV );
 
 /**
+ * Set dark mode for QueryMonitor plugin for Timber section to be readable
+ */
+Config::define( 'QM_DARK_MODE', true );
+
+/**
  * URLs
  */
 Config::define( 'WP_HOME', env( 'WP_HOME' ) );

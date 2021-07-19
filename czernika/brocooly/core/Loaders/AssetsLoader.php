@@ -169,7 +169,7 @@ class AssetsLoader
 	public function asset( string $key ) {
 		if ( file_exists( $this->manifestPath ) ) {
 			$manifestAssets = $this->getAssetsFromManifest();
-			return $manifestAssets[ $key ];
+			return array_key_exists( $key, $manifestAssets ) ? $manifestAssets[ $key ] : null;
 		}
 
 		return null;

@@ -12,6 +12,8 @@ use Brocooly\Router\View;
 use Brocooly\Storage\Config;
 use Brocooly\Loaders\AssetsLoader;
 
+use function Env\env;
+
 if ( ! function_exists( 'isTimberNext' ) ) {
 
 	/**
@@ -19,6 +21,31 @@ if ( ! function_exists( 'isTimberNext' ) ) {
 	 */
 	function isTimberNext() {
 		return version_compare( Timber::$version, '2', '>=' );
+	}
+}
+
+if ( ! function_exists( 'isCurrentEnv' ) ) {
+
+	/**
+	 * Define if application is running in $env mode
+	 * @param string $env | environment.
+	 *
+	 * @return bool
+	 */
+	function isCurrentEnv( string $env ) {
+		return env( 'WP_ENV' ) === $env;
+	}
+}
+
+if ( ! function_exists( 'isProduction' ) ) {
+
+	/**
+	 * Define if application is running in production mode
+	 *
+	 * @return bool
+	 */
+	function isProduction() {
+		return isCurrentEnv( 'production' );
 	}
 }
 

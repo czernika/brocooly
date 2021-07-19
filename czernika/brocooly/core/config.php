@@ -19,8 +19,9 @@ use Brocooly\Support\Factories\CustomizerFactory;
 
 use function DI\get;
 use function DI\create;
+use function DI\factory;
 
-return [
+$appDefintions = [
 
 	/**
 	 *--------------------------------------------------------------------------
@@ -53,4 +54,13 @@ return [
 	'facade'    => create( FacadeFactory::class ),
 	'mod'       => create( CustomizerFactory::class ),
 
+	/**
+	 * --------------------------------------------------------------------------
+	 * Bind ServiceContracts with its Services
+	 * --------------------------------------------------------------------------
+	 */
+	'Theme\Contracts\*ServiceContract' => create( 'Theme\Services\*Service' ),
+
 ];
+
+return $appDefintions;

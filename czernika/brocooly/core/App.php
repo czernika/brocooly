@@ -15,6 +15,7 @@ use DI\Container;
 use Timber\Timber;
 use Psr\Container\ContainerInterface;
 
+use function DI\autowire;
 use function DI\factory;
 
 class App
@@ -82,6 +83,13 @@ class App
 					return $container->get( $value );
 				}
 			)
+		);
+	}
+
+	public function wire( string $key, string $value ) {
+		$this->container->set(
+			$key,
+			autowire( $value ),
 		);
 	}
 
