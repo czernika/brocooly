@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace Brocooly\Providers;
 
 use Theme\Models\WP\Comment;
+use Webmozart\Assert\Assert;
 
 class PostTypeServiceProvider extends AbstractService
 {
@@ -48,9 +49,9 @@ class PostTypeServiceProvider extends AbstractService
 		$postTypes = $this->app->get( 'custom_post_types' );
 
 		if ( ! empty( $postTypes ) ) {
-			foreach ( $postTypes as $postType ) {
+			foreach ( $postTypes as $postTypeClass ) {
 
-				$cpt = $this->app->make( $postType );
+				$cpt = $this->app->get( $postTypeClass );
 
 				if ( in_array( $cpt->getName(), $this->protectedPostTypes, true ) || $cpt->doNotRegister ) {
 
@@ -59,10 +60,21 @@ class PostTypeServiceProvider extends AbstractService
 					// thumbnail trait.
 					$this->callMetaFields( $cpt, 'thumbnail' );
 
+					/**
+					 * No need to register or check any post type options
+					 * which is already registered (like post, page)
+					 */
 					continue;
 				}
 
-				$cpt->setOptions( $cpt->options() );
+				Assert::methodExists(
+					$cpt,
+					'options',
+					sprintf(
+						'Method options was not set for %s taxonomy',
+						$postTypeClass,
+					),
+				);
 
 				add_action(
 					'init',
@@ -93,9 +105,9 @@ class PostTypeServiceProvider extends AbstractService
 		$taxonomies = $this->app->get( 'custom_taxonomies' );
 
 		if ( ! empty( $taxonomies ) ) {
-			foreach ( $taxonomies as $taxonomy ) {
+			foreach ( $taxonomies as $taxonomyClass ) {
 
-				$tax = $this->app->make( $taxonomy );
+				$tax = $this->app->get( $taxonomyClass );
 
 				if ( in_array( $tax->getName(), $this->protectedTaxonomies, true ) || $tax->doNotRegister ) {
 
@@ -109,7 +121,14 @@ class PostTypeServiceProvider extends AbstractService
 					continue;
 				}
 
-				$tax->setOptions( $tax->options() );
+				Assert::methodExists(
+					$tax,
+					'options',
+					sprintf(
+						'Method options was not set for %s taxonomy',
+						$taxonomyClass,
+					),
+				);
 
 				add_action(
 					'init',

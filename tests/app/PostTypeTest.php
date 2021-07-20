@@ -1,6 +1,6 @@
 <?php
 /**
- * Test post type instance
+ * Test post types initialization
  *
  * @package Brocooly
  * @since 0.8.2
@@ -12,21 +12,48 @@ use Brain\Monkey;
 use Brocooly\Models\PostType;
 use PHPUnit\Framework\TestCase;
 
+class CustomPostType extends PostType {
+
+	protected static string $name = 'custom';
+
+	public bool $doNotRegister = false;
+}
+
+class StandardWPPostType extends PostType {
+
+}
+
 class PostTypeTest extends TestCase
 {
 
 	/**
-	 * Post type instance
+	 * Custom post type
 	 *
 	 * @var object
 	 */
-	private object $postType;
+	private object $customPostType;
+
+	/**
+	 * Standard WordPress post type
+	 *
+	 * @var object
+	 */
+	private object $standardPostType;
+
+	/**
+	 * Abstract Post type model
+	 *
+	 * @var object
+	 */
+	private object $parentPostType;
 
 	public function setUp(): void {
 		parent::setUp();
 		Monkey\setUp();
 
-		$this->postType = $this->getMockBuilder( PostType::class )->getMock();
+		$this->customPostType   = new CustomPostType();
+		$this->standardPostType = new StandardWPPostType();
+		$this->parentPostType   = $this->getMockBuilder( PostType::class )->getMock();
 	}
 
 	public function tearDown(): void {
@@ -35,66 +62,48 @@ class PostTypeTest extends TestCase
 	}
 
 	/**
-	 * Post Type has `getName()` method
+	 * List of all public and protected methods
+	 *
+	 * @return array
 	 */
-	public function testPostTypeHasGetNameMethod() {
-		$this->assertTrue( method_exists( $this->postType, 'getName' ) );
+	public function addParentPostTypeMethodsProvider() {
+		return [
+			[ 'options' ],
+			[ 'getOptions' ],
+			[ 'getName' ],
+		];
 	}
 
 	/**
-	 * Post Type has `setOptions()` method
+	 * List of all public and protected properties
+	 *
+	 * @return array
 	 */
-	public function testPostTypeHasSetOptionsMethod() {
-		$this->assertTrue( method_exists( $this->postType, 'setOptions' ) );
+	public function addParentPostTypePropertiesProvider() {
+		return [
+			[ 'name' ],
+			[ 'doNotRegister' ],
+		];
 	}
 
 	/**
-	 * Post Type has `getOptions()` method
+	 * @dataProvider addParentPostTypeMethodsProvider
 	 */
-	public function testPostTypeHasGetOptionsMethod() {
-		$this->assertTrue( method_exists( $this->postType, 'getOptions' ) );
+	public function testParentPostTypeMethodExists( string $method ) {
+		$this->assertTrue( method_exists( $this->parentPostType, $method ) );
 	}
 
 	/**
-	 * Post Type has `createFields()` method
+	 * @dataProvider addParentPostTypePropertiesProvider
 	 */
-	public function testPostTypeHasCreateFieldsMethod() {
-		$this->assertTrue( method_exists( $this->postType, 'createFields' ) );
+	public function testParentPostTypePropertyExists( string $property ) {
+		$this->assertTrue( property_exists( $this->parentPostType, $property ) );
 	}
 
-	/**
-	 * Post Type has `setContainer()` method
-	 */
-	public function testPostTypeHasSetContainerMethod() {
-		$this->assertTrue( method_exists( $this->postType, 'setContainer' ) );
+	public function testPostTypeExtendsAbstractPostType() {
+		$parent = PostType::class;
+		$this->assertSame( $parent, get_parent_class( $this->customPostType ) );
+		$this->assertSame( $parent, get_parent_class( $this->standardPostType ) );
 	}
 
-	/**
-	 * Post Type `setOptions()` method has only one param
-	 */
-	public function testPostTypeSetOptionsMethodHasOnlyOneProperty() {
-		$method = new \ReflectionMethod( $this->postType, 'setOptions' );
-		$this->assertTrue( 1 === $method->getNumberOfParameters() );
-	}
-
-	/**
-	 * Post Type has `name` property
-	 */
-	public function testPostTypeHasNameProperty() {
-		$this->assertTrue( property_exists( $this->postType, 'name' ) );
-	}
-
-	/**
-	 * Post Type has `options` property
-	 */
-	public function testPostTypeHasOptionsProperty() {
-		$this->assertTrue( property_exists( $this->postType, 'options' ) );
-	}
-
-	/**
-	 * Post Type has `doNotRegister` property
-	 */
-	public function testPostTypeHasRegisterPropertyIsBoolean() {
-		$this->assertIsBool( $this->postType->doNotRegister );
-	}
 }

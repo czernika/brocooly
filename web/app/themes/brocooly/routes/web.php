@@ -47,6 +47,5 @@ Route::view( 'is_404', 'content/404.twig' );
  *
  * ! Please do NOT remove next line
  * TODO: handle requests logic somewhere else
- *
  */
 Route::resolve();

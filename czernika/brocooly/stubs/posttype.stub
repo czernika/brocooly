@@ -36,11 +36,20 @@ class {{ MODEL }} extends PostType
 	protected static string $name = '{{ SNAKE_MODEL }}';
 
     /**
+	 * Post type metaboxes
+	 *
+	 * @return void
+	 */
+	protected function fields() {
+        // $this->createFields( ... );
+    }
+
+	/**
 	 * Post type options
 	 *
 	 * @return void
 	 */
 	protected function options() {
-        // $this->createFields( ... );
+        // return [];
     }
 }

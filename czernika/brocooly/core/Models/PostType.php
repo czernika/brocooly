@@ -37,14 +37,6 @@ abstract class PostType extends Post
 	protected static string $name = 'post';
 
 	/**
-	 * Post type options
-	 * Same as for `register_post_type`
-	 *
-	 * @var array
-	 */
-	protected array $options = [];
-
-	/**
 	 * Get post type name
 	 *
 	 * @return string
@@ -60,20 +52,19 @@ abstract class PostType extends Post
 	/**
 	 * Set post type options
 	 *
-	 * @param array $options
-	 * @return void
+	 * @throws Exception
 	 */
-	public function setOptions( array $options ) {
-		$this->options = $options;
+	protected function options() {
+		throw new \Exception( 'You must specify post type options', true );
 	}
 
 	/**
-	 * Get post type options
+	 * Return post type options
 	 *
-	 * @return string
+	 * @throws Exception
 	 */
 	public function getOptions() {
-		return $this->options;
+		return $this->options();
 	}
 
 	/**

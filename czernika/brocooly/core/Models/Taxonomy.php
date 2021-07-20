@@ -45,14 +45,6 @@ abstract class Taxonomy extends Term
 	protected static $postTypes = 'post';
 
 	/**
-	 * Taxonomy options
-	 * Same as for `register_taxonomy`
-	 *
-	 * @var array
-	 */
-	protected array $options = [];
-
-	/**
 	 * Get post type name
 	 *
 	 * @return string
@@ -85,26 +77,25 @@ abstract class Taxonomy extends Term
 	}
 
 	/**
-	 * Set post type options
+	 * Set taxonomy options
 	 *
-	 * @param array $options
-	 * @return void
+	 * @throws Exception
 	 */
-	public function setOptions( array $options ) {
-		$this->options = $options;
+	protected function options() {
+		throw new \Exception( 'You must specify post type options', true );
 	}
 
 	/**
-	 * Get post type options
+	 * Return taxonomy options
 	 *
-	 * @return string
+	 * @throws Exception
 	 */
 	public function getOptions() {
-		return $this->options;
+		return $this->options();
 	}
 
 	/**
-	 * Create metabox container for post types
+	 * Create metabox container for taxonomy
 	 *
 	 * @param string $id | container id.
 	 * @param string $label | container label.
