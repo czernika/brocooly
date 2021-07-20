@@ -33,6 +33,10 @@ class ThemeServiceProvider extends AbstractService
 	/**
 	 * Setup theme features
 	 *
+	 * This hook is called during each page load, after the theme is initialized.
+	 * It is generally used to perform basic setup, registration, and init actions for a theme.
+	 *
+	 * @see https://developer.wordpress.org/reference/hooks/after_setup_theme/
 	 * @return void
 	 */
 	public function boot() {
@@ -43,7 +47,7 @@ class ThemeServiceProvider extends AbstractService
 	 * Register main theme features
 	 */
 	public function registerFeatures() {
-		// Add custom logo
+		// Add custom theme logo support.
 		add_theme_support(
 			'custom-logo',
 			[

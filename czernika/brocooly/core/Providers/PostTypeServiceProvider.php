@@ -17,11 +17,11 @@ class PostTypeServiceProvider extends AbstractService
 {
 
 	/**
-	 * Values reserved by WordPress
+	 * Values reserved by WordPress and WooCommerce
 	 *
 	 * @var array
 	 */
-	private array $protectedPostTypes = [ 'post', 'page' ];
+	private array $protectedPostTypes = [ 'post', 'page', 'product' ];
 
 	/**
 	 * Values reserved by WordPress
@@ -52,7 +52,7 @@ class PostTypeServiceProvider extends AbstractService
 
 				$cpt = $this->app->make( $postType );
 
-				if ( in_array( $cpt->getName(), $this->protectedPostTypes, true ) ) {
+				if ( in_array( $cpt->getName(), $this->protectedPostTypes, true ) || $cpt->doNotRegister ) {
 
 					$this->callMetaFields( $cpt, 'fields' );
 
@@ -97,7 +97,7 @@ class PostTypeServiceProvider extends AbstractService
 
 				$tax = $this->app->make( $taxonomy );
 
-				if ( in_array( $tax->getName(), $this->protectedTaxonomies, true ) ) {
+				if ( in_array( $tax->getName(), $this->protectedTaxonomies, true ) || $tax->doNotRegister ) {
 
 					if ( method_exists( $tax, 'fields' ) ) {
 						add_action(

@@ -1,6 +1,6 @@
 <?php
 /**
- * Helper methods
+ * Helper functions
  *
  * @package Brocooly
  * @since 0.1.0
@@ -17,7 +17,9 @@ use function Env\env;
 if ( ! function_exists( 'isTimberNext' ) ) {
 
 	/**
-	 * Return application instance
+	 * Compare Timber version is it later than 2.0
+	 *
+	 * @return bool
 	 */
 	function isTimberNext() {
 		return version_compare( Timber::$version, '2', '>=' );
@@ -28,8 +30,8 @@ if ( ! function_exists( 'isCurrentEnv' ) ) {
 
 	/**
 	 * Define if application is running in $env mode
-	 * @param string $env | environment.
 	 *
+	 * @param string $env | environment.
 	 * @return bool
 	 */
 	function isCurrentEnv( string $env ) {
@@ -63,12 +65,12 @@ if ( ! function_exists( 'config' ) ) {
 
 	/**
 	 * Return configuration object or provided default value
-	 * @param $key | key value.
-	 * @param $default | default value if key was set and not found
 	 *
+	 * @param string $key | key value.
+	 * @param mixed  $default | default value if key was set and not found.
 	 * @return mixed
 	 */
-	function config( $key = null, $default = null ) {
+	function config( string $key = null, $default = null ) {
 		if ( Config::get( $key ) || null === $default ) {
 			return Config::get( $key );
 		}
@@ -111,14 +113,14 @@ if ( ! function_exists( 'asset' ) ) {
 	/**
 	 * Get asset path from manifest file
 	 *
-	 * @param mixed $val | value to check.
+	 * @param string $filePath | value to check.
 	 * @return string
 	 */
-	function asset( $filePath ) {
+	function asset( string $filePath ) {
 		$asset = ( new AssetsLoader( app() ) )->asset( $filePath );
 
 		if ( $asset ) {
-			$public         = trailingslashit( config( 'assets.public', 'public/' ) );
+			$public         = trailingslashit( config( 'assets.public' ) );
 			$publicFilePath = BROCOOLY_THEME_URI . $public . $asset;
 			return $publicFilePath;
 		}
@@ -133,10 +135,9 @@ if ( ! function_exists( 'view' ) ) {
 	 * Render helper
 	 *
 	 * @param string $views | view file to be rendered.
-	 * @param array  $ctx | context to pass with
-	 * @return void
+	 * @param array  $ctx | context to pass with.
+	 * @return string
 	 */
-
 	function view( string $views, array $ctx = [] ) {
 		return View::make( $views, $ctx );
 	}
@@ -149,9 +150,8 @@ if ( ! function_exists( 'mod' ) ) {
 	 *
 	 * @param string $key | theme mod helper.
 	 * @param mixed  $default | default value.
-	 * @return void
+	 * @return mixed
 	 */
-
 	function mod( string $key, $default = null ) {
 		$prefix   = app()->get( 'customizer_prefix' );
 		$themeMod = $prefix . $key;

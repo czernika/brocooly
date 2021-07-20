@@ -1,7 +1,6 @@
 <?php
 /**
- * Return config options for TimberServiceProvider
- * like custom views, namespaces and cache path
+ * Settings related to view files like views path, caching, templates and namespaces
  *
  * @package Brocooly
  * @since 0.1.0
@@ -11,7 +10,7 @@ return [
 
 	/**
 	 * --------------------------------------------------------------------------
-	 * View Storage Path
+	 * Views Path
 	 * --------------------------------------------------------------------------
 	 *
 	 * All your directories for view files should bу listed here.
@@ -22,22 +21,15 @@ return [
 
 	/**
 	 * --------------------------------------------------------------------------
-	 * View Cache Path
-	 * --------------------------------------------------------------------------
-	 *
-	 * Place where all your cached files will be stored.
-	 * It is available only if WP_ENV === 'production'.
-	 * Set `false` to disable
-	 */
-	'cache'      => get_template_directory() . '/storage/cache/',
-
-	/**
-	 * --------------------------------------------------------------------------
 	 * View Namespaces
 	 * --------------------------------------------------------------------------
 	 *
 	 * You may add extra namespace into your view files
-	 * Use it like `{% include '@components/path/to/view.twig' %}`
+	 *
+	 * @example
+	 * ```
+	 * {% include '@components/path/to/view.twig' %}
+	 * ```
 	 */
 	'namespaces' => [
 		'components' => 'components',
@@ -54,7 +46,22 @@ return [
 	 * --------------------------------------------------------------------------
 	 *
 	 * Register custom templates
+	 *
+	 * @link https://developer.wordpress.org/themes/template-files-section/page-template-files/
 	 */
 	'templates'  => [],
+
+	/**
+	 * --------------------------------------------------------------------------
+	 * View Cache Path
+	 * --------------------------------------------------------------------------
+	 *
+	 * Place where all your cached files will be stored under `/views/` directory.
+	 * It is available only if WP_ENV === 'production'.
+	 * Set `false` to disable
+	 *
+	 * @link https://timber.github.io/docs/guides/performance/
+	 */
+	'cache'      => get_template_directory() . '/storage/cache/',
 
 ];

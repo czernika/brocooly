@@ -18,10 +18,9 @@ return [
 	 * If set to true all generated custom scripts and styles
 	 * will be generated on every page.
 	 *
-	 * Useful for development but in a production it is recommended to load assets on separate pages
-	 *
+	 * Useful for development but in a production it is recommended to load assets on separate ParagonIE_Sodium_Core32_BLAKE2b
 	 */
-	'autoload'       => env( 'WP_ENV' ) != 'production',
+	'autoload'       => ! isProduction(),
 
 	/**
 	 *--------------------------------------------------------------------------
@@ -29,7 +28,6 @@ return [
 	 *--------------------------------------------------------------------------
 	 *
 	 * Where all assets will compiled
-	 *
 	 */
 	'public'         => env( 'PUBLIC_FOLDER' ) ?? 'public',
 
@@ -40,7 +38,6 @@ return [
 	 *
 	 * Manifest filename
 	 * Requires to be changed also in `webpack.config.js`
-	 *
 	 */
 	'manifest'       => 'manifest.json',
 

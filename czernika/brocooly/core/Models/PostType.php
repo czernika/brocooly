@@ -18,6 +18,17 @@ abstract class PostType extends Post
 {
 
 	/**
+	 * Register post type or not
+	 * Sometimes you don't want to register post type as it is already may be registered
+	 * but you want to add extra metaboxes or queries
+	 *
+	 * In that case just set this variable to `true`
+	 *
+	 * @var bool
+	 */
+	public bool $doNotRegister = false;
+
+	/**
 	 * Post type slug
 	 * Must be unique
 	 *

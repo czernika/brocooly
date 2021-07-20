@@ -15,13 +15,25 @@ use Brocooly\Support\Facades\Meta;
 
 class {{ MODEL }} extends PostType
 {
+
+	/**
+	 * Register post type or not
+	 * Sometimes you don't want to register post type as it is already may be registered
+	 * but you want to add extra metaboxes or queries
+	 *
+	 * In that case just set this variable to `true`
+	 *
+	 * @var bool
+	 */
+	public bool $doNotRegister = false;
+
     /**
 	 * Post type slug
 	 * Must be unique
 	 *
 	 * @var string
 	 */
-	protected static string $taxName = '{{ SNAKE_MODEL }}';
+	protected static string $name = '{{ SNAKE_MODEL }}';
 
     /**
 	 * Post type options

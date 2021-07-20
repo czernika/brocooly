@@ -15,7 +15,7 @@ return [
 	 * Load default widgets or not?
 	 *--------------------------------------------------------------------------
 	 *
-	 * Set to `false` if ypu don't want to register default WordPress widgets
+	 * Set to `false` if you don't want to register default WordPress widgets
 	 */
 	'loadDefaults' => false,
 
@@ -25,8 +25,12 @@ return [
 	 *--------------------------------------------------------------------------
 	 *
 	 * Register widgets and location for them
-	 * If ypu wish to register only specific WordPress widget (for example, WP_Widget_Calendar)
-	 * add here.
+	 * If you wish to register only specific WordPress widget (for example, WP_Widget_Search)
+	 * add it here also.
+	 *
+	 * List of all default WordPress widgets can be found here:
+	 *
+	 * @link https://github.com/WordPress/WordPress/blob/master/wp-includes/default-widgets.php
 	 */
 	'sidebars'     => [
 		BlogSidebar::class,

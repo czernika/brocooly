@@ -1,7 +1,6 @@
 <?php
 /**
- * Set PHP DI Container
- * and run Application
+ * Set PHP DI Container and run Application
  *
  * ! Please do NOT change anything
  * unless you know what are you doing
@@ -42,8 +41,7 @@ $brocooly->run();
  * Include Kirki Customizer installer
  * --------------------------------------------------------------------------
  *
- * As Kirki is a WordPress plugin
- * it is depends on user actions
+ * As Kirki is a WordPress plugin it is depends on user actions
  * So we include installer section
  *
  * @see https://kirki.org/docs/setup/integration/

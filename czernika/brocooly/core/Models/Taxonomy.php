@@ -18,6 +18,17 @@ abstract class Taxonomy extends Term
 {
 
 	/**
+	 * Register taxonomy or not
+	 * Sometimes you don't want to register taxonomy as it is already may be registered
+	 * but you want to add extra metaboxes or queries
+	 *
+	 * In that case just set this variable to `true`
+	 *
+	 * @var bool
+	 */
+	public bool $doNotRegister = false;
+
+	/**
 	 * Taxonomy slug
 	 * Must be unique
 	 *

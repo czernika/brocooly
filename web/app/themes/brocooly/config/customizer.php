@@ -26,7 +26,6 @@ return [
 	 *--------------------------------------------------------------------------
 	 *
 	 * Register theme panels and sections.
-	 * Just pass classname here
 	 *
 	 * @see https://kirki.org/docs/setup/panels-sections/
 	 */

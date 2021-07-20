@@ -29,6 +29,17 @@ class UserServiceProvider extends AbstractService
 		}
 	}
 
+	/**
+	 * Register and deregister custom user roles
+	 *
+	 * NOTE: When to call
+	 * Make sure the global $wp_roles is available before attempting to add or modify a role. The best practice is to use a plugin (or theme) activation hook to make changes to roles (since you only want to do it once!).
+	 *
+	 * mu-plugins loads too early, so use an action hook (like 'init') to wrap your add_role() call if you’re doing this in the context of an mu-plugin.
+	 *
+	 * @see https://developer.wordpress.org/reference/functions/add_role/#user-contributed-notes
+	 * @return void
+	 */
 	private function registerRoles() {
 		$roles = $this->app->get( 'custom_roles' );
 

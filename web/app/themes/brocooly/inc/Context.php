@@ -1,6 +1,8 @@
 <?php
 /**
- * Theme Context
+ * Theme Timber context.
+ * This context will be available on any page as key value.
+ * This array will be added to the global context through the `timber/context` filter
  *
  * @package Brocooly
  * @since 0.1.0
@@ -14,17 +16,11 @@ class Context
 {
 
 	/**
-	 * Get theme custom object
-	 * ! It HAS to be static and has to be named `get()`
+	 * Set theme custom object
 	 *
-	 * @return array
+	 * @return array | custom theme context.
 	 */
 	public static function get() {
-
-		/**
-		 * Add values here
-		 * TODO: improve such logic
-		 */
 		$context = [
 			'queried'     => get_queried_object(),
 			'is_front'    => is_front_page(),

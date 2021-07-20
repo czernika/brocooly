@@ -17,8 +17,12 @@ class GutenbergServiceProvider extends AbstractService
 {
 
 	/**
-	 * Setup theme features
+	 * Setup Gutenberg editor features
 	 *
+	 * This hook is called during each page load, after the theme is initialized.
+	 * It is generally used to perform basic setup, registration, and init actions for a theme.
+	 *
+	 * @see https://developer.wordpress.org/reference/hooks/after_setup_theme/
 	 * @return void
 	 */
 	public function boot() {
@@ -26,7 +30,7 @@ class GutenbergServiceProvider extends AbstractService
 	}
 
 	/**
-	 * Register main theme features
+	 * Register Gutenberg features
 	 */
 	public function registerFeatures() {
 		add_theme_support( 'align-wide' );

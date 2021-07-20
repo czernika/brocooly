@@ -3,6 +3,11 @@
  * Return config options for TimberServiceProvider
  * like custom functions and filters
  *
+ * You can extend Twig by adding custom functionality like functions or filters.
+ * Timber provides its own classes (Timber\Twig_Function and Timber\Twig_Filter)
+ * to provide better compatibility with different versions of Twig.
+ *
+ * @see https://timber.github.io/docs/guides/extending-timber/#adding-functionality-to-twig
  * @package Brocooly
  * @since 0.1.0
  */
@@ -10,14 +15,15 @@
 return [
 
 	/**
-	 *--------------------------------------------------------------------------
+	 * --------------------------------------------------------------------------
 	 * Add custom functions to Twig
-	 *--------------------------------------------------------------------------
+	 * --------------------------------------------------------------------------
 	 *
-	 * Place where all your cached files will be stored.
-	 * It is available only if WP_ENV === 'production'.
-	 * Set `false` to disable
-	 *
+	 * @example
+	 * ```
+	 * {{ asset('path/to/asset') }}
+	 * ```
+	 * will return compiled asset if it exists
 	 */
 	'functions' => [
 
@@ -27,7 +33,7 @@ return [
 		'asset'  => 'asset',
 
 		/**
-		 * Get theme mod without prefix
+		 * Get theme mod without customizer prefix
 		 */
 		'mod'    => 'mod',
 
@@ -38,14 +44,15 @@ return [
 	],
 
 	/**
-	 *--------------------------------------------------------------------------
+	 * --------------------------------------------------------------------------
 	 * Add custom filters to Twig
-	 *--------------------------------------------------------------------------
+	 * --------------------------------------------------------------------------
 	 *
-	 * Place where all your cached files will be stored.
-	 * It is available only if WP_ENV === 'production'.
-	 * Set `false` to disable
-	 *
+	 * @example
+	 * ```
+	 * {{ 'post.content|wp_trim_words(7)' }}
+	 * ```
+	 * will trim content to 7 words
 	 */
 	'filters'   => [
 
