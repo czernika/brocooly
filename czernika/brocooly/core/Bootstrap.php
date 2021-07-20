@@ -29,6 +29,13 @@ class Bootstrap
 	private App $app;
 
 	/**
+	 * Check if is app was already booted
+	 *
+	 * @var bool
+	 */
+	private static bool $booted = false;
+
+	/**
 	 * Array of Application loaders
 	 * ! Order matter
 	 *
@@ -54,6 +61,9 @@ class Bootstrap
 	 * @return void
 	 */
 	public function run() {
-		$this->app->bootLoaders( $this->loaders );
+		if ( ! static::$booted ) {
+			$this->app->bootLoaders( $this->loaders );
+			static::$booted = true;
+		}
 	}
 }

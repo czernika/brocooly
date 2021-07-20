@@ -69,6 +69,7 @@ const alias = {
 	'@fonts': path.resolve(themeFolder, 'resources/assets/fonts'),
 	'@static': path.resolve(themeFolder, 'resources/static'),
 	'@resources': path.resolve(themeFolder, 'resources'),
+	'modernizr$': path.resolve('.modernizrrc'),
 };
 
 // All plugins
@@ -143,7 +144,7 @@ if(isProd) {
 	plugins.push(
 		new ShowAssetsTablePlugin(),
 
-		new BundleAnalyzerPlugin(),
+		// new BundleAnalyzerPlugin(),
 
 		new CompressionPlugin({
 			filename: '[path][base].gz',
@@ -223,6 +224,10 @@ const config = {
 
 	module: {
 		rules: [
+			{
+				test: /\.modernizrrc(\.json)?$/,
+				use: [ 'modernizr-loader', 'json-loader' ],
+			},
 			{
 				test: /\.m?js$/,
 				exclude: [

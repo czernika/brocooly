@@ -30,7 +30,7 @@ module.exports = {
 				secondary: '#9AD166',
 			},
 			fontFamily: {
-				body: ['Montserrat', 'sans-serif'],
+				body: ['Roboto', 'sans-serif'],
 			},
 			boxShadow: {
 				full: '0 0 0 9999px rgba(0, 0, 0, 0.25)',

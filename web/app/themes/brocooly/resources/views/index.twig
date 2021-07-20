@@ -44,15 +44,15 @@
 		{% include '@components/header.twig' %}
 	{% endblock %}
 
-    <main
-        id="content"
-        role="main"
-        class="flex-grow w-full h-auto outline-none content"
+	<main
+		id="content"
+		role="main"
+		class="flex-grow w-full h-auto outline-none site-main"
 		tabindex="-1"
-    >
-        {% block layout %}
+	>
+		{% block layout %}
 		{% endblock %}
-    </main>
+	</main>
 
 	{% block footer %}
 		{% include '@components/footer.twig' %}
@@ -61,5 +61,6 @@
 	{{ fn('wp_footer') }}
 
 	{% block scripts %}{% endblock %}
+
 </body>
 </html>
