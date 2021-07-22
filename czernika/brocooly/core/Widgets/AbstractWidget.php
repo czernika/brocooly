@@ -2,6 +2,8 @@
 /**
  * Abstract widget
  *
+ * It is extends Carbon_Fields\Widget and strongly depends on its logic.
+ *
  * @package Brocooly
  * @since 0.4.0
  */
@@ -11,6 +13,7 @@ declare(strict_types=1);
 namespace Brocooly\Widgets;
 
 use Carbon_Fields\Widget;
+use Webmozart\Assert\Assert;
 
 class AbstractWidget extends Widget
 {
@@ -26,18 +29,24 @@ class AbstractWidget extends Widget
 	 * Setup widget
 	 */
 	public function __construct() {
-        $this->setup(
+
+		Assert::stringNotEmpty(
+			$this->widgetId,
+			'You need to specify widget id',
+		);
+
+		$this->setup(
 			$this->widgetId,
 			$this->title(),
 			$this->description(),
 			$this->options(),
 		);
-    }
+	}
 
 	/**
 	 * Widget title
 	 *
-	 * @return string
+	 * @throws Exception if no title was provided.
 	 */
 	protected function title() {
 		throw new \Exception(
@@ -59,7 +68,7 @@ class AbstractWidget extends Widget
 	}
 
 	/**
-	 * Get widget options
+	 * Get widget fields and options
 	 *
 	 * @return array
 	 */
@@ -70,7 +79,7 @@ class AbstractWidget extends Widget
 	/**
 	 * Get widget view file
 	 *
-	 * @return string
+	 * @throws Exception if no file was provided.
 	 */
 	protected function view() {
 		throw new \Exception(
@@ -82,14 +91,14 @@ class AbstractWidget extends Widget
 		);
 	}
 
-    /**
+	/**
 	 * Called when rendering the widget in the front-end
 	 *
 	 * @param array $args | widget arguments.
 	 * @param array $instance | widget instance.
 	 * @return void
 	 */
-    public function front_end( $args, $instance ) {
-        view( $this->view(), compact( 'args', 'instance' ) );
-    }
+	public function front_end( $args, $instance ) {
+		view( $this->view(), compact( 'args', 'instance' ) );
+	}
 }

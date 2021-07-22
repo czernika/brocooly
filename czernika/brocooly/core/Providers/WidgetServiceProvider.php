@@ -33,6 +33,20 @@ class WidgetServiceProvider extends AbstractService
 			add_action( 'init', function() { do_action( 'widgets_init' ); }, 1 );
 		}
 
+		/**
+		 * Use block editor or not
+		 *
+		 * @since 0.8.4
+		 */
+		if ( ! (bool) config( 'widgets.useGutenberg' ) ) {
+			add_action(
+				'after_setup_theme',
+				function() {
+					remove_theme_support( 'widgets-block-editor' );
+				}
+			);
+		}
+
 		$this->bootSidebars();
 		$this->bootWidgets();
 	}

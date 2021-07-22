@@ -40,7 +40,7 @@ class PostsController extends BaseController
 	 * Load archive page
 	 */
 	public function index() {
-		$is_sidebar_active = is_active_sidebar( 1 );
+		$is_sidebar_active = is_active_sidebar( 'blog' );
 		$title             = $this->title;
 		view( 'content/post/index.twig', compact( 'is_sidebar_active', 'title' ) );
 	}

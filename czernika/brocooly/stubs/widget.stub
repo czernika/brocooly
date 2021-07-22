@@ -47,7 +47,9 @@ class {{ WIDGET }}Widget extends AbstractWidget
 	 * @return array
 	 */
 	protected function options() {
-		// return [ Meta::text( 'example_text_field', esc_html__( 'Example Field title', 'brocooly' ) ) ];
+		return [
+			Meta::text( 'title', esc_html__( 'Title', 'brocooly' ) ),
+		];
 	}
 
 	/**
