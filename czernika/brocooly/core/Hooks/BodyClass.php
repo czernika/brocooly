@@ -1,7 +1,9 @@
 <?php
 /**
  * Body class hook
+ * Filters the list of CSS body class names for the current post or page.
  *
+ * @link https://developer.wordpress.org/reference/hooks/body_class/
  * @package Brocooly
  * @since 0.3.0
  */
@@ -22,6 +24,11 @@ class BodyClass
 
 	/**
 	 * Add classes to body
+	 * Will be available with {{ body_class }}
+	 *
+	 * Note that the filter function must return the array of classes
+	 * after it is finished processing, or all of the classes will be cleared
+	 * and could seriously impact the visual state of a user’s site.
 	 *
 	 * @param array $classes | classlist.
 	 * @return array
@@ -79,9 +86,6 @@ class BodyClass
 			$include[ "is-sidebar-{$sidebar['id']}" ] = is_active_sidebar( $sidebar['id'] );
 		}
 
-		/**
-		 * Add classes
-		 */
 		foreach ( $include as $class => $do_include ) {
 			if ( $do_include ) {
 				$classes[ $class ] = $class;
