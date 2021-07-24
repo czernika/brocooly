@@ -1,3 +1,11 @@
 language: php
 php:
-  - 7.4.11
+  - '7.4'
+
+# Commands to be run before your environment runs.
+before_script:
+  - composer self-update
+  - composer install --prefer-source --no-interaction --dev
+
+# Commands you want to run that will verify your build.
+script: phpunit
