@@ -107,7 +107,7 @@ class MenuServiceProvider extends AbstractService
 	 * Get menu object
 	 * Depends on version
 	 *
-	 * @param string $location | menu id.
+	 * @param string $location | Menu location id.
 	 * @return object|false
 	 */
 	private function getMenuObject( string $location ) {

@@ -14,8 +14,6 @@ use Timber\Timber;
 use Brocooly\Storage\Context;
 use Theme\Context as ThemeContext;
 
-use function Env\env;
-
 class View
 {
 
@@ -29,7 +27,13 @@ class View
 		$timberContext = Timber::context();
 		$themeContext  = ThemeContext::get();
 		$ctx           = array_merge( $timberContext, $themeContext, $localContext );
-		$expire        = isProduction() ? 600 : false;
+
+		/**
+		 * Cache time expire
+		 *
+		 * @since Brocooly 0.8.5
+		 */
+		$expire = isProduction() ? ( config( 'views.expire' ) ?? 600 ) : false;
 
 		Context::merge( $ctx );
 

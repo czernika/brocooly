@@ -53,7 +53,7 @@ return [
 	 * Use Gutenberg block for Widgets
 	 *--------------------------------------------------------------------------
 	 *
-	 * As WordPress was released new feature has not been implemented well
+	 * As WordPress 5.8.0 was released new feature has not been implemented well
 	 * and very arguable in my opinion.
 	 * More than that it is NOT implements Carbon Fields Widgets
 	 * If you wish to use new blocks extend WP_Widget instead of Carbon Fields Widget

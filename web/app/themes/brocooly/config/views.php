@@ -64,4 +64,14 @@ return [
 	 */
 	'cache'      => get_template_directory() . '/storage/cache/',
 
+	/**
+	 * --------------------------------------------------------------------------
+	 * Cache time expire
+	 * --------------------------------------------------------------------------
+	 *
+	 * Set time in seconds cache files will be expired.
+	 * Default is 600 (10 minutes)
+	 */
+	'expire'     => 600,
+
 ];

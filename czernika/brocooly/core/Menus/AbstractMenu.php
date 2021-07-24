@@ -17,7 +17,8 @@ namespace Brocooly\Menus;
 abstract class AbstractMenu
 {
 	/**
-	 * Menu location
+	 * Menu location id
+	 * First parameter for `register_nav_menu()`
 	 *
 	 * @var string
 	 */
@@ -25,6 +26,7 @@ abstract class AbstractMenu
 
 	/**
 	 * Get menu label in admin area
+	 * Second parameter for `register_nav_menu()`
 	 *
 	 * @throws Exception
 	 */

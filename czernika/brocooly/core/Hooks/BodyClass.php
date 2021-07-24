@@ -12,13 +12,6 @@ class BodyClass
 {
 
 	/**
-	 * Filter params
-	 *
-	 * @var int
-	 */
-	public int $params = 2;
-
-	/**
 	 * Filter name
 	 *
 	 * @return string

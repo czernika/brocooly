@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-namespace Brocooly\Users\Models;
+namespace Brocooly\Models\Users;
 
 use Carbon_Fields\Container;
 use Timber\User as TimberUser;

@@ -29,11 +29,11 @@ class Route
 	 * @return void
 	 */
 	public static function __callStatic( string $name, array $arguments ) {
-		[ $condition, $callback ]             = $arguments;
+		[ $condition, $callback ] = $arguments;
 
 		$id = uniqid();
-		static::$routes[ $name ][ $id ]['condition'] = $condition;
-		static::$routes[ $name ][ $id ]['callback']  = $callback;
+		static::$routes[ $name ][ $id ]['condition']   = $condition;
+		static::$routes[ $name ][ $id ]['callback']    = $callback;
 	}
 
 	/**
@@ -88,6 +88,19 @@ class Route
 			if ( 'view' === $request ) {
 				static::handleViewMethod( $options );
 			}
+		}
+	}
+
+	public static function middleware( $middleware, $closure ) {
+		call_user_func( $closure );
+
+		echo '<pre>';
+		print_r( static::$routes );
+		echo '</pre>';
+		die();
+
+		if ( is_home() ) {
+			app()->get( $middleware )->handle();
 		}
 	}
 

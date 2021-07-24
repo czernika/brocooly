@@ -23,6 +23,7 @@ define(
 		[
 			'debug-bar-timber/debug-bar-timber.php',
 			'query-monitor/query-monitor.php',
+			'fakerpress/fakerpress.php',
 		],
 	)
 );

@@ -8,13 +8,6 @@ class Context
 {
 
 	/**
-	 * Context instance
-	 *
-	 * @var mixed
-	 */
-    private static $instance;
-
-	/**
 	 * All context data
 	 *
 	 * @var array

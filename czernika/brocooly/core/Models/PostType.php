@@ -96,6 +96,18 @@ abstract class PostType extends Post
 	}
 
 	/**
+	 * Create post type draft
+	 *
+	 * @param array   $data | passed data.
+	 * @param boolean $wp_error | show error as WP_Error object.
+	 * @return int | post id.
+	 */
+	public static function create( array $data, bool $wp_error = false ) {
+		$data['post_type'] = static::$name;
+		return wp_insert_post( wp_slash( $data ), $wp_error );
+	}
+
+	/**
 	 * Get posts by query
 	 *
 	 * @param string $name | method name.

@@ -28,7 +28,7 @@ return [
 	 *--------------------------------------------------------------------------
 	 *
 	 * Every theme menu location will get this postfix
-	 * And will be available under this name on front page
+	 * And will be available under this name in view files
 	 */
 	'postfix' => '_menu',
 
