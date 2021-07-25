@@ -16,6 +16,7 @@ namespace Theme\Customizer\Sections;
 
 use Brocooly\Support\Facades\Mod;
 use Brocooly\Customizer\AbstractSection;
+use Theme\Customizer\Panels\ContactPanel;
 
 class ContactsSection extends AbstractSection
 {
@@ -32,12 +33,12 @@ class ContactsSection extends AbstractSection
 	 * Section settings
 	 * Same as `$args` setting for `Kirki::add_section()`
 	 *
-	 * @return array
+	 * @return array|string
 	 */
 	public function options() {
 		return [
 			'title' => esc_html__( 'Contacts', 'brocooly' ),
-			// 'panel' => Panel::$id,
+			'panel' => ContactPanel::$id,
 		];
 	}
 
@@ -49,7 +50,12 @@ class ContactsSection extends AbstractSection
 	 */
 	public function controls() {
 		return [
-			// Mod::text([ 'settings' => 'example_setting', 'label' => esc_html__( 'Example setting', 'brocooly'  ) ]),
+			Mod::text(
+				[
+					'settings' => 'email',
+					'label'    => esc_html__( 'Email', 'brocooly' ),
+				],
+			),
 		];
 	}
 

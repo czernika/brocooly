@@ -1,6 +1,7 @@
 <?php
 /**
- * Create footer logo
+ * Create second logo
+ * Mostly used in footer or mobile version of the site
  *
  * @package Brocooly
  * @since 0.3.0
@@ -17,12 +18,20 @@ class FooterLogoOption extends AbstractOption
 {
 
 	/**
-	 * Create footer logo instance
+	 * Create footer logo
 	 *
-	 * Will be available as `get_theme_mod( 'brocooly_footer_logo )`
+	 * Will be available as:
+	 *
+	 * @example
+	 * ```
+	 * PHP: get_theme_mod( 'brocooly_footer_logo )
+	 * Twig: {{ mod('footer_logo') }}
+	 * ```
 	 *
 	 * You need to specify WordPress section id
-	 * For `Site Title & Tagline` it's `title_tagline`
+	 * For `Site Title & Tagline` it is `title_tagline`
+	 *
+	 * No need to specify setting's type if you're using Mod factory
 	 *
 	 * @see https://developer.wordpress.org/themes/customize-api/customizer-objects/#sections
 	 * @return array
@@ -34,7 +43,7 @@ class FooterLogoOption extends AbstractOption
 				'section'  => 'title_tagline',
 				'label'    => esc_html__( 'Footer logo', 'brocooly' ),
 				'choices'  => [
-					'save_as' => 'id',
+					'save_as' => 'url',
 				],
 			]
 		);

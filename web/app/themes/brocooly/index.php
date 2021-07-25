@@ -12,10 +12,6 @@
  * @since brocooly 0.1.0
  */
 
-use Brocooly\App;
-use Brocooly\Bootstrap;
-use DI\Container;
-
 /**
  * --------------------------------------------------------------------------
  * Include app routes

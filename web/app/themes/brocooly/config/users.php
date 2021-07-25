@@ -1,6 +1,6 @@
 <?php
 /**
- * Settings related to users, roles and permissions.
+ * Settings related to users, roles and their permissions.
  *
  * @package Brocooly
  * @since 0.8.2

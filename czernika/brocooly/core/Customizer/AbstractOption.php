@@ -1,7 +1,9 @@
 <?php
 /**
  * Abstract customizer option
+ * Same parameters as for any Kirki control option
  *
+ * @link https://kirki.org/docs/controls/
  * @package Brocooly
  * @since 0.3.0
  */

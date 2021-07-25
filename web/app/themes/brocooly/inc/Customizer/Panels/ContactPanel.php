@@ -25,12 +25,14 @@ class ContactPanel extends AbstractPanel
 
 	/**
 	 * Panel settings
+	 * Same as for Kirki panel.
 	 *
-	 * @return array
+	 * Most of the time it is just label so you can pass it as a string.
+	 * If you need more provide an array.
+	 *
+	 * @return array|string
 	 */
 	public function options() {
-		return [
-			'title' => esc_html__( 'Contact data', 'brocooly' ),
-		];
+		return esc_html__( 'Contact data', 'brocooly' );
 	}
 }

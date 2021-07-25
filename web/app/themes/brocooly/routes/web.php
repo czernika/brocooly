@@ -1,7 +1,7 @@
 <?php
 /**
  * Set all your routes here
- * In example below we will handle FrontPageController method `__invoke()` if it is front page
+ * In example below we will handle some basic WordPress requests
  * List of all WordPress conditionals can be found here:
  *
  * @link https://codex.wordpress.org/Conditional_Tags

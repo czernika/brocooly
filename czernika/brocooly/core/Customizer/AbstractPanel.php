@@ -2,6 +2,7 @@
 /**
  * Abstract customizer panel
  *
+ * @see https://kirki.org/docs/setup/panels-sections/
  * @package Brocooly
  * @since 0.3.0
  */
@@ -15,13 +16,16 @@ abstract class AbstractPanel
 
 	/**
 	 * Panel id
+	 * Must be unique
 	 *
 	 * @var string
 	 */
-	public static string $id = 'unknown';
+	public static string $id;
 
 	/**
 	 * Panel settings
+	 * Return array of options
+	 * or string in case only title required
 	 *
 	 * @throws Exception
 	 */

@@ -22,7 +22,8 @@ class {{ OPTION }}Option extends AbstractOption
 	 * You need to specify WordPress section id
 	 * For `Site Title & Tagline` it's `title_tagline`
 	 *
-	 * @see https://developer.wordpress.org/themes/customize-api/customizer-objects/#sections
+	 * @link https://kirki.org/docs/controls/
+	 * @link https://developer.wordpress.org/themes/customize-api/customizer-objects/#sections
 	 * @return array
 	 */
 	public function settings() {

@@ -10,6 +10,8 @@ declare(strict_types=1);
 
 namespace Brocooly\Support\Factories;
 
+use Illuminate\Support\Str;
+
 class CustomizerFactory extends AbstractFactory
 {
 	/**
@@ -17,11 +19,11 @@ class CustomizerFactory extends AbstractFactory
 	 *
 	 * @param string $type | customizer option type.
 	 * @param array  $arguments | customizer option parameters.
-	 * @return object
+	 * @return array
 	 */
 	public static function create( string $type, array $arguments ) {
-		[ $options ] = $arguments;
- 		$options['type'] = $type;
+		[ $options ]     = $arguments;
+		$options['type'] = Str::kebab( $type );
 		return $options;
 	}
 }

@@ -37,7 +37,8 @@ class View
 
 		Context::merge( $ctx );
 
-		return Timber::render( $views, Context::get(), $expire );
+		$defaultPage = config( 'views.default' );
+		return Timber::render( [ $views, $defaultPage ], Context::get(), $expire );
 	}
 
 	/**
