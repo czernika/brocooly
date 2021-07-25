@@ -48,3 +48,15 @@ $brocooly->run();
  * @since 0.3.0
  */
 require_once __DIR__ . '/kirki-installer.php';
+
+/**
+ * --------------------------------------------------------------------------
+ * Include i18n file
+ * --------------------------------------------------------------------------
+ *
+ * This file requires to be handled directly into functions.php
+ * Otherwise other plugins may not see it as a template
+ *
+ * @since 0.8.5
+ */
+require_once __DIR__ . '/i18n.php';
