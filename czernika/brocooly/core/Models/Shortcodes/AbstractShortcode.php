@@ -13,7 +13,7 @@
 
 declare(strict_types=1);
 
-namespace Brocooly\Shortcodes;
+namespace Brocooly\Models\Shortcodes;
 
 abstract class AbstractShortcode
 {

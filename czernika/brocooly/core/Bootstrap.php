@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace Brocooly;
 
+use Brocooly\Loaders\I18n;
 use Brocooly\Loaders\HookLoader;
 use Brocooly\Loaders\AssetsLoader;
 use Brocooly\Loaders\BootProvider;
@@ -49,6 +50,7 @@ class Bootstrap
 		HookLoader::class,
 		AssetsLoader::class,
 		BootProvider::class,
+		I18n::class,
 	];
 
 	public function __construct( App $app ) {

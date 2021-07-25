@@ -12,10 +12,10 @@ declare(strict_types=1);
 namespace Theme\Middleware;
 
 use Brocooly\Router\Redirect;
+use Brocooly\Http\Middleware\AbstractMiddleware;
 
-class UserLoggedIn
+class UserLoggedIn extends AbstractMiddleware
 {
-
 	public function handle() {
 		if ( ! is_user_logged_in() ) {
 			Redirect::to( '/' );

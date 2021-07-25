@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-namespace Brocooly\Middleware;
+namespace Brocooly\Http\Middleware;
 
 abstract class AbstractMiddleware
 {

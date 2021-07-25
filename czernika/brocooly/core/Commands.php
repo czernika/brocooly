@@ -24,6 +24,7 @@ use Brocooly\Console\MakePostType;
 use Brocooly\Console\MakeTaxonomy;
 use Brocooly\Console\MakeShortcode;
 use Brocooly\Console\MakeController;
+use Brocooly\Console\MakeMiddleware;
 
 class Commands
 {
@@ -43,6 +44,7 @@ class Commands
 		MakeTaxonomy::class,
 		MakePostType::class,
 		MakeShortcode::class,
+		MakeMiddleware::class,
 		MakeController::class,
 		ClearCache::class,
 	];

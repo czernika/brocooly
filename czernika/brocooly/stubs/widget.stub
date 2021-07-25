@@ -11,7 +11,7 @@ declare(strict_types=1);
 namespace Theme\Widgets;
 
 use Brocooly\Support\Facades\Meta;
-use Brocooly\Widgets\AbstractWidget;
+use Brocooly\Models\Widgets\AbstractWidget;
 
 class {{ WIDGET }}Widget extends AbstractWidget
 {

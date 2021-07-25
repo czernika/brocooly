@@ -30,7 +30,7 @@ class ProviderLoader
 	 *
 	 * @var instanceof Brocooly\App
 	 */
-    protected App $app;
+	protected App $app;
 
 	/**
 	 * Array of App Service Providers

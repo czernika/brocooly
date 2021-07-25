@@ -11,8 +11,7 @@ declare(strict_types=1);
 namespace Theme\Controllers;
 
 use Theme\Contracts\PostServiceContract;
-use Brocooly\Controllers\BaseController;
-use Brocooly\Middleware\UserLoggedIn;
+use Brocooly\Http\Controllers\BaseController;
 
 class PostsController extends BaseController
 {

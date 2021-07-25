@@ -19,7 +19,7 @@ class Route
 	 *
 	 * @var array
 	 */
-    private static array $routes = [];
+	private static array $routes = [];
 
 	/**
 	 * Handle any request
@@ -32,8 +32,8 @@ class Route
 		[ $condition, $callback ] = $arguments;
 
 		$id = uniqid();
-		static::$routes[ $name ][ $id ]['condition']   = $condition;
-		static::$routes[ $name ][ $id ]['callback']    = $callback;
+		static::$routes[ $name ][ $id ]['condition'] = $condition;
+		static::$routes[ $name ][ $id ]['callback']  = $callback;
 	}
 
 	/**
@@ -42,7 +42,7 @@ class Route
 	 * @param array $options | passed options.
 	 */
 	private static function handleGetRequest( array $options ) {
-		foreach ( $options as $id => $option ) {
+		foreach ( array_values( $options ) as $option ) {
 
 			$condition = static::setCondition( $option['condition'] );
 
@@ -68,10 +68,9 @@ class Route
 	 * @param array $options | passed options.
 	 */
 	private static function handleViewMethod( array $options ) {
-		foreach ( $options as $id => $option ) {
+		foreach ( array_values( $options ) as $option ) {
 			if ( call_user_func( $option['condition'] ) ) {
 				return view( $option['callback'] );
-				break;
 			}
 		}
 	}
@@ -83,24 +82,12 @@ class Route
 		foreach ( static::$routes as $request => $options ) {
 			if ( 'get' === $request ) {
 				static::handleGetRequest( $options );
+				continue;
 			}
 
 			if ( 'view' === $request ) {
 				static::handleViewMethod( $options );
 			}
-		}
-	}
-
-	public static function middleware( $middleware, $closure ) {
-		call_user_func( $closure );
-
-		echo '<pre>';
-		print_r( static::$routes );
-		echo '</pre>';
-		die();
-
-		if ( is_home() ) {
-			app()->get( $middleware )->handle();
 		}
 	}
 
@@ -126,8 +113,8 @@ class Route
 	 * @return void
 	 */
 	private static function dispatchControllerMethod( array $callback ) {
-		[ $class, $method ] = $callback;
-		$class              = static::callController( $class );
+		[ $object, $method ] = $callback;
+		$class              = static::callController( $object );
 		return call_user_func_array( [ $class, $method ], func_get_args() );
 	}
 
@@ -149,10 +136,6 @@ class Route
 	 * @return array
 	 */
 	private static function setCondition( $condition ) {
-		if ( is_string( $condition ) ) {
-			return [ $condition ];
-		}
-
-		return $condition;
+		return (array) $condition;
 	}
 }

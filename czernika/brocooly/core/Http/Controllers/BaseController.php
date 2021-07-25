@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-namespace Brocooly\Controllers;
+namespace Brocooly\Http\Controllers;
 
 use Brocooly\App;
 

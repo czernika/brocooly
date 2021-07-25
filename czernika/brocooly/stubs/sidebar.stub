@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 namespace Theme\Widgets;
 
-use Brocooly\Widgets\AbstractSidebar;
+use Brocooly\Models\Widgets\AbstractSidebar;
 
 class {{ SIDEBAR }}Sidebar extends AbstractSidebar
 {

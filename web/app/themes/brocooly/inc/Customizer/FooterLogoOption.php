@@ -12,7 +12,7 @@ declare(strict_types=1);
 namespace Theme\Customizer;
 
 use Brocooly\Support\Facades\Mod;
-use Brocooly\Customizer\AbstractOption;
+use Brocooly\Models\Customizer\AbstractOption;
 
 class FooterLogoOption extends AbstractOption
 {

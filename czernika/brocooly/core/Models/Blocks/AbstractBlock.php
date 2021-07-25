@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-namespace Brocooly\Blocks;
+namespace Brocooly\Models\Blocks;
 
 use Carbon_Fields\Block;
 use Brocooly\Router\View;

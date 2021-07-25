@@ -10,8 +10,8 @@ declare(strict_types=1);
 
 namespace Theme\Controllers;
 
-use Brocooly\Controllers\BaseController;
 use Theme\Contracts\PageServiceContract;
+use Brocooly\Http\Controllers\BaseController;
 
 class PageController extends BaseController
 {

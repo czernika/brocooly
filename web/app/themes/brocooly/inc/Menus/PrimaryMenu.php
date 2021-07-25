@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 namespace Theme\Menus;
 
-use Brocooly\Menus\AbstractMenu;
+use Brocooly\Models\Menus\AbstractMenu;
 
 class PrimaryMenu extends AbstractMenu
 {
