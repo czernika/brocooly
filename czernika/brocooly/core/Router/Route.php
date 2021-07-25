@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 namespace Brocooly\Router;
 
-use Brocooly\Controllers\BaseController;
+use Brocooly\Http\Controllers\BaseController;
 
 class Route
 {
