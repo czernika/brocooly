@@ -23,13 +23,6 @@ class FrontPageController extends BaseController
 	 */
 	private PageServiceContract $pageService;
 
-	/**
-	 * Page object
-	 *
-	 * @var object
-	 */
-	private PageServiceContract $page;
-
 	public function __construct(
 		PageServiceContract $pageServiceContract
 	) {
