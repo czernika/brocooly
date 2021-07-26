@@ -12,7 +12,7 @@
 
 declare(strict_types=1);
 
-namespace Brocooly\Templates;
+namespace Brocooly\Views\Templates;
 
 abstract class AbstractTemplate
 {

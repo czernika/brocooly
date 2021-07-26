@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-namespace Brocooly\Models\Widgets;
+namespace Brocooly\Views\Widgets;
 
 abstract class AbstractSidebar
 {

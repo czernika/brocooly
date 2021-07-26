@@ -11,7 +11,7 @@ declare(strict_types=1);
 namespace Theme\Blocks;
 
 use Brocooly\Support\Facades\Meta;
-use Brocooly\Models\Blocks\AbstractBlock;
+use Brocooly\Views\Blocks\AbstractBlock;
 
 class {{ BLOCK }}Block extends AbstractBlock
 {

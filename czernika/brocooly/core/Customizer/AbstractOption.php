@@ -10,7 +10,7 @@
 
 declare(strict_types=1);
 
-namespace Brocooly\Models\Customizer;
+namespace Brocooly\Customizer;
 
 class AbstractOption
 {

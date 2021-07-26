@@ -6,7 +6,7 @@
  * @since 0.7.0
  */
 
-use Theme\Menus\PrimaryMenu;
+use Theme\Views\Menus\PrimaryMenu;
 
 return [
 

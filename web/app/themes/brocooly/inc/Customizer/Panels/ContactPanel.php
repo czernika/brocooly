@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Theme\Customizer\Panels;
 
-use Brocooly\Models\Customizer\AbstractPanel;
+use Brocooly\Customizer\AbstractPanel;
 
 class ContactPanel extends AbstractPanel
 {

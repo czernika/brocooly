@@ -12,7 +12,7 @@ namespace Brocooly\Router;
 
 use Timber\Timber;
 use Brocooly\Storage\Context;
-use Theme\Context as ThemeContext;
+use Theme\Brocooly as ThemeContext;
 
 class View
 {
@@ -25,7 +25,7 @@ class View
 	 */
 	public static function make( string $views, array $localContext = [] ) {
 		$timberContext = Timber::context();
-		$themeContext  = ThemeContext::get();
+		$themeContext  = ThemeContext::context();
 		$ctx           = array_merge( $timberContext, $themeContext, $localContext );
 
 		/**

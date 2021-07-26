@@ -11,7 +11,7 @@ declare(strict_types=1);
 namespace Theme\Customizer;
 
 use Brocooly\Support\Facades\Mod;
-use Brocooly\Models\Customizer\AbstractOption;
+use Brocooly\Customizer\AbstractOption;
 
 class DisallowCacheOption extends AbstractOption
 {

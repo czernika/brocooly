@@ -9,7 +9,7 @@
  * @since 0.4.0
  */
 
-use Theme\Widgets\BlogSidebar;
+use Theme\Views\Widgets\BlogSidebar;
 
 return [
 

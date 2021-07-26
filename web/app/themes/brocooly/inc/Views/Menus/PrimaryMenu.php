@@ -8,9 +8,9 @@
 
 declare(strict_types=1);
 
-namespace Theme\Menus;
+namespace Theme\Views\Menus;
 
-use Brocooly\Models\Menus\AbstractMenu;
+use Brocooly\Views\Menus\AbstractMenu;
 
 class PrimaryMenu extends AbstractMenu
 {

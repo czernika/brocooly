@@ -15,8 +15,8 @@ declare(strict_types=1);
 namespace Theme\Customizer\Sections;
 
 use Brocooly\Support\Facades\Mod;
+use Brocooly\Customizer\AbstractSection;
 use Theme\Customizer\Panels\ContactPanel;
-use Brocooly\Models\Customizer\AbstractSection;
 
 class ContactsSection extends AbstractSection
 {

@@ -12,7 +12,7 @@
 
 declare(strict_types=1);
 
-namespace Brocooly\Models\Menus;
+namespace Brocooly\Views\Menus;
 
 abstract class AbstractMenu
 {

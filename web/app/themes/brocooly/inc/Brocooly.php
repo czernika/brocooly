@@ -12,15 +12,15 @@ declare(strict_types=1);
 
 namespace Theme;
 
-class Context
+class Brocooly
 {
 
 	/**
-	 * Set theme custom object
+	 * Set theme global context
 	 *
 	 * @return array | custom theme context.
 	 */
-	public static function get() {
+	public static function context() {
 		$context = [
 			'is_front'    => is_front_page(),
 			'is_singular' => is_singular(),
