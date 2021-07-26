@@ -3,17 +3,26 @@
 <head>
 	<!-- Basic -->
     <meta charset="{{ site.charset }}">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+
 	{% if is_singular and fn('pings_open', queried) %}
     	<link rel="pingback" href="{{ site.pingback_url }}" />
 	{% endif %}
-    <link rel="profile" href="http://gmpg.org/xfn/11">
 
 	<meta name="msapplication-tap-highlight" content="no">
+	<meta name="application-name" content="{{ site.name }}">
+
 	<!-- Phones Link Detection -->
 	<meta name="format-detection" content="telephone=no">
+
+	{% if mod('no_cache', false) %}
+		<!-- No cache allowed -->
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+	{% endif %}
 
 	<title>{% block title %} {{ site.name }} | {{ site.description }} {% endblock %}</title>
 
@@ -40,6 +49,10 @@
 	itemscope itemtype="http://schema.org/WebPage"
 >
 
+{% if mod('no_cache', false) %}
+		Халлое}
+	{% endif %}
+
 	{% block header %}
 		{% include '@components/header.twig' %}
 	{% endblock %}
@@ -62,5 +75,6 @@
 
 	{% block scripts %}{% endblock %}
 
+	<script src="//instant.page/5.1.0" type="module" integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
 </body>
 </html>

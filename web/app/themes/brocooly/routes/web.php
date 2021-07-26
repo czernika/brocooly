@@ -11,10 +11,10 @@
  */
 
 use Brocooly\Router\Route;
-use Theme\Controllers\PageController;
-use Theme\Controllers\PostsController;
-use Theme\Controllers\SearchController;
-use Theme\Controllers\FrontPageController;
+use Theme\Http\Controllers\PageController;
+use Theme\Http\Controllers\PostsController;
+use Theme\Http\Controllers\SearchController;
+use Theme\Http\Controllers\FrontPageController;
 
 /**
  *--------------------------------------------------------------------------

@@ -8,31 +8,35 @@
 
 declare(strict_types=1);
 
-namespace Theme\Controllers;
+namespace Theme\Http\Controllers;
 
 use Theme\Contracts\PostServiceContract;
+use Theme\Contracts\PostRepositoryContract;
 use Brocooly\Http\Controllers\BaseController;
 
 class PostsController extends BaseController
 {
 
 	/**
-	 * Blog page title
-	 *
-	 * @var string
-	 */
-	private string $title;
-
-	/**
-	 * Posts object
+	 * PostSerivce object
 	 *
 	 * @var object
 	 */
-	private PostServiceContract $posts;
+	private PostServiceContract $postService;
 
-	public function __construct( PostServiceContract $postServiceContract ) {
-		$this->posts = $postServiceContract;
-		$this->title = get_the_title( get_option( 'page_for_posts' ) );
+	/**
+	 * PostRepository object
+	 *
+	 * @var object
+	 */
+	private PostRepositoryContract $postRepository;
+
+	public function __construct(
+		PostServiceContract $postServiceContract,
+		PostRepositoryContract $postRepositoryContract
+	) {
+		$this->postService    = $postServiceContract;
+		$this->postRepository = $postRepositoryContract;
 	}
 
 	/**
@@ -40,7 +44,7 @@ class PostsController extends BaseController
 	 */
 	public function index() {
 		$is_sidebar_active = is_active_sidebar( 'blog' );
-		$title             = $this->title;
+		$title             = $this->postService->getBlogTitle();
 		view( 'content/post/index.twig', compact( 'is_sidebar_active', 'title' ) );
 	}
 
@@ -48,13 +52,8 @@ class PostsController extends BaseController
 	 * Load singular page
 	 */
 	public function single() {
-		$post      = $this->posts->current();
-		$ancestors = [
-			[
-				'title' => $this->title,
-				'link'  => get_post_type_archive_link( 'post' ),
-			],
-		];
+		$post      = $this->postRepository->current();
+		$ancestors = $this->postService->getBlogCrumbs();
 		view( 'content/post/single.twig', compact( 'ancestors', 'post' ) );
 	}
 }

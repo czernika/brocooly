@@ -14,16 +14,16 @@ interface PostServiceContract
 {
 
 	/**
-	 * Get all posts
+	 * Get blog title
+	 *
+	 * @return string
+	 */
+	public function getBlogTitle();
+
+	/**
+	 * Get blog crumbs
 	 *
 	 * @return array
 	 */
-	public function all();
-
-	/**
-	 * Get current post
-	 *
-	 * @return object
-	 */
-	public function current();
+	public function getBlogCrumbs();
 }

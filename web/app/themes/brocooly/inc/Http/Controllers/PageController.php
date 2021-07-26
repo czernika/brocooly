@@ -8,30 +8,32 @@
 
 declare(strict_types=1);
 
-namespace Theme\Controllers;
+namespace Theme\Http\Controllers;
 
-use Theme\Contracts\PageServiceContract;
+use Theme\Contracts\PageRepositoryContract;
 use Brocooly\Http\Controllers\BaseController;
 
 class PageController extends BaseController
 {
 
 	/**
-	 * Pages object
+	 * PageRepository object
 	 *
 	 * @var object
 	 */
-	private PageServiceContract $pages;
+	private PageRepositoryContract $pageRepository;
 
-	public function __construct( PageServiceContract $pageServiceContract ) {
-		$this->pages = $pageServiceContract;
+	public function __construct(
+		PageRepositoryContract $pageRepositoryContract
+	) {
+		$this->pageRepository = $pageRepositoryContract;
 	}
 
 	/**
 	 * Load singular page
 	 */
 	public function single() {
-		$post = $this->pages->current();
+		$post = $this->pageRepository->current();
 		view( 'content/page/single.twig', compact( 'post' ) );
 	}
 }

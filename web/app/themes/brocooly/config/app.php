@@ -11,8 +11,8 @@ use Theme\Hooks\DisableEmoji;
 use Theme\Models\WP\Category;
 use Theme\Hooks\GetSearchForm;
 use Theme\Hooks\WpEnqueueScripts;
-use Theme\Middleware\UserLoggedIn;
 use Theme\Hooks\RemoveMetaGenerator;
+use Theme\Http\Middleware\UserLoggedIn;
 use Theme\Providers\ThemeServiceProvider;
 use Theme\Providers\GutenbergServiceProvider;
 

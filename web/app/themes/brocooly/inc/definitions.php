@@ -10,7 +10,7 @@
  * @since 0.8.1
  */
 
-use Theme\Middleware\UserLoggedIn;
+use Theme\Http\Middleware\UserLoggedIn;
 
 use function DI\create;
 

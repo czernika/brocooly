@@ -14,6 +14,7 @@
 
 use Theme\Customizer\FooterLogoOption;
 use Theme\Customizer\Panels\ContactPanel;
+use Theme\Customizer\DisallowCacheOption;
 use Theme\Customizer\Sections\ContactsSection;
 
 use function Env\env;
@@ -51,6 +52,7 @@ return [
 	 */
 	'options'  => [
 		FooterLogoOption::class,
+		DisallowCacheOption::class,
 	],
 
 	/**

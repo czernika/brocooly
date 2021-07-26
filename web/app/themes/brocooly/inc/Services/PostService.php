@@ -10,24 +10,32 @@ declare(strict_types=1);
 
 namespace Theme\Services;
 
-use Theme\Models\WP\Post;
 use Theme\Contracts\PostServiceContract;
 
 class PostService implements PostServiceContract
 {
+
 	/**
-	 * Get all posts with pagination
+	 * Get blog title
+	 *
+	 * @return string
 	 */
-	public function all() {
-		$posts = Post::all();
-		return $posts;
+	public function getBlogTitle() {
+		return get_the_title( get_option( 'page_for_posts' ) );
 	}
 
 	/**
-	 * Get current post
+	 * Get blog crumbs
+	 *
+	 * @return array
 	 */
-	public function current() {
-		$post = Post::current();
-		return $post;
+	public function getBlogCrumbs() {
+		$crumbs = [
+			[
+				'title' => $this->getBlogTitle(),
+				'link'  => get_post_type_archive_link( 'post' ),
+			],
+		];
+		return $crumbs;
 	}
 }

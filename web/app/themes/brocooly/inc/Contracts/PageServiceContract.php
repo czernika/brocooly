@@ -12,12 +12,6 @@ namespace Theme\Contracts;
 
 interface PageServiceContract
 {
-	/**
-	 * Get current post
-	 *
-	 * @return object
-	 */
-	public function current();
 
 	/**
 	 * Get Hello World phrase

@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Theme\Middleware;
+namespace Theme\Http\Middleware;
 
 use Brocooly\Router\Redirect;
 use Brocooly\Http\Middleware\AbstractMiddleware;

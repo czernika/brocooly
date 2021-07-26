@@ -8,13 +8,20 @@
 
 declare(strict_types=1);
 
-namespace Theme\Controllers;
+namespace Theme\Http\Controllers;
 
-use Brocooly\Http\Controllers\BaseController;
 use Theme\Contracts\PageServiceContract;
+use Brocooly\Http\Controllers\BaseController;
 
 class FrontPageController extends BaseController
 {
+
+	/**
+	 * PageService object
+	 *
+	 * @var object
+	 */
+	private PageServiceContract $pageService;
 
 	/**
 	 * Page object
@@ -23,12 +30,14 @@ class FrontPageController extends BaseController
 	 */
 	private PageServiceContract $page;
 
-	public function __construct( PageServiceContract $pageServiceContract ) {
-		$this->page = $pageServiceContract;
+	public function __construct(
+		PageServiceContract $pageServiceContract
+	) {
+		$this->pageService = $pageServiceContract;
 	}
 
 	public function __invoke() {
-		$hello = $this->page->getHelloPhrase();
+		$hello = $this->pageService->getHelloPhrase();
 		view( 'content/front-page.twig', compact( 'hello' ) );
 	}
 }

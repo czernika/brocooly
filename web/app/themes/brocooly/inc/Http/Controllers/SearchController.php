@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-namespace Theme\Controllers;
+namespace Theme\Http\Controllers;
 
 use Brocooly\Http\Controllers\BaseController;
 

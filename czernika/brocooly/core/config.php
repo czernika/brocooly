@@ -59,7 +59,8 @@ $appDefintions = [
 	 * Bind ServiceContracts with its Services
 	 * --------------------------------------------------------------------------
 	 */
-	'Theme\Contracts\*ServiceContract' => create( 'Theme\Services\*Service' ),
+	'Theme\Contracts\*ServiceContract'    => create( 'Theme\Services\*Service' ),
+	'Theme\Contracts\*RepositoryContract' => create( 'Theme\Repositories\*Repository' ),
 
 ];
 
