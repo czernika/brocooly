@@ -23,4 +23,17 @@ class PageService implements PageServiceContract
 		$post = Page::current();
 		return $post;
 	}
+
+	/**
+	 * Get phrase on Hello screen
+	 *
+	 * @return string
+	 */
+	public function getHelloPhrase() {
+		return sprintf(
+			/* translators: 1 - theme version */
+			esc_html__( 'Welcome to Brocooly Framework v%s', 'brocooly' ),
+			wp_get_theme()->get( 'Version' ),
+		);
+	}
 }

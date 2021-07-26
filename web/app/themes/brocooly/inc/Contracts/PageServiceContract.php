@@ -18,4 +18,11 @@ interface PageServiceContract
 	 * @return object
 	 */
 	public function current();
+
+	/**
+	 * Get Hello World phrase
+	 *
+	 * @return string
+	 */
+	public function getHelloPhrase();
 }

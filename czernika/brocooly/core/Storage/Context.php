@@ -1,4 +1,10 @@
 <?php
+/**
+ * Global app context
+ *
+ * @package Brocooly
+ * @since 0.1.0
+ */
 
 declare(strict_types=1);
 
@@ -18,7 +24,7 @@ class Context
 	 * Set context value
 	 *
 	 * @param string $key | key name.
-	 * @param mixed $value | key value.
+	 * @param mixed  $value | key value.
 	 * @return void
 	 */
 	public static function set( string $key, $value ) {
@@ -52,7 +58,7 @@ class Context
 	/**
 	 * Remove key from context
 	 *
-	 * @param string $key
+	 * @param string $key | key to delete.
 	 * @return void
 	 */
 	public static function delete( string $key ) {

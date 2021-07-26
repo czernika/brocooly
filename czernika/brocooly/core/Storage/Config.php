@@ -56,7 +56,7 @@ class Config
 			BROCOOLY_THEME_PATH . 'config/' . $file . '.php',
 			sprintf(
 				'File %s not exists',
-				esc_html( $file . '.php' )
+				esc_html( wp_normalize_path( BROCOOLY_THEME_PATH . 'config/' . $file . '.php' ) )
 			),
 		);
 

@@ -10,22 +10,16 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-07-25 13:30+0000\n"
+"POT-Creation-Date: 2021-07-26 11:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: brocooly\n"
-"\n"
 "Language: \n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;"
 
 #: resources/views/content/post/comments.twig:12
 #, php-format
 msgid "%s says"
-msgstr ""
-
-#: resources/views/content/front-page.twig:10
-#, php-format
-msgid "%s v%s"
 msgstr ""
 
 #: resources/views/layouts/error.twig:14
@@ -292,8 +286,10 @@ msgstr ""
 msgid "Website"
 msgstr ""
 
-#: inc/Controllers/FrontPageController.php:18
-msgid "Welcome to Brocooly Framework"
+#. 1 - theme version
+#: inc/Services/PageService.php:35
+#, php-format
+msgid "Welcome to Brocooly Framework v%s"
 msgstr ""
 
 #: storage/cache/views/9c/9ca0119487b04e8ed5d59b984310a48f537e47817cbcb1259d05422f2e3ecdc5.php:103

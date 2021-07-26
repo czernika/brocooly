@@ -22,7 +22,14 @@ class PostTypeServiceProvider extends AbstractService
 	 *
 	 * @var array
 	 */
-	private array $protectedPostTypes = [ 'post', 'page', 'product' ];
+	private array $protectedPostTypes = [
+		'post',
+		'page',
+		'product',
+		'revision',
+		'attachment',
+		'nav_menu_item',
+	];
 
 	/**
 	 * Values reserved by WordPress
