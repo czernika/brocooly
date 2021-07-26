@@ -60,12 +60,10 @@ class PostTypeServiceProvider extends AbstractService
 
 				$cpt = $this->app->get( $postTypeClass );
 
+				$this->callMetaFields( $cpt, 'fields' );
+				$this->callMetaFields( $cpt, 'thumbnail' ); // thumbnail trait.
+
 				if ( in_array( $cpt->getName(), $this->protectedPostTypes, true ) || $cpt->doNotRegister ) {
-
-					$this->callMetaFields( $cpt, 'fields' );
-
-					// thumbnail trait.
-					$this->callMetaFields( $cpt, 'thumbnail' );
 
 					/**
 					 * No need to register or check any post type options

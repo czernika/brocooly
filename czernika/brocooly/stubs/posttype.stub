@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-namespace Theme\Models\WP;
+namespace Theme\Models;
 
 use Brocooly\Models\PostType;
 use Brocooly\Support\Facades\Meta;

@@ -78,7 +78,7 @@ class MakeBlock extends CreateFileConsoleCommand
 		$this->createFile(
 			$output,
 			$this->block,
-			'/inc/Blocks/',
+			'/inc/Views/Blocks/',
 			'Blocks.php',
 		);
 

@@ -20,9 +20,12 @@ class AbstractFacade
 	/**
 	 * Accessor key at config
 	 *
-	 * @return string
+	 * @throws Exception
 	 */
 	protected static function accessor() {
-		return 'facade';
+		throw new \Exception(
+			'Facade requires accessor to return string',
+			true,
+		);
 	}
 }

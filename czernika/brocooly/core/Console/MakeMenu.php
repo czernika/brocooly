@@ -65,7 +65,7 @@ class MakeMenu extends CreateFileConsoleCommand
 		$this->createFile(
 			$output,
 			$this->menu,
-			'/inc/Menus/',
+			'/inc/Views/Menus/',
 			'Menu.php',
 		);
 

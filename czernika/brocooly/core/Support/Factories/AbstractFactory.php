@@ -12,7 +12,7 @@ namespace Brocooly\Support\Factories;
 
 class AbstractFactory
 {
-    /**
+	/**
 	 * Call function
 	 *
 	 * @param string $name | method name.
@@ -20,6 +20,6 @@ class AbstractFactory
 	 * @return object
 	 */
 	public static function create( string $name, array $arguments ) {
-		return call_user_func_array( $name , $arguments );
+		return call_user_func_array( $name, $arguments );
 	}
 }

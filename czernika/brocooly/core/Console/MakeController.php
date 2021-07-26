@@ -65,7 +65,7 @@ class MakeController extends CreateFileConsoleCommand
 		$this->createFile(
 			$output,
 			$this->controller,
-			'/inc/Controllers/',
+			'/inc/Http/Controllers/',
 			'Controller.php',
 		);
 
