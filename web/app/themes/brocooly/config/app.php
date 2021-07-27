@@ -13,6 +13,7 @@ use Theme\Hooks\GetSearchForm;
 use Theme\Hooks\WpEnqueueScripts;
 use Theme\Hooks\RemoveMetaGenerator;
 use Theme\Http\Middleware\UserLoggedIn;
+use Theme\Models\WP\Page;
 use Theme\Providers\ThemeServiceProvider;
 use Theme\Providers\GutenbergServiceProvider;
 
@@ -54,6 +55,7 @@ return [
 	 */
 	'post_types' => [
 		Post::class,
+		Page::class,
 	],
 
 	'taxonomies' => [

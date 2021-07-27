@@ -45,3 +45,31 @@ RewriteRule "\.js\.gz$" "-" [T=application/javascript,E=no-brotli,E=no-gzip]
     # Force proxies to cache gzip & non-gzip files separately
     Header append Vary Accept-Encoding
 </FilesMatch>
+
+# Disallow wp-config access
+<files web/wp-config.php>
+    order allow,deny
+    deny from all
+</files>
+
+# Some bad thing are not allowed
+Options +FollowSymLinks
+RewriteEngine On
+RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+RewriteRule ^(.*)$ index.php [F,L]
+
+# Limit request size to 10Mb
+LimitRequestBody 10240000
+
+# Caching
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType application/javascript "access plus 7 days"
+ExpiresByType text/javascript "access plus 7 days"
+ExpiresByType text/css "access plus 7 days"
+ExpiresByType image/gif "access plus 7 days"
+ExpiresByType image/jpeg "access plus 7 days"
+ExpiresByType image/png "access plus 7 days"
+</IfModule>

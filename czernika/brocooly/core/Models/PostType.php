@@ -12,9 +12,10 @@ namespace Brocooly\Models;
 
 use Timber\Post;
 use Carbon_Fields\Container;
+use Brocooly\Contracts\ModelContract;
 use Brocooly\Support\Builders\QueryBuilder;
 
-abstract class PostType extends Post
+abstract class PostType extends Post implements ModelContract
 {
 
 	/**
@@ -117,6 +118,15 @@ abstract class PostType extends Post
 	public static function __callStatic( string $name, array $arguments ) {
 		$arguments[] = static::$name;
 		return QueryBuilder::$name( ...$arguments );
+	}
+
+	/**
+	 * Need to implement ModelContract
+	 * TODO: refactor
+	 */
+	public function resolve() {
+		$model = app()->get( static::$name );
+		return $model;
 	}
 
 }

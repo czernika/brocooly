@@ -11,6 +11,7 @@ use Timber\Timber;
 use Brocooly\Router\View;
 use Brocooly\Storage\Config;
 use Brocooly\Loaders\AssetsLoader;
+use Brocooly\Router\Route;
 
 use function Env\env;
 

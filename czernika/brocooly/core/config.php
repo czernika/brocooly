@@ -12,8 +12,10 @@ use Brocooly\App;
 use Timber\Timber;
 use Brocooly\Bootstrap;
 use HelloNico\Twig\DumpExtension;
+use Brocooly\Contracts\ModelContract;
 use Whoops\Handler\PrettyPageHandler;
 use Brocooly\Support\Factories\MetaFactory;
+use Brocooly\Support\Builders\ModelBuilder;
 use Brocooly\Support\Factories\FacadeFactory;
 use Brocooly\Support\Factories\CustomizerFactory;
 
@@ -53,6 +55,7 @@ $appDefintions = [
 	'meta'      => create( MetaFactory::class ),
 	'facade'    => create( FacadeFactory::class ),
 	'mod'       => create( CustomizerFactory::class ),
+	ModelContract::class => factory( [ ModelBuilder::class, 'resolve' ] ),
 
 	/**
 	 * --------------------------------------------------------------------------

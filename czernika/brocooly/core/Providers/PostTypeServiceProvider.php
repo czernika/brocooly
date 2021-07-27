@@ -14,6 +14,8 @@ namespace Brocooly\Providers;
 use Theme\Models\WP\Comment;
 use Webmozart\Assert\Assert;
 
+use function DI\create;
+
 class PostTypeServiceProvider extends AbstractService
 {
 
@@ -39,8 +41,15 @@ class PostTypeServiceProvider extends AbstractService
 	private array $protectedTaxonomies = [ 'category', 'post_tag' ];
 
 	public function register() {
-		$this->app->set( 'custom_post_types', config( 'app.post_types', [] ) );
-		$this->app->set( 'custom_taxonomies', config( 'app.taxonomies', [] ) );
+		foreach ( config( 'app.post_types' ) as $postTypeClass ) {
+			$postType = $this->app->get( $postTypeClass );
+			$this->app->set( $postType->getName(), create( $postTypeClass ) );
+		}
+
+		foreach ( config( 'app.taxonomies' ) as $taxonomyClass ) {
+			$taxonomy = $this->app->get( $taxonomyClass );
+			$this->app->set( $taxonomy->getName, create( $taxonomyClass ) );
+		}
 	}
 
 	public function boot() {
@@ -53,7 +62,7 @@ class PostTypeServiceProvider extends AbstractService
 	 * Register post types
 	 */
 	private function registerPostTypes() {
-		$postTypes = $this->app->get( 'custom_post_types' );
+		$postTypes = config( 'app.post_types' );
 
 		if ( ! empty( $postTypes ) ) {
 			foreach ( $postTypes as $postTypeClass ) {
@@ -107,7 +116,7 @@ class PostTypeServiceProvider extends AbstractService
 	 * Register taxonomies
 	 */
 	private function registerTaxonomies() {
-		$taxonomies = $this->app->get( 'custom_taxonomies' );
+		$taxonomies = config( 'app.taxonomies' );
 
 		if ( ! empty( $taxonomies ) ) {
 			foreach ( $taxonomies as $taxonomyClass ) {

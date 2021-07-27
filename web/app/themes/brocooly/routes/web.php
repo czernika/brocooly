@@ -15,6 +15,7 @@ use Theme\Http\Controllers\PageController;
 use Theme\Http\Controllers\PostsController;
 use Theme\Http\Controllers\SearchController;
 use Theme\Http\Controllers\FrontPageController;
+use Theme\Http\Controllers\PostTypesController;
 
 /**
  *--------------------------------------------------------------------------
@@ -22,8 +23,8 @@ use Theme\Http\Controllers\FrontPageController;
  *--------------------------------------------------------------------------
  */
 Route::get( 'is_front_page', FrontPageController::class );
-Route::get( 'is_page', [ PageController::class, 'single' ] );
 Route::get( 'is_single', [ PostsController::class, 'single' ] );
+Route::get( 'is_singular', [ PostTypesController::class, 'single' ] );
 
 /**
  *--------------------------------------------------------------------------

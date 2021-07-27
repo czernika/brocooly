@@ -144,4 +144,8 @@ class App
 		return $this->container->make( $name, $parameters );
 	}
 
+	public function call( $callable, array $parameters = [] ) {
+		return $this->container->call( $callable, $parameters );
+	}
+
 }

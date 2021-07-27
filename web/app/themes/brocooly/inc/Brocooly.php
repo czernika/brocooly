@@ -24,6 +24,7 @@ class Brocooly
 		$context = [
 			'is_front'    => is_front_page(),
 			'is_singular' => is_singular(),
+			'queried'     => get_queried_object(),
 			'nonce'       => wp_create_nonce( 'brocooly_nonce_action' ),
 		];
 

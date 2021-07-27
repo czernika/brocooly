@@ -31,7 +31,8 @@ class Route
 	public static function __callStatic( string $name, array $arguments ) {
 		[ $condition, $callback ] = $arguments;
 
-		$id = uniqid();
+		$id = isset( $arguments[2] ) ? $arguments[2] : uniqid();
+
 		static::$routes[ $name ][ $id ]['condition'] = $condition;
 		static::$routes[ $name ][ $id ]['callback']  = $callback;
 	}

@@ -12,7 +12,7 @@
 	{% endif %}
 
 	<meta name="msapplication-tap-highlight" content="no">
-	<meta name="application-name" content="{{ site.name }}">
+	<meta name="application-name" content="{{ site.name }}	">
 
 	<!-- Phones Link Detection -->
 	<meta name="format-detection" content="telephone=no">
@@ -49,9 +49,7 @@
 	itemscope itemtype="http://schema.org/WebPage"
 >
 
-{% if mod('no_cache', false) %}
-		Халлое}
-	{% endif %}
+	{% do action('wp_body_open') %}
 
 	{% block header %}
 		{% include '@components/header.twig' %}

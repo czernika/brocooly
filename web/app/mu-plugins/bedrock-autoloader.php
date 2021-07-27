@@ -11,6 +11,6 @@
 
 namespace Roots\Bedrock;
 
-if (is_blog_installed() && class_exists(Autoloader::class)) {
-    new Autoloader();
+if ( is_blog_installed() && class_exists( Autoloader::class ) ) {
+	new Autoloader();
 }
