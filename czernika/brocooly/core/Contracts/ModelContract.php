@@ -6,5 +6,6 @@ namespace Brocooly\Contracts;
 
 interface ModelContract
 {
-	public function resolve();
+	public function getName();
+	public function getOptions();
 }

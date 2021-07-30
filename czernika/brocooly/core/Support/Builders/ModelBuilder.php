@@ -10,9 +10,7 @@ declare(strict_types=1);
 
 namespace Brocooly\Support\Builders;
 
-use Brocooly\Contracts\ModelContract;
-
-class ModelBuilder implements ModelContract
+class ModelBuilder
 {
 	public function resolve() {
 		$model = app()->get( get_post_type() );

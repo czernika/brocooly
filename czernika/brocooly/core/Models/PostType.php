@@ -120,13 +120,4 @@ abstract class PostType extends Post implements ModelContract
 		return QueryBuilder::$name( ...$arguments );
 	}
 
-	/**
-	 * Need to implement ModelContract
-	 * TODO: refactor
-	 */
-	public function resolve() {
-		$model = app()->get( static::$name );
-		return $model;
-	}
-
 }
