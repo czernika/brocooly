@@ -10,11 +10,11 @@ declare(strict_types=1);
 
 namespace Theme\Http\Controllers;
 
+use Theme\Http\Controller;
 use Theme\Contracts\PostServiceContract;
 use Theme\Contracts\PostRepositoryContract;
-use Brocooly\Http\Controllers\BaseController;
 
-class PostsController extends BaseController
+class PostsController extends Controller
 {
 
 	/**

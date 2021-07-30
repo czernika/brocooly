@@ -1,50 +1,75 @@
+# Redirect request to web folder
 RewriteEngine on
 RewriteCond %{REQUEST_URI} !web/
 RewriteRule (.*) /web/$1 [L]
 
-# Assets optimization
+# ------------------------------------------------------------------------------------------
+#
+#   ASSETS AND FILES
+#
+# ------------------------------------------------------------------------------------------
 RewriteBase /
 
 # Brotli
-# If the web browser accept brotli encoding… 
 RewriteCond %{HTTP:Accept-encoding} br
-# …and the web browser is fetching a probably pre-compressed file…
 RewriteCond %{REQUEST_URI} .*\.(css|js)
-# …and a matching pre-compressed file exists… 
 RewriteCond %{REQUEST_FILENAME}.br -s
-# …then rewrite the request to deliver the brotli file
 RewriteRule ^(.+) $1.br
-# For each file format set the correct mime type (otherwise brotli mime type is returned) and prevent Apache for recompressing the files
 RewriteRule "\.css\.br$" "-" [T=text/css,E=no-brotli,E=no-gzip]
 RewriteRule "\.js\.br$" "-" [T=application/javascript,E=no-brotli,E=no-gzip]
 
 # Gzip
-# If the web browser accept gzip encoding… 
 RewriteCond %{HTTP:Accept-Encoding} gzip
-# …and the web browser is fetching a probably pre-compressed file…
 RewriteCond %{REQUEST_URI} .*\.(css|js)
-# …and a matching pre-compressed file exists… 
 RewriteCond %{REQUEST_FILENAME}.gz -s
-# …then rewrite the request to deliver the gzip file
 RewriteRule ^(.+) $1.gz
-# For each file format set the correct mime type (otherwise gzip mime type is returned) and prevent Apache for recompressing the files
 RewriteRule "\.css\.gz$" "-" [T=text/css,E=no-brotli,E=no-gzip]
 RewriteRule "\.js\.gz$" "-" [T=application/javascript,E=no-brotli,E=no-gzip]
 
 <FilesMatch "\.(css|js)\.br$">
     # Prevent mime module to set brazilian language header (because the file ends with .br)
     RemoveLanguage .br
-    # Set the correct encoding type
     Header set Content-Encoding br
-    # Force proxies to cache brotli & non-brotli files separately
     Header append Vary Accept-Encoding
 </FilesMatch>
 <FilesMatch "\.(css|js)\.gz$">
-    # Serve correct encoding type
     Header set Content-Encoding gzip
-    # Force proxies to cache gzip & non-gzip files separately
     Header append Vary Accept-Encoding
 </FilesMatch>
+
+# Force text or pdf to be downloaded, not open in browser
+AddType application/octet-stream .pdf .txt
+# END Force Download
+
+# ------------------------------------------------------------------------------------------
+#
+#   SECURITY
+#
+# ------------------------------------------------------------------------------------------
+
+# No web server version and indexes
+ServerSignature Off
+
+# Disable directory browsing
+Options All -Indexes
+
+# Hide SVN / GIT files
+RedirectMatch 404 /\\.(git|gitignore|gitmodules|sh|svn|log|htaccess|htpasswd|ini|phps|fla|psd)(/.*|$)
+
+# X-XSS-Protection
+<IfModule mod_headers.c>
+  Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# X-Frame-Options
+<IfModule mod_headers.c>
+  Header always append X-Frame-Options SAMEORIGIN
+</IfModule>
+
+# X-Content-Type: nosniff
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options nosniff
+</IfModule>
 
 # Disallow wp-config access
 <files web/wp-config.php>
@@ -52,24 +77,166 @@ RewriteRule "\.js\.gz$" "-" [T=application/javascript,E=no-brotli,E=no-gzip]
     deny from all
 </files>
 
-# Some bad thing are not allowed
-Options +FollowSymLinks
-RewriteEngine On
-RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
-RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
-RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
-RewriteRule ^(.*)$ index.php [F,L]
+# Block access to readme.html
+<Files readme.html>
+	Order Allow,Deny
+	Deny from all
+</Files>
+
+# Protections again Injections
+<IfModule mod_rewrite.c>
+    Options +FollowSymLinks
+    RewriteEngine On
+    # Block suspicious request methods
+    RewriteCond %{REQUEST_METHOD} ^(HEAD|TRACE|DELETE|TRACK|DEBUG) [NC]
+    RewriteRule ^(.*)$ - [F,L]
+    # Block WP timthumb hack
+    RewriteCond %{REQUEST_URI} (timthumb\.php|phpthumb\.php|thumb\.php|thumbs\.php) [NC]
+    RewriteRule . - [S=1]
+    # Block suspicious user agents and requests
+    RewriteCond %{HTTP_USER_AGENT} (libwww-perl|wget|python|nikto|curl|scan|java|winhttp|clshttp|loader) [NC,OR]
+    RewriteCond %{HTTP_USER_AGENT} (<|>|'|%0A|%0D|%27|%3C|%3E|%00) [NC,OR]
+    RewriteCond %{HTTP_USER_AGENT} (;|<|>|'|"|\)|\(|%0A|%0D|%22|%27|%28|%3C|%3E|%00).*(libwww-perl|wget|python|nikto|curl|scan|java|winhttp|HTTrack|clshttp|archiver|loader|email|harvest|extract|grab|miner|elfinder) [NC,OR]
+    RewriteCond %{THE_REQUEST} \?\ HTTP/ [NC,OR]
+    RewriteCond %{THE_REQUEST} \/\*\ HTTP/ [NC,OR]
+    RewriteCond %{THE_REQUEST} etc/passwd [NC,OR]
+    RewriteCond %{THE_REQUEST} cgi-bin [NC,OR]
+    RewriteCond %{THE_REQUEST} (%0A|%0D) [NC,OR]
+    # Block MySQL injections, RFI, base64, etc.
+    #RewriteCond %{QUERY_STRING} [a-zA-Z0-9_]=http:// [OR]
+    #RewriteCond %{QUERY_STRING} [a-zA-Z0-9_]=(\.\.//?)+ [OR]
+    RewriteCond %{QUERY_STRING} [a-zA-Z0-9_]=/([a-z0-9_.]//?)+ [NC,OR]
+    RewriteCond %{QUERY_STRING} \=PHP[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} [NC,OR]
+    RewriteCond %{QUERY_STRING} (\.\./|\.\.) [OR]
+    RewriteCond %{QUERY_STRING} ftp\: [NC,OR]
+    #RewriteCond %{QUERY_STRING} http\: [NC,OR]
+    #RewriteCond %{QUERY_STRING} https\: [NC,OR]
+    RewriteCond %{QUERY_STRING} \=\|w\| [NC,OR]
+    RewriteCond %{QUERY_STRING} ^(.*)/self/(.*)$ [NC,OR]
+    RewriteCond %{QUERY_STRING} ^(.*)cPath=http://(.*)$ [NC,OR]
+    RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+    RewriteCond %{QUERY_STRING} (<|%3C)([^s]*s)+cript.*(>|%3E) [NC,OR]
+    RewriteCond %{QUERY_STRING} (\<|%3C).*iframe.*(\>|%3E) [NC,OR]
+    RewriteCond %{QUERY_STRING} (<|%3C)([^i]*i)+frame.*(>|%3E) [NC,OR]
+    RewriteCond %{QUERY_STRING} base64_encode.*\(.*\) [NC,OR]
+    RewriteCond %{QUERY_STRING} base64_(en|de)code[^(]*\([^)]*\) [NC,OR]
+    RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+    RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2}) [OR]
+    RewriteCond %{QUERY_STRING} ^.*(\[|\]|\(|\)|<|>).* [NC,OR]
+    RewriteCond %{QUERY_STRING} (NULL|OUTFILE|LOAD_FILE) [OR]
+    RewriteCond %{QUERY_STRING} (\./|\../|\.../)+(motd|etc|bin) [NC,OR]
+    RewriteCond %{QUERY_STRING} (localhost|loopback|127\.0\.0\.1) [NC,OR]
+    RewriteCond %{QUERY_STRING} (<|>|'|%0A|%0D|%27|%3C|%3E|%00) [NC,OR]
+    RewriteCond %{QUERY_STRING} concat[^\(]*\( [NC,OR]
+    RewriteCond %{QUERY_STRING} union([^s]*s)+elect [NC,OR]
+    RewriteCond %{QUERY_STRING} union([^a]*a)+ll([^s]*s)+elect [NC,OR]
+    RewriteCond %{QUERY_STRING} (;|<|>|'|"|\)|%0A|%0D|%22|%27|%3C|%3E|%00).*(/\*|union|select|insert|drop|delete|update|cast|create|char|convert|alter|declare|order|script|set|md5|benchmark|encode) [NC,OR]
+    RewriteCond %{QUERY_STRING} (sp_executesql) [NC]
+    RewriteRule ^(.*)$ - [F,L]
+</IfModule>
+
+# Blocks some XSS attacks
+<IfModule mod_rewrite.c>
+    RewriteCond %{QUERY_STRING} (\|%3E) [NC,OR]
+    RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+    RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+    RewriteRule .* index.php [F,L]
+</IfModule>
+
+# Allow access from all domains for web fonts
+<IfModule mod_headers.c>
+    <FilesMatch "\.(eot|font.css|otf|ttc|ttf|woff)$">
+        Header set Access-Control-Allow-Origin "*"
+    </FilesMatch>
+</IfModule>
 
 # Limit request size to 10Mb
 LimitRequestBody 10240000
 
-# Caching
-<IfModule mod_expires.c>
-ExpiresActive On
-ExpiresByType application/javascript "access plus 7 days"
-ExpiresByType text/javascript "access plus 7 days"
-ExpiresByType text/css "access plus 7 days"
-ExpiresByType image/gif "access plus 7 days"
-ExpiresByType image/jpeg "access plus 7 days"
-ExpiresByType image/png "access plus 7 days"
+# Block access to PHP error log
+<Files error.log>
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Block access to WP debug log
+<Files debug.log>
+    Order allow,deny
+    Deny from all
+</Files>
+
+# BLOCK ACCESS TO HTACCESS
+<files ~ "^.*\.([Hh][Tt][Aa])">
+    order allow,deny
+    deny from all
+    satisfy all
+</files>
+
+# BLOCK ACCESS TO CONFIG.PHP
+<files web/wp-config.php>
+    order allow,deny
+    deny from all
+</files>
+
+# Block wp-includes folder and files
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteRule ^web/wp/wp-admin/includes/ - [F,L]
+    RewriteRule !^web/wp/wp-includes/ - [S=3]
+    # comment this next line for WP MU
+    RewriteRule ^web/wp/wp-includes/[^/]+\.php$ - [F,L]
+    RewriteRule ^web/wp/wp-includes/js/tinymce/langs/.+\.php - [F,L]
+    RewriteRule ^web/wp/wp-includes/theme-compat/ - [F,L]
 </IfModule>
+
+# ------------------------------------------------------------------------------------------
+#
+#   CACHING
+#
+# ------------------------------------------------------------------------------------------
+
+Header unset Pragma
+FileETag None
+Header unset ETag
+
+<ifModule mod_deflate.c>
+    <filesMatch "\.(js|css|html|php)$">
+        SetOutputFilter DEFLATE
+    </filesMatch>
+</ifModule>
+
+# Cache-Control Headers
+<IfModule mod_headers.c>
+    <FilesMatch "\\.(ico|jpe?g|png|gif|swf|gz)$">
+        #1month
+        Header set Cache-Control "max-age=2592000, public"
+    </FilesMatch>
+    <FilesMatch "\\.(css)$">
+        #1week
+        Header set Cache-Control "max-age=604800, public"
+    </FilesMatch>
+    <FilesMatch "\\.(js)$">
+        #1month
+        Header set Cache-Control "max-age=2592000, private"
+    </FilesMatch>
+    <filesMatch "\\.(html|htm)$">
+    	# 24h
+    	Header set Cache-Control "max-age=86400, public"
+    </filesMatch>
+    # Disable caching for scripts and other dynamic files
+    <FilesMatch "\.(pl|php|cgi|spl|scgi|fcgi)$">
+    	Header unset Cache-Control
+    </FilesMatch>
+</IfModule>
+
+<FilesMatch "\.(ico|jpg|jpeg|png|gif|js|css|swf|pdf|flv|mp3|ttf)$">
+    <IfModule mod_expires.c>
+    ExpiresActive on
+    ExpiresDefault "access plus 20 weeks"
+    Header set Cache-Control "public"
+    </IfModule>
+    </FilesMatch>
+    <FilesMatch "\.(html|htm|xml|txt|xsl)$">
+    Header set Cache-Control "max-age=86400, must-revalidate"
+</FilesMatch>

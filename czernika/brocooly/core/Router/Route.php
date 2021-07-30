@@ -57,17 +57,19 @@ class Route
 			$condition = static::setCondition( $option['condition'] );
 
 			if ( call_user_func( ...$condition ) ) {
-				if ( is_array( $option['callback'] ) ) {
+				$callback = $option['callback'];
+
+				if ( is_array( $callback ) ) {
 					static::$__route_was_hit = true;
-					return static::dispatchControllerMethod( $option['callback'] );
+					return static::dispatchControllerMethod( $callback );
 				} else {
 					if ( is_subclass_of( $option['callback'], BaseController::class ) ) {
-						$class = static::callController( $option['callback'] );
+						$class                   = static::callController( $callback );
 						static::$__route_was_hit = true;
 						return call_user_func_array( $class, func_get_args() );
 					}
 					static::$__route_was_hit = true;
-					return call_user_func_array( $option['callback'], func_get_args() );
+					return call_user_func_array( $callback, func_get_args() );
 				}
 				break;
 			}
@@ -93,19 +95,15 @@ class Route
 	 */
 	public static function resolve() {
 		foreach ( static::$routes as $request => $options ) {
-
 			if ( ! static::$__route_was_hit ) {
 				if ( in_array( $request, [ 'query', 'condition' ], true ) ) {
 					static::handleConditionalRequest( $options );
-					continue;
 				}
 
 				if ( 'view' === $request ) {
 					static::handleViewMethod( $options );
-					continue;
 				}
 			}
-
 		}
 	}
 
@@ -118,10 +116,10 @@ class Route
 	 */
 	public static function ajax( string $action, $callback ) {
 		[ $class, $method ] = $callback;
-		$class              = app()->injectOn( app()->make( $class ) );
+		$classObject        = app()->make( $class );
 
-		add_action( "wp_ajax_$action", [ $class, $method ] );
-		add_action( "wp_ajax_nopriv_$action", [ $class, $method ] );
+		add_action( "wp_ajax_$action", [ $classObject, $method ] );
+		add_action( "wp_ajax_nopriv_$action", [ $classObject, $method ] );
 	}
 
 	/**

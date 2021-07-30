@@ -11,10 +11,10 @@ declare(strict_types=1);
 
 namespace Theme\Http\Controllers;
 
+use Theme\Http\Controller;
 use Brocooly\Contracts\ModelContract;
-use Brocooly\Http\Controllers\BaseController;
 
-class PostTypesController extends BaseController
+class PostTypesController extends Controller
 {
 
 	/**

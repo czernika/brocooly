@@ -11,12 +11,14 @@ declare(strict_types=1);
 namespace Brocooly;
 
 use Brocooly\Loaders\HookLoader;
+use Brocooly\Loaders\RoutesLoader;
 use Brocooly\Loaders\AssetsLoader;
 use Brocooly\Loaders\BootProvider;
 use Brocooly\Loaders\ConfigLoader;
 use Brocooly\Loaders\DebuggerLoader;
 use Brocooly\Loaders\DefinitionLoader;
 use Brocooly\Loaders\RegisterProvider;
+use Brocooly\Router\Router;
 
 class Bootstrap
 {
@@ -44,6 +46,7 @@ class Bootstrap
 	private array $loaders = [
 		DefinitionLoader::class,
 		DebuggerLoader::class,
+		RoutesLoader::class,
 		ConfigLoader::class,
 		RegisterProvider::class,
 		HookLoader::class,
@@ -65,5 +68,12 @@ class Bootstrap
 			$this->app->bootLoaders( $this->loaders );
 			static::$booted = true;
 		}
+	}
+
+	/**
+	 * Include additional routes
+	 */
+	public function routes() {
+		Router::api();
 	}
 }

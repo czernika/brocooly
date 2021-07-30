@@ -2,8 +2,6 @@
 /**
  * Configuration object for Container instance.
  *
- * TODO: docs
- *
  * @package Brocooly
  * @since 0.1.0
  */
@@ -33,9 +31,9 @@ $appDefintions = [
 	 * Application itself and Timber class. As Brocooly depends on Timber
 	 * this is a core of application.
 	 */
-	'bootstrap' => create( Bootstrap::class )
-						->constructor( get( App::class ) ),
-	'timber'    => create( Timber::class ),
+	'bootstrap'                           => create( Bootstrap::class )
+												->constructor( get( App::class ) ),
+	'timber'                              => create( Timber::class ),
 
 	/**
 	 *--------------------------------------------------------------------------
@@ -44,18 +42,17 @@ $appDefintions = [
 	 *
 	 * Classes to handle errors and exceptions
 	 */
-	'dump'      => create( DumpExtension::class ),
-	'handler'   => create( PrettyPageHandler::class ),
+	'dump'                                => create( DumpExtension::class ),
+	'handler'                             => create( PrettyPageHandler::class ),
 
 	/**
 	 *--------------------------------------------------------------------------
 	 * App Facades
 	 *--------------------------------------------------------------------------
 	 */
-	'meta'      => create( MetaFactory::class ),
-	'facade'    => create( FacadeFactory::class ),
-	'mod'       => create( CustomizerFactory::class ),
-	ModelContract::class => factory( [ ModelBuilder::class, 'resolve' ] ),
+	'meta'                                => create( MetaFactory::class ),
+	'facade'                              => create( FacadeFactory::class ),
+	'mod'                                 => create( CustomizerFactory::class ),
 
 	/**
 	 * --------------------------------------------------------------------------
@@ -64,6 +61,7 @@ $appDefintions = [
 	 */
 	'Theme\Contracts\*ServiceContract'    => create( 'Theme\Services\*Service' ),
 	'Theme\Contracts\*RepositoryContract' => create( 'Theme\Repositories\*Repository' ),
+	ModelContract::class                  => factory( [ ModelBuilder::class, 'resolve' ] ),
 
 ];
 

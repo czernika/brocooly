@@ -6,6 +6,7 @@
  * @since 0.1.0
  */
 
+use Theme\Models\WP\Page;
 use Theme\Models\WP\Post;
 use Theme\Hooks\DisableEmoji;
 use Theme\Models\WP\Category;
@@ -13,7 +14,6 @@ use Theme\Hooks\GetSearchForm;
 use Theme\Hooks\WpEnqueueScripts;
 use Theme\Hooks\RemoveMetaGenerator;
 use Theme\Http\Middleware\UserLoggedIn;
-use Theme\Models\WP\Page;
 use Theme\Providers\ThemeServiceProvider;
 use Theme\Providers\GutenbergServiceProvider;
 

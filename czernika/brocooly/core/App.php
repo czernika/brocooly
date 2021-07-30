@@ -26,7 +26,7 @@ class App
 	 *
 	 * @var instanceof Brocooly\App
 	 */
-	private static $app;
+	private static App $app;
 
 	/**
 	 * Timber instance
@@ -54,7 +54,7 @@ class App
 	 * @return self;
 	 */
 	public static function getApp() {
-		return self::$app;
+		return static::$app;
 	}
 
 	/**

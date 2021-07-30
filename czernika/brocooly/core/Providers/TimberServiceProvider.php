@@ -24,9 +24,9 @@ class TimberServiceProvider extends AbstractService
 		$keys = [
 			'views'            => config( 'views.views', 'resources/views' ),
 			'cache_path'       => config( 'views.cache' ) ? wp_normalize_path( config( 'views.cache' ) ) : false,
-			'views_namespaces' => config( 'views.namespaces', [] ),
-			'timber_filters'   => config( 'timber.filters', [] ),
-			'timber_functions' => config( 'timber.functions', [] ),
+			'views_namespaces' => config( 'views.namespaces' ) ?? [],
+			'timber_filters'   => config( 'timber.filters' ) ?? [],
+			'timber_functions' => config( 'timber.functions' ) ?? [],
 		];
 		foreach ( $keys as $key => $value ) {
 			$this->app->set( $key, $value );

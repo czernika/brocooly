@@ -10,9 +10,9 @@ declare(strict_types=1);
 
 namespace Theme\Http\Controllers;
 
-use Brocooly\Http\Controllers\BaseController;
+use Theme\Http\Controller;
 
-class SearchController extends BaseController
+class SearchController extends Controller
 {
 	public function __invoke() {
 		$s = get_search_query();
