@@ -29,7 +29,7 @@ class DebuggerLoader
 	/**
 	 * Register Debuggers for both views and backend
 	 */
-    public function call() {
+	public function call() {
 		if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
 
 			/**
@@ -42,9 +42,12 @@ class DebuggerLoader
 					return $twig;
 				}
 			);
-			
+
 			/**
 			 * Application debugger
+			 *
+			 * This line causing issue (problem out of the Brocooly theme)
+			 * TODO: provide an option to disable cool errors completely
 			 */
 			$whoops = $this->app->get( Run::class );
 			$whoops->pushHandler( $this->app->get( 'handler' ) );

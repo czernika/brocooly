@@ -13,6 +13,7 @@ use Theme\Models\WP\Category;
 use Theme\Hooks\GetSearchForm;
 use Theme\Hooks\WpEnqueueScripts;
 use Theme\Hooks\RemoveMetaGenerator;
+use Whoops\Handler\PrettyPageHandler;
 use Theme\Http\Middleware\UserLoggedIn;
 use Theme\Providers\ThemeServiceProvider;
 use Theme\Providers\GutenbergServiceProvider;

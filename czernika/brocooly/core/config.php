@@ -11,7 +11,6 @@ use Timber\Timber;
 use Brocooly\Bootstrap;
 use HelloNico\Twig\DumpExtension;
 use Brocooly\Contracts\ModelContract;
-use Whoops\Handler\PrettyPageHandler;
 use Brocooly\Support\Factories\MetaFactory;
 use Brocooly\Support\Builders\ModelBuilder;
 use Brocooly\Support\Factories\FacadeFactory;
@@ -43,7 +42,6 @@ $appDefintions = [
 	 * Classes to handle errors and exceptions
 	 */
 	'dump'                                => create( DumpExtension::class ),
-	'handler'                             => create( PrettyPageHandler::class ),
 
 	/**
 	 *--------------------------------------------------------------------------
