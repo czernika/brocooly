@@ -9,8 +9,6 @@
  * @since 0.1.0
  */
 
-use Brocooly\Router\Router;
-
 /**
  * --------------------------------------------------------------------------
  * Include DI container
@@ -19,7 +17,7 @@ use Brocooly\Router\Router;
  * PHP/DI Container provides very handy dependency injection container
  * working like a charm out of the box
  */
-$container = require_once __DIR__ . '/container.php';
+$container = require_once CORE_PATH . '/container.php';
 
 /**
  * --------------------------------------------------------------------------
@@ -44,6 +42,8 @@ $brocooly->run();
  * --------------------------------------------------------------------------
  *
  * Like AJAX handlers, REST API, HTTP API or WP GraphQL
+ *
+ * @since 0.8.9
  */
 $brocooly->routes();
 

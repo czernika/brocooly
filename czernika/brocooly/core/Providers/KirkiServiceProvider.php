@@ -33,10 +33,12 @@ class KirkiServiceProvider extends AbstractService
 	 * Create sections and options
 	 */
 	public function boot() {
-		$this->initConfig();
-		$this->initPanels();
-		$this->initSections();
-		$this->initOptions();
+		if ( class_exists( 'Kirki' ) ) {
+			$this->initConfig();
+			$this->initPanels();
+			$this->initSections();
+			$this->initOptions();
+		}
 	}
 
 	/**

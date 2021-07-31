@@ -21,7 +21,7 @@ trait Thumbnail
 			[
 				Meta::image( 'thumbnail_url', esc_html__( 'Image', 'brocooly' ) )
 					->set_value_type( 'url' ),
-				Meta::text( 'thumbnail_alt', esc_html__( 'Alt', 'brocooly' ) ),
+				Meta::text( 'thumbnail_alt', esc_html__( 'Alt text', 'brocooly' ) ),
 			],
 			'side',
 		);

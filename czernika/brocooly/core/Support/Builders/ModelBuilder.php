@@ -10,10 +10,11 @@ declare(strict_types=1);
 
 namespace Brocooly\Support\Builders;
 
+use Brocooly\Support\Factories\PostTypeFactory;
+
 class ModelBuilder
 {
 	public function resolve() {
-		$model = app()->get( get_post_type() );
-		return $model;
+		return PostTypeFactory::model();
 	}
 }

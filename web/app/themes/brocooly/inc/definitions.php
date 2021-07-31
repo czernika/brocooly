@@ -25,6 +25,6 @@ return [
 	 *
 	 * @see https://php-di.org/doc/php-definitions.html#aliases
 	 */
-	'auth'  => create( UserLoggedIn::class ),
+	'auth' => create( UserLoggedIn::class ),
 
 ];

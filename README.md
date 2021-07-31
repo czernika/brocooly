@@ -38,3 +38,7 @@ npm run watch
 ``` 
 
 It will start watching your application at `http://localhost:3000`. First time this will trigger WordPress installation process
+
+## Known Issues
+
+1. Fatal error with `sqlite3` PHP module. No PHP downgrade allowed so the only option is to disable it.
