@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Theme\Http;
+namespace Theme\Http\Controllers;
 
 use Brocooly\Http\Controllers\BaseController;
 

@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace Brocooly;
 
+use Brocooly\Router\Router;
 use Brocooly\Loaders\HookLoader;
 use Brocooly\Loaders\RoutesLoader;
 use Brocooly\Loaders\AssetsLoader;
@@ -18,7 +19,6 @@ use Brocooly\Loaders\ConfigLoader;
 use Brocooly\Loaders\DebuggerLoader;
 use Brocooly\Loaders\DefinitionLoader;
 use Brocooly\Loaders\RegisterProvider;
-use Brocooly\Router\Router;
 
 class Bootstrap
 {

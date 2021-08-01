@@ -13,7 +13,6 @@ use Theme\Models\WP\Category;
 use Theme\Hooks\GetSearchForm;
 use Theme\Hooks\WpEnqueueScripts;
 use Theme\Hooks\RemoveMetaGenerator;
-use Whoops\Handler\PrettyPageHandler;
 use Theme\Http\Middleware\UserLoggedIn;
 use Theme\Providers\ThemeServiceProvider;
 use Theme\Providers\GutenbergServiceProvider;
@@ -50,7 +49,9 @@ return [
 	 * Custom post types and taxonomies
 	 *--------------------------------------------------------------------------
 	 *
-	 * Register any custom post type here
+	 * Register any custom post type here.
+	 * Also ypu may register WordPress post type here
+	 * if you need extra functionality for them like metaboxes, etc.
 	 *
 	 * @since 0.2.0
 	 */

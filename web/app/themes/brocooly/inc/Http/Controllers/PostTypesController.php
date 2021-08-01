@@ -11,8 +11,8 @@ declare(strict_types=1);
 
 namespace Theme\Http\Controllers;
 
-use Theme\Http\Controller;
 use Brocooly\Contracts\ModelContract;
+use Theme\Http\Controllers\Controller;
 
 class PostTypesController extends Controller
 {

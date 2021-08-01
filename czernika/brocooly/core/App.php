@@ -15,8 +15,8 @@ use DI\Container;
 use Timber\Timber;
 use Psr\Container\ContainerInterface;
 
-use function DI\autowire;
 use function DI\factory;
+use function DI\autowire;
 
 class App
 {
@@ -60,7 +60,7 @@ class App
 	/**
 	 * Boot loaders
 	 *
-	 * @param array $loaders
+	 * @param array $loaders | array of app loaders.
 	 */
 	public function bootLoaders( array $loaders ) {
 		foreach ( $loaders as $loader ) {
