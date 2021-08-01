@@ -11,11 +11,6 @@
     "info": "autoprefixer --info",
     "analyze": "dotenv -- bash -c 'lighthouse $WP_HOME --output html --view --output-path ./report.html'"
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
