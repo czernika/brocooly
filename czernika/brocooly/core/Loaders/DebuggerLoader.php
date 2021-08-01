@@ -15,12 +15,12 @@ use Brocooly\App;
 
 class DebuggerLoader
 {
-    /**
+	/**
 	 * Application instance
 	 *
 	 * @var instanceof Brocooly\App
 	 */
-    protected App $app;
+	protected App $app;
 
 	public function __construct( App $app ) {
 		$this->app = $app;
@@ -49,8 +49,9 @@ class DebuggerLoader
 			 * This line causing issue (problem out of the Brocooly theme)
 			 * TODO: provide an option to disable cool errors completely
 			 */
-			$whoops = $this->app->get( Run::class );
-			$whoops->pushHandler( $this->app->get( 'handler' ) );
+
+			$whoops = $this->app->make( Run::class );
+			$whoops->pushHandler( $this->app->make( 'handler' ) );
 			$whoops->register();
 		}
 	}

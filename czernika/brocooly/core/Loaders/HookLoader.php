@@ -57,23 +57,7 @@ class HookLoader
 			}
 
 			if ( method_exists( $hook, 'filter' ) ) {
-				Assert::methodExists(
-					$hook,
-					'hook',
-					sprintf(
-						'Hook() method is not present at %s hook',
-						$hookClass
-					),
-				);
-
-				Assert::methodNotExists(
-					$hook,
-					'action',
-					sprintf(
-						'action() method could not be used inside %s filter',
-						$hookClass
-					),
-				);
+				$this->checkFilter( $hook, $hookClass );
 
 				add_filter(
 					$hook->filter(),
@@ -84,23 +68,7 @@ class HookLoader
 			}
 
 			if ( method_exists( $hook, 'action' ) ) {
-				Assert::methodExists(
-					$hook,
-					'hook',
-					sprintf(
-						'Hook() method is not present at %s hook',
-						$hookClass
-					),
-				);
-
-				Assert::methodNotExists(
-					$hook,
-					'filter',
-					sprintf(
-						'filter() method could not be used inside %s action',
-						$hookClass
-					),
-				);
+				$this->checkAction( $hook, $hookClass );
 
 				add_action(
 					$hook->action(),
@@ -110,5 +78,45 @@ class HookLoader
 				);
 			}
 		}
+	}
+
+	private function checkFilter( $hook, $hookClass ) {
+		Assert::methodExists(
+			$hook,
+			'hook',
+			sprintf(
+				'Hook() method is not present at %s hook',
+				$hookClass
+			),
+		);
+
+		Assert::methodNotExists(
+			$hook,
+			'action',
+			sprintf(
+				'action() method could not be used inside %s filter',
+				$hookClass
+			),
+		);
+	}
+
+	private function checkAction( $hook, $hookClass ) {
+		Assert::methodExists(
+			$hook,
+			'hook',
+			sprintf(
+				'Hook() method is not present at %s hook',
+				$hookClass
+			),
+		);
+
+		Assert::methodNotExists(
+			$hook,
+			'filter',
+			sprintf(
+				'filter() method could not be used inside %s action',
+				$hookClass
+			),
+		);
 	}
 }
