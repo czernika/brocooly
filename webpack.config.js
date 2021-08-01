@@ -125,8 +125,8 @@ const plugins = [
 	new StyleLintPlugin({
 		exclude: [
 			'/node_modules/',
-			path.resolve(themeFolder, publicFolder, 'css'), // compiled css files
-			path.resolve(themeFolder, 'style.css'), // style.css
+			path.resolve(themeFolder, publicFolder, 'css'), // compiled css files.
+			path.resolve(themeFolder, 'style.css'), // style.css.
 		],
 		failOnError: false,
 	}),
@@ -144,13 +144,13 @@ if(isProd) {
 	plugins.push(
 		new ShowAssetsTablePlugin(),
 
-		// new BundleAnalyzerPlugin(),
+		new BundleAnalyzerPlugin(),
 
 		new CompressionPlugin({
 			filename: '[path][base].gz',
 			algorithm: 'gzip',
 			test: /\.(js|css)$/,
-			threshold: 4 * 1024, // 4 kb
+			threshold: 4 * 1024, // 4 kb.
 			minRatio: 0.8,
 		}),
 		new CompressionPlugin({
