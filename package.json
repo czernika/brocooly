@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack --mode=development",
-    "build": "cross-env NODE_ENV=production webpack --mode=production",
+    "dev": "cross-env NODE_ENV=development webpack --config=build/webpack.dev.js",
+    "build": "cross-env NODE_ENV=production webpack --config=build/webpack.prod.js",
     "prod": "npm run build",
-    "watch": "cross-env TAILWIND_MODE=watch NODE_ENV=development webpack --mode=development --watch",
+    "watch": "cross-env TAILWIND_MODE=watch NODE_ENV=development webpack --watch --config=build/webpack.dev.js",
     "info": "autoprefixer --info",
     "analyze": "dotenv -- bash -c 'lighthouse $WP_HOME --output html --view --output-path ./report.html'",
     "prepare": "husky install"
