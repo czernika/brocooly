@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9b00cf4544d9b21a4a3bc5c6f122bdff",
+    "content-hash": "5d3e43b0fe23accc70620f3b670bb303",
     "packages": [
         {
             "name": "altorouter/altorouter",
@@ -274,6 +274,115 @@
                 }
             ],
             "time": "2021-04-28T06:42:17+00:00"
+        },
+        {
+            "name": "djboris88/timber-commented-include",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/djboris88/timber-commented-include.git",
+                "reference": "3fb8d7d8b69dd3464c7471ce68daaa5b81f8da86"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/djboris88/timber-commented-include/zipball/3fb8d7d8b69dd3464c7471ce68daaa5b81f8da86",
+                "reference": "3fb8d7d8b69dd3464c7471ce68daaa5b81f8da86",
+                "shasum": ""
+            },
+            "require": {
+                "djboris88/twig-commented-include": "^1.2",
+                "php": ">=5.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Djboris88\\Timber\\": "src/"
+                },
+                "files": [
+                    "functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Boris Đemrovski",
+                    "email": "djboris88@gmail.com",
+                    "role": "developer"
+                }
+            ],
+            "description": "Twig extension for Timber which outputs HTML comments before and after the `include` tag",
+            "homepage": "https://github.com/djboris88/timber-include-comments",
+            "keywords": [
+                "comments",
+                "debug",
+                "html",
+                "twig"
+            ],
+            "support": {
+                "issues": "https://github.com/djboris88/timber-commented-include/issues",
+                "source": "https://github.com/djboris88/timber-commented-include/tree/master"
+            },
+            "time": "2019-12-11T09:04:45+00:00"
+        },
+        {
+            "name": "djboris88/twig-commented-include",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/djboris88/twig-commented-include.git",
+                "reference": "a78dcf60100165f0a07c76e97739d744aca9d9db"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/djboris88/twig-commented-include/zipball/a78dcf60100165f0a07c76e97739d744aca9d9db",
+                "reference": "a78dcf60100165f0a07c76e97739d744aca9d9db",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6",
+                "twig/twig": "^1.14|^2.0|^3.0"
+            },
+            "require-dev": {
+                "symfony/framework-bundle": "^2.7|^3.2",
+                "symfony/twig-bundle": "^2.7|^3.2"
+            },
+            "suggest": {
+                "symfony/framework-bundle": "The framework bundle to integrate the extension into Symfony",
+                "symfony/twig-bundle": "The twig bundle to integrate the extension into Symfony"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Djboris88\\Twig\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Boris Đemrovski",
+                    "email": "djboris88@gmail.com",
+                    "role": "developer"
+                }
+            ],
+            "description": "Twig extension which outputs HTML comments before and after the `include` tag",
+            "homepage": "https://github.com/djboris88/twig-include-comments",
+            "keywords": [
+                "comments",
+                "debug",
+                "html",
+                "twig"
+            ],
+            "support": {
+                "issues": "https://github.com/djboris88/twig-commented-include/issues",
+                "source": "https://github.com/djboris88/twig-commented-include/tree/1.2.0"
+            },
+            "time": "2019-12-11T09:04:24+00:00"
         },
         {
             "name": "doctrine/inflector",

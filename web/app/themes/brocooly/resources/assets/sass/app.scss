@@ -1,11 +1,71 @@
 /**
- * Includes
+ * --------------------------------------------------------------------------
+ * Generic content
+ * --------------------------------------------------------------------------
+ *
+ * Custom functions and mixins.
+ * Must be at top
  */
-@import 'libs/wordpress';
-@import 'libs/tailwind';
-
+@import 'global/vars';
+@import 'generic/functions';
+@import 'generic/mixins';
 
 /**
- * Componentss
+ * --------------------------------------------------------------------------
+ * Vendor files
+ * --------------------------------------------------------------------------
+ *
+ * WordPress core predefined styles, editor, blocks.
  */
-@import 'components/icons';
+@import 'vendor/wordpress';
+@import 'vendor/a11y';
+
+/**
+ * --------------------------------------------------------------------------
+ * App fonts
+ * --------------------------------------------------------------------------
+ *
+ * Include custom local fonts
+ */
+@import 'global/typography/font';
+
+/**
+ * --------------------------------------------------------------------------
+ * External libraries
+ * --------------------------------------------------------------------------
+ *
+ * Like TailwindCSS
+ */
+@import 'libs/tailwind';
+
+/**
+ * --------------------------------------------------------------------------
+ * Typography
+ * --------------------------------------------------------------------------
+ *
+ * Minor app elements and extra general styling
+ */
+@import 'global/typography/heading';
+@import 'global/typography/link';
+@import 'global/typography/list';
+@import 'global/typography/paragraph';
+
+/**
+ * --------------------------------------------------------------------------
+ * Components
+ * --------------------------------------------------------------------------
+ *
+ * Minor app elements and extra general styling
+ */
+
+// If you're using generated SVG icons by webfonts-loader include this file
+@import 'global/components/icons';
+
+/**
+ * --------------------------------------------------------------------------
+ * Media queries
+ * --------------------------------------------------------------------------
+ *
+ * Always at the bottom
+ */
+@import 'global/media';

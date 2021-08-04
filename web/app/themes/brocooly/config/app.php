@@ -12,6 +12,7 @@ use Theme\Hooks\DisableEmoji;
 use Theme\Models\WP\Category;
 use Theme\Hooks\GetSearchForm;
 use Theme\Hooks\WpEnqueueScripts;
+use Theme\Hooks\TemplateRedirect;
 use Theme\Hooks\RemoveMetaGenerator;
 use Theme\Http\Middleware\UserLoggedIn;
 use Theme\Providers\ThemeServiceProvider;
@@ -75,6 +76,7 @@ return [
 	 * @since 0.3.0
 	 */
 	'hooks'      => [
+		TemplateRedirect::class,
 		DisableEmoji::class,
 		GetSearchForm::class,
 		WpEnqueueScripts::class,

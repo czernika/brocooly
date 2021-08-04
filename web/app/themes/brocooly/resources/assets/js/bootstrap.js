@@ -1,27 +1,17 @@
 /**
  * --------------------------------------------------------------------------
- * Modernizr library
+ * Vendor files and utilities
  * --------------------------------------------------------------------------
  */
-import 'modernizr';
+import '@js/vendor/modernizr';
+
+// SVG icon config for webfonts-loader.
+// import '@js/vendor/icons.config';
 
 /**
  * --------------------------------------------------------------------------
- * Webfont-loader
+ * Includes
  * --------------------------------------------------------------------------
  */
-import '@js/icons.config';
-
-/**
- * --------------------------------------------------------------------------
- * General code samples
- * --------------------------------------------------------------------------
- */
-document.body.classList.remove('no-js');
-const i = new Image();
-i.onload = i.onerror = () => {
-	document.body.classList.add(i.height === 1 ? 'webp' : 'no-webp');
-};
-i.src='data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==';
-
-document.documentElement.classList.replace('no-js', 'js');
+import '@js/utilities/add-js-class';
+import '@js/utilities/webp-in-css';

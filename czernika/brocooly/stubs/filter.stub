@@ -11,7 +11,7 @@ namespace Theme\Hooks;
 class {{ HOOK }}
 {
 
-    /**
+	/**
 	 * Filter name
 	 *
 	 * @return string

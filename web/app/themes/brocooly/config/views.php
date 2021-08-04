@@ -10,18 +10,7 @@ return [
 
 	/**
 	 * --------------------------------------------------------------------------
-	 * Views Path
-	 * --------------------------------------------------------------------------
-	 *
-	 * All your directories for view files should bу listed here.
-	 * Relative path to a theme root folder.
-	 * ! MUST be string in opposite to Timber documentation
-	 */
-	'views'      => 'resources/views',
-
-	/**
-	 * --------------------------------------------------------------------------
-	 * View Namespaces
+	 * View namespaces
 	 * --------------------------------------------------------------------------
 	 *
 	 * You may add extra namespace into your view files
@@ -36,7 +25,11 @@ return [
 		'menus'      => 'components/menus',
 		'forms'      => 'components/forms',
 		'post'       => 'content/post',
+		'page'       => 'content/page',
 		'shortcodes' => 'shortcodes',
+		'blocks'     => 'blocks',
+		'templates'  => 'templates',
+		'layouts'    => 'layouts',
 		'widgets'    => 'widgets',
 	],
 
@@ -53,6 +46,17 @@ return [
 
 	/**
 	 * --------------------------------------------------------------------------
+	 * Views path
+	 * --------------------------------------------------------------------------
+	 *
+	 * All your directories for view files should bу listed here.
+	 * Relative path to a theme root folder.
+	 * ! MUST be string in opposite to Timber documentation
+	 */
+	'views'      => 'resources/views',
+
+	/**
+	 * --------------------------------------------------------------------------
 	 * Default view page
 	 * --------------------------------------------------------------------------
 	 *
@@ -65,7 +69,7 @@ return [
 
 	/**
 	 * --------------------------------------------------------------------------
-	 * View Cache Path
+	 * View cache directory storage
 	 * --------------------------------------------------------------------------
 	 *
 	 * Place where all your cached files will be stored under `/views/` directory.

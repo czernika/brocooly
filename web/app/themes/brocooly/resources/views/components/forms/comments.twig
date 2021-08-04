@@ -4,7 +4,7 @@
 		{{ __('Add comment', 'brocooly') }}
 	</h3>
 
-    <form class="w-full comment-form" method="POST" action="{{ site.site_url ~ '/wp-comments-post.php' }}" id="commentform" novalidate>
+    <form class="w-full comment-form" method="POST" action="{{ site.site_url ~ '/wp-comments-post.php' }}" id="commentform" novalidate aria-labelledby="reply-title">
 
         {% if user %}
 
@@ -48,11 +48,11 @@
 
         <div class="flex mb-4 space-x-3 form-submit">
 
-        	<button type="submit" id="submit" name="submit" class="px-4 py-2 text-white duration-200 border border-secondary bg-secondary hover:border-primary hover:bg-primary">
+        	<button type="submit" id="submit" name="submit" class="px-4 py-2 text-white duration-200 border border-secondary bg-secondary hover:border-primary hover:bg-primary submit-commentary">
 				{{ __('Send', 'brocooly') }}
 			</button>
 
-	        <button type="reset" name="cancel" class="px-4 py-2 text-red-600 duration-200 border border-red-600 hover:bg-red-600 hover:text-white">
+	        <button type="reset" name="cancel" class="px-4 py-2 text-red-600 duration-200 border border-red-600 hover:bg-red-600 hover:text-white reset-commentary">
 				{{ __('Cancel', 'brocooly') }}
 			</button>
 

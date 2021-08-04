@@ -44,6 +44,13 @@ class DebuggerLoader
 			);
 
 			/**
+			 * Timber commented output
+			 */
+			if ( function_exists( '\Djboris88\Timber\initialize_filters' ) ) {
+				\Djboris88\Timber\initialize_filters();
+			}
+
+			/**
 			 * Application debugger
 			 *
 			 * This line causing issue (problem out of the Brocooly theme)

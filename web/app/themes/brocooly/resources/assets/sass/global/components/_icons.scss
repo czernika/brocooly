@@ -1,0 +1,6 @@
+$icon-class: '.brocooly';
+
+// center compiled SVG icon
+#{$icon-class}-icon::before {
+	vertical-align: middle;
+}

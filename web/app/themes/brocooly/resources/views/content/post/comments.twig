@@ -4,19 +4,19 @@
 
 		<div class="flex mb-1 space-x-3 text-sm text-gray-400 comment-meta">
 
-			<time datetime="{{ comment.date|date('d.F.Y') }}">
+			<time datetime="{{ comment.date|date('d.F.Y') }}" itemprop="dateCreated">
 				{{ comment.date|date('d M, Y') }}
 			</time>
 
-			<h5 class="comment-author">
+			<h5 class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
 				{{ __('%s says', 'brocooly')|format(comment.comment_author) }}
 			</h5>
 
 		</div>
 
-		<article id="div-comment-{{ comment.ID }}" class="">
+		<article id="div-comment-{{ comment.ID }}" class="" itemprop="comment" itemscope itemtype="https://schema.org/Comment">
 
-			<div class="pb-4 border-b border-gray-300 comment-content">
+			<div class="pb-4 border-b border-gray-300 comment-content" itemprop="text">
 				{{ comment.content|wpautop }}
 			</div>
 

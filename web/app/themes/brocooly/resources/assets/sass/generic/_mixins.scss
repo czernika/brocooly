@@ -1,19 +1,20 @@
-// =============================================================================
-// String Replace
-// =============================================================================
-@function str-replace($string, $search, $replace: '') {
-	$index: str-index($string, $search);
-
-	@if $index {
-		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
-	}
-
-	@return $string;
-}
+/**
+ * --------------------------------------------------------------------------
+ * Mixins
+ * --------------------------------------------------------------------------
+ *
+ * Mixins allow you to define styles that can be re-used throughout your stylesheet.
+ *
+ * @see https://sass-lang.com/documentation/at-rules/mixin
+ */
 
 // =============================================================================
-// Font Face
+// Include local fonts with font-face directive
+//
+// @example
+// @include font-face('FontName', '../path/to/FontName', 'display', 'weight', 'style', 'exts');
 // =============================================================================
+
 @mixin font-face($name, $path, $display: 'swap', $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
 	$src: null;
 

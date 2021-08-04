@@ -1,6 +1,7 @@
 /**
  * --------------------------------------------------------------------------
- * Boot application scripts
+ * Colors
  * --------------------------------------------------------------------------
  */
-import '@js/bootstrap';
+$primary: theme('colors.primary');
+$secondary: theme('colors.secondary');
