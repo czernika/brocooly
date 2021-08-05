@@ -15,10 +15,24 @@
  * @since 0.1.0
  */
 
+use Carbon\Carbon;
 use Roots\WPConfig\Config;
+
 use function Env\env;
 
+/**
+ * Default theme name
+ */
+$theme = env( 'THEME' ) ?? 'brocooly';
+
+/**
+ * App root path
+ */
 defined( 'APP_PATH' ) || define( 'APP_PATH', dirname( __DIR__ ) );
+
+/**
+ * Czernika/brocooly core root path
+ */
 defined( 'CORE_PATH' ) || define( 'CORE_PATH', dirname( __DIR__ ) . '/czernika/brocooly/core' );
 
 /**
@@ -110,8 +124,21 @@ Config::define( 'WP_POST_REVISIONS', env( 'WP_POST_REVISIONS' ) ?: 3 );
 /**
  * Debugging Settings
  */
+$debug_log = env( 'WP_DEBUG_LOG' ) ?? false;
+
+if ( $debug_log && class_exists( 'Carbon\Carbon' ) ) {
+	$date = Carbon::now()->format( 'Y-m-d' );
+	$dir  = APP_PATH . '/web/app/themes/' . $theme . '/' . $debug_log;
+
+	if ( ! file_exists( $dir ) ) {
+		mkdir( $dir, 0777, true );
+	}
+
+	$debug_log = $dir . '/' . $theme . '-' . $date . '.log';
+}
+
 Config::define( 'WP_DEBUG_DISPLAY', false );
-Config::define( 'WP_DEBUG_LOG', env( 'WP_DEBUG_LOG' ) ?? false );
+Config::define( 'WP_DEBUG_LOG', $debug_log );
 Config::define( 'SCRIPT_DEBUG', false );
 
 /**
@@ -139,4 +166,4 @@ defined( 'ABSPATH' ) || define( 'ABSPATH', $webroot_dir . '/wp/' );
 /**
  * Define brocooly as your starter theme
  */
-define( 'WP_DEFAULT_THEME', 'brocooly' );
+define( 'WP_DEFAULT_THEME', $theme );
