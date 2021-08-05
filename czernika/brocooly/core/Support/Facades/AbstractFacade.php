@@ -13,7 +13,7 @@ namespace Brocooly\Support\Facades;
 class AbstractFacade
 {
 	public static function __callStatic( string $name, array $arguments = [] ) {
-		$facade = app()->get( static::accessor() );
+		$facade = app( static::accessor() );
 		return $facade::create( $name, $arguments );
 	}
 

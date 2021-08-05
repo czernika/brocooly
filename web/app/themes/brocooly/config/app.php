@@ -76,10 +76,10 @@ return [
 	 * @since 0.3.0
 	 */
 	'hooks'      => [
-		TemplateRedirect::class,
 		DisableEmoji::class,
 		GetSearchForm::class,
 		WpEnqueueScripts::class,
+		TemplateRedirect::class,
 		RemoveMetaGenerator::class,
 	],
 

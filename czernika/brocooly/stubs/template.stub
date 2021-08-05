@@ -27,7 +27,7 @@ class {{ TEMPLATE }}Template extends AbstractTemplate
 	 *
 	 * @var string
 	 */
-	public string $slug = '{{ LC_TEMPLATE }}';
+	const SLUG = = '{{ LC_TEMPLATE }}';
 
 	/**
 	 * Get template label

@@ -13,7 +13,7 @@ class DeveloperRole extends Role
 	 *
 	 * @var string
 	 */
-	public string $name = 'developer';
+	const ROLE = 'developer';
 
 	/**
 	 * Return role name in human readable format

@@ -9,11 +9,11 @@
 		<div class="col-span-full">
 
 			<h1 class="mb-4 text-2xl font-bold">
-				{{ title }}
+				{{ blog.title }}
 			</h1>
 
 			{% include '@components/breadcrumbs.twig' with {
-				current_title: title
+				current_title: blog.title
 			} %}
 		</div>
 

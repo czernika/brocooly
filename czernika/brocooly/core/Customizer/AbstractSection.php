@@ -18,7 +18,7 @@ abstract class AbstractSection
 	 *
 	 * @var string
 	 */
-	public static string $id = 'unknown';
+	const SECTION_ID = 'abstract';
 
 	/**
 	 * Section settings
@@ -29,7 +29,7 @@ abstract class AbstractSection
 		throw new \Exception(
 			sprintf(
 				'Options for "%s" section is not defined!',
-				$this->id,
+				static::SECTION_ID,
 			),
 			true,
 		);
@@ -44,7 +44,7 @@ abstract class AbstractSection
 		throw new \Exception(
 			sprintf(
 				'Controls settings for "%s" section are not defined!',
-				$this->id,
+				static::SECTION_ID,
 			),
 			true,
 		);

@@ -13,9 +13,14 @@ namespace Brocooly\Views\Widgets;
 abstract class AbstractSidebar
 {
 
-	public string $id = '';
+	/**
+	 * Sidebar id
+	 *
+	 * @var string
+	 */
+	const SIDEBAR_ID = 'sidebar';
 
-    /**
+	/**
 	 * Get sidebar options
 	 *
 	 * @throws Exception
@@ -24,7 +29,7 @@ abstract class AbstractSidebar
 		throw new \Exception(
 			sprintf(
 				'No sidebar options was set for "%s" sidebar!',
-				$this->id,
+				static::SIDEBAR_ID,
 			),
 			true,
 		);

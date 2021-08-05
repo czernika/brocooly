@@ -16,11 +16,10 @@ abstract class AbstractPanel
 
 	/**
 	 * Panel id
-	 * Must be unique
 	 *
 	 * @var string
 	 */
-	public static string $id;
+	const PANEL_ID = 'abstract';
 
 	/**
 	 * Panel settings
@@ -33,7 +32,7 @@ abstract class AbstractPanel
 		throw new \Exception(
 			sprintf(
 				'Options for "%s" panel is not defined!',
-				$this->id,
+				static::PANEL_ID,
 			),
 			true,
 		);

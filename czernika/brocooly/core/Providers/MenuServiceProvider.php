@@ -47,7 +47,7 @@ class MenuServiceProvider extends AbstractService
 				$menu = $this->app->get( $menuClass );
 
 				Assert::stringNotEmpty(
-					$menu->name,
+					$menu::LOCATION,
 					/* translators: menu class */
 					sprintf(
 						'Name property was not provided for %s menu',
@@ -71,17 +71,17 @@ class MenuServiceProvider extends AbstractService
 				add_action(
 					'after_setup_theme',
 					function() use ( $menu ) {
-						register_nav_menu( $menu->name, $menu->label() );
+						register_nav_menu( $menu::LOCATION, $menu->label() );
 					}
 				);
 
 				/**
 				 * Add them into context
 				 */
-				if ( $this->locationWasSetInAdminArea( $menu->name ) ) {
+				if ( $this->locationWasSetInAdminArea( $menu::LOCATION ) ) {
 					Context::set(
-						$this->getMenuName( $menu->name ),
-						$this->getMenuObject( $menu->name )
+						$this->getMenuName( $menu::LOCATION ),
+						$this->getMenuObject( $menu::LOCATION )
 					);
 				}
 			}

@@ -27,7 +27,7 @@ class {{ SHORTCODE }}Shortcode extends AbstractShortcode
 	 *
 	 * @var string
 	 */
-	public string $id = '{{ LC_SHORTCODE }}';
+	const SHORTCODE_ID = '{{ LC_SHORTCODE }}';
 
 	/**
 	 * Render shortcode

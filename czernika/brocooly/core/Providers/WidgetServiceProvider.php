@@ -19,8 +19,8 @@ class WidgetServiceProvider extends AbstractService
 	 * Register sidebars and widgets
 	 */
 	public function register() {
-		$this->app->set( 'sidebars', config( 'widgets.sidebars', [] ) );
-		$this->app->set( 'widgets', config( 'widgets.widgets', [] ) );
+		$this->app->set( 'sidebars', config( 'widgets.sidebars' ) );
+		$this->app->set( 'widgets', config( 'widgets.widgets' ) );
 	}
 
 	/**
@@ -72,17 +72,17 @@ class WidgetServiceProvider extends AbstractService
 							'after_title'   => '</h2>',
 						];
 						$options       = array_merge( $sidebar->options(), $defaults );
-						$options['id'] = $sidebar->id;
+						$options['id'] = $sidebar::SIDEBAR_ID;
 						register_sidebar( $options );
 					}
 				);
 
-				if ( is_active_sidebar( $sidebar->id ) ) {
+				if ( is_active_sidebar( $sidebar::SIDEBAR_ID ) ) {
 					add_filter(
 						'timber/context',
 						function ( $context ) use ( $sidebar ) {
-							$sidebarCaller             = str_replace( '-', '_', $sidebar->id ) . '_sidebar';
-							$context[ $sidebarCaller ] = Timber::get_widgets( $sidebar->id );
+							$sidebarCaller             = str_replace( '-', '_', $sidebar::SIDEBAR_ID ) . '_sidebar';
+							$context[ $sidebarCaller ] = Timber::get_widgets( $sidebar::SIDEBAR_ID );
 							return $context;
 						}
 					);

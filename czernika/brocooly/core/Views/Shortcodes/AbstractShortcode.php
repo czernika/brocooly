@@ -23,7 +23,7 @@ abstract class AbstractShortcode
 	 *
 	 * @var string
 	 */
-	public string $id = '';
+	const SHORTCODE_ID = 'shortcode';
 
 	/**
 	 * Render shortcode
@@ -44,7 +44,7 @@ abstract class AbstractShortcode
 		throw new \Exception(
 			sprintf(
 				'No render callback was set for "%s" shortcode!',
-				$this->id,
+				static::SHORTCODE_ID,
 			),
 			true,
 		);

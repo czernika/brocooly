@@ -55,9 +55,15 @@ if ( ! function_exists( 'app' ) ) {
 
 	/**
 	 * Return application instance
+	 *
+	 * @param string|null $key | key to get.
 	 */
-	function app() {
-		return App::getApp();
+	function app( $key = null ) {
+		$app = App::getApp();
+		if ( isset( $key ) ) {
+			return $app->get( $key );
+		}
+		return $app;
 	}
 }
 
@@ -117,7 +123,7 @@ if ( ! function_exists( 'asset' ) ) {
 	 * @return string
 	 */
 	function asset( string $filePath ) {
-		$asset = ( new AssetsLoader( app() ) )->asset( $filePath );
+		$asset = app( AssetsLoader::class )->asset( $filePath );
 
 		if ( $asset ) {
 			$public         = trailingslashit( config( 'assets.public' ) );
@@ -153,7 +159,7 @@ if ( ! function_exists( 'mod' ) ) {
 	 * @return mixed
 	 */
 	function mod( string $key, $default = null ) {
-		$prefix   = app()->get( 'customizer_prefix' );
+		$prefix   = app( 'customizer_prefix' );
 		$themeMod = $prefix . $key;
 		return get_theme_mod( $themeMod, $default );
 	}

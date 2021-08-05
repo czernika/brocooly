@@ -43,9 +43,11 @@ class PostsController extends Controller
 	 * Load archive page
 	 */
 	public function index() {
-		$is_sidebar_active = is_active_sidebar( 'blog' );
-		$title             = $this->postService->getBlogTitle();
-		view( 'content/post/index.twig', compact( 'is_sidebar_active', 'title' ) );
+		$blog = [
+			'sidebar' => is_active_sidebar( 'blog' ),
+			'title'   => $this->postService->getBlogTitle(),
+		];
+		view( 'content/post/index.twig', compact( 'blog' ) );
 	}
 
 	/**

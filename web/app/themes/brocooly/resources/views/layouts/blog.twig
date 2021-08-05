@@ -4,14 +4,14 @@
 
 	<div class="container grid gap-8 py-16 sm:grid-cols-2 xl:grid-cols-4">
 
-		<div class="{% if is_sidebar_active %} xl:col-span-3 {% else %} col-span-full {% endif %}">
+		<div class="{% if blog.sidebar %} xl:col-span-3 {% else %} col-span-full {% endif %}">
 			{% block content %}
 				{{ __('No posts', 'brocooly') }}
 			{% endblock %}
 		</div>
 
 		{% block sidebar %}
-			{% if is_sidebar_active %}
+			{% if blog.sidebar %}
 				<aside id="secondary" class="p-6 border-l border-gray-200" role="complementary">
 
 					<h1 class="mb-4 text-2xl font-bold">

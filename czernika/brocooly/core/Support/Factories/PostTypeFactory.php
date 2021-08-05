@@ -15,7 +15,7 @@ class PostTypeFactory extends AbstractFactory
 	 */
 	public static function model( $model = null ) {
 		$modelType   = isset( $model ) ? $model : get_post_type();
-		$modelObject = app()->get( $modelType );
+		$modelObject = app( $modelType );
 		return $modelObject;
 	}
 }

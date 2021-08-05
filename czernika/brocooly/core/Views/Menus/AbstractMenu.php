@@ -22,7 +22,7 @@ abstract class AbstractMenu
 	 *
 	 * @var string
 	 */
-	public string $name = '';
+	const LOCATION = 'menu';
 
 	/**
 	 * Get menu label in admin area
@@ -34,7 +34,7 @@ abstract class AbstractMenu
 		throw new \Exception(
 			sprintf(
 				'No label callback was set for "%s" menu!',
-				$this->name,
+				static::LOCATION,
 			),
 			true,
 		);

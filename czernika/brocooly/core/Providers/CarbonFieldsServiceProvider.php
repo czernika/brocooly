@@ -18,7 +18,7 @@ class CarbonFieldsServiceProvider extends AbstractService
 	/**
 	 * Init Carbon Fields
 	 */
-	public function register() {
+	public function boot() {
 		add_action(
 			'after_setup_theme',
 			[ Carbon_Fields::class, 'boot' ],

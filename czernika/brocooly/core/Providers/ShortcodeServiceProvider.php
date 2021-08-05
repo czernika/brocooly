@@ -49,7 +49,7 @@ class ShortcodeServiceProvider extends AbstractService
 				$shortcode = $this->app->get( $shortcodeClass );
 
 				Assert::stringNotEmpty(
-					$shortcode->id,
+					$shortcode::SHORTCODE_ID,
 					/* translators: shortcode class name */
 					sprintf(
 						'ID property was not provided for %s shortcode',
@@ -76,7 +76,7 @@ class ShortcodeServiceProvider extends AbstractService
 					'init',
 					function() use ( $shortcode ) {
 						add_shortcode(
-							Str::lower( $shortcode->id ),
+							Str::snake( $shortcode::SHORTCODE_ID ),
 							[ $shortcode, 'render' ]
 						);
 					}

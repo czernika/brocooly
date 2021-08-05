@@ -21,7 +21,7 @@ class ContactPanel extends AbstractPanel
 	 *
 	 * @var string
 	 */
-	public static string $id = 'contact_panel';
+	const PANEL_ID = 'contact_panel';
 
 	/**
 	 * Panel settings

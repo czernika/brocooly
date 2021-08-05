@@ -17,7 +17,7 @@ class {{ ROLE }}Role extends Role
 	 *
 	 * @var string
 	 */
-	public string $name = '{{ SNAKE_ROLE }}';
+	const ROLE = '{{ SNAKE_ROLE }}';
 
 	/**
 	 * Return role name in human readable format

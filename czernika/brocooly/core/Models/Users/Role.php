@@ -15,7 +15,7 @@ class Role
 	 *
 	 * @var string
 	 */
-	public string $name = '';
+	const ROLE = 'role';
 
 	/**
 	 * Return role name in human readable format
@@ -23,7 +23,7 @@ class Role
 	 * @return string
 	 */
 	public function label() {
-		return '';
+		return esc_html( 'Custom role', 'brocooly' );
 	}
 
 	/**

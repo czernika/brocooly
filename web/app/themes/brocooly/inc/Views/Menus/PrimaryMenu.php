@@ -21,7 +21,7 @@ class PrimaryMenu extends AbstractMenu
 	 *
 	 * @var string
 	 */
-	public string $name = 'primary';
+	const LOCATION = 'primary';
 
 	/**
 	 * Get menu label in admin area

@@ -27,7 +27,7 @@ class ContactsSection extends AbstractSection
 	 *
 	 * @var string
 	 */
-	public static string $id = 'contacts';
+	const SECTION_ID = 'contacts';
 
 	/**
 	 * Section settings
@@ -38,7 +38,7 @@ class ContactsSection extends AbstractSection
 	public function options() {
 		return [
 			'title' => esc_html__( 'Contacts', 'brocooly' ),
-			'panel' => ContactPanel::$id,
+			'panel' => ContactPanel::PANEL_ID,
 		];
 	}
 

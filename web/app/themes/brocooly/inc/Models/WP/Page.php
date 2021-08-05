@@ -21,5 +21,5 @@ class Page extends PostType
 	 *
 	 * @var string
 	 */
-	protected static string $name = 'page';
+	const POST_TYPE = 'page';
 }

@@ -20,7 +20,7 @@ class BlogSidebar extends AbstractSidebar
 	 *
 	 * @var string
 	 */
-	public string $id = 'blog';
+	const SIDEBAR_ID = 'blog';
 
 	/**
 	 * Get sidebar options

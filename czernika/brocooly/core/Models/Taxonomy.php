@@ -30,11 +30,10 @@ abstract class Taxonomy extends Term
 
 	/**
 	 * Taxonomy slug
-	 * Must be unique
 	 *
 	 * @var string
 	 */
-	protected static string $taxName = 'category';
+	const TAXONOMY = 'category';
 
 	/**
 	 * Post type related to taxonomy
@@ -50,15 +49,15 @@ abstract class Taxonomy extends Term
 	 * @return string
 	 */
 	public function getName() {
-		if ( ! static::$taxName ) {
+		if ( ! static::TAXONOMY ) {
 			throw new \Exception( 'You must specify taxonomy name', true );
 		}
 
-		return static::$taxName;
+		return static::TAXONOMY;
 	}
 
 	/**
-	 * Undocumented function
+	 * Get taxonomy post types
 	 *
 	 * @return void
 	 */
@@ -67,7 +66,7 @@ abstract class Taxonomy extends Term
 			throw new \Exception(
 				sprintf(
 					'You must specify post type related to %s taxonomy',
-					static::$taxName
+					static::TAXONOMY
 				),
 				true
 			);
@@ -116,7 +115,7 @@ abstract class Taxonomy extends Term
 	 */
 	protected function setContainer( string $id, string $label ) {
 		$container = Container::make( 'term_meta', $id, $label )
-						->where( 'term_taxonomy', '=', static::$taxName );
+						->where( 'term_taxonomy', '=', static::TAXONOMY );
 		return $container;
 	}
 
@@ -128,7 +127,7 @@ abstract class Taxonomy extends Term
 	 * @return void
 	 */
 	public static function __callStatic( string $method, array $arguments ) {
-		$arguments[] = static::$taxName;
+		$arguments[] = static::TAXONOMY;
 		return QueryBuilder::$method( ...$arguments );
 	}
 

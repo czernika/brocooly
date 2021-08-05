@@ -20,7 +20,7 @@ class {{ SIDEBAR }}Sidebar extends AbstractSidebar
      *
      * @var string
 	 */
-	public string $id = '{{ SNAKE_SIDEBAR }}';
+	const SIDEBAR_ID = '{{ SNAKE_SIDEBAR }}';
 
     /**
 	 * Get sidebar options

@@ -29,11 +29,10 @@ class {{ MODEL }} extends PostType
 
     /**
 	 * Post type slug
-	 * Must be unique
 	 *
 	 * @var string
 	 */
-	protected static string $name = '{{ SNAKE_MODEL }}';
+	const POST_TYPE = '{{ SNAKE_MODEL }}';
 
     /**
 	 * Post type metaboxes

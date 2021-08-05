@@ -15,7 +15,7 @@ namespace Brocooly\Views\Widgets;
 use Carbon_Fields\Widget;
 use Webmozart\Assert\Assert;
 
-class AbstractWidget extends Widget
+abstract class AbstractWidget extends Widget
 {
 
 	/**
@@ -23,7 +23,7 @@ class AbstractWidget extends Widget
 	 *
 	 * @var string
 	 */
-	protected string $widgetId = '';
+	const WIDGET_ID = 'widget';
 
 	/**
 	 * Setup widget
@@ -31,12 +31,12 @@ class AbstractWidget extends Widget
 	public function __construct() {
 
 		Assert::stringNotEmpty(
-			$this->widgetId,
+			static::WIDGET_ID,
 			'You need to specify widget id',
 		);
 
 		$this->setup(
-			$this->widgetId,
+			static::WIDGET_ID,
 			$this->title(),
 			$this->description(),
 			$this->options(),
@@ -52,7 +52,7 @@ class AbstractWidget extends Widget
 		throw new \Exception(
 			sprintf(
 				'Title was not set for "%s" widget!',
-				$this->widgetId,
+				static::WIDGET_ID,
 			),
 			true,
 		);
@@ -85,7 +85,7 @@ class AbstractWidget extends Widget
 		throw new \Exception(
 			sprintf(
 				'View file was not set for "%s" widget!',
-				$this->widgetId,
+				static::WIDGET_ID,
 			),
 			true,
 		);

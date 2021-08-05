@@ -22,7 +22,7 @@ class {{ OPTION }}Panel extends AbstractPanel
 	 *
 	 * @var string
 	 */
-	public static string $id = '{{ SNAKE_OPTION }}';
+	const PANEL_ID = '{{ SNAKE_OPTION }}';
 
 	/**
 	 * Panel settings

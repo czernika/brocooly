@@ -10,7 +10,7 @@ use Theme\Contracts\PostRepositoryContract;
 class PostRepository implements PostRepositoryContract
 {
 	/**
-	 * Get all posts with pagination
+	 * Get all posts with default pagination
 	 */
 	public function all() {
 		$posts = Post::all();

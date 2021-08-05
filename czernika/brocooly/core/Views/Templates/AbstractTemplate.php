@@ -29,7 +29,7 @@ abstract class AbstractTemplate
 	 *
 	 * @var string
 	 */
-	public string $slug = 'custom';
+	const SLUG = 'custom';
 
 	/**
 	 * Get template label

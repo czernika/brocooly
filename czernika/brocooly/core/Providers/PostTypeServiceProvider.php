@@ -43,12 +43,16 @@ class PostTypeServiceProvider extends AbstractService
 	public function register() {
 		foreach ( config( 'app.post_types' ) as $postTypeClass ) {
 			$postType = $this->app->get( $postTypeClass );
-			$this->app->set( $postType->getName(), create( $postTypeClass ) );
+			if ( ! $this->app->has( $postType->getName() ) ) {
+				$this->app->set( $postType->getName(), create( $postTypeClass ) );
+			}
 		}
 
 		foreach ( config( 'app.taxonomies' ) as $taxonomyClass ) {
 			$taxonomy = $this->app->get( $taxonomyClass );
-			$this->app->set( $taxonomy->getName, create( $taxonomyClass ) );
+			if ( ! $this->app->has( $taxonomy->getName() ) ) {
+				$this->app->set( $taxonomy->getName(), create( $taxonomyClass ) );
+			}
 		}
 	}
 

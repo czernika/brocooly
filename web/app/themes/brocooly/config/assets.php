@@ -43,20 +43,15 @@ return [
 
 	/**
 	 *--------------------------------------------------------------------------
-	 * Styles excluded from autoloading
+	 * Styles and scripts excluded from autoloading
 	 *--------------------------------------------------------------------------
+	 *
+	 * According to manifest file
 	 *
 	 * TODO: improve functionality
 	 */
 	'excludeStyles'  => [],
 
-	/**
-	 *--------------------------------------------------------------------------
-	 * Scripts excluded from autoloading
-	 *--------------------------------------------------------------------------
-	 *
-	 * TODO: improve functionality
-	 */
 	'excludeScripts' => [
 		'comments-reply.js',
 	],

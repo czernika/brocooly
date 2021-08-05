@@ -51,15 +51,15 @@ class UserServiceProvider extends AbstractService
 					function() use ( $role ) {
 
 						Assert::null(
-							get_role( $role->name ),
+							get_role( $role::ROLE ),
 							sprintf(
 								'Role %s already exists',
-								$role->name,
+								$role::ROLE,
 							),
 						);
 
 						add_role(
-							$role->name,
+							$role::ROLE,
 							$role->label(),
 							$role->capabilities(),
 						);
@@ -69,7 +69,7 @@ class UserServiceProvider extends AbstractService
 				add_action(
 					'switch_theme',
 					function() use ( $role ) {
-						remove_role( $role->name );
+						remove_role( $role::ROLE );
 					}
 				);
 			}

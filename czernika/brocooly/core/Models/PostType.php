@@ -31,11 +31,10 @@ abstract class PostType extends Post implements ModelContract
 
 	/**
 	 * Post type slug
-	 * Must be unique
 	 *
 	 * @var string
 	 */
-	protected static string $name = 'post';
+	const POST_TYPE = 'post';
 
 	/**
 	 * Get post type name
@@ -43,11 +42,11 @@ abstract class PostType extends Post implements ModelContract
 	 * @return string
 	 */
 	public function getName() {
-		if ( ! static::$name ) {
+		if ( ! static::POST_TYPE ) {
 			throw new \Exception( 'You must specify post type name', true );
 		}
 
-		return static::$name;
+		return static::POST_TYPE;
 	}
 
 	/**
@@ -92,7 +91,7 @@ abstract class PostType extends Post implements ModelContract
 	 */
 	protected function setContainer( string $id, string $label ) {
 		$container = Container::make( 'post_meta', $id, $label )
-						->where( 'post_type', '=', static::$name );
+						->where( 'post_type', '=', static::POST_TYPE );
 		return $container;
 	}
 
@@ -104,7 +103,7 @@ abstract class PostType extends Post implements ModelContract
 	 * @return int | post id.
 	 */
 	public static function create( array $data, bool $wp_error = false ) {
-		$data['post_type'] = static::$name;
+		$data['post_type'] = static::POST_TYPE;
 		return wp_insert_post( wp_slash( $data ), $wp_error );
 	}
 
@@ -116,7 +115,7 @@ abstract class PostType extends Post implements ModelContract
 	 * @return void
 	 */
 	public static function __callStatic( string $name, array $arguments ) {
-		$arguments[] = static::$name;
+		$arguments[] = static::POST_TYPE;
 		return QueryBuilder::$name( ...$arguments );
 	}
 

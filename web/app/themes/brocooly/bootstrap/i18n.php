@@ -9,6 +9,9 @@
 add_action(
 	'after_setup_theme',
 	function() {
-		load_theme_textdomain( 'brocooly', get_template_directory() . '/public/languages' );
+		load_theme_textdomain(
+			'brocooly',
+			get_template_directory() . '/public/languages',
+		);
 	},
 );

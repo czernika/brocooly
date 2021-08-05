@@ -14,7 +14,7 @@ class TemplateServiceProvider extends AbstractService
 {
 
 	public function register() {
-		$this->app->set( 'templates', config( 'views.templates', [] ) );
+		$this->app->set( 'templates', config( 'views.templates' ) );
 	}
 
 	public function boot() {
@@ -27,7 +27,7 @@ class TemplateServiceProvider extends AbstractService
 				add_filter(
 					"theme_${postType}_templates",
 					function ( $post_templates, $theme, $post, $post_type ) use ( $tpl ) {
-						$post_templates[ $tpl->slug ] = $tpl->label();
+						$post_templates[ $tpl::SLUG ] = $tpl->label();
 						return $post_templates;
 					},
 					10,

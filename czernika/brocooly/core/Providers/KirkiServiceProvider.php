@@ -22,11 +22,10 @@ class KirkiServiceProvider extends AbstractService
 	 * Register customizer configuration
 	 */
 	public function register() {
-		$this->app->set( 'customizer_config', config( 'customizer.config' ) );
-		$this->app->set( 'customizer_prefix', config( 'customizer.prefix' ) );
-		$this->app->set( 'customizer_panels', config( 'customizer.panels' ) );
-		$this->app->set( 'customizer_sections', config( 'customizer.sections' ) );
-		$this->app->set( 'customizer_options', config( 'customizer.options' ) );
+		$customizerSettings = [ 'config', 'prefix', 'panels', 'sections', 'options' ];
+		foreach ( $customizerSettings as $setting ) {
+			$this->app->set( 'customizer_' . $setting, config( 'customizer.' . $setting ) );
+		}
 	}
 
 	/**
@@ -69,14 +68,11 @@ class KirkiServiceProvider extends AbstractService
 				$this->assertPanel( $panel, $panelClass );
 
 				$options = $panel->options();
-				if ( is_string( $panel->options() ) ) {
-					$options = [ 'title' => $panel->options() ];
+				if ( is_string( $options ) ) {
+					$options = [ 'title' => $options ];
 				}
 
-				Kirki::add_panel(
-					$panel::$id,
-					$options,
-				);
+				Kirki::add_panel( $panel::PANEL_ID, $options );
 			}
 		}
 	}
@@ -96,17 +92,14 @@ class KirkiServiceProvider extends AbstractService
 				$this->assertSection( $section, $sectionClass );
 
 				$options = $section->options();
-				if ( is_string( $section->options() ) ) {
-					$options = [ 'title' => $section->options() ];
+				if ( is_string( $options ) ) {
+					$options = [ 'title' => $options ];
 				}
 
-				Kirki::add_section(
-					$section::$id,
-					$options,
-				);
+				Kirki::add_section( $section::SECTION_ID, $options );
 
 				foreach ( $section->controls() as $controls ) {
-					$controls['section']  = $section::$id;
+					$controls['section']  = $section::SECTION_ID;
 					$controls['settings'] = $prefix . $controls['settings'];
 					Kirki::add_field( $config, $controls );
 				}
@@ -144,7 +137,7 @@ class KirkiServiceProvider extends AbstractService
 	 */
 	private function assertPanel( object $panel, string $panelClass ) {
 		Assert::stringNotEmpty(
-			$panel::$id,
+			$panel::PANEL_ID,
 			sprintf(
 				'You need to specify static `id` parameter for %s panel',
 				$panelClass,
@@ -161,7 +154,7 @@ class KirkiServiceProvider extends AbstractService
 	 */
 	private function assertSection( object $section, string $sectionClass ) {
 		Assert::stringNotEmpty(
-			$section::$id,
+			$section::SECTION_ID,
 			sprintf(
 				'You need to specify static `id` parameter for %s section',
 				$sectionClass,
