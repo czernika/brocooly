@@ -10,7 +10,11 @@
     "watch": "cross-env TAILWIND_MODE=watch NODE_ENV=development webpack --watch --config=build/webpack.dev.js",
     "info": "autoprefixer --info",
     "analyze": "dotenv -- bash -c 'lighthouse $WP_HOME --output html --view --output-path ./report.html'",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint:css": "stylelint web/app/themes/brocooly/resources/**/*.scss",
+    "lint:js": "eslint web/app/themes/brocooly/resources/**/*.js",
+    "fix:css": "stylelint web/app/themes/brocooly/resources/**/*.scss --fix",
+    "fix:js": "eslint web/app/themes/brocooly/resources/**/*.js --fix"
   },
   "keywords": [],
   "author": "",
