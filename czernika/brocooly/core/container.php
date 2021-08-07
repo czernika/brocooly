@@ -12,7 +12,7 @@
  * @since 0.1.0
  */
 
-use Theme\Brocooly;
+use Theme\Http\Brocooly;
 use DI\ContainerBuilder;
 
 /**

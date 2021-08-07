@@ -12,7 +12,7 @@ namespace Brocooly\Router;
 
 use Timber\Timber;
 use Brocooly\Storage\Context;
-use Theme\Brocooly as ThemeContext;
+use Theme\Http\Brocooly as ThemeContext;
 
 class View
 {
@@ -39,6 +39,10 @@ class View
 
 		$defaultPage = config( 'views.default' );
 		return Timber::render( [ $views, $defaultPage ], Context::get(), $expire );
+	}
+
+	public static function throw404() {
+		return static::make( 'content/404.twig' );
 	}
 
 	/**

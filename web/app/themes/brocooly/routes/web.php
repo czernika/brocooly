@@ -6,11 +6,13 @@
  *
  * @link https://codex.wordpress.org/Conditional_Tags
  *
+ * ! Upcoming changes: routing will be changed soon
+ *
  * @package Brocooly
- * @since brocooly 0.1.0
+ * @since brocooly 0.10.0
  */
 
-use Brocooly\Router\Route;
+use Brocooly\Support\Facades\Route;
 use Theme\Http\Controllers\PageController;
 use Theme\Http\Controllers\PostsController;
 use Theme\Http\Controllers\SearchController;
@@ -18,35 +20,18 @@ use Theme\Http\Controllers\FrontPageController;
 use Theme\Http\Controllers\PostTypesController;
 
 /**
- *--------------------------------------------------------------------------
+ * -------------------------------------------------------------------------
  * Singular
- *--------------------------------------------------------------------------
+ * -------------------------------------------------------------------------
  */
-Route::is_front_page( FrontPageController::class );
+Route::get( 'is_front_page', FrontPageController::class );
 Route::get( 'is_single', [ PostsController::class, 'single' ] );
 Route::get( 'is_singular', [ PostTypesController::class, 'single' ] );
 
 /**
- *--------------------------------------------------------------------------
+ * -------------------------------------------------------------------------
  * Archives
- *--------------------------------------------------------------------------
+ * -------------------------------------------------------------------------
  */
 Route::get( 'is_search', SearchController::class );
 Route::get( 'is_home', [ PostsController::class, 'index' ] );
-
-/**
- *--------------------------------------------------------------------------
- * 404 Template
- *--------------------------------------------------------------------------
- */
-Route::view( 'is_404', 'content/404.twig' );
-
-/**
- *--------------------------------------------------------------------------
- * Resolve which route to pass into view
- *--------------------------------------------------------------------------
- *
- * ! Please do NOT remove next line
- * TODO: handle requests logic somewhere else
- */
-Route::resolve();

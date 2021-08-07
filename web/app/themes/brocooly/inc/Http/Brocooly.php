@@ -10,7 +10,7 @@
 
 declare(strict_types=1);
 
-namespace Theme;
+namespace Theme\Http;
 
 use Brocooly\Http\Request\WPRequest;
 use Whoops\Handler\PlainTextHandler;

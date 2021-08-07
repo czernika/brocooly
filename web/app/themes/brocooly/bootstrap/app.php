@@ -40,14 +40,15 @@ $brocooly->run();
 
 /**
  * --------------------------------------------------------------------------
- * Include additional routes
+ * Include i18n file
  * --------------------------------------------------------------------------
  *
- * Like AJAX handlers, REST API, HTTP API or WP GraphQL
+ * This file requires to be handled directly into functions.php
+ * Otherwise other plugins may not see it as a template
  *
- * @since 0.8.9
+ * @since 0.8.5
  */
-$brocooly->routes();
+File::requireOnce( __DIR__ . '/i18n.php' );
 
 /**
  * --------------------------------------------------------------------------
@@ -61,15 +62,3 @@ $brocooly->routes();
  * @since 0.3.0
  */
 File::requireOnce( __DIR__ . '/kirki-installer.php' );
-
-/**
- * --------------------------------------------------------------------------
- * Include i18n file
- * --------------------------------------------------------------------------
- *
- * This file requires to be handled directly into functions.php
- * Otherwise other plugins may not see it as a template
- *
- * @since 0.8.5
- */
-File::requireOnce( __DIR__ . '/i18n.php' );

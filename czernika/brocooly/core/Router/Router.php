@@ -4,37 +4,31 @@ declare(strict_types=1);
 
 namespace Brocooly\Router;
 
-use Webmozart\Assert\Assert;
-use Brocooly\Support\Facades\File;
-
 class Router
 {
+	private Routes $routes;
 
-	public static array $routes = [];
+	private bool $route_was_hit = false;
 
-	public static function __callStatic( $name, $arguments ) {
-		$basePath = get_template_directory() . '/routes/';
-
-		Assert::fileExists(
-			$basePath . static::$routes[ $name ]['basename'],
-			/* translators: 1: file name. */
-			sprintf(
-				'File %s does not exists',
-				static::$routes[ $name ]['basename'],
-			),
-		);
-
-		File::requireOnce( $basePath . static::$routes[ $name ]['basename'] );
+	public function __construct( Routes $routes ) {
+		$this->routes = $routes;
 	}
 
-	public static function api() {
-		$basePath = get_template_directory() . '/routes/';
+	public function __call( $method, $args ) {
+		[ $condition, $callback ] = $args;
+		$this->routes->addRoute( $method, $condition, $callback );
+	}
 
-		foreach ( static::$routes as $route => $options ) {
-			if ( 'web' === $route ) {
-				continue;
+	public function resolve() {
+		foreach ( $this->routes->getRoutes() as $method => $routes ) {
+			if ( ! $this->route_was_hit ) {
+				$this->route_was_hit = RequestHandler::defineRoute( $method, $routes );
 			}
-			File::requireOnce( $basePath . $options['basename'] );
+		}
+
+		// Default error handler.
+		if ( ! $this->route_was_hit ) {
+			View::throw404();
 		}
 	}
 }

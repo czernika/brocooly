@@ -12,7 +12,6 @@ namespace Brocooly;
 
 use Brocooly\Router\Router;
 use Brocooly\Loaders\HookLoader;
-use Brocooly\Loaders\RoutesLoader;
 use Brocooly\Loaders\AssetsLoader;
 use Brocooly\Loaders\BootProvider;
 use Brocooly\Loaders\ConfigLoader;
@@ -46,7 +45,6 @@ class Bootstrap
 	private array $loaders = [
 		DefinitionLoader::class,
 		DebuggerLoader::class,
-		RoutesLoader::class,
 		ConfigLoader::class,
 		RegisterProvider::class,
 		HookLoader::class,

@@ -13,6 +13,7 @@ namespace Brocooly;
 
 use DI\Container;
 use Timber\Timber;
+use Brocooly\Support\Facades\File;
 use Psr\Container\ContainerInterface;
 
 use function DI\factory;
@@ -42,6 +43,8 @@ class App
 	 */
 	private Container $container;
 
+	private bool $webRoutesWasLoaded = false;
+
 	public function __construct( Container $container ) {
 		self::$app       = $this;
 		$this->container = $container;
@@ -55,6 +58,31 @@ class App
 	 */
 	public static function getApp() {
 		return static::$app;
+	}
+
+	/**
+	 * Get Router
+	 *
+	 * @since 0.10.0
+	 * @return object
+	 */
+	public function router() {
+		return $this->get( 'routing' );
+	}
+
+	/**
+	 * Resolve routes
+	 * Include web.php file and resolve routes.
+	 *
+	 * @since 0.10.0
+	 * @return void
+	 */
+	public function web() {
+		if ( ! $this->webRoutesWasLoaded ) {
+			$this->webRoutesWasLoaded = true;
+			File::requireOnce( BROCOOLY_THEME_PATH . '/routes/web.php' );
+			$this->router()->resolve();
+		}
 	}
 
 	/**

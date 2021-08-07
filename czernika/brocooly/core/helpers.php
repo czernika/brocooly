@@ -12,7 +12,6 @@ use Brocooly\Router\View;
 use Brocooly\Storage\Config;
 use Brocooly\Loaders\AssetsLoader;
 use Brocooly\Http\Request\Request;
-use Brocooly\Router\Route;
 
 use function Env\env;
 
@@ -182,18 +181,5 @@ if ( ! function_exists( 'request' ) ) {
 		}
 
 		return $request;
-	}
-}
-
-if ( ! function_exists( 'action' ) ) {
-
-	/**
-	 * Get POST action
-	 *
-	 * @param string $key | registered action name.
-	 * @return void
-	 */
-	function action( $key ) {
-		Route::action( $key );
 	}
 }

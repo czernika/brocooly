@@ -9,6 +9,8 @@
 use Brocooly\App;
 use Timber\Timber;
 use Brocooly\Bootstrap;
+use Brocooly\Router\Routes;
+use Brocooly\Router\Router;
 use HelloNico\Twig\DumpExtension;
 use Brocooly\Contracts\ModelContract;
 use Brocooly\Support\Factories\MetaFactory;
@@ -17,6 +19,7 @@ use Brocooly\Support\Builders\ModelBuilder;
 use Brocooly\Support\Factories\FacadeFactory;
 use Brocooly\Support\Factories\ValidatorFactory;
 use Brocooly\Support\Factories\CustomizerFactory;
+use Brocooly\Support\Factories\RouteFactory;
 
 use function DI\get;
 use function DI\create;
@@ -35,6 +38,8 @@ $appDefintions = [
 	'bootstrap'                           => create( Bootstrap::class )
 												->constructor( get( App::class ) ),
 	'timber'                              => create( Timber::class ),
+	'routing'                             => create( Router::class )
+												->constructor( get( Routes::class ) ),
 
 	/**
 	 *--------------------------------------------------------------------------
@@ -55,6 +60,7 @@ $appDefintions = [
 	'mod'                                 => create( CustomizerFactory::class ),
 	'validator'                           => create( ValidatorFactory::class ),
 	'file'                                => create( FileFactory::class ),
+	'router'                              => create( RouteFactory::class ),
 
 	/**
 	 * --------------------------------------------------------------------------
