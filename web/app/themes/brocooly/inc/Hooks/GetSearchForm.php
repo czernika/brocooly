@@ -5,6 +5,7 @@
  * @package Brocooly
  * @since 0.4.1
  */
+
 declare(strict_types=1);
 
 namespace Theme\Hooks;

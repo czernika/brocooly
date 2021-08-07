@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Brocooly\Router;
 
 use Webmozart\Assert\Assert;
+use Brocooly\Support\Facades\File;
 
 class Router
 {
@@ -22,7 +23,7 @@ class Router
 			),
 		);
 
-		require_once $basePath . static::$routes[ $name ]['basename'];
+		File::requireOnce( $basePath . static::$routes[ $name ]['basename'] );
 	}
 
 	public static function api() {
@@ -32,8 +33,7 @@ class Router
 			if ( 'web' === $route ) {
 				continue;
 			}
-
-			require_once $basePath . $options['basename'];
+			File::requireOnce( $basePath . $options['basename'] );
 		}
 	}
 }

@@ -12,7 +12,7 @@ const output = {
 	publicPath: '',
 	clean: {
 		dry: false, // change to true for testing.
-		keep: (asset) => asset.includes('languages') || asset.includes('.gitignore'),
+		keep: (asset) => asset.includes('.gitignore'),
 	},
 };
 

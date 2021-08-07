@@ -12,8 +12,10 @@ use Brocooly\Bootstrap;
 use HelloNico\Twig\DumpExtension;
 use Brocooly\Contracts\ModelContract;
 use Brocooly\Support\Factories\MetaFactory;
+use Brocooly\Support\Factories\FileFactory;
 use Brocooly\Support\Builders\ModelBuilder;
 use Brocooly\Support\Factories\FacadeFactory;
+use Brocooly\Support\Factories\ValidatorFactory;
 use Brocooly\Support\Factories\CustomizerFactory;
 
 use function DI\get;
@@ -51,6 +53,8 @@ $appDefintions = [
 	'meta'                                => create( MetaFactory::class ),
 	'facade'                              => create( FacadeFactory::class ),
 	'mod'                                 => create( CustomizerFactory::class ),
+	'validator'                           => create( ValidatorFactory::class ),
+	'file'                                => create( FileFactory::class ),
 
 	/**
 	 * --------------------------------------------------------------------------

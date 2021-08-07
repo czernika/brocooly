@@ -6,7 +6,7 @@
 
 const replyLinks = document.querySelectorAll('.reply');
 
-const insertFormAfterCommentAuthor = (link) => {
+const insertFormAfterCommentAuthor = link => {
 	const respondForm   = document.querySelector('#respond');
 	const parentComment = respondForm.querySelector('#comment_parent');
 	const respondTitle  = respondForm.querySelector('#reply-title');
@@ -23,7 +23,7 @@ const insertFormAfterCommentAuthor = (link) => {
 };
 
 replyLinks?.forEach(link => {
-	link.addEventListener('click', (e) => {
+	link.addEventListener('click', e => {
 		e.preventDefault();
 		insertFormAfterCommentAuthor(link);
 	});

@@ -9,6 +9,8 @@
  * @since 0.1.0
  */
 
+use Brocooly\Support\Facades\File;
+
 /**
  * --------------------------------------------------------------------------
  * Include DI container
@@ -58,7 +60,7 @@ $brocooly->routes();
  * @see https://kirki.org/docs/setup/integration/
  * @since 0.3.0
  */
-require_once __DIR__ . '/kirki-installer.php';
+File::requireOnce( __DIR__ . '/kirki-installer.php' );
 
 /**
  * --------------------------------------------------------------------------
@@ -70,4 +72,4 @@ require_once __DIR__ . '/kirki-installer.php';
  *
  * @since 0.8.5
  */
-require_once __DIR__ . '/i18n.php';
+File::requireOnce( __DIR__ . '/i18n.php' );

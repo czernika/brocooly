@@ -11,6 +11,7 @@ use Timber\Timber;
 use Brocooly\Router\View;
 use Brocooly\Storage\Config;
 use Brocooly\Loaders\AssetsLoader;
+use Brocooly\Http\Request\Request;
 
 use function Env\env;
 
@@ -162,5 +163,23 @@ if ( ! function_exists( 'mod' ) ) {
 		$prefix   = app( 'customizer_prefix' );
 		$themeMod = $prefix . $key;
 		return get_theme_mod( $themeMod, $default );
+	}
+}
+
+if ( ! function_exists( 'request' ) ) {
+
+	/**
+	 * Get WordPress request object
+	 *
+	 * @param string|null $key | key from request.
+	 * @return mixed
+	 */
+	function request( $key = null ) {
+		$request = app( Request::class );
+		if ( isset( $key ) ) {
+			return $request->get( $key );
+		}
+
+		return $request;
 	}
 }
