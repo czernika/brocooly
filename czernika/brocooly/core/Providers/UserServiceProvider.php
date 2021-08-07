@@ -52,6 +52,7 @@ class UserServiceProvider extends AbstractService
 
 						Assert::null(
 							get_role( $role::ROLE ),
+							/* translators: 1: role slug. */
 							sprintf(
 								'Role %s already exists',
 								$role::ROLE,

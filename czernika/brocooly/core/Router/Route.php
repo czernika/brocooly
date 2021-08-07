@@ -2,6 +2,8 @@
 /**
  * Define which request to handle
  *
+ * TODO: refactor
+ *
  * @package Brocooly
  * @since 0.1.0
  */
@@ -37,13 +39,42 @@ class Route
 		} else {
 			$condition = $name;
 			$callback  = $arguments[0];
-			$name      = 'query';
+			$name      = 'condition';
 		}
 
 		$id = uniqid();
 
+		if ( 'post' === $name ) {
+			$id = $condition;
+		}
+
 		static::$routes[ $name ][ $id ]['condition'] = $condition;
 		static::$routes[ $name ][ $id ]['callback']  = $callback;
+	}
+
+	/**
+	 * Handle form action
+	 *
+	 * @param string $key | find route key.
+	 * @return void
+	 */
+	public static function action( string $key ) {
+		if ( empty( $_POST ) ) { // phpcs:ignore WordPress.Security.NonceVerification
+			return;
+		}
+
+		$action = static::$routes['post'][ $key ];
+		if ( isset( $action ) ) {
+			return static::handleMethods( $action );
+		}
+
+		throw new \Exception(
+			/* translators: 1: route POST action name. */
+			sprintf(
+				'Post action %s doesn\'t exist',
+				$key,
+			),
+		);
 	}
 
 	/**
@@ -53,24 +84,9 @@ class Route
 	 */
 	private static function handleConditionalRequest( array $options ) {
 		foreach ( array_values( $options ) as $option ) {
-
 			$condition = static::setCondition( $option['condition'] );
-
 			if ( call_user_func( ...$condition ) ) {
-				$callback = $option['callback'];
-
-				if ( is_array( $callback ) ) {
-					static::$__route_was_hit = true;
-					return static::dispatchControllerMethod( $callback );
-				} else {
-					if ( is_subclass_of( $option['callback'], BaseController::class ) ) {
-						$class                   = static::callController( $callback );
-						static::$__route_was_hit = true;
-						return call_user_func_array( $class, func_get_args() );
-					}
-					static::$__route_was_hit = true;
-					return call_user_func_array( $callback, func_get_args() );
-				}
+				static::handleMethods( $option );
 				break;
 			}
 		}
@@ -96,7 +112,7 @@ class Route
 	public static function resolve() {
 		foreach ( static::$routes as $request => $options ) {
 			if ( ! static::$__route_was_hit ) {
-				if ( in_array( $request, [ 'query', 'condition' ], true ) ) {
+				if ( in_array( $request, [ 'get', 'condition' ], true ) ) {
 					static::handleConditionalRequest( $options );
 				}
 
@@ -120,6 +136,23 @@ class Route
 
 		add_action( "wp_ajax_$action", [ $classObject, $method ] );
 		add_action( "wp_ajax_nopriv_$action", [ $classObject, $method ] );
+	}
+
+	private static function handleMethods( $action ) {
+		$callback = $action['callback'];
+
+		if ( is_array( $callback ) ) {
+			static::$__route_was_hit = true;
+			return static::dispatchControllerMethod( $callback );
+		} else {
+			if ( is_subclass_of( $action['callback'], BaseController::class ) ) {
+				$class                   = static::callController( $callback );
+				static::$__route_was_hit = true;
+				return call_user_func_array( $class, func_get_args() );
+			}
+			static::$__route_was_hit = true;
+			return call_user_func_array( $callback, func_get_args() );
+		}
 	}
 
 	/**

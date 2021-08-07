@@ -50,6 +50,7 @@ abstract class AbstractWidget extends Widget
 	 */
 	protected function title() {
 		throw new \Exception(
+			/* translators: 1: widget id. */
 			sprintf(
 				'Title was not set for "%s" widget!',
 				static::WIDGET_ID,
@@ -83,6 +84,7 @@ abstract class AbstractWidget extends Widget
 	 */
 	protected function view() {
 		throw new \Exception(
+			/* translators: 1: widget id. */
 			sprintf(
 				'View file was not set for "%s" widget!',
 				static::WIDGET_ID,

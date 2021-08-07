@@ -30,6 +30,7 @@ abstract class AbstractPanel
 	 */
 	public function options() {
 		throw new \Exception(
+			/* translators: 1: customizer panel id. */
 			sprintf(
 				'Options for "%s" panel is not defined!',
 				static::PANEL_ID,

@@ -35,7 +35,7 @@ class MenuServiceProvider extends AbstractService
 
 		Assert::isArray(
 			$menus,
-			/* translators: type of variable */
+			/* translators: 1: type of variable */
 			sprintf(
 				'`app.menus` key must be an array, %s given',
 				gettype( $menus )
@@ -48,7 +48,7 @@ class MenuServiceProvider extends AbstractService
 
 				Assert::stringNotEmpty(
 					$menu::LOCATION,
-					/* translators: menu class */
+					/* translators: 1: menu class */
 					sprintf(
 						'Name property was not provided for %s menu',
 						$menuClass
@@ -58,7 +58,7 @@ class MenuServiceProvider extends AbstractService
 				Assert::methodExists(
 					$menu,
 					'label',
-					/* translators: menu class */
+					/* translators: 1: menu class name */
 					sprintf(
 						'%s menu must have `label()` method which should return string',
 						$menuClass

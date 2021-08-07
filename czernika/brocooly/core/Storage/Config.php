@@ -54,6 +54,7 @@ class Config
 
 		Assert::fileExists(
 			BROCOOLY_THEME_PATH . 'config/' . $file . '.php',
+			/* translators: 1: file name. */
 			sprintf(
 				'File %s not exists',
 				esc_html( wp_normalize_path( BROCOOLY_THEME_PATH . 'config/' . $file . '.php' ) )
@@ -63,6 +64,7 @@ class Config
 		Assert::keyExists(
 			static::$data[ $file ],
 			$data,
+			/* translators: 1: key; 2 - file name. */
 			sprintf(
 				'Key "%1$s" not exists in %2$s file',
 				esc_html( $data ),

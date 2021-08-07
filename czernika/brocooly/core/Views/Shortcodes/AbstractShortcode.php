@@ -42,6 +42,7 @@ abstract class AbstractShortcode
 	 */
 	public function render( array $atts = [] ) {
 		throw new \Exception(
+			/* translators: 1: shortcode id. */
 			sprintf(
 				'No render callback was set for "%s" shortcode!',
 				static::SHORTCODE_ID,

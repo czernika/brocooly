@@ -64,6 +64,7 @@ abstract class Taxonomy extends Term
 	public function getPostTypes() {
 		if ( ! static::$postTypes ) {
 			throw new \Exception(
+				/* translators: 1: taxonomy slug. */
 				sprintf(
 					'You must specify post type related to %s taxonomy',
 					static::TAXONOMY

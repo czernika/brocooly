@@ -92,11 +92,13 @@ abstract class CreateFileConsoleCommand extends Command
 		$stub = $this->getStubByType( $type );
 
 		if ( file_exists( $ModelFile ) ) {
+			/* translators: 1: file name. */
 			$this->failure( $output, sprintf( 'File %s already exists', $ModelFile ) );
 			die();
 		}
 
 		if ( ! file_exists( $stub ) || ! copy( $stub, $ModelFile ) ) {
+			/* translators: 1: file name. */
 			$this->failure( $output, sprintf( 'Unable to create file %s', $ModelFile ) );
 			die();
 		}

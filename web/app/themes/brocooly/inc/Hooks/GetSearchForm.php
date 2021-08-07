@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace Theme\Hooks;
 
 use Brocooly\Router\View;
+use Brocooly\Http\Request\WPRequest;
 
 class GetSearchForm
 {
@@ -31,7 +32,7 @@ class GetSearchForm
 	 * @return string
 	 */
 	public function hook( string $form ) {
-		$form = View::compile( '@forms/search.twig', [ 's' => get_search_query() ] );
+		$form = View::compile( '@forms/search.twig', [ 's' => WPRequest::searchQuery() ] );
 		return $form;
 	}
 }

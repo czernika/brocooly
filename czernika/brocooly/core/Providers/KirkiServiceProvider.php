@@ -138,6 +138,7 @@ class KirkiServiceProvider extends AbstractService
 	private function assertPanel( object $panel, string $panelClass ) {
 		Assert::stringNotEmpty(
 			$panel::PANEL_ID,
+			/* translators: 1: customizer panel id. */
 			sprintf(
 				'You need to specify static `id` parameter for %s panel',
 				$panelClass,
@@ -155,6 +156,7 @@ class KirkiServiceProvider extends AbstractService
 	private function assertSection( object $section, string $sectionClass ) {
 		Assert::stringNotEmpty(
 			$section::SECTION_ID,
+			/* translators: 1: customizer section class name. */
 			sprintf(
 				'You need to specify static `id` parameter for %s section',
 				$sectionClass,
@@ -163,6 +165,7 @@ class KirkiServiceProvider extends AbstractService
 
 		Assert::isArray(
 			$section->controls(),
+			/* translators: 1: customizer section class name; 2: customizer section controls type. */
 			sprintf(
 				'`controls()` method should return array for %1$s section, %2$s given',
 				$sectionClass,
@@ -181,6 +184,7 @@ class KirkiServiceProvider extends AbstractService
 	private function assertOption( object $option, string $optionClass ) {
 		Assert::isArray(
 			$option->settings(),
+			/* translators: 1: customizer option class name; 2: customizer option settings type. */
 			sprintf(
 				'`settings()` method should return array for %1$s option, %2$s given',
 				$optionClass,
@@ -191,6 +195,7 @@ class KirkiServiceProvider extends AbstractService
 		Assert::keyExists(
 			$option->settings(),
 			'section',
+			/* translators: 1: customizer section class name. */
 			sprintf(
 				'You need to specify `section` setting for %s option',
 				$optionClass,

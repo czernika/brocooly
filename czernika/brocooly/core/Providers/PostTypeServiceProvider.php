@@ -88,6 +88,7 @@ class PostTypeServiceProvider extends AbstractService
 				Assert::methodExists(
 					$cpt,
 					'options',
+					/* translators: 1: post type class. */
 					sprintf(
 						'Method options was not set for %s taxonomy',
 						$postTypeClass,
@@ -142,6 +143,7 @@ class PostTypeServiceProvider extends AbstractService
 				Assert::methodExists(
 					$tax,
 					'options',
+					/* translators: 1: taxonomy class. */
 					sprintf(
 						'Method options was not set for %s taxonomy',
 						$taxonomyClass,

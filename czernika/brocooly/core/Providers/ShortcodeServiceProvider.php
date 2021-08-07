@@ -37,7 +37,7 @@ class ShortcodeServiceProvider extends AbstractService
 
 		Assert::isArray(
 			$shortcodes,
-			/* translators: type of variable */
+			/* translators: 1: type of variable */
 			sprintf(
 				'`app.shortcodes` key must be an array, %s given',
 				gettype( $shortcodes )
@@ -50,7 +50,7 @@ class ShortcodeServiceProvider extends AbstractService
 
 				Assert::stringNotEmpty(
 					$shortcode::SHORTCODE_ID,
-					/* translators: shortcode class name */
+					/* translators: 1: shortcode class name */
 					sprintf(
 						'ID property was not provided for %s shortcode',
 						$shortcodeClass
@@ -60,7 +60,7 @@ class ShortcodeServiceProvider extends AbstractService
 				Assert::methodExists(
 					$shortcode,
 					'render',
-					/* translators: shortcode class name */
+					/* translators: 1: shortcode class name */
 					sprintf(
 						'%s shortcode must have `render()` method',
 						$shortcodeClass

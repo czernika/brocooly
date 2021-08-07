@@ -27,6 +27,7 @@ abstract class AbstractSection
 	 */
 	public function options() {
 		throw new \Exception(
+			/* translators: 1: customizer section id. */
 			sprintf(
 				'Options for "%s" section is not defined!',
 				static::SECTION_ID,
@@ -42,6 +43,7 @@ abstract class AbstractSection
 	 */
 	public function controls() {
 		throw new \Exception(
+			/* translators: 1: customizer section id. */
 			sprintf(
 				'Controls settings for "%s" section are not defined!',
 				static::SECTION_ID,

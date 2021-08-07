@@ -17,6 +17,7 @@ class Router
 
 		Assert::fileExists(
 			$basePath . static::$routes[ $name ]['basename'],
+			/* translators: 1: file name. */
 			sprintf(
 				'File %s does not exists',
 				static::$routes[ $name ]['basename'],

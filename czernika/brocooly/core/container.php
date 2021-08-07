@@ -12,6 +12,7 @@
  * @since 0.1.0
  */
 
+use Theme\Brocooly;
 use DI\ContainerBuilder;
 
 /**
@@ -36,7 +37,7 @@ $containerBuilder = new ContainerBuilder();
  * Second one is your custom definitions.
  */
 $appDefinitions   = require_once CORE_PATH . '/config.php';
-$themeDefinitions = require_once get_template_directory() . '/inc/definitions.php';
+$themeDefinitions = Brocooly::definitions();
 $containerBuilder->addDefinitions( $appDefinitions, $themeDefinitions );
 
 /**

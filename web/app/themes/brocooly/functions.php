@@ -18,7 +18,7 @@ if ( version_compare( $minimumRequiredPHPVersion, phpversion(), '>=' ) ) {
 	wp_die(
 		/* translators: 1: minimum required PHP version, 2: current PHP version. */
 		sprintf(
-			'<h1>Brocooly Framework requires PHP version %1$s or greater!</h1><p>Invalid PHP version! Please update it. Your current version is: <strong>"%2$s"</strong></p>',
+			/* html */ '<h1>Brocooly Framework requires PHP version %1$s or greater!</h1><p>Invalid PHP version! Please update it. Your current version is: <strong>%2$s</strong></p>',
 			esc_html( $minimumRequiredPHPVersion ),
 			esc_html( phpversion() ),
 		),
@@ -41,9 +41,9 @@ if ( ! file_exists( $autoload ) ) {
 	wp_die(
 		/* translators: 1: root directory, 2: link to Composer website. */
 		sprintf(
-			'<h1>Forester Framework requires composer to be installed!</h1><p>Maybe you forget to run "<code>composer update</code>" in the root folder: <strong>"%1$s"</strong> or %2$s it</p>',
+			/* html */ '<h1>Forester Framework requires composer to be installed!</h1><p>Maybe you forget to run <code>composer update</code> in the root folder: <strong>%1$s</strong> or %2$s it</p>',
 			esc_html( APP_PATH ),
-			'<a href="https://getcomposer.org/" target="_blank">install</a>'
+			/* html */ '<a href="https://getcomposer.org/" target="_blank">install</a>'
 		),
 	);
 }

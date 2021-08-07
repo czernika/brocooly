@@ -23,16 +23,16 @@ use Theme\Http\Controllers\PostTypesController;
  *--------------------------------------------------------------------------
  */
 Route::is_front_page( FrontPageController::class );
-Route::condition( 'is_single', [ PostsController::class, 'single' ] );
-Route::condition( 'is_singular', [ PostTypesController::class, 'single' ] );
+Route::get( 'is_single', [ PostsController::class, 'single' ] );
+Route::get( 'is_singular', [ PostTypesController::class, 'single' ] );
 
 /**
  *--------------------------------------------------------------------------
  * Archives
  *--------------------------------------------------------------------------
  */
-Route::condition( 'is_search', SearchController::class );
-Route::condition( 'is_home', [ PostsController::class, 'index' ] );
+Route::get( 'is_search', SearchController::class );
+Route::get( 'is_home', [ PostsController::class, 'index' ] );
 
 /**
  *--------------------------------------------------------------------------

@@ -6,10 +6,6 @@
  * @since 0.1.0
  */
 
-use Honeybadger\Honeybadger;
-
-use function Env\env;
-
 if ( ! function_exists( 'clearPhone' ) ) {
 
 	/**

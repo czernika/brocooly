@@ -84,6 +84,7 @@ class HookLoader
 		Assert::methodExists(
 			$hook,
 			'hook',
+			/* translators: 1: hook class name. */
 			sprintf(
 				'Hook() method is not present at %s hook',
 				$hookClass
@@ -93,6 +94,7 @@ class HookLoader
 		Assert::methodNotExists(
 			$hook,
 			'action',
+			/* translators: 1: hook class name. */
 			sprintf(
 				'action() method could not be used inside %s filter',
 				$hookClass
@@ -104,6 +106,7 @@ class HookLoader
 		Assert::methodExists(
 			$hook,
 			'hook',
+			/* translators: 1: hook class name. */
 			sprintf(
 				'Hook() method is not present at %s hook',
 				$hookClass
@@ -113,6 +116,7 @@ class HookLoader
 		Assert::methodNotExists(
 			$hook,
 			'filter',
+			/* translators: 1: hook class name. */
 			sprintf(
 				'filter() method could not be used inside %s action',
 				$hookClass

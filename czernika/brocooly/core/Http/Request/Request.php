@@ -14,30 +14,6 @@ use Brocooly\Support\Facades\Validator;
 
 class Request
 {
-	/**
-	 * Get request object or its key
-	 *
-	 * @param string|null $key | query argument.
-	 * @return mixed
-	 */
-	public function getQuery( $key = null ) {
-		global $wp_query;
-
-		if ( isset( $key ) ) {
-			return get_query_var( $key );
-		}
-
-		return $wp_query;
-	}
-
-	/**
-	 * Get queried object
-	 *
-	 * @return object
-	 */
-	public function queried() {
-		return get_queried_object();
-	}
 
 	/**
 	 * Return validation rules array

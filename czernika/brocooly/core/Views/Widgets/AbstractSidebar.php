@@ -27,6 +27,7 @@ abstract class AbstractSidebar
 	 */
 	public function options() {
 		throw new \Exception(
+			/* translators: 1: sidebar location id. */
 			sprintf(
 				'No sidebar options was set for "%s" sidebar!',
 				static::SIDEBAR_ID,

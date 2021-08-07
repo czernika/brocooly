@@ -32,6 +32,7 @@ abstract class AbstractMenu
 	 */
 	public function label() {
 		throw new \Exception(
+			/* translators: 1: menu location id. */
 			sprintf(
 				'No label callback was set for "%s" menu!',
 				static::LOCATION,
