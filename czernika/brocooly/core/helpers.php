@@ -9,6 +9,7 @@
 use Brocooly\App;
 use Timber\Timber;
 use Brocooly\Router\View;
+use Brocooly\Router\Router;
 use Brocooly\Storage\Config;
 use Brocooly\Loaders\AssetsLoader;
 use Brocooly\Http\Request\Request;
@@ -181,5 +182,18 @@ if ( ! function_exists( 'request' ) ) {
 		}
 
 		return $request;
+	}
+}
+
+if ( ! function_exists( 'action' ) ) {
+
+	/**
+	 * Set action form handler
+	 *
+	 * @param string|null $name | action name.
+	 * @return callable
+	 */
+	function action( string $name ) {
+		Router::action( $name );
 	}
 }

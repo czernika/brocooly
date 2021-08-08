@@ -21,11 +21,12 @@ class PostService implements PostServiceContract
 	 * @return string
 	 */
 	public function getBlogTitle() {
-		return get_the_title( get_option( 'page_for_posts' ) );
+		$title = get_option( 'page_for_posts' ) ? get_the_title( get_option( 'page_for_posts' ) ) : esc_html__( 'Blog', 'brocooly' );
+		return $title;
 	}
 
 	/**
-	 * Get blog crumbs
+	 * Get blog breadcrumbs
 	 *
 	 * @return array
 	 */

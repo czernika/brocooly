@@ -1,6 +1,8 @@
 <?php
 /**
- * Post Service interface
+ * Page Service interface
+ *
+ * Get additional data about pages.
  *
  * @package Brocooly
  * @since 0.4.1

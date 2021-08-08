@@ -41,7 +41,12 @@ return [
 		 * Get theme mod
 		 */
 		'rawmod' => 'get_theme_mod',
-	],
+
+		/**
+		 * Form action handler
+		 */
+		'handler' => 'action',
+ 	],
 
 	/**
 	 * --------------------------------------------------------------------------

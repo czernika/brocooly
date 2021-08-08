@@ -2,6 +2,8 @@
 /**
  * Post Service interface
  *
+ * Get additional data about posts.
+ *
  * @package Brocooly
  * @since 0.2.1
  */
@@ -14,14 +16,15 @@ interface PostServiceContract
 {
 
 	/**
-	 * Get blog title
+	 * Get title for blog page
 	 *
 	 * @return string
 	 */
 	public function getBlogTitle();
 
 	/**
-	 * Get blog crumbs
+	 * Get breadcrumbs on blog page
+	 * This crumbs will be set as a parent to a current post type if exists
 	 *
 	 * @return array
 	 */

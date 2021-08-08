@@ -19,11 +19,13 @@ class Router
 		$this->routes->addRoute( $method, $condition, $callback );
 	}
 
+	public static function action( $key ) {
+		return RequestHandler::handlePostRequest( $key );
+	}
+
 	public function resolve() {
-		foreach ( $this->routes->getRoutes() as $method => $routes ) {
-			if ( ! $this->route_was_hit ) {
-				$this->route_was_hit = RequestHandler::defineRoute( $method, $routes );
-			}
+		if ( ! $this->route_was_hit ) {
+			$this->route_was_hit = RequestHandler::defineRoute( $this->routes->getRoutes() );
 		}
 
 		// Default error handler.
