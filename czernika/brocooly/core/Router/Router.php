@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Brocooly\Router;
 
+use Illuminate\Support\Str;
+
 class Router
 {
 	private Routes $routes;
@@ -14,9 +16,27 @@ class Router
 		$this->routes = $routes;
 	}
 
-	public function __call( $method, $args ) {
-		[ $condition, $callback ] = $args;
-		$this->routes->addRoute( $method, $condition, $callback );
+	public function __call( $condition, $args ) {
+		[ $callback ] = $args;
+		$this->routes->addRoute( 'get', Str::snake( $condition ), $callback );
+	}
+
+	public function get( $condition, $callback ) {
+		$this->routes->addRoute( 'get', $condition, $callback );
+	}
+
+	public function view( $condition, $template ) {
+		$this->routes->addRoute(
+			'get',
+			$condition,
+			function() use ( $template ) {
+				view( $template );
+			},
+		);
+	}
+
+	public function post( $condition, $callback ) {
+		$this->routes->addRoute( 'post', $condition, $callback );
 	}
 
 	public static function action( $key ) {

@@ -13,13 +13,13 @@ use Brocooly\Router\Routes;
 use Brocooly\Router\Router;
 use HelloNico\Twig\DumpExtension;
 use Brocooly\Contracts\ModelContract;
+use Brocooly\Support\Builders\ModelBuilder;
 use Brocooly\Support\Factories\MetaFactory;
 use Brocooly\Support\Factories\FileFactory;
-use Brocooly\Support\Builders\ModelBuilder;
+use Brocooly\Support\Factories\RouteFactory;
 use Brocooly\Support\Factories\FacadeFactory;
 use Brocooly\Support\Factories\ValidatorFactory;
 use Brocooly\Support\Factories\CustomizerFactory;
-use Brocooly\Support\Factories\RouteFactory;
 
 use function DI\get;
 use function DI\create;

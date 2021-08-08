@@ -12,9 +12,6 @@
  * @since brocooly 0.1.0
  */
 
-use Brocooly\Router\Router;
-use Brocooly\Router\Routes;
-
 /**
  * --------------------------------------------------------------------------
  * Include app routes

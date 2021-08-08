@@ -19,7 +19,11 @@ class RequestHandler
 	}
 
 	private static function handleGetRequest() {
-		foreach ( static::$routes['get'] as $route ) {
+		$routes = collect( static::$routes )
+					->except( [ 'post' ] )
+					->all();
+
+		foreach ( $routes['get'] as $route ) {
 			if ( call_user_func( $route['name'] ) ) {
 				DispatchCallable::dispatch( $route['callback'] );
 				return true;

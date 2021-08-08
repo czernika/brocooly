@@ -24,7 +24,7 @@ use Theme\Http\Controllers\PostTypesController;
  * Singular
  * -------------------------------------------------------------------------
  */
-Route::get( 'is_front_page', FrontPageController::class );
+Route::isFrontPage( FrontPageController::class );
 Route::get( 'is_single', [ PostsController::class, 'single' ] );
 Route::get( 'is_singular', [ PostTypesController::class, 'single' ] );
 
