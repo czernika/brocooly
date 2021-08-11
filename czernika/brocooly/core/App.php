@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace Brocooly;
 
+use Brocooly\Router\RequestHandler;
 use DI\Container;
 use Timber\Timber;
 use Brocooly\Support\Facades\File;
@@ -43,10 +44,22 @@ class App
 	 */
 	private Container $container;
 
+	/**
+	 * Check if is app was already booted
+	 *
+	 * @var bool
+	 */
+	private static bool $booted = false;
+
+	/**
+	 * Define if route resolver was called
+	 *
+	 * @var bool
+	 */
 	private bool $webRoutesWasLoaded = false;
 
 	public function __construct( Container $container ) {
-		self::$app       = $this;
+		static::$app       = $this;
 		$this->container = $container;
 		$this->timber    = $this->container->make( 'timber' );
 	}
@@ -81,7 +94,11 @@ class App
 		if ( ! $this->webRoutesWasLoaded ) {
 			$this->webRoutesWasLoaded = true;
 			File::requireOnce( BROCOOLY_THEME_PATH . '/routes/web.php' );
+			File::requireOnce( BROCOOLY_THEME_PATH . '/routes/ajax.php' );
+
 			$this->router()->resolve();
+
+			RequestHandler::handleAjaxRequest();
 		}
 	}
 
@@ -91,17 +108,18 @@ class App
 	 * @param array $loaders | array of app loaders.
 	 */
 	public function bootLoaders( array $loaders ) {
-		foreach ( $loaders as $loader ) {
-			$this->make( $loader )->call();
+		if ( ! static::$booted ) {
+			foreach ( $loaders as $loader ) {
+				$this->make( $loader )->call();
+			}
+			static::$booted = true;
 		}
 	}
 
 	/**
 	 * Bind Interface with it's class object
 	 *
-	 * @param string $key
-	 * @param string $value
-	 * @return void
+	 * @inheritdoc
 	 */
 	public function bind( string $key, string $value ) {
 		$this->container->set(
@@ -114,6 +132,11 @@ class App
 		);
 	}
 
+	/**
+	 * Wire key with it's value using DI\Container
+	 *
+	 * @inheritdoc
+	 */
 	public function wire( string $key, string $value ) {
 		$this->container->set(
 			$key,
@@ -155,7 +178,6 @@ class App
 	 * Inject dependencies into object
 	 *
 	 * @param $object | instance of class to inject on.
-	 * @return void
 	 */
 	public function injectOn( $object ) {
 		return $this->container->injectOn( $object );
@@ -172,6 +194,9 @@ class App
 		return $this->container->make( $name, $parameters );
 	}
 
+	/**
+	 * @inheritDoc
+	 */
 	public function call( $callable, array $parameters = [] ) {
 		return $this->container->call( $callable, $parameters );
 	}

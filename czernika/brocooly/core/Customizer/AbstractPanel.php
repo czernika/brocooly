@@ -26,16 +26,15 @@ abstract class AbstractPanel
 	 * Return array of options
 	 * or string in case only title required
 	 *
-	 * @throws Exception
+	 * @throws \Exception | If no options were defined.
 	 */
 	public function options() {
 		throw new \Exception(
-			/* translators: 1: customizer panel id. */
+			/* translators: 1 - customizer panel id. */
 			sprintf(
 				'Options for "%s" panel is not defined!',
-				static::PANEL_ID,
+				esc_html( static::PANEL_ID ),
 			),
-			true,
 		);
 	}
 }

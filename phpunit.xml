@@ -14,7 +14,7 @@
 
 	<coverage>
 		<include>
-			<directory suffix=".php">web</directory>
+			<directory suffix=".php">web/app/themes/brocooly</directory>
 			<directory suffix=".php">czernika</directory>
 		</include>
 		<exclude>

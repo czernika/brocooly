@@ -6,8 +6,6 @@
  *
  * @link https://codex.wordpress.org/Conditional_Tags
  *
- * ! Upcoming changes: routing will be changed soon
- *
  * @package Brocooly
  * @since brocooly 0.10.0
  */

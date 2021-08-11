@@ -12,7 +12,6 @@ declare(strict_types=1);
 namespace Brocooly\Providers;
 
 use Kirki;
-use AssertionError;
 use Webmozart\Assert\Assert;
 
 class KirkiServiceProvider extends AbstractService
@@ -72,7 +71,7 @@ class KirkiServiceProvider extends AbstractService
 					$options = [ 'title' => $options ];
 				}
 
-				Kirki::add_panel( $panel::PANEL_ID, $options );
+				Kirki::add_panel( esc_html( $panel::PANEL_ID ), $options );
 			}
 		}
 	}
@@ -96,10 +95,10 @@ class KirkiServiceProvider extends AbstractService
 					$options = [ 'title' => $options ];
 				}
 
-				Kirki::add_section( $section::SECTION_ID, $options );
+				Kirki::add_section( esc_html( $section::SECTION_ID ), $options );
 
 				foreach ( $section->controls() as $controls ) {
-					$controls['section']  = $section::SECTION_ID;
+					$controls['section']  = esc_html( $section::SECTION_ID );
 					$controls['settings'] = $prefix . $controls['settings'];
 					Kirki::add_field( $config, $controls );
 				}
@@ -123,7 +122,7 @@ class KirkiServiceProvider extends AbstractService
 				$this->assertOption( $option, $optionClass );
 
 				$settings['settings'] = $prefix . $settings['settings'];
-				Kirki::add_field( $config, $settings );
+				Kirki::add_field( esc_html( $config ), $settings );
 			}
 		}
 	}
@@ -137,7 +136,7 @@ class KirkiServiceProvider extends AbstractService
 	 */
 	private function assertPanel( object $panel, string $panelClass ) {
 		Assert::stringNotEmpty(
-			$panel::PANEL_ID,
+			esc_html( $panel::PANEL_ID ),
 			/* translators: 1: customizer panel id. */
 			sprintf(
 				'You need to specify static `id` parameter for %s panel',
@@ -151,11 +150,11 @@ class KirkiServiceProvider extends AbstractService
 	 *
 	 * @param object $section | section object.
 	 * @param string $sectionClass | section class name.
-	 * @throws AssertionError
+	 * @throws \Exception | Assert this is a valid section.
 	 */
 	private function assertSection( object $section, string $sectionClass ) {
 		Assert::stringNotEmpty(
-			$section::SECTION_ID,
+			esc_html( $section::SECTION_ID ),
 			/* translators: 1: customizer section class name. */
 			sprintf(
 				'You need to specify static `id` parameter for %s section',
@@ -165,7 +164,7 @@ class KirkiServiceProvider extends AbstractService
 
 		Assert::isArray(
 			$section->controls(),
-			/* translators: 1: customizer section class name; 2: customizer section controls type. */
+			/* translators: 1 - customizer section class name, 2 - customizer section controls type. */
 			sprintf(
 				'`controls()` method should return array for %1$s section, %2$s given',
 				$sectionClass,
@@ -179,7 +178,7 @@ class KirkiServiceProvider extends AbstractService
 	 *
 	 * @param object $option | option object.
 	 * @param string $optionClass | option class name.
-	 * @throws AssertionError
+	 * @throws \Exception | Assert this is a valid option.
 	 */
 	private function assertOption( object $option, string $optionClass ) {
 		Assert::isArray(

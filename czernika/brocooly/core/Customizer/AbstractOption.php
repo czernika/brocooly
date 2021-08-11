@@ -12,18 +12,21 @@ declare(strict_types=1);
 
 namespace Brocooly\Customizer;
 
-class AbstractOption
+abstract class AbstractOption
 {
 
 	/**
 	 * Option settings
 	 *
-	 * @throws Exception
+	 * @throws \Exception | If option settings was not set.
 	 */
 	public function settings() {
 		throw new \Exception(
-			'Controls settings was not defined',
-			true,
+			/* translators: 1 - class name. */
+			sprintf(
+				'No settings were specified for "%s" class',
+				get_class( $this ),
+			)
 		);
 	}
 }

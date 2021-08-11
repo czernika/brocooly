@@ -6,7 +6,7 @@
 
     <file>.</file>
 
-    <config name="minimum_supported_wp_version" value="5.6"/>
+    <config name="minimum_supported_wp_version" value="5.5"/>
 
     <!-- Exclude WP Core folders and files from being checked -->
 	<exclude-pattern>*/docroot/web/wp/wp-admin/*</exclude-pattern>
@@ -42,9 +42,6 @@
         <!-- Allow short array syntax -->
         <exclude name="Generic.Arrays.DisallowShortArraySyntax"></exclude>
 
-        <!-- Function syntax -->
-        <exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie"></exclude>
-
         <!-- Allow varaibles to be named in camelCase -->
         <exclude name="WordPress.NamingConventions.ValidVariableName"></exclude>
 
@@ -55,6 +52,12 @@
     <!-- WordPress Coding Standards for Inline Documentation and Comments -->
     <rule ref="WordPress-Docs">
         <exclude name="Squiz.Commenting.ClassComment"></exclude>
+    </rule>
+
+    <rule ref="WordPress-Core">
+        <!-- Function syntax -->
+        <exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie"></exclude>
+        <exclude name="WordPress.NamingConventions.ValidFunctionName"></exclude>
     </rule>
 
 </ruleset>

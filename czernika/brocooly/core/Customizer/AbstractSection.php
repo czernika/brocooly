@@ -2,6 +2,7 @@
 /**
  * Abstract customizer section
  *
+ * @see https://kirki.org/docs/setup/panels-sections/
  * @package Brocooly
  * @since 0.3.0
  */
@@ -23,32 +24,30 @@ abstract class AbstractSection
 	/**
 	 * Section settings
 	 *
-	 * @throws Exception
+	 * @throws \Exception | If no options were defined.
 	 */
 	public function options() {
 		throw new \Exception(
-			/* translators: 1: customizer section id. */
+			/* translators: 1 - customizer section id. */
 			sprintf(
-				'Options for "%s" section is not defined!',
-				static::SECTION_ID,
+				'Options for "%s" customizer section is not defined!',
+				esc_html( static::SECTION_ID ),
 			),
-			true,
 		);
 	}
 
 	/**
 	 * Section options
 	 *
-	 * @throws Exception
+	 * @throws \Exception | If no controls for customizer section were defined.
 	 */
 	public function controls() {
 		throw new \Exception(
-			/* translators: 1: customizer section id. */
+			/* translators: 1 - customizer section id. */
 			sprintf(
-				'Controls settings for "%s" section are not defined!',
-				static::SECTION_ID,
+				'Controls settings for "%s" customizer section are not defined!',
+				esc_html( static::SECTION_ID ),
 			),
-			true,
 		);
 	}
 }

@@ -13,6 +13,7 @@ use Brocooly\Router\Routes;
 use Brocooly\Router\Router;
 use HelloNico\Twig\DumpExtension;
 use Brocooly\Contracts\ModelContract;
+use Brocooly\Http\Middleware\DoingAjax;
 use Brocooly\Support\Builders\ModelBuilder;
 use Brocooly\Support\Factories\MetaFactory;
 use Brocooly\Support\Factories\FileFactory;
@@ -35,10 +36,10 @@ $appDefintions = [
 	 * Application itself and Timber class. As Brocooly depends on Timber
 	 * this is a core of application.
 	 */
-	'bootstrap'                           => create( Bootstrap::class )
+	'bootstrap'          => create( Bootstrap::class )
 												->constructor( get( App::class ) ),
-	'timber'                              => create( Timber::class ),
-	'routing'                             => create( Router::class )
+	'timber'             => create( Timber::class ),
+	'routing'            => create( Router::class )
 												->constructor( get( Routes::class ) ),
 
 	/**
@@ -48,28 +49,33 @@ $appDefintions = [
 	 *
 	 * Classes to handle errors and exceptions
 	 */
-	'dump'                                => create( DumpExtension::class ),
+	'dump'               => create( DumpExtension::class ),
 
 	/**
 	 *--------------------------------------------------------------------------
 	 * App Facades
 	 *--------------------------------------------------------------------------
 	 */
-	'meta'                                => create( MetaFactory::class ),
-	'facade'                              => create( FacadeFactory::class ),
-	'mod'                                 => create( CustomizerFactory::class ),
-	'validator'                           => create( ValidatorFactory::class ),
-	'file'                                => create( FileFactory::class ),
-	'router'                              => create( RouteFactory::class ),
+	'meta'               => create( MetaFactory::class ),
+	'facade'             => create( FacadeFactory::class ),
+	'mod'                => create( CustomizerFactory::class ),
+	'validator'          => create( ValidatorFactory::class ),
+	'file'               => create( FileFactory::class ),
+	'router'             => create( RouteFactory::class ),
+
+	/**
+	 * --------------------------------------------------------------------------
+	 * Middleware
+	 * --------------------------------------------------------------------------
+	 */
+	'ajax'               => create( DoingAjax::class ),
 
 	/**
 	 * --------------------------------------------------------------------------
 	 * Bind ServiceContracts with its Services
 	 * --------------------------------------------------------------------------
 	 */
-	'Theme\Contracts\*ServiceContract'    => create( 'Theme\Services\*Service' ),
-	'Theme\Contracts\*RepositoryContract' => create( 'Theme\Repositories\*Repository' ),
-	ModelContract::class                  => factory( [ ModelBuilder::class, 'resolve' ] ),
+	ModelContract::class => factory( [ ModelBuilder::class, 'resolve' ] ),
 
 ];
 

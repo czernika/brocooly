@@ -14,6 +14,7 @@ abstract class AjaxController extends BaseController
 
 	public function __construct( App $app ) {
 		$this->app = $app;
+		$this->middleware( 'ajax' );
 	}
 
 	protected function die() {

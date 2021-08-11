@@ -2,8 +2,6 @@
 /**
  * Console commands loader
  *
- * TODO: add support fot theme console commands?
- *
  * @package Brocooly
  * @since 0.7.0
  */

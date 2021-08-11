@@ -20,7 +20,7 @@ class RequestHandler
 
 	private static function handleGetRequest() {
 		$routes = collect( static::$routes )
-					->except( [ 'post' ] )
+					->except( [ 'post', 'ajax' ] )
 					->all();
 
 		foreach ( $routes['get'] as $route ) {
@@ -30,6 +30,18 @@ class RequestHandler
 			}
 		}
 		return false;
+	}
+
+	public static function handleAjaxRequest() {
+		$allRoutes = static::$routes;
+		if ( key_exists( 'ajax', $allRoutes ) ) {
+			$routes = static::$routes['ajax'];
+			foreach ( $routes as $route ) {
+				$action = $route['name'];
+				add_action( "wp_ajax_$action", $route['callback'] );
+				add_action( "wp_ajax_nopriv_$action", $route['callback'] );
+			}
+		}
 	}
 
 	public static function handlePostRequest( $key ) {

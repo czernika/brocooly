@@ -31,6 +31,14 @@ class ThemeServiceProvider extends AbstractService
 	private int $logoHeight = 190; // px.
 
 	/**
+	 * Register contracts
+	 */
+	public function register() {
+		$this->app->wire( 'Theme\Contracts\*ServiceContract', 'Theme\Services\*Service' );
+		$this->app->wire( 'Theme\Contracts\*RepositoryContract', 'Theme\Repositories\*Repository' );
+	}
+
+	/**
 	 * Setup theme features
 	 *
 	 * This hook is called during each page load, after the theme is initialized.

@@ -39,6 +39,10 @@ class Router
 		$this->routes->addRoute( 'post', $condition, $callback );
 	}
 
+	public function ajax( $action, $callback ) {
+		$this->routes->addRoute( 'ajax', $action, $callback );
+	}
+
 	public static function action( $key ) {
 		return RequestHandler::handlePostRequest( $key );
 	}
