@@ -12,7 +12,7 @@ namespace Brocooly\Models;
 
 use Timber\Term;
 use Carbon_Fields\Container;
-use Brocooly\Support\Builders\QueryBuilder;
+use Brocooly\Support\Builders\TaxonomyQueryBuilder;
 
 abstract class Taxonomy extends Term
 {
@@ -128,8 +128,8 @@ abstract class Taxonomy extends Term
 	 * @return void
 	 */
 	public static function __callStatic( string $method, array $arguments ) {
-		$arguments[] = static::TAXONOMY;
-		return QueryBuilder::$method( ...$arguments );
+		array_unshift( $arguments, static::TAXONOMY );
+		return TaxonomyQueryBuilder::$method( ...$arguments );
 	}
 
 }

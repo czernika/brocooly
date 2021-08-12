@@ -16,6 +16,7 @@ use Brocooly\Http\Request\WPRequest;
 use Whoops\Handler\PlainTextHandler;
 use Whoops\Handler\PrettyPageHandler;
 use Theme\Http\Middleware\UserLoggedIn;
+use Theme\Models\WP\Category;
 
 use function DI\create;
 
