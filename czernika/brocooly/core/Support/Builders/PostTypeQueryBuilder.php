@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Brocooly\Support\Builders;
 
+use Timber\Timber;
+
 class PostTypeQueryBuilder
 {
 

@@ -22,11 +22,6 @@ class DefinitionLoader
 		$this->definitions = [
 
 			/**
-			 * Minimum required PHP version
-			 */
-			'BROCOOLY_MIN_PHP_VERSION' => '7.4',
-
-			/**
 			 * Theme constants
 			 */
 			'BROCOOLY_THEME_PATH'      => trailingslashit( get_template_directory() ),

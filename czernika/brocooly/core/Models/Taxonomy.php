@@ -47,10 +47,11 @@ abstract class Taxonomy extends Term
 	 * Get post type name
 	 *
 	 * @return string
+	 * @throws \Exception | taxonomy name was not set.
 	 */
 	public function getName() {
 		if ( ! static::TAXONOMY ) {
-			throw new \Exception( 'You must specify taxonomy name', true );
+			throw new \Exception( 'You must specify taxonomy name' );
 		}
 
 		return static::TAXONOMY;
@@ -59,7 +60,8 @@ abstract class Taxonomy extends Term
 	/**
 	 * Get taxonomy post types
 	 *
-	 * @return void
+	 * @return string|array
+	 * @throws \Exception | Post type was not set.
 	 */
 	public function getPostTypes() {
 		if ( ! static::$postTypes ) {
@@ -68,8 +70,7 @@ abstract class Taxonomy extends Term
 				sprintf(
 					'You must specify post type related to %s taxonomy',
 					static::TAXONOMY
-				),
-				true
+				)
 			);
 		}
 
@@ -79,16 +80,16 @@ abstract class Taxonomy extends Term
 	/**
 	 * Set taxonomy options
 	 *
-	 * @throws Exception
+	 * @throws \Exception | Taxonomy options were not set.
 	 */
 	protected function options() {
-		throw new \Exception( 'You must specify post type options', true );
+		throw new \Exception( 'You must specify taxonomy options' );
 	}
 
 	/**
 	 * Return taxonomy options
 	 *
-	 * @throws Exception
+	 * @return array
 	 */
 	public function getOptions() {
 		return $this->options();
@@ -123,7 +124,7 @@ abstract class Taxonomy extends Term
 	/**
 	 * Get posts by query
 	 *
-	 * @param string $name | method name.
+	 * @param string $method | method name.
 	 * @param array  $arguments | method options.
 	 * @return void
 	 */

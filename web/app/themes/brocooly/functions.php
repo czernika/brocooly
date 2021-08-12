@@ -13,12 +13,13 @@
  * Ensure compatible version of PHP is used
  * --------------------------------------------------------------------------
  */
-if ( version_compare( BROCOOLY_MIN_PHP_VERSION, phpversion(), '>=' ) ) {
+$brocooly_min_php_version = '7.4';
+if ( version_compare( $brocooly_min_php_version, phpversion(), '>=' ) ) {
 	wp_die(
 		/* translators: 1 - minimum required PHP version, 2 - current PHP version. */
 		sprintf(
 			/* html */ '<h1>Brocooly Framework requires PHP version %1$s or greater!</h1><p>Invalid PHP version! Please update it. Your current version is: <strong>%2$s</strong></p>',
-			esc_html( BROCOOLY_MIN_PHP_VERSION ),
+			esc_html( $brocooly_min_php_version ),
 			esc_html( phpversion() ),
 		),
 	);
