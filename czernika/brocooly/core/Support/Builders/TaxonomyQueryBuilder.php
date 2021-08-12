@@ -13,7 +13,7 @@ namespace Brocooly\Support\Builders;
 use Timber\Term;
 use Timber\Timber;
 
-class TaxonomyQueryBuilder
+class TaxonomyQueryBuilder extends QueryBuilder
 {
 	/**
 	 * Default query parameters
@@ -25,7 +25,7 @@ class TaxonomyQueryBuilder
 	];
 
 	/**
-	 * Taxonomy slug name
+	 * Taxonomy slug
 	 *
 	 * @var string
 	 */
@@ -52,7 +52,10 @@ class TaxonomyQueryBuilder
 	 * @return self
 	 */
 	public static function paginate( int $postsPerPage = 10 ) {
-		$taxQuery            = [ 'posts_per_page' => $postsPerPage ];
+		$taxQuery            = [
+			'posts_per_archive_page' => $postsPerPage,
+			'paged'                  => max( 1, get_query_var( 'paged' ) ),
+		];
 		static::$queryParams = array_merge( static::$queryParams, $taxQuery );
 		return new self();
 	}
@@ -65,8 +68,8 @@ class TaxonomyQueryBuilder
 	 * @param string|array $postTypes | post types.
 	 * @return self
 	 */
-	public static function wherePostType( $post_type = 'post' ) {
-		$taxQuery            = [ 'post_type' => $post_type ];
+	public static function wherePostType( $postTypes = 'post' ) {
+		$taxQuery            = [ 'post_type' => $postTypes ];
 		static::$queryParams = array_merge( static::$queryParams, $taxQuery );
 		return new self();
 	}
@@ -124,21 +127,6 @@ class TaxonomyQueryBuilder
 		$taxQuery            = static::setQuery( 'OR', $key, $value, $operator );
 		static::$queryParams = array_merge_recursive( static::$queryParams, $taxQuery );
 		return new self();
-	}
-
-	/**
-	 * Get posts by query
-	 *
-	 * @param mixed $key | term to get by id or slug.
-	 * @return object
-	 */
-	public static function get( $key = null ) {
-		if ( isset( $key ) ) {
-			return new Term( $key );
-		}
-
-		$posts = Timber::get_posts( static::$queryParams );
-		return $posts;
 	}
 
 	/**
