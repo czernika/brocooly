@@ -35,7 +35,7 @@ class PostTypeQueryBuilder extends QueryBuilder
 	public static function all( string $name ) {
 		$postQuery = [
 			'post_type'      => $name,
-			'posts_per_page' => 500, // TODO: provide an option.
+			'posts_per_page' => config( 'views.limit' ) ?? 500,
 			'no_found_rows'  => true,
 		];
 		$query     = array_merge( $postQuery, static::$queryParams );

@@ -57,6 +57,18 @@ return [
 
 	/**
 	 * --------------------------------------------------------------------------
+	 * Posts per page limit
+	 * --------------------------------------------------------------------------
+	 *
+	 * When you are getting all posts you may set posts_per_page query parameter as -1.
+	 * It is recommended way so we're set it 500. This option will override this value
+	 *
+	 * @since 0.10.2
+	 */
+	'limit'      => 500,
+
+	/**
+	 * --------------------------------------------------------------------------
 	 * Default view page
 	 * --------------------------------------------------------------------------
 	 *

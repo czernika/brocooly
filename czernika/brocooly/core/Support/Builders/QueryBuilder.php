@@ -123,6 +123,18 @@ class QueryBuilder
 	}
 
 	/**
+	 * Suppress filter
+	 *
+	 * @return self
+	 */
+	public function suppress() {
+		$suppressQuery       = [ 'suppress_filters' => true ];
+		static::$queryParams = array_merge( $suppressQuery, static::$queryParams );
+
+		return new self();
+	}
+
+	/**
 	 * Date query AFTER date
 	 *
 	 * @param string $date | date after.
