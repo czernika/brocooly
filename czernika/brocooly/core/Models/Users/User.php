@@ -51,4 +51,25 @@ abstract class User extends TimberUser
 	public static function __callStatic( string $name, array $arguments ) {
 		return UserQueryBuilder::$name( ...$arguments );
 	}
+
+	/**
+	 * Create user or update if ID passed.
+	 *
+	 * @param array  $userdata | additional user data.
+	 * @return int|\WP_Error
+	 */
+	public function createOrUpdate( array $userdata ) {
+		return wp_insert_user( $userdata );
+	}
+
+	/**
+	 * Create user.
+	 *
+	 * @param array  $userdata | additional user data.
+	 * @return int|\WP_Error
+	 */
+	public function create( string $username, string $password, string $email = '' ) {
+		return wp_create_user( $username, $password, $email );
+	}
+
 }

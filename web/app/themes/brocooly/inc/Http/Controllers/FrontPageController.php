@@ -29,6 +29,6 @@ class FrontPageController extends Controller
 
 	public function __invoke() {
 		$hello = $this->pageService->getHelloPhrase();
-		view( 'content/front-page.twig', compact( 'hello' ) );
+		view( 'content/front-page.twig', compact( 'hello', 'posts' ) );
 	}
 }

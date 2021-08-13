@@ -133,4 +133,15 @@ abstract class Taxonomy extends Term
 		return TaxonomyQueryBuilder::$method( ...$arguments );
 	}
 
+	/**
+	 * Create new term
+	 *
+	 * @param string $term | term name.
+	 * @param array  $data | additional data, like parent, slug, description.
+	 * @return array | term taxonomy data.
+	 */
+	public static function create( string $term, array $data ) {
+		return wp_insert_term( $term, static::TAXONOMY, $data );
+	}
+
 }

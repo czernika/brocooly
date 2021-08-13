@@ -20,7 +20,7 @@ class TaxonomyQueryBuilder extends QueryBuilder
 	 *
 	 * @var array
 	 */
-	private static array $queryParams = [
+	protected static array $queryParams = [
 		'merge_default' => true,
 	];
 
@@ -57,7 +57,7 @@ class TaxonomyQueryBuilder extends QueryBuilder
 			'paged'                  => max( 1, get_query_var( 'paged' ) ),
 		];
 		static::$queryParams = array_merge( static::$queryParams, $taxQuery );
-		return new self();
+		return new static();
 	}
 
 	/**
@@ -71,7 +71,7 @@ class TaxonomyQueryBuilder extends QueryBuilder
 	public static function wherePostType( $postTypes = 'post' ) {
 		$taxQuery            = [ 'post_type' => $postTypes ];
 		static::$queryParams = array_merge( static::$queryParams, $taxQuery );
-		return new self();
+		return new static();
 	}
 
 	/**
@@ -98,7 +98,7 @@ class TaxonomyQueryBuilder extends QueryBuilder
 		];
 
 		static::$queryParams = array_merge_recursive( static::$queryParams, $taxQuery );
-		return new self();
+		return new static();
 	}
 
 	/**
@@ -112,7 +112,7 @@ class TaxonomyQueryBuilder extends QueryBuilder
 	public static function andWhereTerm( string $key, $value, string $operator = 'IN' ) {
 		$taxQuery            = static::setQuery( 'AND', $key, $value, $operator );
 		static::$queryParams = array_merge_recursive( static::$queryParams, $taxQuery );
-		return new self();
+		return new static();
 	}
 
 	/**
@@ -126,7 +126,7 @@ class TaxonomyQueryBuilder extends QueryBuilder
 	public static function orWhereTerm( string $key, $value, string $operator = 'IN' ) {
 		$taxQuery            = static::setQuery( 'OR', $key, $value, $operator );
 		static::$queryParams = array_merge_recursive( static::$queryParams, $taxQuery );
-		return new self();
+		return new static();
 	}
 
 	/**

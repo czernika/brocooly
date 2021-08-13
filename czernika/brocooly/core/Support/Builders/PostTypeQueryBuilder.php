@@ -15,7 +15,7 @@ class PostTypeQueryBuilder extends QueryBuilder
 	 *
 	 * @var array
 	 */
-	private static array $queryParams = [
+	protected static array $queryParams = [
 		'merge_default' => true,
 	];
 
@@ -76,7 +76,7 @@ class PostTypeQueryBuilder extends QueryBuilder
 		];
 		static::$queryParams = array_merge( $postQuery, static::$queryParams );
 
-		return new self();
+		return new static();
 	}
 
 	/**

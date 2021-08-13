@@ -22,8 +22,9 @@ class QueryBuilder
 	 *
 	 * @var array
 	 */
-	private static array $queryParams = [
-		'merge_default' => true,
+	protected static array $queryParams = [
+		'merge_default'  => true,
+		'posts_per_page' => -1, // TODO: refactor to have a choice.
 	];
 
 	/**
@@ -31,13 +32,13 @@ class QueryBuilder
 	 *
 	 * @param string $key | query key.
 	 * @param mixed  $value | query key value.
-	 * @return void
+	 * @return self
 	 */
 	public static function where( string $key, $value ) {
 		$query               = [ $key => $value ];
 		static::$queryParams = array_merge( $query, static::$queryParams );
 
-		return new self();
+		return new static();
 	}
 
 	/**
@@ -52,8 +53,6 @@ class QueryBuilder
 	 * @return self
 	 */
 	public static function whereMeta( string $name, string $key, $value, string $compare_key = '=', string $compare = '=', string $type = 'CHAR' ) {
-
-		static::$postType = $name;
 
 		if ( is_array( $value ) ) {
 			$compare = 'IN';
@@ -72,7 +71,7 @@ class QueryBuilder
 
 		static::$queryParams = array_merge( $metaQuery, static::$queryParams );
 
-		return new self();
+		return new static();
 	}
 
 	/**
@@ -106,7 +105,7 @@ class QueryBuilder
 
 		static::$queryParams = array_merge_recursive( $metaQuery, static::$queryParams );
 
-		return new self();
+		return new static();
 	}
 
 	/**
@@ -140,24 +139,26 @@ class QueryBuilder
 
 		static::$queryParams = array_merge_recursive( $metaQuery, static::$queryParams );
 
-		return new self();
+		return new static();
 	}
 
 	/**
 	 * Author query
 	 *
-	 * @param integer|array $authorId | array of authors id.
+	 * @param integer|string|array $authorId | array of authors id.
 	 * @return self
 	 */
-	public function whereAuthor( $authorId ) {
+	public static function whereAuthor( $authorId ) {
 		if ( is_array( $authorId ) ) {
 			$authorQuery = [ 'author__in' => $authorId ];
+		} elseif ( is_string( $authorId ) ) {
+			$authorQuery = [ 'author_name' => $authorId ];
 		} else {
 			$authorQuery = [ 'author' => $authorId ];
 		}
 		static::$queryParams = array_merge( $authorQuery, static::$queryParams );
 
-		return new self();
+		return new static();
 	}
 
 	/**
@@ -170,7 +171,7 @@ class QueryBuilder
 		$sortQuery           = [ 'post_status' => $status ];
 		static::$queryParams = array_merge( $sortQuery, static::$queryParams );
 
-		return new self();
+		return new static();
 	}
 
 	/**
@@ -187,7 +188,7 @@ class QueryBuilder
 		];
 		static::$queryParams = array_merge( $sortQuery, static::$queryParams );
 
-		return new self();
+		return new static();
 	}
 
 	/**
@@ -199,7 +200,7 @@ class QueryBuilder
 		$sortQuery           = [ 'order' => 'ASC' ];
 		static::$queryParams = array_merge( $sortQuery, static::$queryParams );
 
-		return new self();
+		return new static();
 	}
 
 	/**
@@ -211,7 +212,7 @@ class QueryBuilder
 		$sortQuery           = [ 'order' => 'DESC' ];
 		static::$queryParams = array_merge( $sortQuery, static::$queryParams );
 
-		return new self();
+		return new static();
 	}
 
 	/**
@@ -224,7 +225,7 @@ class QueryBuilder
 		$offsetQuery         = [ 'offset' => $offset ];
 		static::$queryParams = array_merge( $offsetQuery, static::$queryParams );
 
-		return new self();
+		return new static();
 	}
 
 	/**
@@ -236,7 +237,7 @@ class QueryBuilder
 		$noStickyQuery       = [ 'ignore_sticky_posts' => true ];
 		static::$queryParams = array_merge( $noStickyQuery, static::$queryParams );
 
-		return new self();
+		return new static();
 	}
 
 	/**
@@ -248,7 +249,7 @@ class QueryBuilder
 		$suppressQuery       = [ 'suppress_filters' => true ];
 		static::$queryParams = array_merge( $suppressQuery, static::$queryParams );
 
-		return new self();
+		return new static();
 	}
 
 	/**
@@ -265,7 +266,7 @@ class QueryBuilder
 		];
 		static::$queryParams = array_merge( $dateQuery, static::$queryParams );
 
-		return new self();
+		return new static();
 	}
 
 	/**
@@ -282,7 +283,7 @@ class QueryBuilder
 		];
 		static::$queryParams = array_merge( $dateQuery, static::$queryParams );
 
-		return new self();
+		return new static();
 	}
 
 	/**
@@ -305,7 +306,26 @@ class QueryBuilder
 		];
 		static::$queryParams = array_merge( $dateQuery, static::$queryParams );
 
-		return new self();
+		return new static();
+	}
+
+	/**
+	 * Find posts by search phrase.
+	 *
+	 * @param string  $key | search phrase.
+	 * @param boolean $exact | exact or not.
+	 * @param boolean $sentence | consider full key phrase or not.
+	 * @return void
+	 */
+	public static function findByPhrase( string $key, bool $exact = false, bool $sentence = false ) {
+		$searchQuery        = [
+			's'        => $key,
+			'exact'    => $exact,
+			'sentence' => $sentence,
+		];
+		static::$queryParams = array_merge( $searchQuery, static::$queryParams );
+
+		return new static();
 	}
 
 	/**
@@ -346,7 +366,11 @@ class QueryBuilder
 	 * @return object
 	 */
 	public static function get() {
-		$posts = Timber::get_posts( static::$queryParams );
+		if ( isTimberNext() ) {
+			$posts = Timber::get_posts( static::$queryParams );
+		} else {
+			$posts = new PostQuery( static::$queryParams );
+		}
 		return $posts;
 	}
 

@@ -96,18 +96,6 @@ abstract class PostType extends Post implements ModelContract
 	}
 
 	/**
-	 * Create post type draft
-	 *
-	 * @param array   $data | passed data.
-	 * @param boolean $wp_error | show error as WP_Error object.
-	 * @return int | post id.
-	 */
-	public static function create( array $data, bool $wp_error = false ) {
-		$data['post_type'] = static::POST_TYPE;
-		return wp_insert_post( wp_slash( $data ), $wp_error );
-	}
-
-	/**
 	 * Get posts by query
 	 *
 	 * @param string $name | method name.
@@ -117,6 +105,33 @@ abstract class PostType extends Post implements ModelContract
 	public static function __callStatic( string $name, array $arguments ) {
 		array_unshift( $arguments, static::POST_TYPE );
 		return PostTypeQueryBuilder::$name( ...$arguments );
+	}
+
+	/**
+	 * Create post type draft
+	 *
+	 * @param array   $data | passed data.
+	 * @param boolean $wp_error | show error as WP_Error object.
+	 * @return int | post id.
+	 */
+	public static function createDraft( array $data, bool $wp_error = false ) {
+		$data['post_type']   = static::POST_TYPE;
+		$data['post_author'] = get_current_user_id() ?? 1;
+		return wp_insert_post( wp_slash( $data ), $wp_error );
+	}
+
+	/**
+	 * Create post type
+	 *
+	 * @param array   $data | passed data.
+	 * @param boolean $wp_error | show error as WP_Error object.
+	 * @return int | post id.
+	 */
+	public static function create( array $data, bool $wp_error = false ) {
+		$data['post_status'] = 'publish';
+		$data['post_type']   = static::POST_TYPE;
+		$data['post_author'] = get_current_user_id() ?? 1;
+		return wp_insert_post( wp_slash( $data ), $wp_error );
 	}
 
 }

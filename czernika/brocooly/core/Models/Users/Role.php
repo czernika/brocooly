@@ -1,6 +1,9 @@
 <?php
 /**
+ * Create new role
  *
+ * @package Brocooly
+ * @since 0.10.2
  */
 
 declare(strict_types=1);
@@ -35,12 +38,44 @@ class Role
 		return [];
 	}
 
+	/**
+	 * Return user's capabilities same as already registered role.
+	 *
+	 * @param string $role | role name.
+	 * @return \WP_Role|null
+	 */
 	protected function as( string $role ) {
-		if ( $role ) {
-			$caps = get_role( $role )->capabilities;
+		$roleCaps = get_role( $role );
+		if ( $roleCaps ) {
+			$caps = $roleCaps->capabilities;
 			return $caps;
 		}
 
 		return null;
+	}
+
+
+	private static function getRoleObject() {
+		return get_role( static::ROLE );
+	}
+
+	protected static function get() {
+		return static::getRoleObject();
+	}
+
+	protected static function getName() {
+		return static::get()->name;
+	}
+
+	protected static function getCapabilities() {
+		return static::get()->capabilities;
+	}
+
+	protected static function addCap( $caps ) {
+		static::get()->add_cap( $caps );
+	}
+
+	protected static function removeCap( $caps ) {
+		static::get()->remove_cap( $caps );
 	}
 }

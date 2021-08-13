@@ -60,11 +60,11 @@ class MakeMiddleware extends CreateFileConsoleCommand
 	 * Set arguments for `execute()` method
 	 */
 	protected function preexecute( InputInterface $input, OutputInterface $output ) {
-		$this->controller = $input->getArgument( 'middleware' );
+		$this->middleware = $input->getArgument( 'middleware' );
 
 		$this->createFile(
 			$output,
-			$this->controller,
+			$this->middleware,
 			'/inc/Http/Middleware/',
 		);
 

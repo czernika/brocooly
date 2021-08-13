@@ -12,15 +12,15 @@ class DispatchCallable
 		if ( is_array( $callable ) ) {
 			// This is controller method.
 			return static::dispatchControllerMethod( $callable );
-		} else {
-			if ( is_subclass_of( $callable, BaseController::class ) ) {
-				// Call invokable class.
-				$class = static::callController( $callable );
-				return call_user_func_array( $class, func_get_args() );
-			}
-			// or closure.
-			return call_user_func_array( $callable, func_get_args() );
 		}
+
+		if ( is_subclass_of( $callable, BaseController::class ) ) {
+			// Call invokable class.
+			$class = static::callController( $callable );
+			return call_user_func_array( $class, func_get_args() );
+		}
+
+		return call_user_func_array( $callable, func_get_args() );
 	}
 
 	/**
