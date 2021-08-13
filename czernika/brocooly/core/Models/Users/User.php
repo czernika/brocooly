@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace Brocooly\Models\Users;
 
+use Brocooly\Support\Builders\UserQueryBuilder;
 use Carbon_Fields\Container;
 use Timber\User as TimberUser;
 
@@ -38,5 +39,16 @@ abstract class User extends TimberUser
 	protected function setContainer( string $id, string $label ) {
 		$container = Container::make( 'user_meta', $id, $label );
 		return $container;
+	}
+
+	/**
+	 * Get users by query
+	 *
+	 * @param string $name | method name.
+	 * @param array  $arguments | method options.
+	 * @return void
+	 */
+	public static function __callStatic( string $name, array $arguments ) {
+		return UserQueryBuilder::$name( ...$arguments );
 	}
 }

@@ -27,6 +27,123 @@ class QueryBuilder
 	];
 
 	/**
+	 * Set query parameter
+	 *
+	 * @param string $key | query key.
+	 * @param mixed  $value | query key value.
+	 * @return void
+	 */
+	public static function where( string $key, $value ) {
+		$query               = [ $key => $value ];
+		static::$queryParams = array_merge( $query, static::$queryParams );
+
+		return new self();
+	}
+
+	/**
+	 * Meta query builder
+	 *
+	 * @param string $name | post type name.
+	 * @param string $key | meta key.
+	 * @param mixed  $value | meta value.
+	 * @param string $compare_key | compare key.
+	 * @param string $compare | compare value.
+	 * @param string $type | meta type.
+	 * @return self
+	 */
+	public static function whereMeta( string $name, string $key, $value, string $compare_key = '=', string $compare = '=', string $type = 'CHAR' ) {
+
+		static::$postType = $name;
+
+		if ( is_array( $value ) ) {
+			$compare = 'IN';
+		}
+		$metaQuery        = [
+			'meta_query' => [
+				[
+					'key'         => $key,
+					'value'       => $value,
+					'compare_key' => $compare_key,
+					'compare'     => $compare,
+					'type'        => $type,
+				],
+			],
+		];
+
+		static::$queryParams = array_merge( $metaQuery, static::$queryParams );
+
+		return new self();
+	}
+
+	/**
+	 * Meta query builder for OR relationship
+	 *
+	 * @param string $key | meta key.
+	 * @param mixed  $value | meta value.
+	 * @param string $compare_key | compare key.
+	 * @param string $compare | compare value.
+	 * @param string $type | meta type.
+	 * @return self
+	 */
+	public static function orWhereMeta( string $key, $value, string $compare_key = '=', string $compare = '=', string $type = 'CHAR' ) {
+
+		if ( is_array( $value ) ) {
+			$compare = 'IN';
+		}
+
+		$metaQuery = [
+			'meta_query' => [
+				'relation' => 'OR',
+				[
+					'key'         => $key,
+					'value'       => $value,
+					'compare_key' => $compare_key,
+					'compare'     => $compare,
+					'type'        => $type,
+				],
+			],
+		];
+
+		static::$queryParams = array_merge_recursive( $metaQuery, static::$queryParams );
+
+		return new self();
+	}
+
+	/**
+	 * Meta query builder for AND relationship
+	 *
+	 * @param string $key | meta key.
+	 * @param mixed  $value | meta value.
+	 * @param string $compare_key | compare key.
+	 * @param string $compare | compare value.
+	 * @param string $type | meta type.
+	 * @return self
+	 */
+	public static function andWhereMeta( string $key, $value, string $compare_key = '=', string $compare = '=', string $type = 'CHAR' ) {
+
+		if ( is_array( $value ) ) {
+			$compare = 'IN';
+		}
+
+		$metaQuery        = [
+			'meta_query' => [
+				'relation' => 'AND',
+				[
+					'key'         => $key,
+					'value'       => $value,
+					'compare_key' => $compare_key,
+					'compare'     => $compare,
+					'type'        => $type,
+				],
+			],
+		];
+
+		static::$queryParams = array_merge_recursive( $metaQuery, static::$queryParams );
+
+		return new self();
+	}
+
+	/**
 	 * Author query
 	 *
 	 * @param integer|array $authorId | array of authors id.

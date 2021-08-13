@@ -23,9 +23,7 @@ class PageController extends Controller
 	 */
 	private PageRepositoryContract $pageRepository;
 
-	public function __construct(
-		PageRepositoryContract $pageRepositoryContract
-	) {
+	public function __construct( PageRepositoryContract $pageRepositoryContract ) {
 		$this->pageRepository = $pageRepositoryContract;
 	}
 

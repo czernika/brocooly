@@ -23,9 +23,7 @@ class FrontPageController extends Controller
 	 */
 	private PageServiceContract $pageService;
 
-	public function __construct(
-		PageServiceContract $pageServiceContract
-	) {
+	public function __construct( PageServiceContract $pageServiceContract ) {
 		$this->pageService = $pageServiceContract;
 	}
 

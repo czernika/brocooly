@@ -1,10 +1,13 @@
 <?php
+/**
+ *
+ */
 
 declare(strict_types=1);
 
 namespace Brocooly\Providers;
 
-use Theme\Models\WP\User;
+use Theme\Models\Users\User;
 use Webmozart\Assert\Assert;
 
 class UserServiceProvider extends AbstractService

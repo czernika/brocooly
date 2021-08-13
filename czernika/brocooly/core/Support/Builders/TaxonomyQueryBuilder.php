@@ -83,7 +83,7 @@ class TaxonomyQueryBuilder extends QueryBuilder
 	 * @param string $operator | field operator.
 	 * @return self
 	 */
-	public static function where( string $name, string $key, $value, $operator = 'IN' ) {
+	public static function whereTerm( string $name, string $key, $value, $operator = 'IN' ) {
 		static::$taxonomy = $name;
 
 		$taxQuery = [
@@ -109,7 +109,7 @@ class TaxonomyQueryBuilder extends QueryBuilder
 	 * @param string $operator | field operator.
 	 * @return self
 	 */
-	public static function andWhere( string $key, $value, string $operator = 'IN' ) {
+	public static function andWhereTerm( string $key, $value, string $operator = 'IN' ) {
 		$taxQuery            = static::setQuery( 'AND', $key, $value, $operator );
 		static::$queryParams = array_merge_recursive( static::$queryParams, $taxQuery );
 		return new self();
@@ -123,7 +123,7 @@ class TaxonomyQueryBuilder extends QueryBuilder
 	 * @param string $operator | field operator.
 	 * @return self
 	 */
-	public static function orWhere( string $key, $value, string $operator = 'IN' ) {
+	public static function orWhereTerm( string $key, $value, string $operator = 'IN' ) {
 		$taxQuery            = static::setQuery( 'OR', $key, $value, $operator );
 		static::$queryParams = array_merge_recursive( static::$queryParams, $taxQuery );
 		return new self();

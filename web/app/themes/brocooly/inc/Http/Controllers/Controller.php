@@ -1,4 +1,10 @@
 <?php
+/**
+ * Base request controller
+ *
+ * @package Brocooly
+ * @since 0.10.2
+ */
 
 declare(strict_types=1);
 

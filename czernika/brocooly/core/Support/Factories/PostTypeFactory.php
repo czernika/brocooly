@@ -1,4 +1,10 @@
 <?php
+/**
+ * Resolve custom post type
+ *
+ * @package Brocooly
+ * @since 0.10.2
+ */
 
 declare(strict_types=1);
 
