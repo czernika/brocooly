@@ -64,7 +64,7 @@ class DBQueryBuilder
 	 * @param boolean $withPrefix | prefix table or not.
 	 * @return self
 	 */
-	public function from( string $tableName, bool $withPrefix = true ) {
+	public function table( string $tableName, bool $withPrefix = true ) {
 		$tableName   = esc_sql( $tableName );
 		$this->table = $withPrefix ? $this->prefix . $tableName : $tableName;
 		return $this;

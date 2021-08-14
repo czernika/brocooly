@@ -21,7 +21,7 @@ class CustomizerFactory extends AbstractFactory
 	 * @param array  $arguments | customizer option parameters.
 	 * @return array
 	 */
-	public static function create( string $type, array $arguments ) {
+	public static function create( string $type, array $arguments, $factory = null ) {
 		[ $options ]     = $arguments;
 		$options['type'] = Str::kebab( $type );
 		return $options;

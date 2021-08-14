@@ -13,16 +13,34 @@ namespace Brocooly\Router;
 class Redirect
 {
 
-	public static function to( string $to ) {
+	/**
+	 * Redirect to custom url.
+	 *
+	 * @param string $to | url.
+	 * @return void
+	 */
+	public function to( string $to ) {
 		wp_safe_redirect( esc_url( $to ) );
 		exit;
 	}
 
-	public static function home() {
-		return esc_url( home_url( '/' ) );
+	/**
+	 * Redirect home
+	 *
+	 * @return void
+	 */
+	public function home() {
+		wp_safe_redirect( esc_url( home_url( '/' ) ) );
+		exit;
 	}
 
-	public static function from() {
-		return esc_url( wp_get_referer() );
+	/**
+	 * Redirect back
+	 *
+	 * @return void
+	 */
+	public function back() {
+		wp_safe_redirect( esc_url( wp_get_referer() ) );
+		exit;
 	}
 }

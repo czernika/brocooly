@@ -63,7 +63,7 @@ class ValidatorFactory extends AbstractFactory
 	 * @param array  $args | method arguments.
 	 * @return void
 	 */
-	public static function create( string $method, array $args ) {
+	public static function create( string $method, array $args, $factory = null ) {
 		return call_user_func_array( [ static::$factory, $method ], $args );
 	}
 }

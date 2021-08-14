@@ -18,10 +18,7 @@ use Brocooly\Contracts\ModelContract;
 use Brocooly\Http\Middleware\DoingAjax;
 use Brocooly\Support\Builders\ModelBuilder;
 use Brocooly\Support\Factories\MetaFactory;
-use Brocooly\Support\Factories\FileFactory;
-use Brocooly\Support\Factories\RouteFactory;
 use Brocooly\Support\Factories\FacadeFactory;
-use Brocooly\Support\Factories\DatabaseFactory;
 use Brocooly\Support\Factories\ValidatorFactory;
 use Brocooly\Support\Factories\CustomizerFactory;
 
@@ -61,10 +58,7 @@ $appDefintions = [
 	 */
 	'mod'                => create( CustomizerFactory::class ),
 	'meta'               => create( MetaFactory::class ),
-	'file'               => create( FileFactory::class ),
-	'router'             => create( RouteFactory::class ),
 	'facade'             => create( FacadeFactory::class ),
-	'database'           => create( DatabaseFactory::class ),
 	'validator'          => create( ValidatorFactory::class ),
 
 	/**

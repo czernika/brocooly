@@ -17,7 +17,7 @@ class AbstractFactory implements FactoryContract
 	/**
 	 * @inheritDoc
 	 */
-	public static function create( string $name, array $arguments ) {
+	public static function create( string $name, array $arguments, $factory = null ) {
 		return call_user_func_array( $name, $arguments );
 	}
 }

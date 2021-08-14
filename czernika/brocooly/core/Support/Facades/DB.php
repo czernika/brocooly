@@ -11,9 +11,9 @@ declare(strict_types=1);
 
 namespace Brocooly\Support\Facades;
 
+use Brocooly\Support\Builders\DBQueryBuilder;
+
 class DB extends AbstractFacade
 {
-	public static function accessor() {
-		return 'database';
-	}
+	protected static $factory = DBQueryBuilder::class;
 }

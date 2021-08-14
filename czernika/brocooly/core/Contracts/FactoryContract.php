@@ -21,5 +21,5 @@ interface FactoryContract
 	 * @param array  $arguments | method arguments.
 	 * @return mixed
 	 */
-	public static function create( string $name, array $arguments );
+	public static function create( string $name, array $arguments, $factory = null );
 }

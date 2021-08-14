@@ -6,7 +6,5 @@ namespace Brocooly\Support\Facades;
 
 class Route extends AbstractFacade
 {
-	protected static function accessor() {
-		return 'router';
-	}
+	protected static $factory = 'routing';
 }

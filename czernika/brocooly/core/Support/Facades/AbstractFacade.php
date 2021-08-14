@@ -12,17 +12,26 @@ namespace Brocooly\Support\Facades;
 
 abstract class AbstractFacade
 {
+
+	/**
+	 * Factory name
+	 *
+	 * @var null|object
+	 */
+	protected static $factory = null;
+
 	public static function __callStatic( string $name, array $arguments = [] ) {
-		$factory = app( static::accessor() );
-		return $factory::create( $name, $arguments );
+		$factory  = app( static::accessor() );
+		return $factory::create( $name, $arguments, static::$factory );
 	}
 
 	/**
-	 * Accessor key at config
+	 * Accessor key.
+	 * By default is FacadeFactory
 	 *
-	 * @throws \Exception | if no accessor was provided.
+	 * @return string
 	 */
 	protected static function accessor() {
-		throw new \Exception( 'Facade requires accessor to return string' );
+		return 'facade';
 	}
 }
