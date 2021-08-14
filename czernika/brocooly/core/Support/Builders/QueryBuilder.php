@@ -23,8 +23,9 @@ class QueryBuilder
 	 * @var array
 	 */
 	protected static array $queryParams = [
-		'merge_default'  => true,
-		'posts_per_page' => -1, // TODO: refactor to have a choice.
+		'merge_default'  => false,
+		'posts_per_page' => 500, // TODO: refactor to have a choice.
+		'no_found_rows'  => true,
 	];
 
 	/**

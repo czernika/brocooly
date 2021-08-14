@@ -10,7 +10,6 @@ declare(strict_types=1);
 
 namespace Brocooly;
 
-use Brocooly\Router\Router;
 use Brocooly\Loaders\HookLoader;
 use Brocooly\Loaders\AssetsLoader;
 use Brocooly\Loaders\BootProvider;

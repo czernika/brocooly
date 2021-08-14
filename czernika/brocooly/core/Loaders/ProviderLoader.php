@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace Brocooly\Loaders;
 
 use Brocooly\App;
+use Brocooly\Providers\UserServiceProvider;
 use Brocooly\Providers\MenuServiceProvider;
 use Brocooly\Providers\KirkiServiceProvider;
 use Brocooly\Providers\BlockServiceProvider;
@@ -20,7 +21,6 @@ use Brocooly\Providers\TemplateServiceProvider;
 use Brocooly\Providers\PostTypeServiceProvider;
 use Brocooly\Providers\ShortcodeServiceProvider;
 use Brocooly\Providers\CarbonFieldsServiceProvider;
-use Brocooly\Providers\UserServiceProvider;
 
 class ProviderLoader
 {

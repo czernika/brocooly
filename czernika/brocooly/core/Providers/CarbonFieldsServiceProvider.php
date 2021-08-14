@@ -3,6 +3,8 @@
  * Carbon Fields Service Provider
  * Add support for metaboxes, option pages and widgets
  *
+ * @link https://docs.carbonfields.net/
+ *
  * @package Brocooly
  * @since 0.2.0
  */
@@ -17,11 +19,10 @@ class CarbonFieldsServiceProvider extends AbstractService
 {
 	/**
 	 * Init Carbon Fields
+	 *
+	 * @link https://docs.carbonfields.net/plugin-quickstart.html
 	 */
 	public function boot() {
-		add_action(
-			'after_setup_theme',
-			[ Carbon_Fields::class, 'boot' ],
-		);
+		add_action( 'after_setup_theme', [ Carbon_Fields::class, 'boot' ] );
 	}
 }

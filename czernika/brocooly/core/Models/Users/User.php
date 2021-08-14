@@ -10,9 +10,9 @@ declare(strict_types=1);
 
 namespace Brocooly\Models\Users;
 
-use Brocooly\Support\Builders\UserQueryBuilder;
 use Carbon_Fields\Container;
 use Timber\User as TimberUser;
+use Brocooly\Support\Builders\UserQueryBuilder;
 
 abstract class User extends TimberUser
 {
@@ -55,20 +55,22 @@ abstract class User extends TimberUser
 	/**
 	 * Create user or update if ID passed.
 	 *
-	 * @param array  $userdata | additional user data.
+	 * @param array $userdata | additional user data.
 	 * @return int|\WP_Error
 	 */
-	public function createOrUpdate( array $userdata ) {
+	public static function insert( array $userdata ) {
 		return wp_insert_user( $userdata );
 	}
 
 	/**
 	 * Create user.
 	 *
-	 * @param array  $userdata | additional user data.
+	 * @param string $username | username.
+	 * @param string $password | password.
+	 * @param string $email | email.
 	 * @return int|\WP_Error
 	 */
-	public function create( string $username, string $password, string $email = '' ) {
+	public static function create( string $username, string $password, string $email = '' ) {
 		return wp_create_user( $username, $password, $email );
 	}
 

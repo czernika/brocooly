@@ -73,6 +73,7 @@ class PostTypeQueryBuilder extends QueryBuilder
 			'post_type'      => static::$postType,
 			'posts_per_page' => $postsPerPage,
 			'paged'          => max( 1, get_query_var( 'paged' ) ),
+			'no_found_rows'  => false,
 		];
 		static::$queryParams = array_merge( $postQuery, static::$queryParams );
 

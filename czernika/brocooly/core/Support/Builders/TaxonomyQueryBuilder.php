@@ -55,6 +55,7 @@ class TaxonomyQueryBuilder extends QueryBuilder
 		$taxQuery            = [
 			'posts_per_archive_page' => $postsPerPage,
 			'paged'                  => max( 1, get_query_var( 'paged' ) ),
+			'no_found_rows'          => false,
 		];
 		static::$queryParams = array_merge( static::$queryParams, $taxQuery );
 		return new static();

@@ -10,22 +10,19 @@ declare(strict_types=1);
 
 namespace Brocooly\Support\Facades;
 
-class AbstractFacade
+abstract class AbstractFacade
 {
 	public static function __callStatic( string $name, array $arguments = [] ) {
-		$facade = app( static::accessor() );
-		return $facade::create( $name, $arguments );
+		$factory = app( static::accessor() );
+		return $factory::create( $name, $arguments );
 	}
 
 	/**
 	 * Accessor key at config
 	 *
-	 * @throws Exception
+	 * @throws \Exception | if no accessor was provided.
 	 */
 	protected static function accessor() {
-		throw new \Exception(
-			'Facade requires accessor to return string',
-			true,
-		);
+		throw new \Exception( 'Facade requires accessor to return string' );
 	}
 }

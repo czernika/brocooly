@@ -15,6 +15,8 @@ class DefinitionLoader
 
 	/**
 	 * Definitions array
+	 *
+	 * @var array
 	 */
 	private array $definitions;
 
@@ -24,8 +26,8 @@ class DefinitionLoader
 			/**
 			 * Theme constants
 			 */
-			'BROCOOLY_THEME_PATH'      => trailingslashit( get_template_directory() ),
-			'BROCOOLY_THEME_URI'       => trailingslashit( get_template_directory_uri() ),
+			'BROCOOLY_THEME_PATH' => trailingslashit( get_template_directory() ),
+			'BROCOOLY_THEME_URI'  => trailingslashit( get_template_directory_uri() ),
 		];
 	}
 

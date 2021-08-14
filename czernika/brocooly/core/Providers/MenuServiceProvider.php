@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 namespace Brocooly\Providers;
 
+use Timber\Menu;
 use Timber\Timber;
 use Webmozart\Assert\Assert;
 use Brocooly\Storage\Context;
@@ -35,7 +36,7 @@ class MenuServiceProvider extends AbstractService
 
 		Assert::isArray(
 			$menus,
-			/* translators: 1: type of variable */
+			/* translators: 1 - type of variable */
 			sprintf(
 				'`app.menus` key must be an array, %s given',
 				gettype( $menus )
@@ -48,7 +49,7 @@ class MenuServiceProvider extends AbstractService
 
 				Assert::stringNotEmpty(
 					$menu::LOCATION,
-					/* translators: 1: menu class */
+					/* translators: 1 - menu class */
 					sprintf(
 						'Name property was not provided for %s menu',
 						$menuClass
@@ -58,7 +59,7 @@ class MenuServiceProvider extends AbstractService
 				Assert::methodExists(
 					$menu,
 					'label',
-					/* translators: 1: menu class name */
+					/* translators: 1 - menu class name */
 					sprintf(
 						'%s menu must have `label()` method which should return string',
 						$menuClass
@@ -115,7 +116,7 @@ class MenuServiceProvider extends AbstractService
 			return Timber::get_menu( $location );
 		}
 
-		return new \Timber\Menu( $location );
+		return new Menu( $location );
 	}
 
 	/**

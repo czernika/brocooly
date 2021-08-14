@@ -50,8 +50,8 @@ class AssetsLoader
 
 	public function __construct( App $app ) {
 		$this->app          = $app;
-		$this->publicFolder = trailingslashit( config( 'assets.public', 'public' ) );
-		$this->manifest     = untrailingslashit( config( 'assets.manifest', 'manifest.json' ) );
+		$this->publicFolder = trailingslashit( config( 'assets.public' ) );
+		$this->manifest     = untrailingslashit( config( 'assets.manifest' ) );
 		$this->assets       = $this->getAssets();
 	}
 

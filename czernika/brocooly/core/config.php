@@ -1,6 +1,8 @@
 <?php
 /**
- * Configuration object for Container instance.
+ * Configuration object for DI Container instance.
+ *
+ * @link https://php-di.org/doc/php-definitions.html
  *
  * @package Brocooly
  * @since 0.1.0
@@ -19,6 +21,7 @@ use Brocooly\Support\Factories\MetaFactory;
 use Brocooly\Support\Factories\FileFactory;
 use Brocooly\Support\Factories\RouteFactory;
 use Brocooly\Support\Factories\FacadeFactory;
+use Brocooly\Support\Factories\DatabaseFactory;
 use Brocooly\Support\Factories\ValidatorFactory;
 use Brocooly\Support\Factories\CustomizerFactory;
 
@@ -37,10 +40,10 @@ $appDefintions = [
 	 * this is a core of application.
 	 */
 	'bootstrap'          => create( Bootstrap::class )
-												->constructor( get( App::class ) ),
+								->constructor( get( App::class ) ),
 	'timber'             => create( Timber::class ),
 	'routing'            => create( Router::class )
-												->constructor( get( Routes::class ) ),
+								->constructor( get( Routes::class ) ),
 
 	/**
 	 *--------------------------------------------------------------------------
@@ -56,12 +59,13 @@ $appDefintions = [
 	 * App Facades
 	 *--------------------------------------------------------------------------
 	 */
-	'meta'               => create( MetaFactory::class ),
-	'facade'             => create( FacadeFactory::class ),
 	'mod'                => create( CustomizerFactory::class ),
-	'validator'          => create( ValidatorFactory::class ),
+	'meta'               => create( MetaFactory::class ),
 	'file'               => create( FileFactory::class ),
 	'router'             => create( RouteFactory::class ),
+	'facade'             => create( FacadeFactory::class ),
+	'database'           => create( DatabaseFactory::class ),
+	'validator'          => create( ValidatorFactory::class ),
 
 	/**
 	 * --------------------------------------------------------------------------
@@ -72,7 +76,7 @@ $appDefintions = [
 
 	/**
 	 * --------------------------------------------------------------------------
-	 * Bind ServiceContracts with its Services
+	 * Factories
 	 * --------------------------------------------------------------------------
 	 */
 	ModelContract::class => factory( [ ModelBuilder::class, 'resolve' ] ),
