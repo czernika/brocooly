@@ -13,28 +13,19 @@ use Brocooly\Support\Facades\File;
 
 /**
  * --------------------------------------------------------------------------
- * Include DI container
- * --------------------------------------------------------------------------
- *
- * PHP/DI Container provides very handy dependency injection container
- * working like a charm out of the box
- */
-$container = require_once CORE_PATH . '/container.php';
-
-/**
- * --------------------------------------------------------------------------
  * Call The Application
  * --------------------------------------------------------------------------
- *
- * By calling Bootstrap class we are gonna register
- * and then load all Providers for application
+ * Include DI container and cool App class.
+ * We are gonna register and load all Providers for application.
  */
-$brocooly = $container->get( 'bootstrap' );
+$brocooly = container()->get( 'app' );
 
 /**
  * --------------------------------------------------------------------------
  * Run Forest Run!
  * --------------------------------------------------------------------------
+ *
+ * Boot application.
  */
 $brocooly->run();
 
@@ -44,7 +35,7 @@ $brocooly->run();
  * --------------------------------------------------------------------------
  *
  * This file requires to be handled directly into functions.php
- * Otherwise other plugins may not see it as a template
+ * Otherwise other plugins may not see .pot file as a language template.
  *
  * @since 0.8.5
  */
@@ -55,9 +46,15 @@ File::requireOnce( __DIR__ . '/i18n.php' );
  * Include Kirki Customizer installer
  * --------------------------------------------------------------------------
  *
- * As Kirki is a WordPress plugin it is depends on user actions
- * So we include installer section
+ * Kirki Framework - The ultimate framework for theme developers using the WordPress Customizer
  *
+ * Kirki is licensed under the MIT Licence.
+ * Copyright (c) 2020 Ari Stathopoulos (@aristath)
+ *
+ * As Kirki is a WordPress plugin it is depends on user actions.
+ * So we include installer section to recommend the installation of Kirki from inside the customizer.
+ *
+ * @link https://kirki.org/
  * @see https://kirki.org/docs/setup/integration/
  * @since 0.3.0
  */

@@ -45,7 +45,8 @@
         "illuminate/validation": "^8.53",
         "illuminate/filesystem": "^8.53",
         "illuminate/translation": "^8.53",
-        "elegantweb/sanitizer": "^1.1"
+        "elegantweb/sanitizer": "^1.1",
+        "spatie/once": "^2.2"
 	},
 	"require-dev": {
 		"squizlabs/php_codesniffer": "^3.5.8",

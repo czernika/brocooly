@@ -12,6 +12,7 @@ namespace Brocooly\Loaders;
 
 use Whoops\Run;
 use Brocooly\App;
+use HelloNico\Twig\DumpExtension;
 
 class DebuggerLoader
 {
@@ -38,7 +39,7 @@ class DebuggerLoader
 			add_filter(
 				'timber/loader/twig',
 				function( $twig ) {
-					$twig->addExtension( $this->app->get( 'dump' ) );
+					$twig->addExtension( $this->app->get( DumpExtension::class ) );
 					return $twig;
 				}
 			);

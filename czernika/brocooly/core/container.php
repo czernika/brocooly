@@ -1,7 +1,6 @@
 <?php
 /**
- * Create DI\Container v6 instance
- * and provide configuration for it
+ * Create DI\Container instance and provide configuration for it
  *
  * PHP-DI Container runs under MIT License
  *
@@ -33,16 +32,18 @@ $containerBuilder = new ContainerBuilder();
  * PHP-DI's definitions are written using a DSL (Domain Specific Language) written in PHP and based on helper functions.
  * You can register that configuration as an array.
  *
- * ! First line is VERY important - it is application definitions which includes main app instances.
- * Second one is your custom definitions.
+ * ! First one is VERY important - it is application definitions which includes main app instances.
+ * Second one is your custom theme definitions.
  */
-$appDefinitions   = require_once CORE_PATH . '/config.php';
-$themeDefinitions = Brocooly::definitions();
+$appDefinitions = require_once CORE_PATH . '/config.php';
+
+$brocooly         = new Brocooly();
+$themeDefinitions = $brocooly->definitions();
 $containerBuilder->addDefinitions( $appDefinitions, $themeDefinitions );
 
 /**
  * --------------------------------------------------------------------------
- * Build container
+ * Build container and return it
  * --------------------------------------------------------------------------
  *
  * Provide configuration and build container.

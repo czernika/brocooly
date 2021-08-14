@@ -53,6 +53,22 @@ if ( ! function_exists( 'isProduction' ) ) {
 	}
 }
 
+if ( ! function_exists( 'container' ) ) {
+
+	/**
+	 * Return container instance
+	 *
+	 * @return \DI\Container
+	 */
+	function container() {
+		return once(
+			function() {
+				return require_once CORE_PATH . '/container.php';
+			}
+		);
+	}
+}
+
 if ( ! function_exists( 'app' ) ) {
 
 	/**
@@ -61,7 +77,8 @@ if ( ! function_exists( 'app' ) ) {
 	 * @param string|null $key | key to get.
 	 */
 	function app( $key = null ) {
-		$app = App::getApp();
+		$container = container();
+		$app       = new App( $container );
 		if ( isset( $key ) ) {
 			return $app->get( $key );
 		}

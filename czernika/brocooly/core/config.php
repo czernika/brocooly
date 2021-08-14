@@ -10,10 +10,7 @@
 
 use Brocooly\App;
 use Timber\Timber;
-use Brocooly\Bootstrap;
-use Brocooly\Router\Routes;
 use Brocooly\Router\Router;
-use HelloNico\Twig\DumpExtension;
 use Brocooly\Contracts\ModelContract;
 use Brocooly\Http\Middleware\DoingAjax;
 use Brocooly\Support\Builders\ModelBuilder;
@@ -36,20 +33,9 @@ $appDefintions = [
 	 * Application itself and Timber class. As Brocooly depends on Timber
 	 * this is a core of application.
 	 */
-	'bootstrap'          => create( Bootstrap::class )
-								->constructor( get( App::class ) ),
-	'timber'             => create( Timber::class ),
-	'routing'            => create( Router::class )
-								->constructor( get( Routes::class ) ),
-
-	/**
-	 *--------------------------------------------------------------------------
-	 * Debug helpers
-	 *--------------------------------------------------------------------------
-	 *
-	 * Classes to handle errors and exceptions
-	 */
-	'dump'               => create( DumpExtension::class ),
+	'app'                => get( App::class ),
+	'timber'             => get( Timber::class ),
+	'routing'            => get( Router::class ),
 
 	/**
 	 *--------------------------------------------------------------------------

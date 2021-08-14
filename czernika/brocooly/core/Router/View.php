@@ -25,7 +25,7 @@ class View
 	 */
 	public static function make( string $views, array $localContext = [] ) {
 		$timberContext = Timber::context();
-		$themeContext  = ThemeContext::context();
+		$themeContext  = app( ThemeContext::class )->context();
 		$ctx           = array_merge( $timberContext, $themeContext, $localContext );
 
 		/**

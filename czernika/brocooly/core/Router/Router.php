@@ -56,5 +56,11 @@ class Router
 		if ( ! $this->route_was_hit ) {
 			View::throw404();
 		}
+
+		$this->resolveAjax();
+	}
+
+	private function resolveAjax() {
+		RequestHandler::handleAjaxRequest();
 	}
 }

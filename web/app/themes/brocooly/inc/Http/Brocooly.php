@@ -1,8 +1,10 @@
 <?php
 /**
- * Theme Timber context.
- * This context will be available on any page as key value.
- * This array will be added to the global context through the `timber/context` filter
+ * Theme instance.
+ * Context from context() method will be available on any page as key value.
+ * This array will be added to the global context through the `timber/context` filter.
+ *
+ * Definitions added directly into App Container.
  *
  * @package Brocooly
  * @since 0.1.0
@@ -16,6 +18,7 @@ use Brocooly\Http\Request\WPRequest;
 use Whoops\Handler\PlainTextHandler;
 use Whoops\Handler\PrettyPageHandler;
 use Theme\Http\Middleware\UserLoggedIn;
+
 use function DI\create;
 
 class Brocooly
@@ -26,7 +29,7 @@ class Brocooly
 	 *
 	 * @return array | custom theme context.
 	 */
-	public static function context() {
+	public function context() {
 		$context = [
 
 			/**
@@ -59,7 +62,7 @@ class Brocooly
 	 * @package Brocooly
 	 * @since 0.9.1
 	 */
-	public static function definitions() {
+	public function definitions() {
 		$definitions = [
 
 			/**
@@ -67,9 +70,9 @@ class Brocooly
 			 * Set debug handler
 			 * --------------------------------------------------------------------------
 			 *
-			 * If you see some errors change handler to `PlainTextHandler::class`
+			 * ! If you see some errors change handler to `PlainTextHandler::class`
 			 * as PrettyPageHandler may cause some problems with `sqlite3` PHP extension.
-			 * Alternatively you may disable extension itself
+			 * Alternatively you may disable extension itself.
 			 *
 			 * @since 0.8.9
 			 */

@@ -11,24 +11,23 @@ declare(strict_types=1);
 
 namespace Brocooly;
 
-use Brocooly\Router\RequestHandler;
 use DI\Container;
 use Timber\Timber;
 use Brocooly\Support\Facades\File;
 use Psr\Container\ContainerInterface;
+use Brocooly\Loaders\HookLoader;
+use Brocooly\Loaders\AssetsLoader;
+use Brocooly\Loaders\BootProvider;
+use Brocooly\Loaders\ConfigLoader;
+use Brocooly\Loaders\DebuggerLoader;
+use Brocooly\Loaders\DefinitionLoader;
+use Brocooly\Loaders\RegisterProvider;
 
 use function DI\factory;
 use function DI\autowire;
 
-class App
+class App implements ContainerInterface
 {
-
-	/**
-	 * Application instance
-	 *
-	 * @var instanceof Brocooly\App
-	 */
-	private static App $app;
 
 	/**
 	 * Timber instance
@@ -49,7 +48,23 @@ class App
 	 *
 	 * @var bool
 	 */
-	private static bool $booted = false;
+	private bool $booted = false;
+
+	/**
+	 * Array of Application loaders
+	 * ! Order matter - consider to load in a first place important loaders
+	 *
+	 * @var array
+	 */
+	private array $loaders = [
+		DefinitionLoader::class,
+		DebuggerLoader::class,
+		ConfigLoader::class,
+		RegisterProvider::class,
+		HookLoader::class,
+		AssetsLoader::class,
+		BootProvider::class,
+	];
 
 	/**
 	 * Define if route resolver was called
@@ -59,18 +74,8 @@ class App
 	private bool $webRoutesWasLoaded = false;
 
 	public function __construct( Container $container ) {
-		static::$app       = $this;
 		$this->container = $container;
-		$this->timber    = $this->container->make( 'timber' );
-	}
-
-	/**
-	 * Get application instance
-	 *
-	 * @return self;
-	 */
-	public static function getApp() {
-		return static::$app;
+		$this->timber    = $this->container->get( 'timber' );
 	}
 
 	/**
@@ -93,30 +98,38 @@ class App
 	public function web() {
 		if ( ! $this->webRoutesWasLoaded ) {
 			$this->webRoutesWasLoaded = true;
+
+			/**
+			 * Include routes files
+			 */
 			File::requireOnce( BROCOOLY_THEME_PATH . '/routes/web.php' );
 			File::requireOnce( BROCOOLY_THEME_PATH . '/routes/ajax.php' );
 
+			/**
+			 * Resolve routes
+			 */
 			$this->router()->resolve();
-
-			RequestHandler::handleAjaxRequest();
 		}
 	}
 
 	/**
-	 * Boot loaders
+	 * Boot loaders.
+	 * Make instance of this loader
 	 *
 	 * @param array $loaders | array of app loaders.
 	 */
-	public function bootLoaders( array $loaders ) {
-		if ( ! static::$booted ) {
-			foreach ( $loaders as $loader ) {
-				$this->make( $loader )->call();
+	public function run() {
+		if ( ! $this->booted ) {
+			foreach ( $this->loaders as $loader ) {
+				if ( method_exists( $loader, 'call' ) ) {
+					$this->call( [ $loader, 'call' ] );
+				}
 			}
-			static::$booted = true;
+			$this->booted = true;
 		}
 	}
 
-	/**
+	/** 
 	 * Bind Interface with it's class object
 	 *
 	 * @inheritdoc
@@ -138,10 +151,7 @@ class App
 	 * @inheritdoc
 	 */
 	public function wire( string $key, string $value ) {
-		$this->container->set(
-			$key,
-			autowire( $value ),
-		);
+		$this->container->set( $key, autowire( $value ) );
 	}
 
 	/**

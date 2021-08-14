@@ -19,13 +19,14 @@ class ThemeTest extends TestCase
 	}
 
 	public function tearDown(): void {
-		Monkey\tearDown();
-		parent::tearDown();
 
 		/**
 		 * Switch back to Brocooly
 		 */
 		switch_theme( 'brocooly' );
+
+		Monkey\tearDown();
+		parent::tearDown();
 	}
 
 	/**

@@ -12,6 +12,8 @@
  * --------------------------------------------------------------------------
  * Ensure compatible version of PHP is used
  * --------------------------------------------------------------------------
+ *
+ * Minimum required version is 7.4.
  */
 $brocooly_min_php_version = '7.4';
 if ( version_compare( $brocooly_min_php_version, phpversion(), '>=' ) ) {
@@ -30,8 +32,8 @@ if ( version_compare( $brocooly_min_php_version, phpversion(), '>=' ) ) {
  * Check if Composer is installed
  * --------------------------------------------------------------------------
  *
- * Brocooly STRONGLY requires Composer to be installed.
- * If it's not got to.
+ * ! Brocooly STRONGLY requires Composer to be installed.
+ * If it's not go to and install.
  *
  * @link https://getcomposer.org/
  */
@@ -55,11 +57,17 @@ require_once $autoload;
  * Let's start
  * --------------------------------------------------------------------------
  *
- * If Composer installed boot application
+ * Boot application
  */
 require_once __DIR__ . '/bootstrap/app.php';
 
-/****************************************************
- * All you custom functions are goes here
+/**
+ * ==========================================================================
+ * Start line - place your code AFTER this block
+ * ==========================================================================
+ *
+ * All you custom functions may be placed here as it is still WordPress installation.
+ * But Brocooly Framework recommends you not to do that and handle logic inside theme inc folder.
+ *
  * Happy coding!
- ************************************************** */
+ */
