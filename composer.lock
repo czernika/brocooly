@@ -281,7 +281,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/czernika/brocooly-core.git",
-                "reference": "f8157c2f89fc375688c1d216e7df907eb434a783"
+                "reference": "2569eba257c6de63baeb79a14643f0597633a0ad"
             },
             "require": {
                 "composer/installers": "^1.10",
@@ -305,14 +305,6 @@
                 "vlucas/phpdotenv": "^5.3",
                 "webmozart/assert": "^1.10"
             },
-            "require-dev": {
-                "brain/monkey": "2.*",
-                "friendsoftwig/twigcs": "^5.0",
-                "phpunit/phpunit": "^9.5",
-                "roave/security-advisories": "dev-master",
-                "squizlabs/php_codesniffer": "^3.5.8",
-                "wp-coding-standards/wpcs": "^2.3.0"
-            },
             "default-branch": true,
             "type": "library",
             "autoload": {
@@ -333,7 +325,7 @@
                 }
             ],
             "description": "Core engine for Brocooly Framework",
-            "time": "2021-08-15T09:28:34+00:00"
+            "time": "2021-08-15T10:03:53+00:00"
         },
         {
             "name": "djboris88/timber-commented-include",
