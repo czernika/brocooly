@@ -9,11 +9,5 @@ use Brocooly\Models\Comment as BaseComment;
 
 class Comment extends BaseComment
 {
-	/**
-	 * Add meta to comment
-	 * Call $this->createFields() inside
-	 *
-	 * @return void
-	 */
-	// public function fields() {}
+	
 }

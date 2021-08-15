@@ -27,6 +27,11 @@ class FrontPageController extends Controller
 		$this->pageService = $pageServiceContract;
 	}
 
+	/**
+	 * Render front page
+	 *
+	 * @return void
+	 */
 	public function __invoke() {
 		$hello = $this->pageService->getHelloPhrase();
 		view( 'content/front-page.twig', compact( 'hello' ) );

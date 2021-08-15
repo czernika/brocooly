@@ -1,4 +1,10 @@
 <?php
+/**
+ * Create Developer role for app
+ *
+ * @package Brocooly
+ * @since 0.12.0 
+ */
 
 declare(strict_types=1);
 
@@ -8,6 +14,7 @@ use Brocooly\Models\Users\Role;
 
 class DeveloperRole extends Role
 {
+
 	/**
 	 * Role name
 	 *
@@ -26,6 +33,7 @@ class DeveloperRole extends Role
 
 	/**
 	 * Get user capabilities
+	 * We will set same level of caps as admin has
 	 *
 	 * @return array
 	 */

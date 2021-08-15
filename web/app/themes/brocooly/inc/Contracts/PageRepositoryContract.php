@@ -2,7 +2,7 @@
 /**
  * Page Repository interface
  *
- * Get page object and queries.
+ * Get page object and queries for it.
  *
  * @package Brocooly
  * @since 0.4.1
@@ -16,9 +16,9 @@ interface PageRepositoryContract
 {
 
 	/**
-	 * Get current post
+	 * Get current page object
 	 *
-	 * @return object
+	 * @return \Timber\Post
 	 */
 	public function current();
 }

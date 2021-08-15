@@ -44,6 +44,7 @@ class ContactsSection extends AbstractSection
 
 	/**
 	 * Section controls
+	 * Let's create contact email option field
 	 *
 	 * @see https://kirki.org/docs/controls/
 	 * @return array

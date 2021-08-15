@@ -17,7 +17,7 @@ class Page extends PostType
 {
 
 	/**
-	 * Post type name
+	 * Post type slug
 	 *
 	 * @var string
 	 */

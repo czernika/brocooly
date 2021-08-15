@@ -14,7 +14,7 @@ namespace Theme\Contracts;
 
 interface PostRepositoryContract
 {
-	
+
 	/**
 	 * Get all posts
 	 *
@@ -25,13 +25,13 @@ interface PostRepositoryContract
 	/**
 	 * Get all posts with pagination
 	 *
-	 * @param integer $postsPerPage | posts per page.
+	 * @param integer $postsPerPage | posts per page, default to 10.
 	 * @return \Timber\PostQuery
 	 */
 	public function paginate( int $postsPerPage = 10 );
 
 	/**
-	 * Get current post
+	 * Get current post object
 	 *
 	 * @return \Timber\Post
 	 */

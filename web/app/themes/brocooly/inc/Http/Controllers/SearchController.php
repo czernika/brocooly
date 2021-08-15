@@ -10,12 +10,17 @@ declare(strict_types=1);
 
 namespace Theme\Http\Controllers;
 
+use Brocooly\Http\Request\WPRequest;
 use Theme\Http\Controllers\Controller;
 
 class SearchController extends Controller
 {
+
+	/**
+	 * Render search page with search query
+	 */
 	public function __invoke() {
-		$s = get_search_query();
+		$s = WPRequest::searchQuery();
 		view( 'content/search.twig', compact( 's' ) );
 	}
 }

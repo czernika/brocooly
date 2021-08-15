@@ -1,6 +1,6 @@
 <?php
 /**
- * Custom action
+ * Extra hook to handle scripts and styles enqueuing.
  *
  * @package Brocooly
  * @since 0.3.0

@@ -16,7 +16,8 @@ interface PageServiceContract
 {
 
 	/**
-	 * Get Hello World phrase
+	 * Get welcome phrase
+	 * Just for example
 	 *
 	 * @return string
 	 */

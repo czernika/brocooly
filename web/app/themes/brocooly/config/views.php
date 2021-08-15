@@ -100,6 +100,6 @@ return [
 	 * Set time in seconds cache files will be expired.
 	 * Default is 600 (10 minutes)
 	 */
-	'expire'     => 600,
+	'expire'     => 600, // seconds.
 
 ];

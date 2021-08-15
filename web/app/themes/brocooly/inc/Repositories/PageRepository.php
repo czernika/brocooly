@@ -1,4 +1,10 @@
 <?php
+/**
+ * Page Repository
+ *
+ * @package Brocooly
+ * @since 0.12.0
+ */
 
 declare(strict_types=1);
 
@@ -11,7 +17,9 @@ class PageRepository implements PageRepositoryContract
 {
 
 	/**
-	 * Get current post
+	 * Get current page object
+	 *
+	 * @return \Timber\Post
 	 */
 	public function current() {
 		$post = Page::current();

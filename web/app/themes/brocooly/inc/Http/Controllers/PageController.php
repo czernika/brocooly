@@ -28,7 +28,7 @@ class PageController extends Controller
 	}
 
 	/**
-	 * Load singular page
+	 * Render singular page
 	 */
 	public function single() {
 		$post = $this->pageRepository->current();

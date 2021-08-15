@@ -70,9 +70,8 @@ class Brocooly
 			 * Set debug handler
 			 * --------------------------------------------------------------------------
 			 *
-			 * ! If you see some errors change handler to `PlainTextHandler::class`
-			 * as PrettyPageHandler may cause some problems with `sqlite3` PHP extension.
-			 * Alternatively you may disable extension itself.
+			 * PrettyPageHandler may cause some problems with `sqlite3` PHP extension.
+			 * Alternatively you may disable extension itself (recommended).
 			 *
 			 * @since 0.8.9
 			 */

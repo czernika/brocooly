@@ -1,7 +1,7 @@
 <?php
 /**
- * Handle any post type requests
- * Useful for mass assignment
+ * Handle any post type requests.
+ * Useful for mass assignment.
  *
  * @package Brocooly
  * @since 0.8.7
@@ -29,7 +29,7 @@ class PostTypesController extends Controller
 	}
 
 	/**
-	 * Handle any post type
+	 * Handle any post type singular page
 	 */
 	public function single() {
 		$post = $this->post::current();

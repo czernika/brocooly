@@ -43,9 +43,10 @@ class PostsController extends Controller
 	}
 
 	/**
-	 * Load archive page
+	 * Render archive page
 	 *
 	 * Note that Timber handles `posts` context with default query params by itself
+	 * so no need to create it. But if you wish you may override it.
 	 */
 	public function index() {
 		$blog = [
@@ -56,7 +57,7 @@ class PostsController extends Controller
 	}
 
 	/**
-	 * Load singular page
+	 * Render singular page
 	 */
 	public function single() {
 		$post      = $this->postRepository->current();

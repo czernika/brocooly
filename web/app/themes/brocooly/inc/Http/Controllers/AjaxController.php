@@ -15,10 +15,18 @@ use Brocooly\Http\Controllers\BaseController;
 abstract class AjaxController extends BaseController
 {
 
+	/**
+	 * Protect it with `ajax` middleware.
+	 */
 	public function __construct() {
 		$this->middleware( 'ajax' );
 	}
 
+	/**
+	 * Exit handler
+	 *
+	 * @return void
+	 */
 	protected function die() {
 		wp_die();
 	}

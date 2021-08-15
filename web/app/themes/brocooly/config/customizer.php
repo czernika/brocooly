@@ -22,9 +22,9 @@ use function Env\env;
 return [
 
 	/**
-	 *--------------------------------------------------------------------------
+	 * --------------------------------------------------------------------------
 	 * Customizer panels and sections
-	 *--------------------------------------------------------------------------
+	 * --------------------------------------------------------------------------
 	 *
 	 * Register theme panels and sections.
 	 *
@@ -39,9 +39,9 @@ return [
 	],
 
 	/**
-	 *--------------------------------------------------------------------------
+	 * --------------------------------------------------------------------------
 	 * Customizer controls
-	 *--------------------------------------------------------------------------
+	 * --------------------------------------------------------------------------
 	 *
 	 * This will register individual options
 	 * Mostly used for WordPress sections like `title_tagline` etc
@@ -56,16 +56,16 @@ return [
 	],
 
 	/**
-	 *--------------------------------------------------------------------------
+	 * --------------------------------------------------------------------------
 	 * Configuration
-	 *--------------------------------------------------------------------------
+	 * --------------------------------------------------------------------------
 	 *
 	 * Options for Kirki config
 	 * Configurations allow each project to use a different setup
 	 * and act as identifiers so it’s important you create one.
 	 * Fields that belong to your configuration will inherit your config properties.
 	 *
-	 * TODO: add more configs
+	 * TODO: add more configs. Currently only ONE config supported.
 	 *
 	 * @see https://kirki.org/docs/setup/config/
 	 */
@@ -86,8 +86,11 @@ return [
 	 * @example
 	 * ```
 	 * get_theme_mod( 'brocooly_setting' );
-	 * is same as
-	 * {{ mod('setting') }} | {{ fn('get_theme_mod', 'brocooly_setting') }}
+	 * is same as:
+	 * 
+	 * {{ mod('setting') }}
+	 * {{ theme.theme_mod('brocooly_setting') }}
+	 * {{ fn('get_theme_mod', 'brocooly_setting') }}
 	 * ```
 	 */
 	'prefix'   => env( 'THEME' ) ? env( 'THEME' ) . '_' : 'brocooly_',

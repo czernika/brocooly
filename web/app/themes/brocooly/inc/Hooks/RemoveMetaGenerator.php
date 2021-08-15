@@ -12,6 +12,12 @@ namespace Theme\Hooks;
 
 class RemoveMetaGenerator
 {
+
+	/**
+	 * Run hook
+	 *
+	 * @return void
+	 */
 	public function load() {
 		add_filter( 'the_generator', '__return_empty_string' );
 	}
