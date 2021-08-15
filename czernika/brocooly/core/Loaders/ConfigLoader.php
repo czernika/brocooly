@@ -21,7 +21,7 @@ class ConfigLoader
 	 *
 	 * @var instanceof Brocooly\App
 	 */
-    private $app;
+	private $app;
 
 	public function __construct( App $app ) {
 		$this->app = $app;

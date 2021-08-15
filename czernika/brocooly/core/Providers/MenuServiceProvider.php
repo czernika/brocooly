@@ -15,7 +15,7 @@ namespace Brocooly\Providers;
 use Timber\Menu;
 use Timber\Timber;
 use Webmozart\Assert\Assert;
-use Brocooly\Storage\Context;
+use Brocooly\Support\Facades\Ctx;
 
 class MenuServiceProvider extends AbstractService
 {
@@ -80,7 +80,7 @@ class MenuServiceProvider extends AbstractService
 				 * Add them into context
 				 */
 				if ( $this->locationWasSetInAdminArea( $menu::LOCATION ) ) {
-					Context::set(
+					Ctx::set(
 						$this->getMenuName( $menu::LOCATION ),
 						$this->getMenuObject( $menu::LOCATION )
 					);

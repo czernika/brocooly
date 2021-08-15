@@ -10,6 +10,9 @@ declare(strict_types=1);
 
 namespace Brocooly\Storage;
 
+use Timber\Timber;
+use Theme\Http\Brocooly as ThemeContext;
+
 class Context
 {
 
@@ -18,7 +21,7 @@ class Context
 	 *
 	 * @var array
 	 */
-	private static array $registry = [];
+	private array $registry = [];
 
 	/**
 	 * Set context value
@@ -27,8 +30,8 @@ class Context
 	 * @param mixed  $value | key value.
 	 * @return void
 	 */
-	public static function set( string $key, $value ) {
-		self::$registry[ $key ] = $value;
+	public function set( string $key, $value ) {
+		$this->registry[ $key ] = $value;
 	}
 
 	/**
@@ -37,8 +40,8 @@ class Context
 	 * @param array $ctx | custom context array.
 	 * @return void
 	 */
-	public static function merge( array $ctx ) {
-		self::$registry = array_merge( self::$registry, $ctx );
+	public function merge( array $ctx ) {
+		$this->registry = array_merge( $this->registry, $ctx );
 	}
 
 	/**
@@ -47,12 +50,21 @@ class Context
 	 * @param string|null $key | key name.
 	 * @return array|mixed
 	 */
-	public static function get( $key = null ) {
-		if ( isset( self::$registry[ $key ] ) ) {
-			return self::$registry[ $key ];
+	public function get( $key = null ) {
+		$timberContext = Timber::context();
+		$themeContext  = app( ThemeContext::class )->context();
+
+		$this->registry = array_merge( $this->registry, $timberContext, $themeContext );
+
+		if ( isset( $key ) ) {
+			if ( key_exists( $key, $this->registry ) ) {
+				return $this->registry[ $key ];
+			}
+
+			return null;
 		}
 
-		return self::$registry;
+		return $this->registry;
 	}
 
 	/**
@@ -61,14 +73,7 @@ class Context
 	 * @param string $key | key to delete.
 	 * @return void
 	 */
-	public static function delete( string $key ) {
-		unset( self::$registry[ $key ] );
+	public function delete( string $key ) {
+		unset( $this->registry[ $key ] );
 	}
-
-	/**
-	 * Capsulate singleton
-	 */
-	private function __construct() {}
-	private function __clone() {}
-	private function __wakeup() {}
 }

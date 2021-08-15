@@ -27,11 +27,13 @@ class PostService implements PostServiceContract
 
 	/**
 	 * Get blog breadcrumbs
+	 * Return array of arrays (crumbs).
 	 *
 	 * @return array
 	 */
 	public function getBlogCrumbs() {
 		$crumbs = [
+			// first (and only) parent crumb.
 			[
 				'title' => $this->getBlogTitle(),
 				'link'  => get_post_type_archive_link( 'post' ),

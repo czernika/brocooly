@@ -10,7 +10,9 @@ use Theme\Contracts\PostRepositoryContract;
 class PostRepository implements PostRepositoryContract
 {
 	/**
-	 * Get all posts with default pagination
+	 * Get all posts
+	 *
+	 * @return \Timber\PostQuery
 	 */
 	public function all() {
 		$posts = Post::all();
@@ -18,7 +20,20 @@ class PostRepository implements PostRepositoryContract
 	}
 
 	/**
+	 * Get all posts with pagination
+	 *
+	 * @param integer $postsPerPage | posts per page.
+	 * @return \Timber\PostQuery
+	 */
+	public function paginate( int $postsPerPage = 10 ) {
+		$posts = Post::paginate( $postsPerPage )->get();
+		return $posts;
+	}
+
+	/**
 	 * Get current post
+	 *
+	 * @return \Timber\Post
 	 */
 	public function current() {
 		$post = Post::current();

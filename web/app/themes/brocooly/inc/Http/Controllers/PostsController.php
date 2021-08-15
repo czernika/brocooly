@@ -1,6 +1,9 @@
 <?php
 /**
- * All requests for posts
+ * All requests for posts - both singular and archive.
+ *
+ * In this example we just provide current object for singular post with breadcrumbs
+ * and default posts query with extra information about sidebar and blog title.
  *
  * @package Brocooly
  * @since 0.2.1
@@ -18,7 +21,7 @@ class PostsController extends Controller
 {
 
 	/**
-	 * PostSerivce object
+	 * PostService object
 	 *
 	 * @var object
 	 */
@@ -41,6 +44,8 @@ class PostsController extends Controller
 
 	/**
 	 * Load archive page
+	 *
+	 * Note that Timber handles `posts` context with default query params by itself
 	 */
 	public function index() {
 		$blog = [

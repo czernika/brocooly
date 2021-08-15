@@ -61,18 +61,11 @@ class Config
 			),
 		);
 
-		Assert::keyExists(
-			static::$data[ $file ],
-			$data,
-			/* translators: 1: key; 2 - file name. */
-			sprintf(
-				'Key "%1$s" not exists in %2$s file',
-				esc_html( $data ),
-				esc_html( $file . '.php' )
-			),
-		);
+		if ( key_exists( $data, static::$data[ $file ] ) ) {
+			return static::$data[ $file ][ $data ];
+		}
 
-		return static::$data[ $file ][ $data ];
+		return null;
 	}
 
 	/**

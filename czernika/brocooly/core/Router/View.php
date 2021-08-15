@@ -11,8 +11,7 @@ declare(strict_types=1);
 namespace Brocooly\Router;
 
 use Timber\Timber;
-use Brocooly\Storage\Context;
-use Theme\Http\Brocooly as ThemeContext;
+use Brocooly\Support\Facades\Ctx;
 
 class View
 {
@@ -24,23 +23,23 @@ class View
 	 * @param array  $localContext | context to pass with.
 	 */
 	public static function make( string $views, array $localContext = [] ) {
-		$timberContext = Timber::context();
-		$themeContext  = app( ThemeContext::class )->context();
-		$ctx           = array_merge( $timberContext, $themeContext, $localContext );
+		$appContext = Ctx::get();
+		$ctx        = array_merge( $appContext, $localContext );
 
 		/**
 		 * Cache time expire
 		 *
 		 * @since Brocooly 0.8.5
 		 */
-		$expire = isProduction() ? ( config( 'views.expire' ) ?? 600 ) : false;
-
-		Context::merge( $ctx );
+		$expire = isProduction() ? ( config( 'views.expire', 600 ) ) : false;
 
 		$defaultPage = config( 'views.default' );
-		return Timber::render( [ $views, $defaultPage ], Context::get(), $expire );
+		return Timber::render( [ $views, $defaultPage ], $ctx, $expire );
 	}
 
+	/**
+	 * Get default 404 template
+	 */
 	public static function throw404() {
 		return static::make( 'content/404.twig' );
 	}
