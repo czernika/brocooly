@@ -1,3 +1,0 @@
-{% if example %}
-    {# This is {{ SHORTCODE }}Shortcode output #}
-{% endif %}

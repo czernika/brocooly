@@ -31,11 +31,6 @@ $theme = env( 'THEME' ) ?? 'brocooly';
 defined( 'APP_PATH' ) || define( 'APP_PATH', dirname( __DIR__ ) );
 
 /**
- * Czernika/brocooly core root path
- */
-defined( 'CORE_PATH' ) || define( 'CORE_PATH', dirname( __DIR__ ) . '/czernika/brocooly/core' );
-
-/**
  * Document Root
  */
 $webroot_dir = APP_PATH . '/web';

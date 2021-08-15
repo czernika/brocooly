@@ -1,5 +1,0 @@
-{% extends 'layouts/widget.twig' %}
-
-{% block widget %}
-    {# Widget content here #}
-{% endblock %}

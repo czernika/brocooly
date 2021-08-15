@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8717553841a063c29d240f01bfddb378",
+    "content-hash": "e2929c3d92e42a053f1b70b90b9b6b8f",
     "packages": [
         {
             "name": "altorouter/altorouter",
@@ -274,6 +274,66 @@
                 }
             ],
             "time": "2021-04-28T06:42:17+00:00"
+        },
+        {
+            "name": "czernika/brocooly-core",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/czernika/brocooly-core.git",
+                "reference": "f8157c2f89fc375688c1d216e7df907eb434a783"
+            },
+            "require": {
+                "composer/installers": "^1.10",
+                "djboris88/timber-commented-include": "^1.1",
+                "elegantweb/sanitizer": "^1.1",
+                "filp/whoops": "^2.13",
+                "hellonico/twig-dump-extension": "^1.1",
+                "htmlburger/carbon-fields": "^3.2",
+                "illuminate/collections": "^8.45",
+                "illuminate/filesystem": "^8.53",
+                "illuminate/support": "^8.49",
+                "illuminate/translation": "^8.53",
+                "illuminate/validation": "^8.53",
+                "nesbot/carbon": "^2.50",
+                "oscarotero/env": "^2.1",
+                "php": ">=7.4",
+                "php-di/php-di": "^6.3",
+                "spatie/once": "^2.2",
+                "symfony/console": "^5.3",
+                "timber/timber": "^1.18",
+                "vlucas/phpdotenv": "^5.3",
+                "webmozart/assert": "^1.10"
+            },
+            "require-dev": {
+                "brain/monkey": "2.*",
+                "friendsoftwig/twigcs": "^5.0",
+                "phpunit/phpunit": "^9.5",
+                "roave/security-advisories": "dev-master",
+                "squizlabs/php_codesniffer": "^3.5.8",
+                "wp-coding-standards/wpcs": "^2.3.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Brocooly\\": "core"
+                },
+                "files": [
+                    "core/helpers.php"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ihar Aliakseyenka",
+                    "email": "aliha.devs@gmail.com"
+                }
+            ],
+            "description": "Core engine for Brocooly Framework",
+            "time": "2021-08-15T09:28:34+00:00"
         },
         {
             "name": "djboris88/timber-commented-include",
@@ -7215,6 +7275,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "czernika/brocooly-core": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,
