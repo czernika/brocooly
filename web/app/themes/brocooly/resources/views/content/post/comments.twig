@@ -2,15 +2,15 @@
 
 	<li class="{{ comment.comment_type }} byuser comment-author-{{ comment.author.ID }} {% if post.author.ID == comment.author.ID %}bypostauthor{% endif %} depth-{{ comment.depth }} bg-white border-l-2 comment-body border-l-secondary mb-4 py-4 px-4 sm:px-10 shadow" id="comment-{{ comment.ID }}">
 
-		<div class="flex mb-1 space-x-3 text-sm text-gray-400 comment-meta">
+		<div class="flex mb-1 space-x-3 text-sm text-gray-600 comment-meta">
 
 			<time datetime="{{ comment.date|date('d.F.Y') }}" itemprop="dateCreated">
 				{{ comment.date|date('d M, Y') }}
 			</time>
 
-			<h5 class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+			<h3 class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
 				{{ __('%s says', 'brocooly')|format(comment.comment_author) }}
-			</h5>
+			</h3>
 
 		</div>
 
@@ -34,9 +34,11 @@
 			</div>
 
 			{% if comment.children %}
-				{% include '@post/comments.twig' with {
-					comments: comment.children
-				} %}
+				<ul>
+					{% include '@post/comments.twig' with {
+						comments: comment.children
+					} %}
+				</ul>
 			{% endif %}
 
 		</article>

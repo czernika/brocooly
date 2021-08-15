@@ -1,5 +1,7 @@
-<nav id="post-navigation">
-    <h4 class="sr-only">{{ __('Post navigation', 'brocooly') }}</h4>
+<nav id="post-navigation" aria-labelledby="post-navigation-label">
+
+    <h3 id="post-navigation-label" class="sr-only">{{ __('Post navigation', 'brocooly') }}</h3>
+
     <ul class="flex items-center justify-between">
 
         {% if post.next %}
