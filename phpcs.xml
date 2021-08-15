@@ -9,12 +9,13 @@
     <config name="minimum_supported_wp_version" value="5.5"/>
 
     <!-- Exclude WP Core folders and files from being checked -->
-	<exclude-pattern>*/docroot/web/wp/wp-admin/*</exclude-pattern>
-	<exclude-pattern>*/docroot/web/wp/wp-includes/*</exclude-pattern>
-	<exclude-pattern>*/docroot/web/wp/wp-*.php</exclude-pattern>
-	<exclude-pattern>*/docroot/web/index.php</exclude-pattern>
-	<exclude-pattern>*/docroot/web/wp/xmlrpc.php</exclude-pattern>
-	<exclude-pattern>*/docroot/web/app/plugins/*</exclude-pattern>
+	<exclude-pattern>*/web/wp/wp-admin/*</exclude-pattern>
+	<exclude-pattern>*/web/wp/wp-includes/*</exclude-pattern>
+	<exclude-pattern>*/web/wp/wp-*.php</exclude-pattern>
+	<exclude-pattern>*/web/index.php</exclude-pattern>
+	<exclude-pattern>*/web/wp/xmlrpc.php</exclude-pattern>
+	<exclude-pattern>*/web/app/plugins/*</exclude-pattern>
+	<exclude-pattern>*/tests/*</exclude-pattern>
 
 	<!-- Exclude the Composer Vendor directory -->
 	<exclude-pattern>*/vendor/*</exclude-pattern>

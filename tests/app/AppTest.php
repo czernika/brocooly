@@ -59,4 +59,13 @@ class AppTest extends TestCase
 	public function test_app_must_have_methods( string $method ) {
 		$this->assertTrue( method_exists( $this->app, $method ) );
 	}
+
+	/**
+	 * --------------------------------------------------------------------------
+	 * CORE_PATH constant must be defined
+	 * --------------------------------------------------------------------------
+	 */
+	public function test_app_core_path_constant_must_be_defined() {
+		$this->assertTrue( defined( 'CORE_PATH' ) );
+	}
 }

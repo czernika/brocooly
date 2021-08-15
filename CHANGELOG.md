@@ -3,7 +3,7 @@
 ## Release 0.12.1
 
 * **Tests**: added tests for \Brocooly\App
-* **Tests**: added tests for main container configuration instances like 'timber' and 'routing'
+* **Tests**: added tests for app container
 
 ## Release 0.12.0
 

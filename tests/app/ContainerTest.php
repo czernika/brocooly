@@ -5,9 +5,11 @@ declare(strict_types=1);
 namespace App;
 
 use Brain\Monkey;
+use Brocooly\App;
 use Timber\Timber;
 use Brocooly\Router\Router;
 use PHPUnit\Framework\TestCase;
+use Psr\Container\ContainerInterface;
 
 class ContainerTest extends TestCase
 {
@@ -28,6 +30,15 @@ class ContainerTest extends TestCase
 
 	/**
 	 * --------------------------------------------------------------------------
+	 * Check container implements ContainerInterface
+	 * --------------------------------------------------------------------------
+	 */
+	public function test_app_must_be_an_instance_of_container_interface() {
+		$this->assertTrue( container() instanceof ContainerInterface );
+	}
+
+	/**
+	 * --------------------------------------------------------------------------
 	 * Check app container keys
 	 * --------------------------------------------------------------------------
 	 * 'timber' key is for \Timber\Timber instance
@@ -35,6 +46,7 @@ class ContainerTest extends TestCase
 	 */
 	public function container_config_keys() {
 		return [
+			[ 'app', App::class ],
 			[ 'timber', Timber::class ],
 			[ 'routing', Router::class ],
 		];
