@@ -21,21 +21,38 @@ use Roots\WPConfig\Config;
 use function Env\env;
 
 /**
+ * --------------------------------------------------------------------------
  * Default theme name
+ * --------------------------------------------------------------------------
+ *
+ * We do not recommend to change it as it will do nothing for you.
+ * No, seriously - it is for the future development.
  */
 $theme = env( 'THEME' ) ?? 'brocooly';
 
 /**
- * App root path
+ * --------------------------------------------------------------------------
+ * Define app path
+ * --------------------------------------------------------------------------
+ *
+ * App path - is the root application folder
  */
 defined( 'APP_PATH' ) || define( 'APP_PATH', dirname( __DIR__ ) );
 
 /**
- * Document Root
+ * --------------------------------------------------------------------------
+ * Document root
+ * --------------------------------------------------------------------------
+ *
+ * Place where all requests are going to.
  */
 $webroot_dir = APP_PATH . '/web';
 
 /**
+ * --------------------------------------------------------------------------
+ * Define Dotenv extension
+ * --------------------------------------------------------------------------
+ *
  * Use Dotenv to set required environment variables and load .env file in root
  */
 $dotenv = Dotenv\Dotenv::createUnsafeImmutable( APP_PATH );
@@ -48,32 +65,46 @@ if ( file_exists( APP_PATH . '/.env' ) ) {
 }
 
 /**
+ * --------------------------------------------------------------------------
  * Set up our global environment constant and load its config first
+ * --------------------------------------------------------------------------
+ *
  * Default: production
  */
 define( 'WP_ENV', env( 'WP_ENV' ) ?: 'production' );
 Config::define( 'WP_ENVIRONMENT_TYPE', WP_ENV );
 
 /**
+ * --------------------------------------------------------------------------
  * Set dark mode for QueryMonitor plugin for Timber section to be readable
+ * --------------------------------------------------------------------------
+ *
+ * Debug Timber bar environment is written in a white color
+ * so it is become unreadable
  */
 Config::define( 'QM_DARK_MODE', true );
 
 /**
- * URLs
+ * --------------------------------------------------------------------------
+ * Site URLs
+ * --------------------------------------------------------------------------
  */
 Config::define( 'WP_HOME', env( 'WP_HOME' ) );
 Config::define( 'WP_SITEURL', env( 'WP_SITEURL' ) );
 
 /**
- * Custom Content Directory
+ * --------------------------------------------------------------------------
+ * Custom content directory
+ * --------------------------------------------------------------------------
  */
 Config::define( 'CONTENT_DIR', '/app' );
 Config::define( 'WP_CONTENT_DIR', $webroot_dir . Config::get( 'CONTENT_DIR' ) );
 Config::define( 'WP_CONTENT_URL', Config::get( 'WP_HOME' ) . Config::get( 'CONTENT_DIR' ) );
 
 /**
+ * --------------------------------------------------------------------------
  * DB settings
+ * --------------------------------------------------------------------------
  */
 Config::define( 'DB_NAME', env( 'DB_NAME' ) );
 Config::define( 'DB_USER', env( 'DB_USER' ) );
@@ -93,7 +124,9 @@ if ( env( 'DATABASE_URL' ) ) {
 }
 
 /**
+ * --------------------------------------------------------------------------
  * Authentication Unique Keys and Salts
+ * --------------------------------------------------------------------------
  */
 Config::define( 'AUTH_KEY', env( 'AUTH_KEY' ) );
 Config::define( 'SECURE_AUTH_KEY', env( 'SECURE_AUTH_KEY' ) );
@@ -105,31 +138,50 @@ Config::define( 'LOGGED_IN_SALT', env( 'LOGGED_IN_SALT' ) );
 Config::define( 'NONCE_SALT', env( 'NONCE_SALT' ) );
 
 /**
- * Custom Settings
+ * --------------------------------------------------------------------------
+ * Custom settings
+ * --------------------------------------------------------------------------
  */
 Config::define( 'AUTOMATIC_UPDATER_DISABLED', true );
 Config::define( 'DISABLE_WP_CRON', env( 'DISABLE_WP_CRON' ) ?: false );
-// Disable the plugin and theme file editor in the admin.
+
+/**
+ * --------------------------------------------------------------------------
+ * Disable the plugin and theme file editor in the admin.
+ * --------------------------------------------------------------------------
+ */
 Config::define( 'DISALLOW_FILE_EDIT', true );
-// Disable plugin and theme updates and installation from the admin.
+
+/**
+ * --------------------------------------------------------------------------
+ * Disable plugin and theme updates and installation from the admin.
+ * --------------------------------------------------------------------------
+ */
 Config::define( 'DISALLOW_FILE_MODS', true );
-// Limit the number of post revisions that WordPress stores (true (default WP): store every revision).
+
+/**
+ * --------------------------------------------------------------------------
+ * Limit the number of post revisions that WordPress stores (true (default WP): store every revision).
+ * --------------------------------------------------------------------------
+ */
 Config::define( 'WP_POST_REVISIONS', env( 'WP_POST_REVISIONS' ) ?: 3 );
 
 /**
- * Debugging Settings
+ * --------------------------------------------------------------------------
+ * Debug settings
+ * --------------------------------------------------------------------------
  */
 $debug_log = env( 'WP_DEBUG_LOG' ) ?? false;
 
 if ( $debug_log && class_exists( 'Carbon\Carbon' ) ) {
 	$date = Carbon::now()->format( 'Y-m-d' );
-	$dir  = APP_PATH . '/web/app/themes/' . $theme . '/' . $debug_log;
+	$dir  = APP_PATH . '/web/app/themes/' . $theme . DIRECTORY_SEPARATOR . $debug_log;
 
 	if ( ! file_exists( $dir ) ) {
 		mkdir( $dir, 0777, true );
 	}
 
-	$debug_log = $dir . '/' . $theme . '-' . $date . '.log';
+	$debug_log = $dir . DIRECTORY_SEPARATOR . $theme . '-' . $date . '.log';
 }
 
 Config::define( 'WP_DEBUG_DISPLAY', false );
@@ -137,7 +189,11 @@ Config::define( 'WP_DEBUG_LOG', $debug_log );
 Config::define( 'SCRIPT_DEBUG', false );
 
 /**
- * Allow WordPress to detect HTTPS when used behind a reverse proxy or a load balancer
+ * --------------------------------------------------------------------------
+ * Allow WordPress to detect HTTPS
+ * --------------------------------------------------------------------------
+ *
+ * When used behind a reverse proxy or a load balancer
  *
  * @see https://codex.wordpress.org/Function_Reference/is_ssl#Notes
  */
@@ -145,20 +201,35 @@ if ( 'https' === isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && $_SERVER['HTTP_X
 	$_SERVER['HTTPS'] = 'on';
 }
 
+/**
+ * --------------------------------------------------------------------------
+ * Load environment file
+ * --------------------------------------------------------------------------
+ */
 $env_config = __DIR__ . '/environments/' . WP_ENV . '.php';
-
 if ( file_exists( $env_config ) ) {
 	require_once $env_config;
 }
 
+/**
+ * --------------------------------------------------------------------------
+ * Boot WordPress
+ * --------------------------------------------------------------------------
+ */
 Config::apply();
 
 /**
- * Bootstrap WordPress
+ * --------------------------------------------------------------------------
+ * Define ABSPATH constant
+ * --------------------------------------------------------------------------
  */
 defined( 'ABSPATH' ) || define( 'ABSPATH', $webroot_dir . '/wp/' );
 
 /**
- * Define brocooly as your starter theme
+ * --------------------------------------------------------------------------
+ * Set your default theme
+ * --------------------------------------------------------------------------
+ *
+ * Currently Brocooly
  */
 define( 'WP_DEFAULT_THEME', $theme );
