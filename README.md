@@ -6,16 +6,9 @@
 
 WordPress starter boilerplate with an improved folder structure (by [Bedrock](https://roots.io/bedrock)), twig template engine and webpack for compiling assets. It uses the power of [wepback](https://webpackjs.org) and [Timber](https://timber.github.io/docs/) together to simplify your local development workflow.
 
-## Still Beta!
+## Still Beta
 
 > This package is on development mode
-## Browsers support
-
-| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari-ios/safari-ios_48x48.png" alt="iOS Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>iOS Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/samsung-internet/samsung-internet_48x48.png" alt="Samsung" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Samsung | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png" alt="Opera" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Opera | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera-mini/opera-mini_48x48.png" alt="Opera Mini" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Opera Mini | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/yandex/yandex_48x48.png" alt="Yandex" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Yandex |
-| --------- | --------- | --------- | --------- | --------- | --------- | --------- | --------- | --------- |
-| Edge| last 5 versions| last 5 versions| last 5 versions| last 5 versions| last 5 versions| last 5 versions| last 2 versions| last 5 versions
-
-We're using TailwindCSS/AlpineJS and do NOT support any version of Internet Explorer. Even more WordPress 5.8 release drop support for IE also.
 
 ## Requirements
 
@@ -25,32 +18,38 @@ We're using TailwindCSS/AlpineJS and do NOT support any version of Internet Expl
 
 ## Getting Started
 
-1. Create a new project with
+1 - Create a new project with
+
 ```sh
 composer create-project czernika/brocooly your-app-folder
 ```
-2. Set your own environment variables in `.env` file
 
-3. Make sure the `DocumentRoot` is set to the `web` folder
+2 - Set your own environment variables in `.env` file
+
+3 - Make sure the `DocumentRoot` is set to the `web` folder
 
 See [here](https://roots.io/docs/bedrock/master/server-configuration/#nginx-configuration-for-bedrock).
 
-4. Install your project dependencies
+4 - Install your project dependencies
+
 ```sh
 npm install
 ```  
 
-5. Now you can run
+5 - Now you can run
+
 ```sh
 npm run watch
-``` 
+```
 
 It will start watching your application at `http://localhost:3000`. First time this will trigger WordPress installation process
 
 ## Documentation
+
 See [here](https://czernika.gitbook.io/brocooly/). **Work in progress**
 
 ## Known Issues
 
-1. Fatal error with `sqlite3` PHP module and filp/whoops PrettyPageHandler. No PHP downgrade allowed so the only option is to disable one of them. In a production mode debugger set to false.
-2. First time login - may not redirect to admin-panel although successfully being authenticated. 
+1. During installation process you may see **WordPress database error: Table doesn't exist** error. It is appears as database is not set but you're already connected to it with `.env` file credentials.
+2. Fatal error with `sqlite3` PHP module. No PHP downgrade allowed so the only option is to disable SQLite3 extension.
+3. First time login - may not redirect to admin-panel although successfully being authenticated.
