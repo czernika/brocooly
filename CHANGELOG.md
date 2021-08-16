@@ -2,12 +2,11 @@
 
 ## Release 0.12.1
 
-* **Tests**: added tests for \Brocooly\App
-* **Tests**: added tests for app container
-* **Docs**: improved docs for config environment
-* **Chore**: added contribution for [Flaticon](https://www.flaticon.com/) icons
-* **Chore**: changed 'Set up menu' link into 'Go to admin'
 * **Feat**: improved a11y
+* **Chore**: added more translation
+* **Docs**: added contribution for [Flaticon](https://www.flaticon.com/) icons
+* **Docs**: improved docs for config environment
+* **Tests**: added more tests
 
 Release Date: ---
 

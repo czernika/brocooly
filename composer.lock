@@ -281,7 +281,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/czernika/brocooly-core.git",
-                "reference": "11f9f0a119cc3cc42c71432bfff4c956affa2bb4"
+                "reference": "9fbcde200d453094fb4db0df91ff2a7819c27b50"
             },
             "require": {
                 "composer/installers": "^1.10",
@@ -325,7 +325,7 @@
                 }
             ],
             "description": "Core engine for Brocooly Framework",
-            "time": "2021-08-15T16:41:58+00:00"
+            "time": "2021-08-16T14:48:05+00:00"
         },
         {
             "name": "djboris88/timber-commented-include",
@@ -4469,16 +4469,16 @@
     "packages-dev": [
         {
             "name": "antecedent/patchwork",
-            "version": "2.1.12",
+            "version": "2.1.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/antecedent/patchwork.git",
-                "reference": "b98e046dd4c0acc34a0846604f06f6111654d9ea"
+                "reference": "0158dbd62bd852b178307d17a5b43a9415ca391b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/antecedent/patchwork/zipball/b98e046dd4c0acc34a0846604f06f6111654d9ea",
-                "reference": "b98e046dd4c0acc34a0846604f06f6111654d9ea",
+                "url": "https://api.github.com/repos/antecedent/patchwork/zipball/0158dbd62bd852b178307d17a5b43a9415ca391b",
+                "reference": "0158dbd62bd852b178307d17a5b43a9415ca391b",
                 "shasum": ""
             },
             "require": {
@@ -4511,9 +4511,9 @@
             ],
             "support": {
                 "issues": "https://github.com/antecedent/patchwork/issues",
-                "source": "https://github.com/antecedent/patchwork/tree/2.1.12"
+                "source": "https://github.com/antecedent/patchwork/tree/2.1.13"
             },
-            "time": "2019-12-22T17:52:09+00:00"
+            "time": "2021-08-15T16:32:48+00:00"
         },
         {
             "name": "brain/monkey",
