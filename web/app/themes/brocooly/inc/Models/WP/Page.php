@@ -1,6 +1,7 @@
 <?php
 /**
  * Page model
+ * Pages are for non-chronological content: pages like 'About' or 'Contact' would be common examples.
  *
  * @package Brocooly
  * @since 0.2.0

@@ -281,7 +281,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/czernika/brocooly-core.git",
-                "reference": "9fbcde200d453094fb4db0df91ff2a7819c27b50"
+                "reference": "2c17375b8a08863ef63960aa8d50c972b481be63"
             },
             "require": {
                 "composer/installers": "^1.10",
@@ -325,7 +325,7 @@
                 }
             ],
             "description": "Core engine for Brocooly Framework",
-            "time": "2021-08-16T14:48:05+00:00"
+            "time": "2021-08-16T20:50:35+00:00"
         },
         {
             "name": "djboris88/timber-commented-include",
@@ -1069,7 +1069,7 @@
         },
         {
             "name": "illuminate/collections",
-            "version": "v8.54.0",
+            "version": "v8.55.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/collections.git",
@@ -1123,7 +1123,7 @@
         },
         {
             "name": "illuminate/container",
-            "version": "v8.54.0",
+            "version": "v8.55.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
@@ -1174,16 +1174,16 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v8.54.0",
+            "version": "v8.55.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
-                "reference": "504a34286a1b4c5421c43087d6bd4e176138f6fb"
+                "reference": "1a448a53bed5b3399a699321815953594aa72b40"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/contracts/zipball/504a34286a1b4c5421c43087d6bd4e176138f6fb",
-                "reference": "504a34286a1b4c5421c43087d6bd4e176138f6fb",
+                "url": "https://api.github.com/repos/illuminate/contracts/zipball/1a448a53bed5b3399a699321815953594aa72b40",
+                "reference": "1a448a53bed5b3399a699321815953594aa72b40",
                 "shasum": ""
             },
             "require": {
@@ -1218,11 +1218,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-08-03T14:03:47+00:00"
+            "time": "2021-08-13T13:58:11+00:00"
         },
         {
             "name": "illuminate/filesystem",
-            "version": "v8.54.0",
+            "version": "v8.55.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
@@ -1284,7 +1284,7 @@
         },
         {
             "name": "illuminate/macroable",
-            "version": "v8.54.0",
+            "version": "v8.55.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/macroable.git",
@@ -1330,16 +1330,16 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v8.54.0",
+            "version": "v8.55.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "bd33cb3460edfef8a2afd304fb7d2ff26b02f581"
+                "reference": "fa99f391a9f51b3c6ea32a87f89fb89f5ed91211"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/bd33cb3460edfef8a2afd304fb7d2ff26b02f581",
-                "reference": "bd33cb3460edfef8a2afd304fb7d2ff26b02f581",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/fa99f391a9f51b3c6ea32a87f89fb89f5ed91211",
+                "reference": "fa99f391a9f51b3c6ea32a87f89fb89f5ed91211",
                 "shasum": ""
             },
             "require": {
@@ -1394,11 +1394,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-08-10T14:09:41+00:00"
+            "time": "2021-08-16T13:24:30+00:00"
         },
         {
             "name": "illuminate/translation",
-            "version": "v8.54.0",
+            "version": "v8.55.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/translation.git",
@@ -1450,16 +1450,16 @@
         },
         {
             "name": "illuminate/validation",
-            "version": "v8.54.0",
+            "version": "v8.55.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/validation.git",
-                "reference": "4c8cf879ebca6480aa554fd05993ec8c21719ef0"
+                "reference": "2589833d9fdda853192b5a39093694cdadfcd826"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/validation/zipball/4c8cf879ebca6480aa554fd05993ec8c21719ef0",
-                "reference": "4c8cf879ebca6480aa554fd05993ec8c21719ef0",
+                "url": "https://api.github.com/repos/illuminate/validation/zipball/2589833d9fdda853192b5a39093694cdadfcd826",
+                "reference": "2589833d9fdda853192b5a39093694cdadfcd826",
                 "shasum": ""
             },
             "require": {
@@ -1505,7 +1505,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-08-10T14:12:13+00:00"
+            "time": "2021-08-17T14:03:11+00:00"
         },
         {
             "name": "mnsami/composer-custom-directory-installer",

@@ -15,6 +15,7 @@ use Brocooly\Support\Facades\File;
  * --------------------------------------------------------------------------
  * Call The Application
  * --------------------------------------------------------------------------
+ *
  * Include DI container and cool App class.
  * We are gonna register and load all Providers for application.
  */

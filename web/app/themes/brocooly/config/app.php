@@ -6,6 +6,7 @@
  * @since 0.1.0
  */
 
+use Theme\Models\WP\Tag;
 use Theme\Models\WP\Page;
 use Theme\Models\WP\Post;
 use Theme\Hooks\DisableEmoji;
@@ -19,31 +20,6 @@ use Theme\Providers\ThemeServiceProvider;
 use Theme\Providers\GutenbergServiceProvider;
 
 return [
-
-	/**
-	 * --------------------------------------------------------------------------
-	 * Providers
-	 * --------------------------------------------------------------------------
-	 *
-	 * Custom service providers
-	 */
-	'providers'  => [
-		ThemeServiceProvider::class,
-		GutenbergServiceProvider::class,
-	],
-
-	/**
-	 * -------------------------------------------------------------------------
-	 * Middleware
-	 * -------------------------------------------------------------------------
-	 *
-	 * Custom middleware
-	 *
-	 * @since 0.8.0
-	 */
-	'middleware' => [
-		UserLoggedIn::class,
-	],
 
 	/**
 	 * --------------------------------------------------------------------------
@@ -62,6 +38,7 @@ return [
 
 	'taxonomies' => [
 		Category::class,
+		Tag::class,
 	],
 
 	/**
@@ -90,5 +67,30 @@ return [
 	 * Register shortcodes
 	 */
 	'shortcodes' => [],
+
+	/**
+	 * --------------------------------------------------------------------------
+	 * Providers
+	 * --------------------------------------------------------------------------
+	 *
+	 * Custom service providers
+	 */
+	'providers'  => [
+		ThemeServiceProvider::class,
+		GutenbergServiceProvider::class,
+	],
+
+	/**
+	 * -------------------------------------------------------------------------
+	 * Middleware
+	 * -------------------------------------------------------------------------
+	 *
+	 * Custom middleware
+	 *
+	 * @since 0.8.0
+	 */
+	'middleware' => [
+		UserLoggedIn::class,
+	],
 
 ];

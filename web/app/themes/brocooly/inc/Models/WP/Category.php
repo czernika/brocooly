@@ -1,6 +1,7 @@
 <?php
 /**
- * Taxonomy model
+ * Post Category model
+ * Categories provide a helpful way to group related posts together.
  *
  * @package Brocooly
  * @since 0.2.1

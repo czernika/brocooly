@@ -12,7 +12,6 @@ namespace Theme\Http\Controllers;
 
 use Theme\Http\Controllers\Controller;
 use Theme\Contracts\PageServiceContract;
-
 class FrontPageController extends Controller
 {
 

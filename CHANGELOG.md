@@ -1,5 +1,12 @@
 # Changelog
 
+## Release 0.12.2
+
+* **[Feat]**: added Tag model
+* **[Docs]**: improved docs for WordPress models
+
+Release Date: August 17, 2021
+
 ## Release 0.12.1
 
 * **[Feat]**: improved a11y
