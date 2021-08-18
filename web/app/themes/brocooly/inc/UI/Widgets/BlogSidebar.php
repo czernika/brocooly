@@ -8,9 +8,9 @@
 
 declare(strict_types=1);
 
-namespace Theme\Views\Widgets;
+namespace Theme\UI\Widgets;
 
-use Brocooly\Views\Widgets\AbstractSidebar;
+use Brocooly\UI\Widgets\AbstractSidebar;
 
 class BlogSidebar extends AbstractSidebar
 {

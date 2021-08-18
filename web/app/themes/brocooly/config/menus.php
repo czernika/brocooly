@@ -6,7 +6,7 @@
  * @since 0.7.0
  */
 
-use Theme\Views\Menus\PrimaryMenu;
+use Theme\UI\Menus\PrimaryMenu;
 
 return [
 
@@ -32,7 +32,7 @@ return [
 	 * @example
 	 * ```
 	 * `primary` menu will be available as:
-	 * 
+	 *
 	 * {{ dump(primary_menu) }} - contain \Timber\Menu object
 	 * ```
 	 */

@@ -10,7 +10,7 @@
 
 declare(strict_types=1);
 
-namespace Theme\Contracts;
+namespace Theme\Contracts\Services;
 
 interface PostServiceContract
 {

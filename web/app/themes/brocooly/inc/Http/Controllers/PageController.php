@@ -11,7 +11,7 @@ declare(strict_types=1);
 namespace Theme\Http\Controllers;
 
 use Theme\Http\Controllers\Controller;
-use Theme\Contracts\PageRepositoryContract;
+use Theme\Contracts\Repositories\PageRepositoryContract;
 
 class PageController extends Controller
 {

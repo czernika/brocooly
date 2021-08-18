@@ -34,8 +34,14 @@ class ThemeServiceProvider extends AbstractService
 	 * Register contracts
 	 */
 	public function register() {
-		$this->app->wire( 'Theme\Contracts\*ServiceContract', 'Theme\Services\*Service' );
-		$this->app->wire( 'Theme\Contracts\*RepositoryContract', 'Theme\Repositories\*Repository' );
+		$this->app->wire(
+			'Theme\Contracts\Services\*ServiceContract',
+			'Theme\Services\*Service',
+		);
+		$this->app->wire(
+			'Theme\Contracts\Repositories\*RepositoryContract',
+			'Theme\Repositories\*Repository',
+		);
 	}
 
 	/**

@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 namespace Theme\Services;
 
-use Theme\Contracts\PostServiceContract;
+use Theme\Contracts\Services\PostServiceContract;
 
 class PostService implements PostServiceContract
 {
@@ -21,7 +21,9 @@ class PostService implements PostServiceContract
 	 * @return string
 	 */
 	public function getBlogTitle() {
-		$title = get_option( 'page_for_posts' ) ? get_the_title( get_option( 'page_for_posts' ) ) : esc_html__( 'Blog', 'brocooly' );
+		$title = get_option( 'page_for_posts' ) ?
+				get_the_title( get_option( 'page_for_posts' ) ) :
+				esc_html__( 'Blog', 'brocooly' );
 		return $title;
 	}
 

@@ -11,7 +11,7 @@ declare(strict_types=1);
 namespace Theme\Repositories;
 
 use Theme\Models\WP\Page;
-use Theme\Contracts\PageRepositoryContract;
+use Theme\Contracts\Repositories\PageRepositoryContract;
 
 class PageRepository implements PageRepositoryContract
 {

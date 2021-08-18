@@ -11,7 +11,7 @@ declare(strict_types=1);
 namespace Theme\Repositories;
 
 use Theme\Models\WP\Post;
-use Theme\Contracts\PostRepositoryContract;
+use Theme\Contracts\Repositories\PostRepositoryContract;
 
 class PostRepository implements PostRepositoryContract
 {

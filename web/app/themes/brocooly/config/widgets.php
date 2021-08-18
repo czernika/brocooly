@@ -9,7 +9,7 @@
  * @since 0.4.0
  */
 
-use Theme\Views\Widgets\BlogSidebar;
+use Theme\UI\Widgets\BlogSidebar;
 
 return [
 
@@ -31,7 +31,7 @@ return [
 	],
 
 	'widgets'      => [
-		WP_Widget_Search::class,
+		// WP_Widget_Search::class,
 	],
 
 	/**

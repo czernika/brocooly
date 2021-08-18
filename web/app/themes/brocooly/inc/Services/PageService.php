@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 namespace Theme\Services;
 
-use Theme\Contracts\PageServiceContract;
+use Theme\Contracts\Services\PageServiceContract;
 
 class PageService implements PageServiceContract
 {
