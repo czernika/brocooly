@@ -9,15 +9,20 @@
 use Theme\Models\WP\Tag;
 use Theme\Models\WP\Page;
 use Theme\Models\WP\Post;
-use Theme\Hooks\DisableEmoji;
 use Theme\Models\WP\Category;
+
+use Theme\Hooks\DisableEmoji;
 use Theme\Hooks\GetSearchForm;
 use Theme\Hooks\WpEnqueueScripts;
 use Theme\Hooks\TemplateRedirect;
 use Theme\Hooks\RemoveMetaGenerator;
+
 use Theme\Http\Middleware\UserLoggedIn;
+
 use Theme\Providers\ThemeServiceProvider;
 use Theme\Providers\GutenbergServiceProvider;
+use Theme\Containers\PageSection\Providers\PageServiceProvider;
+use Theme\Containers\BlogSection\Providers\PostServiceProvider;
 
 return [
 
@@ -78,6 +83,8 @@ return [
 	'providers'  => [
 		ThemeServiceProvider::class,
 		GutenbergServiceProvider::class,
+		PostServiceProvider::class,
+		PageServiceProvider::class,
 	],
 
 	/**
