@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Theme\Containers\BlogSection\Tasks;
 
-use Theme\Containers\BlogSection\Contracts\PostRepositoryContract;
+use Theme\Containers\BlogSection\Contracts\Repositories\PostRepositoryContract;
 
 class GetAllBlogPostsTask
 {

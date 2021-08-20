@@ -1,5 +1,11 @@
 # Changelog
 
+## Release 0.13.1
+
+* **[Fix]**: added correct PostRepositoryContract
+* **[Feat]**: added support for stringified controller@method name for routing callback
+
+Release Date: August 20, 2021
 ## Release 0.13.0
 
 * **[Feat]**: maintenance mode

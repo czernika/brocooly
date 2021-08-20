@@ -29,7 +29,7 @@ use Theme\Http\Controllers\PostTypesController;
  * Determines whether the query is for an existing single post of any post type (post, attachment, page, custom post types).
  */
 Route::isFrontPage( FrontPageController::class );
-Route::get( 'is_single', [ PostsController::class, 'single' ] );
+Route::get( 'is_single', 'Theme\Containers\BlogSection\Web\Controllers\PostsController@single' );
 Route::get( 'is_singular', [ PostTypesController::class, 'single' ] );
 
 /**
