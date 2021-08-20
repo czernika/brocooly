@@ -2,10 +2,11 @@
 
 ## Release 0.12.3
 
+* **[Feat]**: maintenance mode
 * **[Refactor]**: Views folder renamed to UI
 * **[Refactor]**: Contracts folder structure refactored
 
-Release Date: August 18, 2021
+Release Date: August 20, 2021
 
 ## Release 0.12.2
 

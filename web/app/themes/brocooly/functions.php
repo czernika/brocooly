@@ -63,11 +63,13 @@ require_once __DIR__ . '/bootstrap/app.php';
 
 /**
  * ==========================================================================
- * Start line - place your code AFTER this block
+ * Stop line - you may place your code AFTER this block
  * ==========================================================================
  *
  * All you custom functions may be placed here as it is still WordPress installation.
- * But Brocooly Framework recommends you not to do that and handle logic inside theme inc folder.
+ *
+ * ! But Brocooly Framework recommends you NOT to do that
+ * and handle logic inside theme inc folder.
  *
  * Happy coding!
  */
