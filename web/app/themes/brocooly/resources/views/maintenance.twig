@@ -1,0 +1,25 @@
+{% extends 'layouts/error.twig' %}
+
+{% block title %} {{ __('Maintenance mode', 'brocooly') }} | {{ site.name }} {% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block content %}
+	<div class="container h-full">
+		<div class="flex flex-col items-center justify-center h-full px-4 py-12">
+
+			<div class="w-32 h-32 mb-2">
+				<img class="object-contain w-full h-full" src="{{ asset('static/404.svg') }}" alt="{{ __('Temporarily unavailable', 'brocooly') }}">
+			</div>
+
+			<h1 class="mb-6 text-3xl font-semibold text-gray-300">
+				{{ __( 'Temporarily unavailable', 'brocooly' ) }}
+			</h1>
+
+			<p class="max-w-lg mx-auto mb-12 text-center">
+				{{ __( 'This site is currently unavailable. Please come back later', 'brocooly' ) }}
+			</p>
+
+		</div>
+	</div>
+{% endblock %}

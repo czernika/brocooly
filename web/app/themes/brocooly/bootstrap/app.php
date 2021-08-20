@@ -60,3 +60,14 @@ File::requireOnce( __DIR__ . '/i18n.php' );
  * @since 0.3.0
  */
 File::requireOnce( __DIR__ . '/kirki-installer.php' );
+
+/**
+ * --------------------------------------------------------------------------
+ * Maintenance mode
+ * --------------------------------------------------------------------------
+ *
+ * Enable maintenance mode
+ *
+ * @since 0.12.3
+ */
+File::requireOnce( __DIR__ . '/maintenance.php' );

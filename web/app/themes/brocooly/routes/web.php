@@ -14,10 +14,11 @@
  */
 
 use Brocooly\Support\Facades\Route;
-use Theme\Http\Controllers\PageController;
-use Theme\Http\Controllers\PostsController;
-use Theme\Http\Controllers\SearchController;
-use Theme\Http\Controllers\FrontPageController;
+
+use Theme\Containers\PageSection\Web\Controller\PagesController;
+use Theme\Containers\BlogSection\Web\Controllers\PostsController;
+use Theme\Containers\SearchSection\Web\Controllers\SearchController;
+use Theme\Containers\FrontPageSection\Web\Controllers\FrontPageController;
 use Theme\Http\Controllers\PostTypesController;
 
 /**
