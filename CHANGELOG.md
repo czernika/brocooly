@@ -1,8 +1,9 @@
 # Changelog
 
-## Release 0.12.3
+## Release 0.13.0
 
 * **[Feat]**: maintenance mode
+* **[Feat]**: implemented Porto containers
 * **[Refactor]**: Views folder renamed to UI
 * **[Refactor]**: Contracts folder structure refactored
 
