@@ -1,7 +1,5 @@
 {% extends 'layouts/app.twig' %}
 
-{% block title %} {{ post.title }} | {{ site.name }} {% endblock %}
-
 {% block content %}
 
 	<article
@@ -48,7 +46,7 @@
 
 		{% if post.comments %}
 			<section class="max-w-4xl mx-auto mb-10 comments-area" id="comments">
-				
+
 				<h2 class="sr-only">{{ __('Commentaries', 'brocooly') }}</h2>
 
 				<h3 class="mb-2 text-xl font-bold comments-title">

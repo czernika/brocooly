@@ -6,6 +6,7 @@
 * **[Fix]**: fixed GetSearchForm hook called deprecated method
 * **[Feat]**: added support for focus-visible state
 * **[Feat]**: threshold for assets brotli and gzip compression changed from 4kb to 2kb
+* **[Feat]**: added user avatar trait
 
 Release Date: August 22, 2021
 
