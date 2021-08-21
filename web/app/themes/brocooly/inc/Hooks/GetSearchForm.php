@@ -35,7 +35,7 @@ class GetSearchForm
 	 * @return string
 	 */
 	public function hook( string $form ) {
-		$form = View::compile( '@forms/search.twig', [ 's' => WPRequest::searchQuery() ] );
+		$form = View::compile( '@forms/search.twig', [ 's' => WPRequest::getSearchQuery() ] );
 		return $form;
 	}
 }

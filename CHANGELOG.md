@@ -3,9 +3,11 @@
 ## Release 0.13.2
 
 * **[Fix]**: logged in users no longer bypassing maintenance mode
+* **[Fix]**: fixed GetSearchForm hook called deprecated method
 * **[Feat]**: added support for focus-visible state
+* **[Feat]**: threshold for assets brotli and gzip compression changed from 4kb to 2kb
 
-Release Date: August 21, 2021
+Release Date: August 22, 2021
 
 ## Release 0.13.1
 

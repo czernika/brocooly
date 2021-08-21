@@ -6,7 +6,7 @@ const compressionPlugins = [
 		filename: '[path][base].gz',
 		algorithm: 'gzip',
 		test: /\.(js|css)$/,
-		threshold: 4 * 1024, // 4 kb.
+		threshold: 2 * 1024, // 2 kb.
 		minRatio: 0.8,
 	}),
 	new CompressionPlugin({
@@ -18,7 +18,7 @@ const compressionPlugins = [
 				[zlib.constants.BROTLI_PARAM_QUALITY]: 11,
 			},
 		},
-		threshold: 4 * 1024, // 4 kb
+		threshold: 2 * 1024, // 2 kb
 		minRatio: 0.8,
 	}),
 ];
