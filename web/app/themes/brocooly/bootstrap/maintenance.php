@@ -9,7 +9,7 @@
 add_action(
 	'wp',
 	function () {
-		if ( current_user_can( 'edit_themes' ) || is_user_logged_in() ) {
+		if ( current_user_can( 'manage_options' ) ) {
 			return;
 		}
 

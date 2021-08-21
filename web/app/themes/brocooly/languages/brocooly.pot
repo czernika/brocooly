@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-08-16 14:53+0000\n"
+"POT-Creation-Date: 2021-08-21 17:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: brocooly\n"
@@ -45,13 +45,13 @@ msgstr ""
 msgid "Back to home page"
 msgstr ""
 
-#: inc/Services/PostService.php:24
+#: inc/Containers/BlogSection/Tasks/GetBlogTitleTask.php:12
 #: storage/cache/views/1d/1d2141ec1806fbf3bb014015191fa1c1b4efd23aa1f9025ef79d44a55eeb4d8c.php:51
 #: resources/views/content/post/index.twig:3
 msgid "Blog"
 msgstr ""
 
-#: inc/Views/Widgets/BlogSidebar.php:32
+#: inc/UI/Widgets/BlogSidebar.php:32
 msgid "Blog sidebar"
 msgstr ""
 
@@ -167,6 +167,10 @@ msgstr ""
 msgid "Let's start"
 msgstr ""
 
+#: resources/views/maintenance.twig:3
+msgid "Maintenance mode"
+msgstr ""
+
 #: resources/views/callback.twig:18
 msgid "Most likely you forget to create appropriate view file"
 msgstr ""
@@ -209,7 +213,7 @@ msgid "Pagination"
 msgstr ""
 
 #: storage/cache/views/48/482bf1e86aadcc6ac07ac8aa6bb094883bb15e62fdcd296b99c0c43c81d3cd9b.php:56
-#: resources/views/components/footer.twig:15
+#: resources/views/components/footer.twig:16
 msgid "PHP %s"
 msgstr ""
 
@@ -228,7 +232,7 @@ msgstr ""
 msgid "Previous post"
 msgstr ""
 
-#: inc/Views/Menus/PrimaryMenu.php:32
+#: inc/UI/Menus/PrimaryMenu.php:32
 msgid "Primary menu"
 msgstr ""
 
@@ -244,6 +248,10 @@ msgstr ""
 
 #: resources/views/content/post/comments.twig:32
 msgid "Reply"
+msgstr ""
+
+#: resources/views/components/footer.twig:12
+msgid "Runs under MIT License"
 msgstr ""
 
 #: resources/views/components/forms/search.twig:10
@@ -268,13 +276,17 @@ msgstr ""
 msgid "Set up menu"
 msgstr ""
 
-#: inc/Views/Widgets/BlogSidebar.php:33
+#: inc/UI/Widgets/BlogSidebar.php:33
 msgid "Sidebar on blog page"
 msgstr ""
 
 #: storage/cache/views/58/58c15336a3dac02717dccd5c46ee1f59225291183fba2d74085f0ee4088bbe1d.php:48
 #: resources/views/components/header.twig:10
 msgid "Skip to the content"
+msgstr ""
+
+#: resources/views/maintenance.twig:16
+msgid "Temporarily unavailable"
 msgstr ""
 
 #: resources/views/layouts/error.twig:20
@@ -303,6 +315,10 @@ msgstr ""
 msgid "This page is currently empty"
 msgstr ""
 
+#: resources/views/maintenance.twig:20
+msgid "This site is currently unavailable. Please come back later"
+msgstr ""
+
 #: storage/cache/views/42/4223af78eeb3a3fb0ba25ce778add2bcced735e182b0e5f7d171e2a648651703.php:118
 #: resources/views/content/front-page.twig:52
 msgid "Timber"
@@ -313,7 +329,7 @@ msgid "Website"
 msgstr ""
 
 #. 1 - theme version
-#: inc/Services/PageService.php:26
+#: inc/Containers/FrontPageSection/Tasks/GetMainScreenHelloPhrase.php:12
 #, php-format
 msgid "Welcome to Brocooly Framework v%s"
 msgstr ""
@@ -329,7 +345,7 @@ msgid "WordPress"
 msgstr ""
 
 #: storage/cache/views/48/482bf1e86aadcc6ac07ac8aa6bb094883bb15e62fdcd296b99c0c43c81d3cd9b.php:61
-#: resources/views/components/footer.twig:17
+#: resources/views/components/footer.twig:18
 msgid "WordPress %s"
 msgstr ""
 

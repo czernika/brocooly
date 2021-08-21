@@ -1,11 +1,19 @@
 # Changelog
 
+## Release 0.13.2
+
+* **[Fix]**: logged in users no longer bypassing maintenance mode
+* **[Feat]**: added support for focus-visible state
+
+Release Date: August 21, 2021
+
 ## Release 0.13.1
 
 * **[Fix]**: added correct PostRepositoryContract
 * **[Feat]**: added support for stringified controller@method name for routing callback
 
 Release Date: August 20, 2021
+
 ## Release 0.13.0
 
 * **[Feat]**: maintenance mode

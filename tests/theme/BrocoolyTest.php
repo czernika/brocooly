@@ -13,6 +13,8 @@ class BrocoolyTest extends TestCase
 
 	private $theme;
 
+	private $version = '0.13.2';
+
 	public function setUp(): void {
 		parent::setUp();
 		Monkey\setUp();
@@ -23,6 +25,14 @@ class BrocoolyTest extends TestCase
 	public function tearDown(): void {
 		Monkey\tearDown();
 		parent::tearDown();
+	}
+
+	/**
+	 * Check current theme version
+	 */
+	public function test_theme_version() {
+		$theme = wp_get_theme( 'brocooly' );
+		$this->assertSame( $this->version, $theme->get( 'Version' ) );
 	}
 
 	/**

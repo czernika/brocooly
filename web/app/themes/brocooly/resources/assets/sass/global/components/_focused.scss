@@ -1,0 +1,3 @@
+.focused {
+	@apply focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-white focus-visible:ring-offset-2;
+}
