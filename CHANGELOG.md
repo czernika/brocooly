@@ -1,14 +1,22 @@
 # Changelog
 
+## Release -.-.-
+
+
+
+Release Date: August --, 2021
+
 ## Release 0.13.2
 
 * **[Fix]**: logged in users no longer bypassing maintenance mode
 * **[Fix]**: fixed GetSearchForm hook called deprecated method
+* **[Fix]**: fixed default styles not applied after installation
+* **[Fix]**: airbnb-config name
 * **[Feat]**: added support for focus-visible state
 * **[Feat]**: threshold for assets brotli and gzip compression changed from 4kb to 2kb
 * **[Feat]**: added user avatar trait
 
-Release Date: August 22, 2021
+Release Date: August 26, 2021
 
 ## Release 0.13.1
 
