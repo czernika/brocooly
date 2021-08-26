@@ -1178,6 +1178,46 @@ p:last-of-type {
 	}
 }
 
+.selection\:bg-green-700 ::-moz-selection {
+	--tw-bg-opacity: 1;
+	background-color: rgba(4, 120, 87, var(--tw-bg-opacity))
+}
+
+.selection\:bg-green-700 ::selection {
+	--tw-bg-opacity: 1;
+	background-color: rgba(4, 120, 87, var(--tw-bg-opacity))
+}
+
+.selection\:text-white ::-moz-selection {
+	--tw-text-opacity: 1;
+	color: rgba(255, 255, 255, var(--tw-text-opacity))
+}
+
+.selection\:text-white ::selection {
+	--tw-text-opacity: 1;
+	color: rgba(255, 255, 255, var(--tw-text-opacity))
+}
+
+.selection\:bg-green-700::-moz-selection {
+	--tw-bg-opacity: 1;
+	background-color: rgba(4, 120, 87, var(--tw-bg-opacity))
+}
+
+.selection\:bg-green-700::selection {
+	--tw-bg-opacity: 1;
+	background-color: rgba(4, 120, 87, var(--tw-bg-opacity))
+}
+
+.selection\:text-white::-moz-selection {
+	--tw-text-opacity: 1;
+	color: rgba(255, 255, 255, var(--tw-text-opacity))
+}
+
+.selection\:text-white::selection {
+	--tw-text-opacity: 1;
+	color: rgba(255, 255, 255, var(--tw-text-opacity))
+}
+
 .hover\:border-primary:hover {
 	--tw-border-opacity: 1;
 	border-color: rgba(86, 179, 0, var(--tw-border-opacity))
@@ -1277,3 +1317,4 @@ p:last-of-type {
 		grid-template-columns: repeat(2, minmax(0, 1fr))
 	}
 }
+

@@ -3,6 +3,7 @@
 ## Release 0.14.0
 
 * **[Refactor]**: Brocooly config file moved into root folder
+* **[Style]**: added selection color
 
 Release Date: August 27, 2021
 
