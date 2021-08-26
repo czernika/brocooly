@@ -1,10 +1,10 @@
 # Changelog
 
-## Release -.-.-
+## Release 0.14.0
 
+* **[Refactor]**: Brocooly config file moved into root folder
 
-
-Release Date: August --, 2021
+Release Date: August 27, 2021
 
 ## Release 0.13.2
 

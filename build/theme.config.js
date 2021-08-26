@@ -14,7 +14,7 @@ const {
 	webpackConfig: userConfig
 
 // eslint-disable-next-line import/no-dynamic-require
-} = require(`../${themeFolder}/resources/brocooly.config.js`);
+} = require(`../brocooly.config.js`);
 
 module.exports = {
 	themeName, proxy, browser, publicFolder, entries, userConfig, themeFolder
