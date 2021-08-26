@@ -9,17 +9,27 @@
  * @since 0.1.0
  */
 
+use Brocooly\App;
 use Brocooly\Support\Facades\File;
+
+/**
+ * --------------------------------------------------------------------------
+ * Get app container
+ * --------------------------------------------------------------------------
+ *
+ * Include DI container
+ */
+$container = require_once CORE_PATH . '/container.php';
 
 /**
  * --------------------------------------------------------------------------
  * Call The Application
  * --------------------------------------------------------------------------
  *
- * Include DI container and cool App class.
+ * Call App class.
  * We are gonna register and load all Providers for application.
  */
-$brocooly = container()->get( 'app' );
+$brocooly = $container->make( 'app' );
 
 /**
  * --------------------------------------------------------------------------

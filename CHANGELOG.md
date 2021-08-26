@@ -3,6 +3,7 @@
 ## Release 0.14.0
 
 * **[Refactor]**: Brocooly config file moved into root folder
+* **[Refactor]**: changed container caller and boot method
 * **[Style]**: added selection color
 
 Release Date: August 27, 2021
