@@ -9,11 +9,15 @@
 add_action(
 	'wp',
 	function () {
+
+		/**
+		 * Allow users with admin rights to bypass maintenance mode
+		 */
 		if ( current_user_can( 'manage_options' ) ) {
 			return;
 		}
 
-		if ( (bool) env( 'MAINTENANCE_MODE' ) || wp_is_maintenance_mode() ) {
+		if ( (bool) config( 'views.maintenance' )  || wp_is_maintenance_mode() ) {
 
 			$protocol = $_SERVER['SERVER_PROTOCOL'];
 			if ( 'HTTP/1.1' !== $protocol && 'HTTP/1.0' !== $protocol ) {
@@ -24,7 +28,7 @@ add_action(
 			header( 'Content-Type: text/html; charset=utf-8' );
 			header( 'Retry-After: 600' );
 
-			view( env( 'MAINTENANCE_TEMPLATE' ) );
+			view( config( 'views.maintenance_template' ) );
 			die();
 		}
 	}

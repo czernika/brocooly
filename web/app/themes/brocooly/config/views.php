@@ -111,4 +111,15 @@ return [
 	 */
 	'expire'     => 600, // seconds.
 
+	/**
+	 * --------------------------------------------------------------------------
+	 * Maintenance mode
+	 * --------------------------------------------------------------------------
+	 *
+	 * Define is maintenance mode enabled or not
+	 * @since 0.14.0
+	 */
+	'maintenance'          => env( 'MAINTENANCE_MODE' ) ?? false,
+	'maintenance_template' => env( 'MAINTENANCE_TEMPLATE' ) ?? 'maintenance.twig',
+
 ];

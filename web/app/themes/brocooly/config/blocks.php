@@ -24,7 +24,7 @@ return [
 	 *
 	 * @since 0.12.2
 	 */
-	'use_editor'              => true,
+	'use_editor'              => false,
 
 	/**
 	 * Works only, if 'use_editor' set to 'false'

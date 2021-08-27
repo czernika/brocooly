@@ -46,6 +46,11 @@ return [
 		 * Form action handler
 		 */
 		'handler' => 'action',
+
+		/**
+		 * Carbon fields meta helpers
+		 */
+		'post_meta' => 'carbonPostMeta',
 	],
 
 	/**

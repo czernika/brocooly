@@ -19,3 +19,23 @@ if ( ! function_exists( 'clearPhone' ) ) {
 		return preg_replace( '/[^0-9+]/', '', esc_attr( $phone ) );
 	}
 }
+
+if ( ! function_exists( 'carbonPostMeta' ) ) {
+
+	/**
+	 * Carbon Fields post meta
+	 *
+	 * @param string $key | key ti retrieve
+	 * @param int|null $id | post ID.
+	 * @return void
+	 */
+	function carbonPostMeta( string $key, $id = null ) {
+		if ( class_exists( 'Carbon_Fields\Carbon_Fields' ) ) {
+			$postId = $id ?? get_the_ID();
+			$meta = carbon_get_post_meta( $postId, $key );
+			return $meta;
+		}
+
+		return null;
+	}
+}

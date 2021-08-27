@@ -3,16 +3,14 @@
  * Create Developer role for app
  *
  * @package Brocooly
- * @since 0.12.0 
+ * @since 0.12.0
  */
 
 declare(strict_types=1);
 
 namespace Theme\Models\Users;
 
-use Brocooly\Models\Users\Role;
-
-class DeveloperRole extends Role
+class Developer extends User
 {
 
 	/**

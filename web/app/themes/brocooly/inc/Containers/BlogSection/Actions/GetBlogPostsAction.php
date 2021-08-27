@@ -16,7 +16,7 @@ class GetBlogPostsAction
 
 	public function getBlogInformation() {
 		$info = [
-			'sidebar' => task( IsActiveSidebarTask::class ),
+			'sidebar' => task( IsActiveSidebarTask::class, [ 'blog' ] ),
 			'title'   => task( GetBlogTitleTask::class ),
 		];
 		return $info;

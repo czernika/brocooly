@@ -6,7 +6,7 @@ namespace Theme\Containers\BlogSection\Tasks;
 
 class IsActiveSidebarTask
 {
-	public function run() {
-		return is_active_sidebar( 'blog' );
+	public function run( string $sidebar ) {
+		return is_active_sidebar( $sidebar );
 	}
 }

@@ -2,11 +2,19 @@
 
 ## Release 0.14.0
 
+* **[Fix]**: fixed composer vendor file included twice
+* **[Fix]**: fixed blog layout page title
+* **[Fix]**: fixed config default key overriding config values
+* **[Feat]**: task() helper now may have arguments
+* **[Refactor]**: added AppContainerInterface as app instance
+* **[Refactor]**: User roles refactored
 * **[Refactor]**: Brocooly config file moved into root folder
 * **[Refactor]**: changed container caller and boot method
+* **[Refactor]**: changed maintenance mode config
+* **[Refactor]**: changed container app booting within functions.php file
 * **[Style]**: added selection color
 
-Release Date: August 27, 2021
+Release Date: August 28, 2021
 
 ## Release 0.13.2
 

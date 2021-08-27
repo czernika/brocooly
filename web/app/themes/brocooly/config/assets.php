@@ -49,9 +49,9 @@ return [
 	 * You may exclude some files from autoloading
 	 * if you pass its handler from manifest file here.
 	 */
-	'excludeStyles'  => [],
+	'excludedStyles'  => [],
 
-	'excludeScripts' => [
+	'excludedScripts' => [
 		'comments-reply.js', // this requires only on singular pages with comments enabled.
 	],
 

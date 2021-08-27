@@ -1,6 +1,6 @@
 <?php
 /**
- * User model
+ * Base user model for all roles
  *
  * @package Brocooly
  * @since 0.8.5

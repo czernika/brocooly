@@ -8,49 +8,9 @@
  * @since 0.1.0
  */
 
-/**
- * --------------------------------------------------------------------------
- * Ensure compatible version of PHP is used
- * --------------------------------------------------------------------------
- *
- * Minimum required version is 7.4.
- */
-$brocooly_min_php_version = '7.4';
-if ( version_compare( $brocooly_min_php_version, phpversion(), '>=' ) ) {
-	wp_die(
-		/* translators: 1 - minimum required PHP version, 2 - current PHP version. */
-		sprintf(
-			/* html */ '<h1>Brocooly Framework requires PHP version %1$s or greater!</h1><p>Invalid PHP version! Please update it. Your current version is: <strong>%2$s</strong></p>',
-			esc_html( $brocooly_min_php_version ),
-			esc_html( phpversion() ),
-		),
-	);
-}
+use Brocooly\Support\Facades\File;
 
-/**
- * --------------------------------------------------------------------------
- * Check if Composer is installed
- * --------------------------------------------------------------------------
- *
- * ! Brocooly STRONGLY requires Composer to be installed.
- * If it's not go to and install.
- *
- * @link https://getcomposer.org/
- */
-$autoload = APP_PATH . '/vendor/autoload.php';
-
-if ( ! file_exists( $autoload ) ) {
-	wp_die(
-		/* translators: 1 - root directory, 2 - link to Composer website. */
-		sprintf(
-			/* html */ '<h1>Forester Framework requires composer to be installed!</h1><p>Maybe you forget to run <code>composer update</code> in the root folder: <strong>%1$s</strong> or %2$s it</p>',
-			esc_html( APP_PATH ),
-			/* html */ '<a href="https://getcomposer.org/" target="_blank">install</a>'
-		),
-	);
-}
-
-require_once $autoload;
+$bootstrapPath = __DIR__ . '/bootstrap/';
 
 /**
  * --------------------------------------------------------------------------
@@ -59,7 +19,49 @@ require_once $autoload;
  *
  * Boot application
  */
-require_once __DIR__ . '/bootstrap/app.php';
+require_once $bootstrapPath . 'app.php';
+
+/**
+ * --------------------------------------------------------------------------
+ * Include i18n file
+ * --------------------------------------------------------------------------
+ *
+ * This file requires to be handled directly into functions.php
+ * Otherwise other plugins may not see .pot file as a language template.
+ *
+ * @since 0.8.5
+ */
+File::requireOnce( $bootstrapPath . 'i18n.php' );
+
+/**
+ * --------------------------------------------------------------------------
+ * Include Kirki Customizer installer
+ * --------------------------------------------------------------------------
+ *
+ * Kirki Framework - The ultimate framework for theme developers using the WordPress Customizer
+ *
+ * Kirki is licensed under the MIT Licence.
+ * Copyright (c) 2020 Ari Stathopoulos (@aristath)
+ *
+ * As Kirki is a WordPress plugin it is depends on user actions.
+ * So we include installer section to recommend the installation of Kirki from inside the customizer.
+ *
+ * @link https://kirki.org/
+ * @see https://kirki.org/docs/setup/integration/
+ * @since 0.3.0
+ */
+File::requireOnce( $bootstrapPath . 'kirki-installer.php' );
+
+/**
+ * --------------------------------------------------------------------------
+ * Maintenance mode
+ * --------------------------------------------------------------------------
+ *
+ * Enable maintenance mode
+ *
+ * @since 0.12.3
+ */
+File::requireOnce( $bootstrapPath . 'maintenance.php' );
 
 /**
  * ==========================================================================
