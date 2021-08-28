@@ -2,9 +2,11 @@
 
 ## Release 0.14.0
 
+* **[Major]**: added docker support (based on [this great work](https://github.com/urre/wordpress-nginx-docker-compose))
 * **[Fix]**: fixed composer vendor file included twice
 * **[Fix]**: fixed blog layout page title
 * **[Fix]**: fixed config default key overriding config values
+* **[Fix]**: fixed blog breadcrumbs when page_for_posts doesn't exist 
 * **[Feat]**: task() helper now may have arguments
 * **[Refactor]**: added AppContainerInterface as app instance
 * **[Refactor]**: User roles refactored

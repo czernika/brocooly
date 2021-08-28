@@ -15,12 +15,16 @@ class GetBlogArticleAction
 	}
 
 	public function getPostAncestors() {
-		$ancestors = [
-			[
-				'title' => task( GetBlogTitleTask::class ),
-				'link'  => task( GetBlogPostsArchiveLinkTask::class ),
-			],
-		];
-		return $ancestors;
+		if ( get_option( 'page_for_post' ) ) {
+			$ancestors = [
+				[
+					'title' => task( GetBlogTitleTask::class ),
+					'link'  => task( GetBlogPostsArchiveLinkTask::class ),
+				],
+			];
+			return $ancestors;
+		}
+
+		return null;
 	}
 }

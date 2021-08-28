@@ -25,23 +25,23 @@
 		</header>
 
 		{% if post.meta('_thumbnail_url') %}
-			<figure class="flex-shrink-0 w-full mb-4 h-80">
-				<img loading="lazy" src="{{ post.meta('_thumbnail_url') }}" alt="{{ post.meta('_thumbnail_alt') }}" class="object-cover w-full h-full">
+			<figure class="flex-shrink-0 w-full mb-4 h-80" itemscope itemtype="https://schema.org/ImageObject">
+				<img loading="lazy" src="{{ post.meta('_thumbnail_url') }}" alt="{{ post.meta('_thumbnail_alt') }}" class="object-cover w-full h-full" itemprop="image">
 			</figure>
 		{% endif %}
 
 		<div class="flex mb-6 space-x-3 text-sm text-gray-600">
-			<time pubdate datetime="{{ post.date|date('d.F.Y') }}">
+			<time pubdate datetime="{{ post.date|date('Y-m-d') }}" itemprop="datePublished">
 				{{ post.date|date('d M, Y') }}
 			</time>
 
-			<span>
+			<span itemprop="author">
 				{{ post.author }}
 			</span>
 		</div>
 
 		<div class="mb-10 entry-content" itemprop="articleBody">
-			{{ post.content }}
+			{{ post.content|e('wp_kses_post') }}
 		</div>
 
 		{% if post.comments %}

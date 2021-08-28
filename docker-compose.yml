@@ -1,0 +1,84 @@
+version: '3.6'
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: ${THEME}-nginx
+    ports:
+      - '80:80'
+    volumes:  
+      - "./docker/nginx/:/etc/nginx/templates/"
+      - ./:/var/www/html:rw,cached
+    environment:
+      - "NGINX_ENVSUBST_TEMPLATE_SUFFIX=.conf"
+      - "DOMAIN=${DOMAIN}"
+    depends_on:
+      - wordpress
+    restart: always
+
+  mysql:
+    image: mariadb
+    container_name: ${THEME}-mysql
+    command: --lower_case_table_names=2
+    volumes:
+       - './docker/data/db:/var/lib/mysql:delegated'
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+      - MYSQL_DATABASE=${DB_NAME}
+    restart: always
+    command: '--default-authentication-plugin=mysql_native_password'
+    ports:
+      - '3306:3306'
+
+  wordpress:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ${THEME}-wordpress
+    volumes:
+      - ./:/var/www/html:rw,cached
+      - ./docker/config/php.ini:/usr/local/etc/php/conf.d/php.ini
+    depends_on:
+      - mysql
+    restart: always
+
+  wp-cli:
+    image: wordpress:cli
+    container_name: ${THEME}-wpcli
+    user: xfs
+    command: "--info"
+    volumes:
+      - ./:/var/www/html  
+    depends_on:
+      - mysql
+      - wordpress
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: ${THEME}-phpmyadmin
+    volumes:
+      - ./docker/config/phpmyadmin.ini:/usr/local/etc/php/conf.d/phpmyadmin.ini
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: "${DB_PASSWORD}"
+    ports:
+      - '8088:80'
+    depends_on:
+      - mysql
+
+  mailhog:
+    image: mailhog/mailhog
+    container_name: ${THEME}-mailhog
+    ports:
+      - '8025:8025'
+      - '1025:1025'
+
+  composer:
+    image: composer
+    container_name: ${THEME}-composer
+    working_dir: /var/www/html
+    restart: 'no'
+    volumes:
+      - ./:/var/www/html:rw,cached
+   
