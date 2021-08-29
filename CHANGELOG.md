@@ -2,6 +2,7 @@
 
 ## Release 0.14.1
 
+* **[Fix]**: fixed blog action typo which leads to broken blog breadcrumb
 * **[Feat]**: added lazy load support
 * **[Feat]**: added node image into docker container
 * **[Feat]**: added 1920px max-width for Tailwind config
@@ -15,7 +16,7 @@ Release Date: August 29, 2021
 * **[Fix]**: fixed composer vendor file included twice
 * **[Fix]**: fixed blog layout page title
 * **[Fix]**: fixed config default key overriding config values
-* **[Fix]**: fixed blog breadcrumbs when page_for_posts doesn't exist 
+* **[Fix]**: fixed blog breadcrumbs when page_for_posts doesn't exist
 * **[Feat]**: task() helper now may have arguments
 * **[Refactor]**: added AppContainerInterface as app instance
 * **[Refactor]**: User roles refactored

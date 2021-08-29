@@ -10,11 +10,13 @@
 
 import lozad from 'lozad';
 
-const imgSelector = 'img'; // this is the default selector.
+const imgSelector = document.querySelectorAll('.lazy, .entry-content img'); // this is the default selector.
 
 lozad(imgSelector, {
 	load: (el) => {
-		el.src = el.dataset.src;
+		if (el.dataset.src) {
+			el.src = el.dataset.src;
+		}
 		el.onload = () => {
 			el.classList.remove('blur');
 		}

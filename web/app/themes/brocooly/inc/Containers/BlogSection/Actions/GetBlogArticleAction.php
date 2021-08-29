@@ -15,7 +15,7 @@ class GetBlogArticleAction
 	}
 
 	public function getPostAncestors() {
-		if ( get_option( 'page_for_post' ) ) {
+		if ( get_option( 'page_for_posts' ) ) {
 			$ancestors = [
 				[
 					'title' => task( GetBlogTitleTask::class ),

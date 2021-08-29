@@ -16,6 +16,7 @@ use Theme\Hooks\GetSearchForm;
 use Theme\Hooks\WpEnqueueScripts;
 use Theme\Hooks\TemplateRedirect;
 use Theme\Hooks\RemoveMetaGenerator;
+use Theme\Hooks\LazyLoadContentImages;
 
 use Theme\Http\Middleware\UserLoggedIn;
 
@@ -62,6 +63,7 @@ return [
 		WpEnqueueScripts::class,
 		TemplateRedirect::class,
 		RemoveMetaGenerator::class,
+		LazyLoadContentImages::class,
 	],
 
 	/**
