@@ -35,6 +35,9 @@ module.exports = {
 			boxShadow: {
 				full: '0 0 0 9999px rgba(0, 0, 0, 0.25)',
 			},
+			maxWidth: {
+				'1920': '1920px',
+			}
 		},
 	},
 

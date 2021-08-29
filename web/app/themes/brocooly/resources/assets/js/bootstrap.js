@@ -4,6 +4,7 @@
  * --------------------------------------------------------------------------
  */
 import '@js/vendor/modernizr';
+import '@js/vendor/lazy-load';
 import '@js/vendor/focus-visible';
 
 // SVG icon config for webfonts-loader.

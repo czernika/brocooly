@@ -7,7 +7,7 @@
 
 	{% if post.meta('_thumbnail_url') %}
 		<figure class="flex-shrink-0 w-full lg:w-2/5 h-72">
-			<img loading="lazy" src="{{ post.meta('_thumbnail_url') }}" alt="{{ post.meta('_thumbnail_alt') }}" class="object-cover w-full h-full">
+			<img src="{{ post.meta('_thumbnail_url')|resize(50,50) }}" data-src="{{ post.meta('_thumbnail_url') }}" alt="{{ post.meta('_thumbnail_alt') }}" class="object-cover w-full h-full blur">
 		</figure>
 	{% endif %}
 

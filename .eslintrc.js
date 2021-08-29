@@ -33,6 +33,7 @@ module.exports = {
 			}
 		],
 		'no-multi-assign': 'off',
+		'no-param-reassign': 'off',
 		'import/no-extraneous-dependencies': 'off',
 	},
 	ignorePatterns: [

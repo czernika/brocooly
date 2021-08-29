@@ -1,5 +1,14 @@
 # Changelog
 
+## Release 0.14.1
+
+* **[Feat]**: added lazy load support
+* **[Feat]**: added node image into docker container
+* **[Feat]**: added 1920px max-width for Tailwind config
+* **[Style]**: added composer normalize as dev dependency
+
+Release Date: August 29, 2021
+
 ## Release 0.14.0
 
 * **[Major]**: added docker support (based on [this great work](https://github.com/urre/wordpress-nginx-docker-compose))
