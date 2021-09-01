@@ -9,18 +9,13 @@ use Theme\Containers\BlogSection\Contracts\Repositories\PostRepositoryContract;
 
 class PostRepository implements PostRepositoryContract
 {
-	public function all() {
-		$posts = Post::all();
+	public function getPostsForBlog() {
+		$posts = Post::paginate( get_option( 'posts_per_page' ) )->get();
 		return $posts;
 	}
 
 	public function current() {
 		$post = Post::current();
 		return $post;
-	}
-
-	public function paginate( int $postsPerPage = 10 ) {
-		$posts = Post::paginate( $postsPerPage )->get();
-		return $posts;
 	}
 }

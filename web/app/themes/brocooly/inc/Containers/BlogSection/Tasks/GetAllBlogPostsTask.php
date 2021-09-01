@@ -16,7 +16,7 @@ class GetAllBlogPostsTask
 	}
 
 	public function run() {
-		$posts = $this->postRepository->all();
+		$posts = $this->postRepository->getPostsForBlog();
 		return $posts;
 	}
 }

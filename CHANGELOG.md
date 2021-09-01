@@ -7,8 +7,9 @@
 * **[Feat]**: added node image into docker container
 * **[Feat]**: added 1920px max-width for Tailwind config
 * **[Style]**: added composer normalize as dev dependency
+* **[Style]**: dark mode
 
-Release Date: August 29, 2021
+Release Date: September 1, 2021
 
 ## Release 0.14.0
 

@@ -11,11 +11,8 @@ use Theme\Models\WP\Page;
 use Theme\Models\WP\Post;
 use Theme\Models\WP\Category;
 
-use Theme\Hooks\DisableEmoji;
 use Theme\Hooks\GetSearchForm;
 use Theme\Hooks\WpEnqueueScripts;
-use Theme\Hooks\TemplateRedirect;
-use Theme\Hooks\RemoveMetaGenerator;
 use Theme\Hooks\LazyLoadContentImages;
 
 use Theme\Http\Middleware\UserLoggedIn;
@@ -58,11 +55,8 @@ return [
 	 * @since 0.3.0
 	 */
 	'hooks'      => [
-		DisableEmoji::class,
 		GetSearchForm::class,
 		WpEnqueueScripts::class,
-		TemplateRedirect::class,
-		RemoveMetaGenerator::class,
 		LazyLoadContentImages::class,
 	],
 

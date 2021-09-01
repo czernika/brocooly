@@ -2,13 +2,13 @@
     <nav class="grid w-full my-4 place-items-center" id="pagination" aria-labelledby="pagination-header">
 
         <h3 id="pagination-header" class="sr-only">{{ __( 'Pagination', 'brocooly' ) }}</h3>
-        
+
 		<ul class="flex center">
 
             {# First #}
             {% if pagination.pages|first and pagination.pages|first.current != true %}
                 <li class="mx-1">
-                    <a class="block w-full h-full px-6 py-2 duration-200 border border-secondary hover:bg-secondary hover:text-white" href="{{ pagination.pages | first.link }}">
+                    <a class="block w-full h-full px-6 py-2 duration-200 border border-secondary hover:bg-secondary hover:text-white" href="{{ pagination.pages|first.link }}">
 						{{ __('First', 'brocooly') }}
 					</a>
                 </li>
@@ -78,7 +78,7 @@
             {# Last #}
             {% if pagination.pages|last and pagination.pages|last.current != true %}
                 <li class="mx-1">
-                    <a class="block w-full h-full px-6 py-2 duration-200 border border-secondary hover:bg-secondary hover:text-white" href="{{ pagination.pages | last.link }}">
+                    <a class="block w-full h-full px-6 py-2 duration-200 border border-secondary hover:bg-secondary hover:text-white" href="{{ pagination.pages|last.link }}">
 						{{ __('Last', 'brocooly') }}
 					</a>
                 </li>

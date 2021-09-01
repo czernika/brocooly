@@ -8,7 +8,7 @@ const themeFolder = `web/app/themes/${themeName}`;
 module.exports = {
 	mode: 'jit',
 
-	darkMode: false,
+	darkMode: 'media',
 
 	purge: {
 		content: [
@@ -28,9 +28,11 @@ module.exports = {
 			colors: {
 				primary: '#56B300',
 				secondary: '#9AD166',
+				dark: '#12142B',
+				middle: '#181B3A',
 			},
 			fontFamily: {
-				body: ['Roboto', 'sans-serif'],
+				body: ["'Roboto', sans-serif"],
 			},
 			boxShadow: {
 				full: '0 0 0 9999px rgba(0, 0, 0, 0.25)',

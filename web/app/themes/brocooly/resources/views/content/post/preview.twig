@@ -1,6 +1,6 @@
 <!-- Post-{{ post.ID }}  -->
 <article
-	class="{{ post.post_class }} w-full h-auto lg:flex duration-200 bg-white rounded shadow preview hover:shadow-md border border-gray-200 overflow-hidden"
+	class="{{ post.post_class }} w-full h-auto lg:flex duration-200 bg-white dark:border-dark dark:bg-dark rounded shadow preview hover:shadow-md border border-gray-200 overflow-hidden"
 	id="post-{{ post.ID }}"
 	itemscope itemtype="http://schema.org/Article"
 >
@@ -20,7 +20,7 @@
 				</a>
 			</h2>
 
-			<div class="flex space-x-3 text-sm text-gray-600">
+			<div class="flex space-x-3 text-sm text-gray-600 dark:text-gray-300">
 				<time pubdate datetime="{{ post.date|date('d.F.Y') }}">
 					{{ post.date|date('d M, Y') }}
 				</time>

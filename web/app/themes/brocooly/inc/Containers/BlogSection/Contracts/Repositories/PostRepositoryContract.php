@@ -6,9 +6,7 @@ namespace Theme\Containers\BlogSection\Contracts\Repositories;
 
 interface PostRepositoryContract
 {
-	public function all();
-
-	public function paginate( int $postsPerPage = 10 );
+	public function getPostsForBlog();
 
 	public function current();
 }

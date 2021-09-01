@@ -3,4 +3,7 @@
 // Typography
 // --------------------------------------------------------------------------
 //
-$font-body: theme('fontFamily.body');
+
+:root {
+	--font-body: theme('fontFamily.body');
+}

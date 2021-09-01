@@ -14,7 +14,8 @@
 					"responsive",
 					"screen",
 					"tailwind",
-					"variants"
+					"variants",
+					"apply"
 				]
 			}
 		]
