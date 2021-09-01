@@ -6,6 +6,7 @@
 * **[Feat]**: added lazy load support
 * **[Feat]**: added node image into docker container
 * **[Feat]**: added 1920px max-width for Tailwind config
+* **[Refactor]**: some hooks were relocated into core, some were removed
 * **[Style]**: added composer normalize as dev dependency
 * **[Style]**: dark mode
 
