@@ -3,8 +3,8 @@
 # ------------------------------------------------------------------------------------------
 RewriteEngine on
 
-RewriteCond %{REQUEST_URI} !^/web/
-RewriteRule ^(.*) /web/$1 [L,R=301]
+RewriteCond %{REQUEST_URI} !web/
+RewriteRule (.*) /web/$1 [L]
 
 # ------------------------------------------------------------------------------------------
 #   ASSETS AND FILES
