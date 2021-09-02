@@ -1,5 +1,11 @@
 # Changelog
 
+## Release 0.14.2
+
+* **[Refactor]**: generic favicon now has additional check
+
+Release Date: September 2, 2021
+
 ## Release 0.14.1
 
 * **[Fix]**: fixed blog action typo which leads to broken blog breadcrumb

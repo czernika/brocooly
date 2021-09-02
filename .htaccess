@@ -2,8 +2,9 @@
 #   Redirect request to web folder
 # ------------------------------------------------------------------------------------------
 RewriteEngine on
-RewriteCond %{REQUEST_URI} !web/
-RewriteRule (.*) /web/$1 [L]
+
+RewriteCond %{REQUEST_URI} !^/web/
+RewriteRule ^(.*) /web/$1 [L,R=301]
 
 # ------------------------------------------------------------------------------------------
 #   ASSETS AND FILES
@@ -46,71 +47,68 @@ AddType application/octet-stream .pdf .txt
 #   SECURITY
 # ------------------------------------------------------------------------------------------
 
-# No web server version and indexes
-ServerSignature Off
-
 # Disable directory browsing
 Options All -Indexes
 
-# Hide SVN / GIT files
-RedirectMatch 404 /\\.(git|gitignore|gitmodules|sh|svn|log|htaccess|htpasswd|ini|phps|fla|psd)(/.*|$)
-
-# X-XSS-Protection
-<IfModule mod_headers.c>
-    Header set X-XSS-Protection "1; mode=block"
-</IfModule>
-
-# X-Frame-Options
-<IfModule mod_headers.c>
-    Header always append X-Frame-Options SAMEORIGIN
-</IfModule>
-
-# X-Content-Type: nosniff
-<IfModule mod_headers.c>
-    Header set X-Content-Type-Options nosniff
-</IfModule>
-
-# Allow access from all domains for web fonts
-<IfModule mod_headers.c>
-    <FilesMatch "\.(eot|font.css|otf|ttc|ttf|woff)$">
-        Header set Access-Control-Allow-Origin "*"
-    </FilesMatch>
-</IfModule>
-
-# Limit request size to 10Mb
+# Limit request to 10Mb
 LimitRequestBody 10240000
 
-# Block access to PHP error log
-<Files *.log>
-    Order allow,deny
-    Deny from all
-</Files>
+# Close author archive /?author=1 from being shown 
+RewriteCond %{QUERY_STRING} author=d
+RewriteRule ^ /? [L,R=301]
 
-# Block access to readme.html
-<Files web/wp/readme.html>
-	Order Allow,Deny
-	Deny from all
-</Files>
+<Directory "web/wp">
 
-# BLOCK ACCESS TO HTACCESS
-<Files ~ "^.*\.([Hh][Tt][Aa])">
-    Order allow,deny
-    Deny from all
-    Satisfy all
-</Files>
+   # Block wp-includes folder and files
+    <IfModule mod_rewrite.c>
+        RewriteEngine On
+        RewriteBase /
+        RewriteRule ^wp-admin/includes/ - [F,L]
+        RewriteRule !^wp-includes/ - [S=3]
+        RewriteRule ^wp-includes/[^/]+\.php$ - [F,L]
+        RewriteRule ^wp-includes/js/tinymce/langs/.+\.php - [F,L]
+        RewriteRule ^wp-includes/theme-compat/ - [F,L]
+    </IfModule>
 
-# BLOCK ACCESS TO CONFIG.PHP
+    # Prevent WordPress' readme.html from being accessed (as it contains the version number)
+    <Files readme.html>
+        Deny from all
+    </Files>
+</Directory>
+
+# Protect wp-config.php file
 <Files web/wp-config.php>
-    Order allow,deny
-    Deny from all
+    order allow,deny
+    deny from all
 </Files>
 
-# Block wp-includes folder and files
+# Protect .htaccess
+<Files ~ "^.*\.([Hh][Tt][Aa])">
+    order allow,deny
+    deny from all
+    satisfy all
+</Files>
+<Files .htaccess>
+    order allow,deny
+    deny from all
+</Files>
+
+# Block access to hidden files & directories
 <IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteBase /
-    RewriteRule ^web/wp/wp-admin/includes/ - [F,L]
-    RewriteRule !^web/wp/wp-includes/ - [S=3]
+    RewriteCond %{SCRIPT_FILENAME} -d [OR]
+    RewriteCond %{SCRIPT_FILENAME} -f
+    RewriteRule "(^|/)\." - [F]
+</IfModule>
+
+# ------------------------------------------------------------------------------------------
+#   Miscellaneous
+# ------------------------------------------------------------------------------------------
+
+# Allow Cross-Domain Fonts
+<IfModule mod_headers.c>
+    <FilesMatch "\.(eot|otf|ttc|ttf|woff|woff2)$">
+        Header set Access-Control-Allow-Origin "*"
+    </FilesMatch>
 </IfModule>
 
 # ------------------------------------------------------------------------------------------
@@ -121,11 +119,11 @@ Header unset Pragma
 FileETag None
 Header unset ETag
 
-<ifModule mod_deflate.c>
-    <filesMatch "\.(js|css|html|php)$">
+<IfModule mod_deflate.c>
+    <FilesMatch "\.(js|css|html|php)$">
         SetOutputFilter DEFLATE
-    </filesMatch>
-</ifModule>
+    </FilesMatch>
+</IfModule>
 
 # Cache-Control Headers
 <IfModule mod_headers.c>
@@ -141,13 +139,9 @@ Header unset ETag
         #1month
         Header set Cache-Control "max-age=2592000, private"
     </FilesMatch>
-    <filesMatch "\\.(html|htm)$">
+    <FilesMatch "\\.(html|htm)$">
     	# 24h
     	Header set Cache-Control "max-age=86400, public"
-    </filesMatch>
-    # Disable caching for scripts and other dynamic files
-    <FilesMatch "\.(pl|php|cgi|spl|scgi|fcgi)$">
-    	Header unset Cache-Control
     </FilesMatch>
 </IfModule>
 

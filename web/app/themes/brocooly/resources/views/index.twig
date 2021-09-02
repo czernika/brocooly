@@ -26,9 +26,11 @@
 
 	<title>{% block title %} {{ wp_title }} | {{ site.name }} {% endblock %}</title>
 
-	<!-- Favicons -->
-	<link rel="shortcut icon" href="{{ asset('static/favicon.ico') }}" type="image/x-icon">
-	<link rel="icon" href="{{ asset('static/favicon.ico') }}" type="image/x-icon">
+	<!-- Brocooly Favicons -->
+	{% if not fn('get_site_icon_url') %}
+		<link rel="shortcut icon" href="{{ asset('static/favicon.ico') }}" type="image/x-icon">
+		<link rel="icon" href="{{ asset('static/favicon.ico') }}" type="image/x-icon">
+	{% endif %}
 
 	<!-- Google Fonts -->
 	<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>

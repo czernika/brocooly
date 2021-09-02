@@ -18,7 +18,6 @@
         "roots/wordpress": "5.8.0",
         "roots/wp-config": "1.0.0",
         "roots/wp-password-bcrypt": "1.0.0",
-        "wpackagist-plugin/fakerpress": "^0.5.1",
         "wpackagist-plugin/kirki": "^3.1",
         "wpackagist-plugin/query-monitor": "^3.6"
     },

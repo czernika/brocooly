@@ -53,4 +53,5 @@ See [here](https://czernika.gitbook.io/brocooly/). **Work in progress**
 1. During installation process you may see **WordPress database error: Table doesn't exist** error. It is appears as database is not set but you're already connected to it with `.env` file credentials.
 2. Fatal error with `sqlite3` PHP module. No PHP downgrade allowed so the only option is to disable SQLite3 extension.
 3. First time login - may not redirect to admin-panel although successfully being authenticated.
-4. Errors within functions.php bypassing maintenance mode
+4. Errors within `functions.php` bypassing maintenance mode
+5. TinyMCE Editor may not be initialized. Init it by `wp_enqueue_editor()` on `admin_enqueue_scripts`
