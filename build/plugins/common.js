@@ -10,7 +10,7 @@ const CaseSensitivePathsPlugin    = require('case-sensitive-paths-webpack-plugin
 const FriendlyErrorsWebpackPlugin = require('@soda/friendly-errors-webpack-plugin');
 
 const {
-	themeName, publicFolder, themeFolder
+	themeName, publicFolder, themeFolder, manifestFile
 } = require('../theme.config');
 
 const { fileName } = require('../utilities');
@@ -33,7 +33,7 @@ const plugins = [
 	}),
 
 	new WebpackAssetsManifest({
-		output: 'manifest.json',
+		output: manifestFile,
 		space: 4,
 	}),
 

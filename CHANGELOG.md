@@ -2,9 +2,12 @@
 
 ## Release 0.14.2
 
+* **[Feat]**: added support for script localization
+* **[Feat]**: added support for custom manifest file name
 * **[Refactor]**: generic favicon now has additional check
+* **[Refactor]**: refactored .htaccess file
 
-Release Date: September 2, 2021
+Release Date: September 4, 2021
 
 ## Release 0.14.1
 

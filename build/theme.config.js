@@ -5,6 +5,7 @@ const {
 	WP_HOME: proxy,
 	BROWSER: browser = 'firefox',
 	PUBLIC_FOLDER: publicFolder = 'public',
+	MANIFEST: manifestFile = 'manifest.json',
 } = process.env;
 
 const themeFolder = `./web/app/themes/${themeName}`;
@@ -17,5 +18,5 @@ const {
 } = require(`../brocooly.config.js`);
 
 module.exports = {
-	themeName, proxy, browser, publicFolder, entries, userConfig, themeFolder
+	themeName, proxy, browser, publicFolder, entries, userConfig, themeFolder, manifestFile
 };

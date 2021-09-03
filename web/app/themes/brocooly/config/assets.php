@@ -12,6 +12,26 @@ return [
 
 	/**
 	 * --------------------------------------------------------------------------
+	 * Localization script
+	 * --------------------------------------------------------------------------
+	 *
+	 * Will be used inside wp_localize_script hook
+	 *
+	 * First key - script handler, next is key for script entry
+	 * and final one is key-value pair inside JS files
+	 *
+	 * @since 0.14.2
+	 */
+	'localize' => [
+		'brocooly-main' => [
+			'ajax' => [
+				'url' => esc_url( admin_url( 'admin-ajax.php' ) ),
+			],
+		],
+	],
+
+	/**
+	 * --------------------------------------------------------------------------
 	 * Enqueue all scripts and styles by default
 	 * --------------------------------------------------------------------------
 	 *
@@ -19,7 +39,7 @@ return [
 	 *
 	 * Useful for development but in a production it is recommended to load assets on separate pages with a link tag
 	 */
-	'autoload'       => ! isProduction(),
+	'autoload'       => true,
 
 	/**
 	 * --------------------------------------------------------------------------
@@ -36,10 +56,9 @@ return [
 	 * Manifest name
 	 * --------------------------------------------------------------------------
 	 *
-	 * Manifest filename
-	 * Requires to be changed also in webpack configuration file
+	 * The name of generated manifest file
 	 */
-	'manifest'       => 'manifest.json',
+	'manifest'       => env( 'MANIFEST' ) ?? 'manifest.json',
 
 	/**
 	 * --------------------------------------------------------------------------
