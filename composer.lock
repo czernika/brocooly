@@ -281,7 +281,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/czernika/brocooly-core.git",
-                "reference": "dea14bdb2d6e51c97ae487aa80d44e2f742b364f"
+                "reference": "107b9d542ff0e0d37db17ad3a1e47f14d4c4f735"
             },
             "require": {
                 "composer/installers": "^1.10",
@@ -325,7 +325,7 @@
                 }
             ],
             "description": "Core engine for Brocooly Framework",
-            "time": "2021-09-03T19:58:35+00:00"
+            "time": "2021-09-04T12:37:47+00:00"
         },
         {
             "name": "djboris88/timber-commented-include",

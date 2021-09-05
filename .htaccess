@@ -88,10 +88,6 @@ RewriteRule ^ /? [L,R=301]
     deny from all
     satisfy all
 </Files>
-<Files .htaccess>
-    order allow,deny
-    deny from all
-</Files>
 
 # Block access to hidden files & directories
 <IfModule mod_rewrite.c>
