@@ -15,6 +15,7 @@
         "czernika/brocooly-core": "dev-master",
         "mnsami/composer-custom-directory-installer": "^2.0",
         "roots/bedrock-autoloader": "^1.0",
+        "roots/bedrock-disallow-indexing": "^2.0",
         "roots/wordpress": "5.8.0",
         "roots/wp-config": "1.0.0",
         "roots/wp-password-bcrypt": "1.0.0",

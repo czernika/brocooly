@@ -5,6 +5,7 @@
 * **[Fix]**: fixed broken console commands
 * **[Fix]**: removed plugin disabler
 * **[Feat]**: added support for script localization
+* **[Feat]**: now scripts may NOT be concat by default
 * **[Feat]**: added support for custom manifest file name
 * **[Feat]**: added `middlewareOnly()` method
 * **[Refactor]**: generic favicon now has additional check

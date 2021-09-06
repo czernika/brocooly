@@ -20,3 +20,8 @@ use Roots\WPConfig\Config;
  * Example: `Config::define( 'WP_DEBUG', true );`
  * Example: `Config::define( 'DISALLOW_FILE_MODS', false );`
  */
+
+/**
+ * @since Brocooly 0.14.2
+ */
+Config::define( 'DISALLOW_INDEXING', true );

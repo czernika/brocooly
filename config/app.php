@@ -55,7 +55,11 @@ $webroot_dir = APP_PATH . '/web';
  *
  * Use Dotenv to set required environment variables and load .env file in root
  */
-$dotenv = Dotenv\Dotenv::createUnsafeImmutable( APP_PATH );
+$env_files = file_exists( APP_PATH . '/.env.local' )
+    ? [ '.env', '.env.local' ]
+    : [ '.env' ];
+
+$dotenv = Dotenv\Dotenv::createUnsafeImmutable( APP_PATH, $env_files, false );
 if ( file_exists( APP_PATH . '/.env' ) ) {
 	$dotenv->load();
 	$dotenv->required( [ 'WP_HOME', 'WP_SITEURL' ] );
@@ -73,16 +77,6 @@ if ( file_exists( APP_PATH . '/.env' ) ) {
  */
 define( 'WP_ENV', env( 'WP_ENV' ) ?: 'production' );
 Config::define( 'WP_ENVIRONMENT_TYPE', WP_ENV );
-
-/**
- * --------------------------------------------------------------------------
- * Set dark mode for QueryMonitor plugin for Timber section to be readable
- * --------------------------------------------------------------------------
- *
- * Debug Timber bar environment is written in a white color
- * so it is become unreadable
- */
-Config::define( 'QM_DARK_MODE', true );
 
 /**
  * --------------------------------------------------------------------------
@@ -210,6 +204,16 @@ $env_config = __DIR__ . '/environments/' . WP_ENV . '.php';
 if ( file_exists( $env_config ) ) {
 	require_once $env_config;
 }
+
+/**
+ * --------------------------------------------------------------------------
+ * Set dark mode for QueryMonitor plugin for Timber section to be readable
+ * --------------------------------------------------------------------------
+ *
+ * Debug Timber bar environment is written in a white color
+ * so it is become unreadable
+ */
+Config::define( 'QM_DARK_MODE', true );
 
 /**
  * --------------------------------------------------------------------------
