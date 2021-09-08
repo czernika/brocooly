@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Theme\Containers\BlogSection\Web\Controllers;
 
+use Timber\Helper;
 use Theme\Http\Controllers\Controller;
 use Theme\Containers\BlogSection\Actions\GetBlogPostsAction;
 use Theme\Containers\BlogSection\Actions\GetBlogArticleAction;
@@ -24,8 +25,8 @@ class PostsController extends Controller
 	}
 
 	public function index() {
-		$posts = $this->posts->getBlogPosts();
 		$blog  = $this->posts->getBlogInformation();
+		$posts = $this->posts->getBlogPosts();
 		return view( 'content/post/index.twig', compact( 'posts', 'blog' ) );
 	}
 

@@ -87,7 +87,7 @@ return [
 	 * ```
 	 * get_theme_mod( 'brocooly_setting' );
 	 * is same as:
-	 * 
+	 *
 	 * {{ mod('setting') }}
 	 * {{ theme.theme_mod('brocooly_setting') }}
 	 * {{ fn('get_theme_mod', 'brocooly_setting') }}

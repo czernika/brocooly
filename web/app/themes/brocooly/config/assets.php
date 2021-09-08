@@ -22,7 +22,7 @@ return [
 	 *
 	 * @since 0.14.2
 	 */
-	'localize' => [
+	'localize'        => [
 		'brocooly-main' => [
 			'ajax' => [
 				'url' => esc_url( admin_url( 'admin-ajax.php' ) ),
@@ -39,7 +39,7 @@ return [
 	 *
 	 * Useful for development but in a production it is recommended to load assets on separate pages with a link tag
 	 */
-	'autoload'       => true,
+	'autoload'        => true,
 
 	/**
 	 * --------------------------------------------------------------------------
@@ -49,7 +49,7 @@ return [
 	 * Where all assets will compiled
 	 * It is recommended to change it in `.env` file.
 	 */
-	'public'         => env( 'PUBLIC_FOLDER' ) ?? 'public',
+	'public'          => env( 'PUBLIC_FOLDER' ) ?? 'public',
 
 	/**
 	 * --------------------------------------------------------------------------
@@ -58,7 +58,7 @@ return [
 	 *
 	 * The name of generated manifest file
 	 */
-	'manifest'       => env( 'MANIFEST' ) ?? 'manifest.json',
+	'manifest'        => env( 'MANIFEST' ) ?? 'manifest.json',
 
 	/**
 	 * --------------------------------------------------------------------------

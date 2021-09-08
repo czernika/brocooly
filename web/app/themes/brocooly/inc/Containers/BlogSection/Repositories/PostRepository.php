@@ -10,7 +10,8 @@ use Theme\Containers\BlogSection\Contracts\Repositories\PostRepositoryContract;
 class PostRepository implements PostRepositoryContract
 {
 	public function getPostsForBlog() {
-		$posts = Post::paginate( get_option( 'posts_per_page' ) )->get();
+		$postsPerPage = get_option( 'posts_per_page' );
+		$posts        = Post::paginate( $postsPerPage )->get();
 		return $posts;
 	}
 

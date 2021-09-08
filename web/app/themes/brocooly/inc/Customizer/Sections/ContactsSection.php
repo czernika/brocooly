@@ -57,6 +57,18 @@ class ContactsSection extends AbstractSection
 					'label'    => esc_html__( 'Email', 'brocooly' ),
 				],
 			),
+			Mod::text(
+				[
+					'settings' => 'phone',
+					'label'    => esc_html__( 'Phone number', 'brocooly' ),
+				],
+			),
+			Mod::textarea(
+				[
+					'settings' => 'address',
+					'label'    => esc_html__( 'Address', 'brocooly' ),
+				],
+			),
 		];
 	}
 

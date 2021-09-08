@@ -37,7 +37,9 @@ $theme = env( 'THEME' ) ?? 'brocooly';
  *
  * App path - is the root application folder
  */
-defined( 'APP_PATH' ) || define( 'APP_PATH', dirname( __DIR__ ) );
+if ( ! defined( 'APP_PATH' ) ) {
+	define( 'APP_PATH', dirname( __DIR__ ) );
+}
 
 /**
  * --------------------------------------------------------------------------
@@ -227,7 +229,9 @@ Config::apply();
  * Define ABSPATH constant
  * --------------------------------------------------------------------------
  */
-defined( 'ABSPATH' ) || define( 'ABSPATH', $webroot_dir . '/wp/' );
+if ( ! defined( 'ABSPATH' ) ) {
+	define( 'ABSPATH', $webroot_dir . '/wp/' );
+}
 
 /**
  * --------------------------------------------------------------------------

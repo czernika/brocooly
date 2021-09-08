@@ -20,7 +20,7 @@ return [
 	 * {% include '@components/path/to/view.twig' %}
 	 * ```
 	 */
-	'namespaces' => [
+	'namespaces'           => [
 		'components' => 'components',
 		'menus'      => 'components/menus',
 		'forms'      => 'components/forms',
@@ -42,7 +42,7 @@ return [
 	 *
 	 * @link https://developer.wordpress.org/themes/template-files-section/page-template-files/
 	 */
-	'templates'  => [],
+	'templates'            => [],
 
 	/**
 	 * --------------------------------------------------------------------------
@@ -51,7 +51,7 @@ return [
 	 *
 	 * Register shortcodes
 	 */
-	'shortcodes' => [],
+	'shortcodes'           => [],
 
 	/**
 	 * --------------------------------------------------------------------------
@@ -62,7 +62,7 @@ return [
 	 * Relative path to a theme root folder.
 	 * ! MUST be string in opposite to Timber documentation
 	 */
-	'views'      => 'resources/views',
+	'views'                => 'resources/views',
 
 	/**
 	 * --------------------------------------------------------------------------
@@ -70,23 +70,23 @@ return [
 	 * --------------------------------------------------------------------------
 	 *
 	 * When you are getting all posts you may set posts_per_page query parameter as -1.
-	 * It is recommended way so we're set it 500. This option will override this value
+	 * It is not recommended way so we're set it 100.
 	 *
 	 * @since 0.10.2
 	 */
-	'limit'      => 500,
+	'limit'                => 100,
 
 	/**
 	 * --------------------------------------------------------------------------
 	 * Default view page
 	 * --------------------------------------------------------------------------
 	 *
-	 * In case you miss to include some view file on unexpected output
-	 * this file will be rendered instead of causing error
+	 * In case you miss to include some view file or unexpected output occurs
+	 * this file will be rendered instead of 'undefined template' error
 	 *
 	 * @since 0.8.5
 	 */
-	'default'    => 'callback.twig',
+	'default'              => 'callback.twig',
 
 	/**
 	 * --------------------------------------------------------------------------
@@ -99,7 +99,7 @@ return [
 	 *
 	 * @link https://timber.github.io/docs/guides/performance/
 	 */
-	'cache'      => get_template_directory() . '/storage/cache/',
+	'cache'                => BROCOOLY_THEME_PATH . '/storage/cache/',
 
 	/**
 	 * --------------------------------------------------------------------------
@@ -109,7 +109,7 @@ return [
 	 * Set time in seconds cache files will be expired.
 	 * Default is 600 (10 minutes)
 	 */
-	'expire'     => 600, // seconds.
+	'expire'               => 600, // seconds.
 
 	/**
 	 * --------------------------------------------------------------------------
@@ -117,6 +117,7 @@ return [
 	 * --------------------------------------------------------------------------
 	 *
 	 * Define is maintenance mode enabled or not
+	 *
 	 * @since 0.14.0
 	 */
 	'maintenance'          => env( 'MAINTENANCE_MODE' ) ?? false,

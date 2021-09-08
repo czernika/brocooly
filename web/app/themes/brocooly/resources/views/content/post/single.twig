@@ -20,13 +20,13 @@
 			</h1>
 
 			{% include '@components/breadcrumbs.twig' with {
-				current_title: post.title
+				current_title: post.title,
 			} %}
 		</header>
 
 		{% if post.meta('_thumbnail_url') %}
 			<figure class="flex-shrink-0 w-full mb-4 h-80" itemscope itemtype="https://schema.org/ImageObject">
-				<img loading="lazy" src="{{ post.meta('_thumbnail_url') }}" alt="{{ post.meta('_thumbnail_alt') }}" class="object-cover w-full h-full" itemprop="image">
+				<img src="{{ post.meta('_thumbnail_url') }}" alt="{{ post.meta('_thumbnail_alt') }}" class="object-cover w-full h-full" itemprop="image">
 			</figure>
 		{% endif %}
 

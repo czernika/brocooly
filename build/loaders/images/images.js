@@ -11,7 +11,7 @@ const loader = {
 	],
 	type: 'asset',
 	generator: {
-		filename: 'img/[name].[hash:8][ext]'
+		filename: 'img/[name].[hash:8][ext]',
 	},
 	parser: {
 		dataUrlCondition: {

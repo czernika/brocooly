@@ -11,19 +11,12 @@ web/.htaccess
 # Local wp-cli config
 wp-cli.local.yml
 
-# All plugins
-# Note: If you wish to blacklist plugins,
-# comment the next line
-web/app/plugins
-
-# Vendor folder is used for Carbon Fields
-web/app/vendor
-
-# Uploads directory
-web/app/uploads
-
-# Uploads directory
-web/app/languages
+# All except mu-plugins and themes
+web/app
+!web/app/themes
+!web/app/mu-plugins
+# !web/app/uploads
+!web/app/db.php
 
 # End of https://www.toptal.com/developers/gitignore/api/wordpress
 
