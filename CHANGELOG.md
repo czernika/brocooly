@@ -6,6 +6,7 @@
 * **[Fix]**: removed plugin disabler
 * **[Feat]**: added support for script localization
 * **[Feat]**: added .distignore file
+* **[Feat]**: added html-twig compression feature for production mode
 * **[Feat]**: now scripts may NOT be concat by default
 * **[Feat]**: added support for custom manifest file name
 * **[Feat]**: added `middlewareOnly()` method
