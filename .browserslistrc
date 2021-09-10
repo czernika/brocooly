@@ -1,4 +1,4 @@
 > 0.25%
-last 5 versions
-Firefox ESR
+not IE 11
 not dead
+extends @wordpress/browserslist-config

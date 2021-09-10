@@ -16,7 +16,6 @@ web/app
 !web/app/themes
 !web/app/mu-plugins
 # !web/app/uploads
-!web/app/db.php
 
 # End of https://www.toptal.com/developers/gitignore/api/wordpress
 

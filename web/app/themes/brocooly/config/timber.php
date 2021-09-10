@@ -71,6 +71,11 @@ return [
 		 */
 		'antispambot'   => 'antispambot',
 		'wp_trim_words' => 'wp_trim_words',
+
+		/**
+		 * Copyrights filter
+		 */
+		'copyrights'    => 'copyrights',
 	],
 
 ];

@@ -1,13 +1,20 @@
 # Changelog
 
+## Release 0.14.3
+
+* **[Feat]**: added `copyrights()` filter
+* **[Build]**: changed `.browserslistrc` config
+
+Release Date: September 10, 2021
+
 ## Release 0.14.2
 
 * **[Fix]**: fixed broken console commands
 * **[Fix]**: removed plugin disabler
 * **[Feat]**: added support for script localization
-* **[Feat]**: added .distignore file
+* **[Feat]**: added `.distignore` file
 * **[Feat]**: added html-twig compression feature for production mode
-* **[Feat]**: now scripts may NOT be concat by default
+* **[Feat]**: now scripts may NOT be concatenated by default
 * **[Feat]**: added support for custom manifest file name
 * **[Feat]**: added `middlewareOnly()` method
 * **[Refactor]**: generic favicon now has additional check

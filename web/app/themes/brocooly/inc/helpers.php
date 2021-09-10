@@ -6,6 +6,8 @@
  * @since 0.1.0
  */
 
+use Carbon\Carbon;
+
 if ( ! function_exists( 'clearPhone' ) ) {
 
 	/**
@@ -37,5 +39,31 @@ if ( ! function_exists( 'carbonPostMeta' ) ) {
 		}
 
 		return null;
+	}
+}
+
+if ( ! function_exists( 'copyrights' ) ) {
+
+	/**
+	 * Convert copyrights into human-readable format.
+	 *
+	 * @param string $text | unformatted copyrights text.
+	 * @return string
+	 */
+	function copyrights( string $text ) {
+
+		$search_and_replace = [
+			'[year]'             => Carbon::today()->year,
+			'[site_name]'        => get_bloginfo( 'name' ),
+			'[site_description]' => get_bloginfo( 'description' ),
+		];
+
+		$copyrights = str_replace(
+			array_keys( $search_and_replace ),
+			array_values( $search_and_replace ),
+			$text,
+		);
+
+		return $copyrights;
 	}
 }
