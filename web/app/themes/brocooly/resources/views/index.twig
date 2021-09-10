@@ -28,7 +28,7 @@
 	<title>{% block title %} {{ wp_title }} | {{ site.name }} {% endblock %}</title>
 
 	<!-- Brocooly Favicons -->
-	{% if not fn('get_site_icon_url') %}
+	{% if not site.icon %}
 		<link rel="shortcut icon" href="{{ asset('static/favicon.ico') }}" type="image/x-icon">
 		<link rel="icon" href="{{ asset('static/favicon.ico') }}" type="image/x-icon">
 	{% endif %}

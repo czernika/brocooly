@@ -12,7 +12,7 @@ web/.htaccess
 wp-cli.local.yml
 
 # All except mu-plugins and themes
-web/app
+web/app/*
 !web/app/themes
 !web/app/mu-plugins
 # !web/app/uploads

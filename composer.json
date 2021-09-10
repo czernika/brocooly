@@ -55,10 +55,10 @@
     },
     "autoload": {
         "psr-4": {
-            "Theme\\": "web/app/themes/brocooly/inc"
+            "Theme\\": "web/app/themes/brocooly/src"
         },
         "files": [
-            "web/app/themes/brocooly/inc/helpers.php"
+            "web/app/themes/brocooly/src/helpers.php"
         ]
     },
     "repositories": [

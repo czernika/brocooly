@@ -6,6 +6,7 @@
  * @since 0.1.0
  */
 
+use Timber\Site;
 use Carbon\Carbon;
 
 if ( ! function_exists( 'clearPhone' ) ) {
@@ -52,10 +53,12 @@ if ( ! function_exists( 'copyrights' ) ) {
 	 */
 	function copyrights( string $text ) {
 
+		$site = app( Site::class );
+
 		$search_and_replace = [
 			'[year]'             => Carbon::today()->year,
-			'[site_name]'        => get_bloginfo( 'name' ),
-			'[site_description]' => get_bloginfo( 'description' ),
+			'[site_name]'        => $site->name,
+			'[site_description]' => $site->description,
 		];
 
 		$copyrights = str_replace(

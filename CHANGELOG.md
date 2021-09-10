@@ -1,6 +1,8 @@
 # Changelog
 
-## Release 0.14.3
+## Release 0.15.0
+
+* **[Breaking]**: `inc` folder renamed to `src` as there are may be additional extra includes
 
 * **[Feat]**: added `copyrights()` filter
 * **[Build]**: changed `.browserslistrc` config
