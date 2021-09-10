@@ -5,6 +5,9 @@
 * **[Breaking]**: `inc` folder renamed to `src` as there are may be additional extra includes
 
 * **[Feat]**: added `copyrights()` filter
+* **[Feat]**: added `sprite()` function for SVG icons like `<svg><use xlink:href="{{ sprite('sprite-id') }}" /></svg>`
+* **[Build]**: added `.min` postfix for minified scripts and styles
+* **[Build]**: added `.stylelintignore` and `.eslintignore` files
 * **[Build]**: changed `.browserslistrc` config
 
 Release Date: September 10, 2021

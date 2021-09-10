@@ -3,6 +3,7 @@ const CopyPlugin                  = require('copy-webpack-plugin');
 const WebpackBar                  = require('webpackbar');
 const ESLintPlugin                = require('eslint-webpack-plugin');
 const StyleLintPlugin             = require('stylelint-webpack-plugin');
+const SVGSpritemapPlugin          = require('svg-spritemap-webpack-plugin');
 const MiniCssExtractPlugin        = require('mini-css-extract-plugin');
 const WebpackNotifierPlugin       = require('webpack-notifier');
 const WebpackAssetsManifest       = require('webpack-assets-manifest');
@@ -26,6 +27,10 @@ const plugins = [
 			{ from: path.resolve(themeFolder, 'resources/static'), to: 'static' },
 		],
 	}),
+
+	new SVGSpritemapPlugin(
+		`${themeFolder}/resources/assets/icons/**/*.svg`,
+	),
 
 	new WebpackNotifierPlugin({
 		title: themeName,

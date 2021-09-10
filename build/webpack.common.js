@@ -10,7 +10,7 @@ const {
 const config = {
 
 	// dynamic entries.
-	entry: () => new Promise((resolve) => resolve(entries)),
+	entry: () => new Promise((r) => r(entries)),
 
 	context,
 	output,

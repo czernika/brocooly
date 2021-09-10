@@ -28,9 +28,10 @@ return [
 	'functions' => [
 
 		/**
-		 * Help to include correct production bundle accordingly to manifest file
+		 * Assets helper methods
 		 */
 		'asset'     => 'asset',
+		'sprite'    => 'sprite',
 
 		/**
 		 * Get theme mod without customizer prefix

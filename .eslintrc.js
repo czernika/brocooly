@@ -20,8 +20,8 @@ module.exports = {
 		'wp': true,
 	},
 	rules: {
-		'no-console': isProd ? 'warn' : 'off',
-		'no-debugger': isProd ? 'warn' : 'off',
+		'no-console': isProd ? 'error' : 'off',
+		'no-debugger': isProd ? 'error' : 'off',
 		'indent': [
 			'error',
 			'tab',
