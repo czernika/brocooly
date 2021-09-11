@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e4018e4135eedaaeae0ec9d5d0018bdc",
+    "content-hash": "4ea3ec5796da5db179c73be7d70b34bc",
     "packages": [
         {
             "name": "altorouter/altorouter",
@@ -281,7 +281,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/czernika/brocooly-core.git",
-                "reference": "cfd3991142909c68c08ca51c459ceb191a791f20"
+                "reference": "f4a432d50e8c4e9106df3627b35ff0a6ddb7e6fc"
             },
             "require": {
                 "composer/installers": "^1.10",
@@ -326,7 +326,7 @@
                 }
             ],
             "description": "Core engine for Brocooly Framework",
-            "time": "2021-09-10T21:32:09+00:00"
+            "time": "2021-09-11T13:06:44+00:00"
         },
         {
             "name": "djboris88/timber-commented-include",
@@ -2558,15 +2558,15 @@
         },
         {
             "name": "roots/wordpress",
-            "version": "5.8",
+            "version": "5.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress.git",
-                "reference": "5.8"
+                "reference": "5.8.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/refs/tags/5.8"
+                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/refs/tags/5.8.1"
             },
             "require": {
                 "php": ">=5.3.2",
@@ -2609,7 +2609,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2021-07-20T16:24:55+00:00"
+            "time": "2021-09-09T02:22:02+00:00"
         },
         {
             "name": "roots/wordpress-core-installer",

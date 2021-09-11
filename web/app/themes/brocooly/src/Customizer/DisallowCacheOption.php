@@ -28,8 +28,8 @@ class DisallowCacheOption extends AbstractOption
 	 */
 	public function settings() {
 		return Mod::checkbox(
+			'no_cache',
 			[
-				'settings'    => 'no_cache',
 				'section'     => 'title_tagline',
 				'label'       => esc_html__( 'Disallow Site Cache', 'brocooly' ),
 				'description' => esc_html__( 'This option will force cache to be cleared. Use it for some time if there are some issues with cache only', 'brocooly' ),

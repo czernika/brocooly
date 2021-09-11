@@ -51,24 +51,9 @@ class ContactsSection extends AbstractSection
 	 */
 	public function controls() {
 		return [
-			Mod::text(
-				[
-					'settings' => 'email',
-					'label'    => esc_html__( 'Email', 'brocooly' ),
-				],
-			),
-			Mod::text(
-				[
-					'settings' => 'phone',
-					'label'    => esc_html__( 'Phone number', 'brocooly' ),
-				],
-			),
-			Mod::textarea(
-				[
-					'settings' => 'address',
-					'label'    => esc_html__( 'Address', 'brocooly' ),
-				],
-			),
+			Mod::text( 'email', esc_html__( 'Email', 'brocooly' ) ),
+			Mod::text( 'phone', esc_html__( 'Phone number', 'brocooly' ) ),
+			Mod::textarea( 'address', esc_html__( 'Address', 'brocooly' ) ),
 		];
 	}
 

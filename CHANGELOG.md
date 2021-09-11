@@ -6,6 +6,7 @@
 
 * **[Feat]**: added `copyrights()` filter
 * **[Feat]**: added `sprite()` function for SVG icons like `<svg><use xlink:href="{{ sprite('sprite-id') }}" /></svg>`
+* **[Refactor]**: `Mod` facade now implements simple settings creation with `Mod::type('id', 'label')`
 * **[Build]**: added `.min` postfix for minified scripts and styles
 * **[Build]**: added `.stylelintignore` and `.eslintignore` files
 * **[Build]**: changed `.browserslistrc` config

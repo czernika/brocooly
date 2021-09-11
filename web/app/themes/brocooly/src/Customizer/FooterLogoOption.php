@@ -38,11 +38,11 @@ class FooterLogoOption extends AbstractOption
 	 */
 	public function settings() {
 		return Mod::image(
+			'footer_logo',
 			[
-				'settings' => 'footer_logo',
-				'section'  => 'title_tagline',
-				'label'    => esc_html__( 'Footer logo', 'brocooly' ),
-				'choices'  => [
+				'section' => 'title_tagline',
+				'label'   => esc_html__( 'Footer logo', 'brocooly' ),
+				'choices' => [
 					'save_as' => 'url',
 				],
 			]

@@ -6,10 +6,17 @@ require_once __DIR__ . '/web/wp/wp-load.php';
 use Brocooly\Commands;
 use Symfony\Component\Console\Application;
 
+use function Env\env;
+
 $app = new Application();
 
 # add your commands
 $commands = Commands::get();
+
+if ( 'production' === env( 'WP_ENV' ) ) {
+	echo 'Not allowed in production';
+	exit;
+}
 
 foreach ( $commands as $command ) {
 	$app->add( new $command() );
