@@ -30,17 +30,13 @@ return [
 		/**
 		 * Assets helper methods
 		 */
-		'asset'     => 'asset',
-		'sprite'    => 'sprite',
-
-		/**
-		 * Get theme mod without customizer prefix
-		 */
-		'mod'       => 'mod',
+		'asset',
+		'sprite',
 
 		/**
 		 * Get theme mod
 		 */
+		'mod',
 		'rawmod'    => 'get_theme_mod',
 
 		/**
@@ -70,13 +66,13 @@ return [
 		/**
 		 * Wrapper for most used WordPress filters
 		 */
-		'antispambot'   => 'antispambot',
-		'wp_trim_words' => 'wp_trim_words',
+		'antispambot',
+		'wp_trim_words',
 
 		/**
 		 * Copyrights filter
 		 */
-		'copyrights'    => 'copyrights',
+		'copyrights',
 	],
 
 ];
