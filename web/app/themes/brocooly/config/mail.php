@@ -17,7 +17,7 @@ return [
 	 * Default mailer
 	 * -------------------------------------------------------------------------
 	 *
-	 * Define mailer to send emails
+	 * Your application will use this default mailer to send emails
 	 */
 	'default' => env( 'MAIL_MAILER' ) ?? 'wordpress',
 
@@ -26,7 +26,8 @@ return [
 	 * List of all available mailers
 	 * -------------------------------------------------------------------------
 	 *
-	 * Currently only WordPress default and SMTP supported
+	 * Here you may specify all of the mailers used by application.
+	 * WordPress by default includes PHPMailer library so we're use it via 'phpmailer_init' hook.
 	 */
 	'mailers' => [
 
@@ -34,13 +35,34 @@ return [
 			'transport' => 'wordpress',
 		],
 
-		'smtp'      => [
+		/**
+		 * Mailhog for Dev environment
+		 * WebUI will be available under http://localhost:8025
+		 */
+		'mailhog'   => [
+			'transport' => 'mailhog',
+			'host'      => '127.0.0.1',
+			'port'      => 1025,
+		],
+
+		/**
+		 * SMTP
+		 */
+		'google'    => [
 			'transport'  => 'smtp',
-			'host'       => env( 'MAIL_HOST' ),
-			'port'       => env( 'MAIL_PORT' ),
+			'host'       => env( 'MAIL_HOST' ) ?? 'smtp.googlemail.com',
+			'port'       => env( 'MAIL_PORT' ) ?? 465,
 			'username'   => env( 'MAIL_USERNAME' ),
 			'password'   => env( 'MAIL_PASSWORD' ),
-			'encryption' => env( 'MAIL_ENCRYPTION' ),
+			'encryption' => env( 'MAIL_ENCRYPTION' ) ?? 'tls',
+		],
+		'yandex'    => [
+			'transport'  => 'smtp',
+			'host'       => env( 'MAIL_HOST' ) ?? 'smtp.yandex.ru',
+			'port'       => env( 'MAIL_PORT' ) ?? 587,
+			'username'   => env( 'MAIL_USERNAME' ),
+			'password'   => env( 'MAIL_PASSWORD' ),
+			'encryption' => env( 'MAIL_ENCRYPTION' ) ?? 'ssl',
 		],
 
 	],
@@ -56,5 +78,15 @@ return [
 		'name'    => env( 'MAIL_FROM_NAME' ) ?? app( Site::class )->name,
 		'address' => env( 'MAIL_FROM_ADDRESS' ) ?? get_option( 'admin_email' ),
 	],
+
+	/**
+	 * -------------------------------------------------------------------------
+	 * Mail content type
+	 * -------------------------------------------------------------------------
+	 *
+	 * Default to "text/html" as it is most common use
+	 * Alternatively set "text/plain" to pass text only
+	 */
+	'type'    => 'text/html',
 
 ];
