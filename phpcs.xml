@@ -53,6 +53,7 @@
     <!-- WordPress Coding Standards for Inline Documentation and Comments -->
     <rule ref="WordPress-Docs">
         <exclude name="Squiz.Commenting.ClassComment"></exclude>
+        <exclude name="Squiz.Commenting.FunctionComment"></exclude>
     </rule>
 
     <rule ref="WordPress-Core">

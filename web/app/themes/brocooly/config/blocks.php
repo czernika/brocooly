@@ -1,6 +1,6 @@
 <?php
 /**
- * Custom Gutenberg blocks
+ * Gutenberg Editor block options
  *
  * @package Brocooly
  * @since 0.6.0
@@ -20,15 +20,15 @@ return [
 	 * Use Gutenberg Editor
 	 * --------------------------------------------------------------------------
 	 *
-	 * If set to false Gutenberg editor will be removed from all posts.
+	 * If set to `false` Gutenberg editor will be removed globally.
 	 *
 	 * @since 0.12.2
 	 */
 	'use_editor'              => true,
 
 	/**
-	 * Works only, if 'use_editor' set to 'false'
-	 * If there additional problems with widgets set it to 'false'
+	 * Works only, if `use_editor` set to `false`
+	 * If there additional problems with widgets set it to `false`
 	 */
 	'deregister_block_styles' => true,
 

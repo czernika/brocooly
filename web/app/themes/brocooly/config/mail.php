@@ -7,6 +7,7 @@
  */
 
 use Timber\Site;
+use Brocooly\Support\Facades\Option;
 
 use function Env\env;
 
@@ -76,7 +77,7 @@ return [
 	 */
 	'from'    => [
 		'name'    => env( 'MAIL_FROM_NAME' ) ?? app( Site::class )->name,
-		'address' => env( 'MAIL_FROM_ADDRESS' ) ?? get_option( 'admin_email' ),
+		'address' => env( 'MAIL_FROM_ADDRESS' ) ?? Option::get( 'admin_email' ),
 	],
 
 	/**

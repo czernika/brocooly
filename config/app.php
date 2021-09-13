@@ -58,8 +58,8 @@ $webroot_dir = APP_PATH . '/web';
  * Use Dotenv to set required environment variables and load .env file in root
  */
 $env_files = file_exists( APP_PATH . '/.env.local' )
-    ? [ '.env', '.env.local' ]
-    : [ '.env' ];
+	? [ '.env', '.env.local' ]
+	: [ '.env' ];
 
 $dotenv = Dotenv\Dotenv::createUnsafeImmutable( APP_PATH, $env_files, false );
 if ( file_exists( APP_PATH . '/.env' ) ) {
@@ -111,6 +111,7 @@ Config::define( 'DB_COLLATE', '' );
 $table_prefix = env( 'DB_PREFIX' ) ?: 'wp_'; // phpcs:disable WordPress.WP.GlobalVariablesOverride
 
 if ( env( 'DATABASE_URL' ) ) {
+	// phpcs:disable WordPress.WP.AlternativeFunctions
 	$dsn = (object) parse_url( env( 'DATABASE_URL' ) );
 
 	Config::define( 'DB_NAME', substr( $dsn->path, 1 ) );

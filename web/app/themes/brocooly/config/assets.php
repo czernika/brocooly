@@ -1,6 +1,6 @@
 <?php
 /**
- * Configuration options fro scripts and styles
+ * Configuration options for scripts and styles (CSS and JS files)
  *
  * @package Brocooly
  * @since 0.1.0
@@ -15,10 +15,9 @@ return [
 	 * Localization script
 	 * --------------------------------------------------------------------------
 	 *
-	 * Will be used inside wp_localize_script hook
+	 * Will be used inside `wp_localize_script` hook
 	 *
-	 * First key - script handler, next is key for script entry
-	 * and final one is key-value pair inside JS files
+	 * Key is the script handler to attach localization object.
 	 *
 	 * @since 0.14.2
 	 */
@@ -38,6 +37,8 @@ return [
 	 * If set to true all generated scripts and styles will be enqueued on every page.
 	 *
 	 * Useful for development but in a production it is recommended to load assets on separate pages with a link tag
+	 *
+	 * @var bool
 	 */
 	'autoload'        => true,
 
@@ -47,7 +48,7 @@ return [
 	 * --------------------------------------------------------------------------
 	 *
 	 * Where all assets will compiled
-	 * It is recommended to change it in `.env` file.
+	 * It is recommended to change it in `.env` file as it is also used in webpack configuration file
 	 */
 	'public'          => env( 'PUBLIC_FOLDER' ) ?? 'public',
 
@@ -57,6 +58,7 @@ return [
 	 * --------------------------------------------------------------------------
 	 *
 	 * The name of generated manifest file
+	 * Used for autoloading
 	 */
 	'manifest'        => env( 'MANIFEST' ) ?? 'manifest.json',
 
@@ -65,13 +67,12 @@ return [
 	 * Styles and scripts excluded from autoloading
 	 * --------------------------------------------------------------------------
 	 *
-	 * You may exclude some files from autoloading
-	 * if you pass its handler from manifest file here.
+	 * You may exclude some files from autoloading if you pass its handler from manifest file here.
 	 */
 	'excludedStyles'  => [],
 
 	'excludedScripts' => [
-		'comments-reply.js', // this requires only on singular pages with comments enabled.
+		'comments-reply.js', // this script required only on singular pages with comments enabled.
 	],
 
 ];

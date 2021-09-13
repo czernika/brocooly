@@ -31,7 +31,7 @@ return [
 	 * --------------------------------------------------------------------------
 	 *
 	 * Register any custom post type here.
-	 * Also you may register WordPress post types here (like Post, Page) or from other plugins. This required for extra functionality to add metaboxes, etc.
+	 * Also you may register WordPress post types here (like Post, Page) or from other plugins. This required for extra functionality (to add metaboxes, etc).
 	 *
 	 * @since 0.2.0
 	 */
@@ -51,7 +51,8 @@ return [
 	 * --------------------------------------------------------------------------
 	 *
 	 * Register hooks which will be used in your theme.
-	 * You hook class requires to implement `load` method which will handle hook itself.
+	 * Your hook class requires to implement `load()` method which will handle hook itself
+	 * or pair `filter() - hook()` | `action() - hook()` of methods
 	 *
 	 * @since 0.3.0
 	 */
@@ -65,7 +66,7 @@ return [
 	 * Providers
 	 * --------------------------------------------------------------------------
 	 *
-	 * Custom service providers
+	 * Custom service providers. Use them to bind some value into Container, register or just boot some grouped features within
 	 */
 	'providers'  => [
 		ThemeServiceProvider::class,
@@ -79,7 +80,7 @@ return [
 	 * Middleware
 	 * -------------------------------------------------------------------------
 	 *
-	 * Custom middleware
+	 * Custom middleware. Used to pre-handle request
 	 *
 	 * @since 0.8.0
 	 */

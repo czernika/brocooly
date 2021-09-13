@@ -2,7 +2,9 @@
 
 ## Release 0.16.0
 
-* **[Feat]**: added support for extending Timber default classes. **This works only for version 1.18 currently!**
+* **[Feat]**: added support for extending Timber default classes. **Currently this works only for version 1.18!**
+* **[Feat]**: added `Option` facade
+* **[Docs]**: improved docs, fixed some typos
 
 Release Date: September 14, 2021
 
