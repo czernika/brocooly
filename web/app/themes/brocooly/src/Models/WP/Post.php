@@ -19,4 +19,22 @@ use Brocooly\Support\Traits\Thumbnail;
 class Post extends PostType
 {
 	use Thumbnail;
+
+	/**
+	 * List of protected CarbonFields meta.
+	 * ! You need to register meta first
+	 *
+	 * @example `{{ post.thumbnail_url }}`
+	 *
+	 * Alternatively you may use it in regular way as
+	 * `{{ post.meta('_thumbnail_url') }}` with underscore,
+	 * or
+	 * `{{ fn('carbon_get_post_meta', post.ID, 'thumbnail_url') }}`
+	 *
+	 * @var array
+	 */
+	protected array $allowedMeta = [
+		'thumbnail_url',
+		'thumbnail_alt',
+	];
 }

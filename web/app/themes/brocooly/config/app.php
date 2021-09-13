@@ -13,6 +13,7 @@ use Theme\Models\WP\Category;
 
 use Theme\Hooks\GetSearchForm;
 use Theme\Hooks\WpEnqueueScripts;
+use Theme\Hooks\DisableAuthorArchives;
 use Theme\Hooks\LazyLoadContentImages;
 
 use Theme\Http\Middleware\UserLoggedIn;
@@ -57,7 +58,6 @@ return [
 	'hooks'      => [
 		GetSearchForm::class,
 		WpEnqueueScripts::class,
-		LazyLoadContentImages::class,
 	],
 
 	/**

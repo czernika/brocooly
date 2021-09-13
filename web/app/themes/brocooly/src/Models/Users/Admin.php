@@ -23,6 +23,6 @@ class Admin extends User
 	 * @link https://wordpress.org/support/article/roles-and-capabilities/
 	 * @var string
 	 */
-	const ROLE  = 'administrator';
+	const ROLE = 'administrator';
 
 }

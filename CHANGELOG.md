@@ -1,5 +1,11 @@
 # Changelog
 
+## Release 0.16.0
+
+* **[Feat]**: added support for extending Timber default classes. **This works only for version 1.18 currently!**
+
+Release Date: September 14, 2021
+
 ## Release 0.15.0
 
 * **[Breaking]**: `inc` folder renamed to `src` as there are may be additional extra includes

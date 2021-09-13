@@ -5,9 +5,9 @@
 	itemscope itemtype="http://schema.org/Article"
 >
 
-	{% if post.meta('_thumbnail_url') %}
+	{% if post.thumbnail_url %}
 		<figure class="flex-shrink-0 w-full lg:w-2/5 h-72" itemscope itemtype="https://schema.org/ImageObject">
-			<img src="{{ post.meta('_thumbnail_url')|resize(50,50) }}" data-src="{{ post.meta('_thumbnail_url') }}" alt="{{ post.meta('_thumbnail_alt') }}" class="lazy object-cover w-full h-full blur" itemprop="image">
+			<img src="{{ post.thumbnail_url|resize(50,50) }}" data-src="{{ post.thumbnail_url }}" alt="{{ post.thumbnail_alt }}" class="lazy object-cover w-full h-full blur" itemprop="image">
 		</figure>
 	{% endif %}
 
@@ -21,11 +21,11 @@
 			</h2>
 
 			<div class="flex space-x-3 text-sm text-gray-600 dark:text-gray-300">
-				<time pubdate datetime="{{ post.date|date('d.F.Y') }}">
+				<time pubdate datetime="{{ post.date|date('d.F.Y') }}" itemprop="datePublished">
 					{{ post.date|date('d M, Y') }}
 				</time>
 
-				<span>
+				<span itemprop="author">
 					{{ post.author }}
 				</span>
 			</div>

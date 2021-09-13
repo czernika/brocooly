@@ -36,6 +36,6 @@ class Developer extends User
 	 * @return array
 	 */
 	public function capabilities() {
-		return $this->as( 'administrator' );
+		return $this->as( Admin::ROLE );
 	}
 }
