@@ -5,9 +5,9 @@
 	itemscope itemtype="http://schema.org/Article"
 >
 
-	{% if post.thumbnail_url %}
+	{% if post.meta('_thumbnail_url') %}
 		<figure class="flex-shrink-0 w-full lg:w-2/5 h-72" itemscope itemtype="https://schema.org/ImageObject">
-			<img src="{{ post.thumbnail_url|resize(50,50) }}" data-src="{{ post.thumbnail_url }}" alt="{{ post.thumbnail_alt }}" class="lazy object-cover w-full h-full blur" itemprop="image">
+			<img src="{{ post.meta('_thumbnail_url')|resize(50,50) }}" data-src="{{ post.meta('_thumbnail_url') }}" alt="{{ post.meta('_thumbnail_alt') }}" class="lazy object-cover w-full h-full blur" itemprop="image">
 		</figure>
 	{% endif %}
 

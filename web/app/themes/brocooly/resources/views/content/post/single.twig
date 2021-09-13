@@ -24,9 +24,9 @@
 			} %}
 		</header>
 
-		{% if post.thumbnail_url %}
+		{% if post.meta('_thumbnail_url') %}
 			<figure class="flex-shrink-0 w-full mb-4 h-80" itemscope itemtype="https://schema.org/ImageObject">
-				<img src="{{ post.thumbnail_url }}" alt="{{ post.thumbnail_alt }}" class="object-cover w-full h-full" itemprop="image">
+				<img src="{{ post.meta('_thumbnail_url') }}" alt="{{ post.meta('_thumbnail_alt') }}" class="object-cover w-full h-full" itemprop="image">
 			</figure>
 		{% endif %}
 
