@@ -10,342 +10,122 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-08-21 17:40+0000\n"
+"POT-Creation-Date: 2021-09-21 18:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: brocooly\n"
 "Language: \n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;"
 
-#: resources/views/content/post/single.twig:55
-#, php-format
-msgid "%s comment"
-msgid_plural "%s comments"
-msgstr[0] ""
-msgstr[1] ""
-
-#: resources/views/content/post/comments.twig:12
-#, php-format
-msgid "%s says"
-msgstr ""
-
-#: resources/views/layouts/error.twig:16
+#: resources/views/layouts/error.twig:18
 msgid "404 | Not found"
-msgstr ""
-
-#: resources/views/components/forms/comments.twig:4
-msgid "Add comment"
 msgstr ""
 
 #. Author of the theme
 msgid "Aliakseyenka Ihar "
 msgstr ""
 
-#: resources/views/layouts/error.twig:24
+#: resources/views/layouts/error.twig:26
 msgid "Back to home page"
 msgstr ""
 
-#: inc/Containers/BlogSection/Tasks/GetBlogTitleTask.php:12
-#: storage/cache/views/1d/1d2141ec1806fbf3bb014015191fa1c1b4efd23aa1f9025ef79d44a55eeb4d8c.php:51
-#: resources/views/content/post/index.twig:3
-msgid "Blog"
-msgstr ""
-
-#: inc/UI/Widgets/BlogSidebar.php:32
-msgid "Blog sidebar"
-msgstr ""
-
-#: storage/cache/views/82/822310d552bad59c4342cf2ea8c5ba4ca9a9d93ad3385ebf4b2aba8c55141f62.php:46
-msgid "Breadcrumbs"
-msgstr ""
-
 #. Name of the theme
-#: storage/cache/views/ac/ac07718afa429e99df355098692fcb25e15f7389be0f637b37d2afc99d33c4d5.php:42
 msgid "Brocooly"
 msgstr ""
 
-#: resources/views/components/forms/comments.twig:56
-msgid "Cancel"
-msgstr ""
-
-#: storage/cache/views/42/4223af78eeb3a3fb0ba25ce778add2bcced735e182b0e5f7d171e2a648651703.php:102
-#: resources/views/content/front-page.twig:39
+#: resources/views/example.twig:37
 msgid "CMS Documentation"
 msgstr ""
 
-#: resources/views/components/forms/comments.twig:44
-msgid "Comment"
-msgstr ""
-
-#: resources/views/content/post/single.twig:52
-msgid "Commentaries"
-msgstr ""
-
-#: resources/views/content/post/single.twig:60
-msgid "Comments for this post are closed"
-msgstr ""
-
-#: inc/Customizer/Panels/ContactPanel.php:36
-msgid "Contact data"
-msgstr ""
-
-#: inc/Customizer/Sections/ContactsSection.php:40
-msgid "Contacts"
-msgstr ""
-
-#: storage/cache/views/e4/e45e34a0be76594201562bdbb6c892dde773bd9895aaca7b8dc86cb8edf8b3d9.php:106
-#: resources/views/content/post/preview.twig:35
-msgid "Continue Reading"
-msgstr ""
-
-#: inc/Models/Users/DeveloperRole.php:31
-msgid "Developer"
-msgstr ""
-
-#: inc/Customizer/DisallowCacheOption.php:34
-msgid "Disallow Site Cache"
-msgstr ""
-
-#: storage/cache/views/42/4223af78eeb3a3fb0ba25ce778add2bcced735e182b0e5f7d171e2a648651703.php:77
-#: resources/views/content/front-page.twig:23
+#: resources/views/example.twig:21
 msgid "Documentation"
 msgstr ""
 
-#: storage/cache/views/24/242a0b05e3b811169978f74ad1014d8dc4733c237d60d321ddc3876972b5105a.php:84
-#: resources/views/content/page/single.twig:15
-#: resources/views/content/post/single.twig:15
-msgid "Edit post"
-msgstr ""
-
-#: inc/Customizer/Sections/ContactsSection.php:57
-#: resources/views/components/forms/comments.twig:19
-msgid "Email"
-msgstr ""
-
-#: storage/cache/views/02/0219c28f8884ca464754ace2147fce79c506a8ffe68dfdc41d15feee5d244e1c.php:58
-#: storage/cache/views/02/0219c28f8884ca464754ace2147fce79c506a8ffe68dfdc41d15feee5d244e1c.php:69
-#: resources/views/components/pagination.twig:12
-#: resources/views/components/pagination.twig:18
-msgid "First"
-msgstr ""
-
-#: inc/Customizer/FooterLogoOption.php:44
-msgid "Footer logo"
-msgstr ""
-
-#: resources/views/components/menus/primary.menu.twig:19
+#: resources/views/example.twig:59
 msgid "Go to admin"
-msgstr ""
-
-#: storage/cache/views/82/822310d552bad59c4342cf2ea8c5ba4ca9a9d93ad3385ebf4b2aba8c55141f62.php:65
-#: resources/views/components/breadcrumbs.twig:19
-msgid "Home"
-msgstr ""
-
-#. URI of the theme
-msgid "https://brocooly.czernika.fun/"
 msgstr ""
 
 #. Author URI of the theme
 msgid "https://czernika.fun/"
 msgstr ""
 
-#: storage/cache/views/02/0219c28f8884ca464754ace2147fce79c506a8ffe68dfdc41d15feee5d244e1c.php:218
-#: storage/cache/views/02/0219c28f8884ca464754ace2147fce79c506a8ffe68dfdc41d15feee5d244e1c.php:229
-#: resources/views/components/pagination.twig:82
-#: resources/views/components/pagination.twig:88
-msgid "Last"
+#. URI of the theme
+msgid "https://czernika.gitbook.io/brocooly/"
 msgstr ""
 
-#: storage/cache/views/42/4223af78eeb3a3fb0ba25ce778add2bcced735e182b0e5f7d171e2a648651703.php:122
-#: resources/views/content/front-page.twig:53
+#: resources/views/example.twig:51
 msgid "Learn about Timber theme"
 msgstr ""
 
-#: storage/cache/views/42/4223af78eeb3a3fb0ba25ce778add2bcced735e182b0e5f7d171e2a648651703.php:136
-#: resources/views/content/front-page.twig:61
-msgid "Let's start"
-msgstr ""
-
-#: resources/views/maintenance.twig:3
+#: resources/views/content/maintenance.twig:3
 msgid "Maintenance mode"
 msgstr ""
 
-#: resources/views/callback.twig:18
+#: resources/views/content/callback.twig:18
 msgid "Most likely you forget to create appropriate view file"
-msgstr ""
-
-#: resources/views/components/forms/comments.twig:27
-msgid "Name"
-msgstr ""
-
-#: storage/cache/views/02/0219c28f8884ca464754ace2147fce79c506a8ffe68dfdc41d15feee5d244e1c.php:187
-#: storage/cache/views/02/0219c28f8884ca464754ace2147fce79c506a8ffe68dfdc41d15feee5d244e1c.php:198
-#: resources/views/components/pagination.twig:67
-#: resources/views/components/pagination.twig:73
-msgid "Next"
-msgstr ""
-
-#: resources/views/components/navigation.twig:13
-msgid "Next post"
-msgstr ""
-
-#: storage/cache/views/9c/9ca0119487b04e8ed5d59b984310a48f537e47817cbcb1259d05422f2e3ecdc5.php:85
-#: resources/views/layouts/blog.twig:9
-msgid "No posts"
-msgstr ""
-
-#: resources/views/content/search.twig:24
-msgid "No results were found"
-msgstr ""
-
-#: resources/views/layouts/widget.twig:7
-msgid "No widget instance was passed"
 msgstr ""
 
 #: resources/views/content/404.twig:3
 msgid "Not found"
 msgstr ""
 
-#: storage/cache/views/02/0219c28f8884ca464754ace2147fce79c506a8ffe68dfdc41d15feee5d244e1c.php:42
-#: resources/views/components/pagination.twig:4
-msgid "Pagination"
-msgstr ""
-
-#: storage/cache/views/48/482bf1e86aadcc6ac07ac8aa6bb094883bb15e62fdcd296b99c0c43c81d3cd9b.php:56
-#: resources/views/components/footer.twig:16
+#: resources/views/components/footer.twig:15
 msgid "PHP %s"
 msgstr ""
 
-#: resources/views/components/navigation.twig:3
-msgid "Post navigation"
-msgstr ""
-
-#: storage/cache/views/02/0219c28f8884ca464754ace2147fce79c506a8ffe68dfdc41d15feee5d244e1c.php:89
-#: storage/cache/views/02/0219c28f8884ca464754ace2147fce79c506a8ffe68dfdc41d15feee5d244e1c.php:100
-#: resources/views/components/pagination.twig:27
-#: resources/views/components/pagination.twig:33
-msgid "Previous"
-msgstr ""
-
-#: resources/views/components/navigation.twig:25
-msgid "Previous post"
-msgstr ""
-
-#: inc/UI/Menus/PrimaryMenu.php:32
+#: src/UI/Menus/PrimaryMenu.php:32
 msgid "Primary menu"
 msgstr ""
 
-#: storage/cache/views/42/4223af78eeb3a3fb0ba25ce778add2bcced735e182b0e5f7d171e2a648651703.php:81
-#: resources/views/content/front-page.twig:24
+#: resources/views/example.twig:22
 msgid "Read about main Brocooly features"
 msgstr ""
 
-#: storage/cache/views/e4/e45e34a0be76594201562bdbb6c892dde773bd9895aaca7b8dc86cb8edf8b3d9.php:117
-#: resources/views/content/post/preview.twig:40
-msgid "Read more"
-msgstr ""
-
-#: resources/views/content/post/comments.twig:32
-msgid "Reply"
-msgstr ""
-
-#: resources/views/components/footer.twig:12
+#: resources/views/components/footer.twig:11
 msgid "Runs under MIT License"
 msgstr ""
 
-#: resources/views/components/forms/search.twig:10
-msgid "Search"
-msgstr ""
-
-#: resources/views/components/forms/search.twig:4
-msgid "Search for:"
-msgstr ""
-
-#: resources/views/content/search.twig:3 resources/views/content/search.twig:12
-#: resources/views/content/search.twig:16
-#, php-format
-msgid "Search results for %s"
-msgstr ""
-
-#: resources/views/components/forms/comments.twig:52
-msgid "Send"
-msgstr ""
-
-#: storage/cache/views/94/94513e63acb4131a77d44f0787f2c76806b1c596292e8d88add0b46403a1125b.php:100
-msgid "Set up menu"
-msgstr ""
-
-#: inc/UI/Widgets/BlogSidebar.php:33
-msgid "Sidebar on blog page"
-msgstr ""
-
-#: storage/cache/views/58/58c15336a3dac02717dccd5c46ee1f59225291183fba2d74085f0ee4088bbe1d.php:48
 #: resources/views/components/header.twig:10
 msgid "Skip to the content"
 msgstr ""
 
-#: resources/views/maintenance.twig:16
+#: resources/views/content/maintenance.twig:16
 msgid "Temporarily unavailable"
 msgstr ""
 
-#: resources/views/layouts/error.twig:20
+#: resources/views/layouts/error.twig:22
 msgid ""
 "The page you were looking for could not be found. It might have been removed,"
 " renamed, or did not exist in the first place."
 msgstr ""
 
-#: storage/cache/views/1d/1d2141ec1806fbf3bb014015191fa1c1b4efd23aa1f9025ef79d44a55eeb4d8c.php:120
-#: resources/views/content/post/index.twig:24
-msgid "There is nothing has been published yet"
-msgstr ""
-
-#: resources/views/callback.twig:14
+#: resources/views/content/callback.twig:14
 msgid "This is default page"
 msgstr ""
 
-#: inc/Customizer/DisallowCacheOption.php:35
-msgid ""
-"This option will force cache to be cleared. Use it for some time if there "
-"are some issues with cache only"
-msgstr ""
-
-#: storage/cache/views/80/80237f2de2478e86647c2c53ee44b8ecc5d0c7f17a7c58228d7b018eca43c7e1.php:68
 #: resources/views/layouts/app.twig:9
 msgid "This page is currently empty"
 msgstr ""
 
-#: resources/views/maintenance.twig:20
+#: resources/views/content/maintenance.twig:20
 msgid "This site is currently unavailable. Please come back later"
 msgstr ""
 
-#: storage/cache/views/42/4223af78eeb3a3fb0ba25ce778add2bcced735e182b0e5f7d171e2a648651703.php:118
-#: resources/views/content/front-page.twig:52
+#: resources/views/example.twig:50
 msgid "Timber"
 msgstr ""
 
-#: resources/views/components/forms/comments.twig:35
-msgid "Website"
-msgstr ""
-
 #. 1 - theme version
-#: inc/Containers/FrontPageSection/Tasks/GetMainScreenHelloPhrase.php:12
+#: src/Containers/FrontPageSection/Tasks/GetHelloWorld.php:12
 #, php-format
 msgid "Welcome to Brocooly Framework v%s"
 msgstr ""
 
-#: storage/cache/views/9c/9ca0119487b04e8ed5d59b984310a48f537e47817cbcb1259d05422f2e3ecdc5.php:103
-#: resources/views/layouts/blog.twig:18
-msgid "Widgets"
-msgstr ""
-
-#: storage/cache/views/42/4223af78eeb3a3fb0ba25ce778add2bcced735e182b0e5f7d171e2a648651703.php:98
-#: resources/views/content/front-page.twig:38
+#: resources/views/example.twig:36
 msgid "WordPress"
 msgstr ""
 
-#: storage/cache/views/48/482bf1e86aadcc6ac07ac8aa6bb094883bb15e62fdcd296b99c0c43c81d3cd9b.php:61
-#: resources/views/components/footer.twig:18
+#: resources/views/components/footer.twig:17
 msgid "WordPress %s"
 msgstr ""
 
@@ -355,6 +135,7 @@ msgid ""
 "template engine and webpack for compiling assets. Developer friendly"
 msgstr ""
 
-#: resources/views/components/forms/comments.twig:65
-msgid "Your comment will be revised by the site if needed."
+#: resources/views/example.twig:9
+#, php-format
+msgid "You can find this file at %s"
 msgstr ""

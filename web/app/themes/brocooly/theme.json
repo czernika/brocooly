@@ -4,13 +4,13 @@
         "color": {
             "palette": [
                 {
-                    "name": "Primary",
-                    "slug": "primary",
+                    "name": "Primary Dark",
+                    "slug": "primary-dark",
                     "color": "#56B300"
                 },
                 {
-                    "name": "Secondary",
-                    "slug": "secondary",
+                    "name": "Primary Light",
+                    "slug": "primary-light",
                     "color": "#9AD166"
                 }
             ]
