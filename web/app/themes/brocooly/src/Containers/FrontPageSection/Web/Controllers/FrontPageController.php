@@ -4,19 +4,20 @@ declare(strict_types=1);
 
 namespace Theme\Containers\FrontPageSection\Web\Controllers;
 
-use Theme\Containers\FrontPageSection\Actions\GetMainScreenInfoAction;
 use Theme\Http\Controllers\Controller;
+use Theme\Containers\FrontPageSection\Actions\GetMainScreen;
 
 class FrontPageController extends Controller
 {
-	private $frontPage;
 
-	public function __construct( GetMainScreenInfoAction $getMainScreenInfoAction ) {
-		$this->frontPage = $getMainScreenInfoAction;
+	private $mainScreen;
+
+	public function __construct( GetMainScreen $mainScreen ) {
+		$this->mainScreen = $mainScreen;
 	}
 
 	public function __invoke() {
-		$hello = $this->frontPage->getHelloPhrase();
+		$hello = $this->mainScreen->getHelloWorld();
 		return view( 'content/front-page.twig', compact( 'hello' ) );
 	}
 }

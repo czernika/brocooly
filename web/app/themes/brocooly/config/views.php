@@ -23,15 +23,7 @@ return [
 	 */
 	'namespaces'           => [
 		'components' => 'components',
-		'menus'      => 'components/menus',
-		'forms'      => 'components/forms',
-		'post'       => 'content/post',
-		'page'       => 'content/page',
-		'shortcodes' => 'shortcodes',
-		'blocks'     => 'blocks',
-		'templates'  => 'templates',
 		'layouts'    => 'layouts',
-		'widgets'    => 'widgets',
 	],
 
 	/**
@@ -92,7 +84,7 @@ return [
 	 * @var string
 	 * @since 0.8.5
 	 */
-	'default'              => 'callback.twig',
+	'default'              => 'content/callback.twig',
 
 	/**
 	 * --------------------------------------------------------------------------
@@ -131,6 +123,6 @@ return [
 	 * @since 0.14.0
 	 */
 	'maintenance'          => env( 'MAINTENANCE_MODE' ) ?? false,
-	'maintenance_template' => env( 'MAINTENANCE_TEMPLATE' ) ?? 'maintenance.twig',
+	'maintenance_template' => 'content/maintenance.twig',
 
 ];

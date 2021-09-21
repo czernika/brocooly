@@ -26,10 +26,10 @@ module.exports = {
 		},
 		extend: {
 			colors: {
-				primary: '#56B300',
-				secondary: '#9AD166',
-				dark: '#12142B',
-				middle: '#181B3A',
+				primary: {
+					light: '#9AD166',
+					dark: '#56B300',
+				},
 			},
 			fontFamily: {
 				body: ["'Roboto', sans-serif"],

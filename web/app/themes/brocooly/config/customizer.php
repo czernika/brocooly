@@ -12,11 +12,6 @@
  * @since 0.3.0
  */
 
-use Theme\Customizer\FooterLogoOption;
-use Theme\Customizer\Panels\ContactPanel;
-use Theme\Customizer\DisallowCacheOption;
-use Theme\Customizer\Sections\ContactsSection;
-
 use function Env\env;
 
 return [
@@ -30,13 +25,9 @@ return [
 	 *
 	 * @see https://kirki.org/docs/setup/panels-sections/
 	 */
-	'panels'   => [
-		ContactPanel::class,
-	],
+	'panels'   => [],
 
-	'sections' => [
-		ContactsSection::class,
-	],
+	'sections' => [],
 
 	/**
 	 * --------------------------------------------------------------------------
@@ -50,10 +41,7 @@ return [
 	 *
 	 * @see https://kirki.org/docs/controls/
 	 */
-	'options'  => [
-		FooterLogoOption::class,
-		DisallowCacheOption::class,
-	],
+	'options'  => [],
 
 	/**
 	 * --------------------------------------------------------------------------

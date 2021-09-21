@@ -71,7 +71,7 @@ File::requireOnce( $bootstrapPath . 'maintenance.php' );
  * All you custom functions may be placed here as it is still WordPress installation.
  *
  * ! But Brocooly Framework recommends you NOT to do that
- * and handle logic inside theme inc folder.
+ * and handle logic inside theme source folder.
  *
  * Happy coding!
  */

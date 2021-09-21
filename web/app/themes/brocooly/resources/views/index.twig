@@ -12,18 +12,8 @@
     	<link rel="pingback" href="{{ site.pingback_url }}" />
 	{% endif %}
 
-	<meta name="msapplication-tap-highlight" content="no">
-	<meta name="application-name" content="{{ site.name }}">
-
 	<!-- Phones Link Detection -->
 	<meta name="format-detection" content="telephone=no">
-
-	{% if mod('no_cache', false) %}
-		<!-- No cache allowed -->
-		<meta http-equiv="pragma" content="no-cache">
-		<meta http-equiv="cache-control" content="no-cache">
-		<meta http-equiv="expires" content="0">
-	{% endif %}
 
 	<title>{% block title %} {{ wp_title }} | {{ site.name }} {% endblock %}</title>
 
@@ -48,7 +38,7 @@
 	{{ fn('wp_head') }}
 </head>
 <body
-	class="{{ body_class }} flex flex-col overflow-x-hidden text-base antialiased font-body dark:bg-middle dark:text-white bg-gray-50 selection:bg-green-700 selection:text-white {% block body_class %} min-h-screen {% endblock %}"
+	class="{{ body_class }} flex flex-col overflow-x-hidden text-base antialiased font-body bg-gray-50 {% block body_class %} min-h-screen {% endblock %}"
 	itemscope itemtype="http://schema.org/WebPage"
 >
 

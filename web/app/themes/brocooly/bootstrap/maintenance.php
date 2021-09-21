@@ -17,7 +17,7 @@ add_action(
 			return;
 		}
 
-		if ( (bool) config( 'views.maintenance' )  || wp_is_maintenance_mode() ) {
+		if ( (bool) config( 'views.maintenance' ) || wp_is_maintenance_mode() ) {
 
 			$protocol = $_SERVER['SERVER_PROTOCOL'];
 			if ( 'HTTP/1.1' !== $protocol && 'HTTP/1.0' !== $protocol ) {

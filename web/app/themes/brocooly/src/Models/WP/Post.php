@@ -14,9 +14,9 @@ namespace Theme\Models\WP;
 
 use Brocooly\Models\PostType;
 use Brocooly\Support\Facades\Meta;
-use Brocooly\Support\Traits\Thumbnail;
+use Brocooly\Support\Traits\HasThumbnail;
 
 class Post extends PostType
 {
-	use Thumbnail;
+	use HasThumbnail;
 }

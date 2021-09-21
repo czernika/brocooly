@@ -19,7 +19,9 @@
  * ! NOTE: if you're gonna place it inside `public` directory
  * make sure it is will NOT be deleted during production assets compilation by webpack.
  */
-defined( 'BROCOOLY_LANG_DIR' ) || define( 'BROCOOLY_LANG_DIR', trailingslashit( get_template_directory() ) . 'languages' );
+if ( ! defined( 'BROCOOLY_LANG_DIR' ) ) {
+	define( 'BROCOOLY_LANG_DIR', BROCOOLY_THEME_PATH . 'languages' );
+}
 
 /**
  * --------------------------------------------------------------------------

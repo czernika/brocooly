@@ -15,7 +15,6 @@ const plugins = [
 				path.resolve(themeFolder, './resources/views/**/*.twig'),
 				path.resolve(themeFolder, './**/*.php'),
 				path.resolve(themeFolder, './style.css'),
-				path.resolve(__dirname, './czernika/brocooly/**/*.php'),
 			],
 			browser,
 			notify: false,

@@ -21,13 +21,7 @@ return [
 	 *
 	 * @since 0.14.2
 	 */
-	'localize'        => [
-		'brocooly-main' => [
-			'ajax' => [
-				'url' => esc_url( admin_url( 'admin-ajax.php' ) ),
-			],
-		],
-	],
+	'localize'        => [],
 
 	/**
 	 * --------------------------------------------------------------------------
@@ -71,8 +65,6 @@ return [
 	 */
 	'excludedStyles'  => [],
 
-	'excludedScripts' => [
-		'comments-reply.js', // this script required only on singular pages with comments enabled.
-	],
+	'excludedScripts' => [],
 
 ];

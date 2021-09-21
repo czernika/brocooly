@@ -9,8 +9,6 @@
  * @since 0.4.0
  */
 
-use Theme\UI\Widgets\BlogSidebar;
-
 return [
 
 	/**
@@ -26,9 +24,7 @@ return [
 	 *
 	 * @link https://github.com/WordPress/WordPress/blob/master/wp-includes/default-widgets.php
 	 */
-	'sidebars'     => [
-		BlogSidebar::class,
-	],
+	'sidebars'     => [],
 
 	'widgets'      => [
 		// WP_Widget_Search::class,

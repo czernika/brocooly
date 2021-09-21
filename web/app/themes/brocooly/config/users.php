@@ -6,8 +6,6 @@
  * @since 0.8.2
  */
 
-use Theme\Models\Users\Developer;
-
 return [
 
 	/**
@@ -24,8 +22,6 @@ return [
 	 *
 	 * @see https://developer.wordpress.org/reference/functions/add_role/#user-contributed-notes
 	 */
-	'roles' => [
-		// Developer::class,
-	],
+	'roles' => [],
 
 ];

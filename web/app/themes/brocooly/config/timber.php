@@ -37,17 +37,12 @@ return [
 		 * Get theme mod
 		 */
 		'mod',
-		'rawmod'    => 'get_theme_mod',
+		'rawmod'  => 'get_theme_mod',
 
 		/**
 		 * Form action handler
 		 */
-		'handler'   => 'action',
-
-		/**
-		 * Carbon fields meta helpers
-		 */
-		'post_meta' => 'carbonPostMeta',
+		'handler' => 'action',
 	],
 
 	/**

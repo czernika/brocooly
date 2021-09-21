@@ -2,11 +2,13 @@
 
 ## Release 0.16.0
 
+* **[Breaking]**: default theme was minified
+
 * **[Feat]**: added support for extending Timber default classes. **Currently this works only for version 1.18!**
 * **[Feat]**: added `Option` facade
 * **[Docs]**: improved docs, fixed some typos
 
-Release Date: September 14, 2021
+Release Date: September 21, 2021
 
 ## Release 0.15.0
 

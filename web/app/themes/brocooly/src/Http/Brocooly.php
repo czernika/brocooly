@@ -17,7 +17,6 @@ namespace Theme\Http;
 use Brocooly\Http\Request\WPRequest;
 use Whoops\Handler\PlainTextHandler;
 use Whoops\Handler\PrettyPageHandler;
-use Theme\Http\Middleware\UserLoggedIn;
 
 use function DI\create;
 
@@ -42,11 +41,6 @@ class Brocooly
 			 * Queried object
 			 */
 			'queried'     => WPRequest::queried(),
-
-			/**
-			 * Security nonce
-			 */
-			'nonce'       => wp_create_nonce( 'brocooly_nonce_action' ),
 		];
 
 		return $context;
@@ -76,17 +70,6 @@ class Brocooly
 			 * @since 0.8.9
 			 */
 			'handler' => create( PrettyPageHandler::class ),
-
-			/**
-			 * --------------------------------------------------------------------------
-			 * Aliases
-			 * --------------------------------------------------------------------------
-			 *
-			 * Bind classes with its shortcut.
-			 *
-			 * @see https://php-di.org/doc/php-definitions.html#aliases
-			 */
-			'auth'    => create( UserLoggedIn::class ),
 		];
 
 		return $definitions;

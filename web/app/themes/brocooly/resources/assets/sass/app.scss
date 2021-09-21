@@ -1,80 +1,28 @@
-//
-// --------------------------------------------------------------------------
-// Generic content
-// --------------------------------------------------------------------------
-//
-// Custom functions and mixins.
-// Must be at top
-//
-@import 'global/vars';
+// =============================================================================
+// Helpers
+// =============================================================================
 @import 'generic/functions';
 @import 'generic/mixins';
 
-//
-// --------------------------------------------------------------------------
-// Vendor files
-// --------------------------------------------------------------------------
-//
-// WordPress core predefined styles, editor, blocks.
-//
-@import 'vendor/wordpress';
-@import 'vendor/a11y';
-
-//
-// --------------------------------------------------------------------------
-// App fonts
-// --------------------------------------------------------------------------
-//
-// Include custom local fonts
-//
-@import 'global/typography/font';
-
-//
-// --------------------------------------------------------------------------
-// External libraries
-// --------------------------------------------------------------------------
-//
-// Like TailwindCSS
-//
+// =============================================================================
+// TailwindCSS
+// =============================================================================
 @import 'libs/tailwind';
 
-//
-// --------------------------------------------------------------------------
-// Typography
-// --------------------------------------------------------------------------
-//
-// Minor app elements and extra general styling
-//
-@import 'global/typography/heading';
-@import 'global/typography/link';
-@import 'global/typography/list';
-@import 'global/typography/paragraph';
+// =============================================================================
+// WordPress a11y
+// =============================================================================
+@import 'vendor/a11y';
 
-//
-// --------------------------------------------------------------------------
-// Components
-// --------------------------------------------------------------------------
-//
-// Minor app elements and extra general styling
-//
-@import 'global/components/btn';
-@import 'global/components/focused';
+// You may delete next lines
+.btn {
+	@apply flex h-full px-8 py-6 space-x-4 duration-200 border rounded-sm shadow hover:shadow-md hover:bg-primary-light hover:border-primary-light;
 
-// If you're using generated SVG icons by webfonts-loader include this file
-@import 'global/components/icons';
+	&--primary {
+		@apply text-white border-primary-dark bg-primary-dark;
+	}
 
-//
-// --------------------------------------------------------------------------
-// Extra utilities
-// --------------------------------------------------------------------------
-//
-@import 'utilities/print';
-
-//
-// --------------------------------------------------------------------------
-// Media queries
-// --------------------------------------------------------------------------
-//
-// Always at the bottom
-//
-@import 'global/media';
+	&--secondary {
+		@apply bg-white border-gray-200 hover:text-white;
+	}
+}

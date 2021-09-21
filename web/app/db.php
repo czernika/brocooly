@@ -1,1 +1,0 @@
-/home/aliha/projects/sites/brocooly/web/app/plugins/query-monitor/wp-content/db.php

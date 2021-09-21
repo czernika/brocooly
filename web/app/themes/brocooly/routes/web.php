@@ -15,11 +15,7 @@
 
 use Brocooly\Support\Facades\Route;
 
-use Theme\Containers\PageSection\Web\Controller\PagesController;
-use Theme\Containers\BlogSection\Web\Controllers\PostsController;
-use Theme\Containers\SearchSection\Web\Controllers\SearchController;
 use Theme\Containers\FrontPageSection\Web\Controllers\FrontPageController;
-use Theme\Http\Controllers\PostTypesController;
 
 /**
  * -------------------------------------------------------------------------
@@ -29,15 +25,3 @@ use Theme\Http\Controllers\PostTypesController;
  * Determines whether the query is for an existing single post of any post type (post, attachment, page, custom post types).
  */
 Route::isFrontPage( FrontPageController::class );
-Route::get( 'is_single', 'Theme\Containers\BlogSection\Web\Controllers\PostsController@single' );
-Route::get( 'is_singular', [ PostTypesController::class, 'single' ] );
-
-/**
- * -------------------------------------------------------------------------
- * Archives
- * -------------------------------------------------------------------------
- *
- * Determines whether the query is for an existing archive page.
- */
-Route::get( 'is_search', SearchController::class );
-Route::get( 'is_home', [ PostsController::class, 'index' ] );
