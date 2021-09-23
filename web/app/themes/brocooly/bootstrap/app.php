@@ -16,7 +16,7 @@
  *
  * Include DI container
  */
-$container = require_once CORE_PATH . '/container.php';
+$container = require_once BROCOOLY_CORE_PATH . '/container.php';
 
 /**
  * --------------------------------------------------------------------------

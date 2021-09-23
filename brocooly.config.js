@@ -20,6 +20,17 @@ module.exports = {
 	},
 
 	/**
+	 * Merge scripts together in one file in production mod (`true`)
+	 * or separate them in chunks (`false`)
+	 */
+	concat: true,
+
+	/**
+	 * Browser to open in development watch mode
+	 */
+	browser: 'firefox',
+
+	/**
 	 * Custom webpack configuration
 	 */
 	webpackConfig: {},

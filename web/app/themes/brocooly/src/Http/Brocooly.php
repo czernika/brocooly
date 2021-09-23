@@ -52,6 +52,9 @@ class Brocooly
 	 * This method binds directly into ContainerBuilder
 	 * so you're free to use any feature at any app environment
 	 *
+	 * This is EARLY access to DI\Container so bind here values
+	 * extremely important for application. Otherwise use Providers
+	 *
 	 * @link https://php-di.org/doc/php-definitions.html
 	 * @package Brocooly
 	 * @since 0.9.1
@@ -69,7 +72,29 @@ class Brocooly
 			 *
 			 * @since 0.8.9
 			 */
-			'handler' => create( PrettyPageHandler::class ),
+			'handler'         => create( PrettyPageHandler::class ),
+
+			/**
+			 * --------------------------------------------------------------------------
+			 * Main Users class
+			 * --------------------------------------------------------------------------
+			 *
+			 * Will inherit `Timber\User` class to handle user metaboxes
+			 *
+			 * @since 0.16.1
+			 */
+			'users.parent'    => null,
+
+			/**
+			 * --------------------------------------------------------------------------
+			 * Main Comments class
+			 * --------------------------------------------------------------------------
+			 *
+			 * Same but for Comments
+			 *
+			 * @since 0.16.1
+			 */
+			'comments.parent' => null,
 		];
 
 		return $definitions;

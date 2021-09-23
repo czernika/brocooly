@@ -22,8 +22,8 @@ return [
 	 * ```
 	 */
 	'namespaces'           => [
-		'components' => 'components',
-		'layouts'    => 'layouts',
+		'components',
+		'layouts',
 	],
 
 	/**
@@ -98,7 +98,7 @@ return [
 	 * @var string
 	 * @link https://timber.github.io/docs/guides/performance/
 	 */
-	'cache'                => BROCOOLY_THEME_PATH . '/storage/cache/',
+	'cache'                => BROCOOLY_THEME_PATH . 'storage/cache/',
 
 	/**
 	 * --------------------------------------------------------------------------

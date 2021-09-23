@@ -10,8 +10,6 @@
 
 use Brocooly\Support\Facades\File;
 
-$bootstrapPath = __DIR__ . '/bootstrap/';
-
 /**
  * --------------------------------------------------------------------------
  * Let's start
@@ -19,49 +17,20 @@ $bootstrapPath = __DIR__ . '/bootstrap/';
  *
  * Boot application
  */
-require_once $bootstrapPath . 'app.php';
+require_once __DIR__ . '/bootstrap/app.php';
 
 /**
  * --------------------------------------------------------------------------
- * Include i18n file
+ * Include other bootstrap file
  * --------------------------------------------------------------------------
  *
- * This file requires to be handled directly into functions.php
- * Otherwise other plugins may not see .pot file as a language template.
- *
- * @since 0.8.5
+ * Except `app.php`
  */
-File::requireOnce( $bootstrapPath . 'i18n.php' );
+$bootstrappers = glob( wp_normalize_path( BROCOOLY_THEME_BOOT_PATH . '/[^app]*.php' ) );
 
-/**
- * --------------------------------------------------------------------------
- * Include Kirki Customizer installer
- * --------------------------------------------------------------------------
- *
- * Kirki Framework - The ultimate framework for theme developers using the WordPress Customizer
- *
- * Kirki is licensed under the MIT Licence.
- * Copyright (c) 2020 Ari Stathopoulos (@aristath)
- *
- * As Kirki is a WordPress plugin it is depends on user actions.
- * So we include installer section to recommend the installation of Kirki from inside the customizer.
- *
- * @link https://kirki.org/
- * @see https://kirki.org/docs/setup/integration/
- * @since 0.3.0
- */
-File::requireOnce( $bootstrapPath . 'kirki-installer.php' );
-
-/**
- * --------------------------------------------------------------------------
- * Maintenance mode
- * --------------------------------------------------------------------------
- *
- * Enable maintenance mode
- *
- * @since 0.12.3
- */
-File::requireOnce( $bootstrapPath . 'maintenance.php' );
+foreach ( $bootstrappers as $file ) {
+	File::requireOnce( $file );
+}
 
 /**
  * ==========================================================================

@@ -22,6 +22,6 @@ return [
 	 *
 	 * @see https://developer.wordpress.org/reference/functions/add_role/#user-contributed-notes
 	 */
-	'roles' => [],
+	'roles'  => [],
 
 ];

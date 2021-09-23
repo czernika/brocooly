@@ -20,7 +20,7 @@ return [
 	 *
 	 * Your application will use this default mailer to send emails
 	 */
-	'default' => env( 'MAIL_MAILER' ) ?? 'wordpress',
+	'default' => env( 'MAIL_MAILER' ) ?? 'mailhog',
 
 	/**
 	 * -------------------------------------------------------------------------

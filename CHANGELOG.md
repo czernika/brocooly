@@ -1,5 +1,12 @@
 # Changelog
 
+## Release 0.16.1
+
+* **[Feat]**: added parent `Comment` and `User` classes to extend from
+* **[Feat]**: more config options for `brocooly.config.js`
+
+Release Date: September 24, 2021
+
 ## Release 0.16.0
 
 * **[Breaking]**: default theme was minified

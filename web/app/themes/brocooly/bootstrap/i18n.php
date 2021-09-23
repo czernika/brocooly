@@ -19,8 +19,8 @@
  * ! NOTE: if you're gonna place it inside `public` directory
  * make sure it is will NOT be deleted during production assets compilation by webpack.
  */
-if ( ! defined( 'BROCOOLY_LANG_DIR' ) ) {
-	define( 'BROCOOLY_LANG_DIR', BROCOOLY_THEME_PATH . 'languages' );
+if ( ! defined( 'BROCOOLY_THEME_LANG_PATH' ) ) {
+	define( 'BROCOOLY_THEME_LANG_PATH', BROCOOLY_THEME_PATH . 'languages' );
 }
 
 /**
@@ -33,6 +33,6 @@ if ( ! defined( 'BROCOOLY_LANG_DIR' ) ) {
 add_action(
 	'after_setup_theme',
 	function() {
-		load_theme_textdomain( 'brocooly', BROCOOLY_LANG_DIR );
+		load_theme_textdomain( 'brocooly', BROCOOLY_THEME_LANG_PATH );
 	},
 );

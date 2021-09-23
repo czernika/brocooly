@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace Theme\Providers;
 
 use Brocooly\Providers\AbstractService;
+use Whoops\Handler\PrettyPageHandler;
 
 class ThemeServiceProvider extends AbstractService
 {
