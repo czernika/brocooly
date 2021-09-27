@@ -5,14 +5,14 @@ declare(strict_types=1);
 namespace Theme\Containers\FrontPageSection\Web\Controllers;
 
 use Theme\Http\Controllers\Controller;
-use Theme\Containers\FrontPageSection\Actions\GetMainScreen;
+use Theme\Containers\FrontPageSection\Contracts\Actions\GetMainScreenActionContract;
 
 class FrontPageController extends Controller
 {
 
 	private $mainScreen;
 
-	public function __construct( GetMainScreen $mainScreen ) {
+	public function __construct( GetMainScreenActionContract $mainScreen ) {
 		$this->mainScreen = $mainScreen;
 	}
 

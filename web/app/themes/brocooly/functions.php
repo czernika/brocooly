@@ -21,10 +21,11 @@ require_once __DIR__ . '/bootstrap/app.php';
 
 /**
  * --------------------------------------------------------------------------
- * Include other bootstrap file
+ * Include other bootstrap files
  * --------------------------------------------------------------------------
  *
- * Except `app.php`
+ * Every bootstrapper will handle it's own boot logic inside.
+ * We do NOT require `app.php` file as it is already have been included
  */
 $bootstrappers = glob( wp_normalize_path( BROCOOLY_THEME_BOOT_PATH . '/[^app]*.php' ) );
 
@@ -40,7 +41,7 @@ foreach ( $bootstrappers as $file ) {
  * All you custom functions may be placed here as it is still WordPress installation.
  *
  * ! But Brocooly Framework recommends you NOT to do that
- * and handle logic inside theme source folder.
+ * and handle logic inside theme source directories.
  *
  * Happy coding!
  */

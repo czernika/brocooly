@@ -8,7 +8,7 @@ const themeFolder = `web/app/themes/${themeName}`;
 module.exports = {
 	mode: 'jit',
 
-	darkMode: 'media',
+	darkMode: false,
 
 	purge: {
 		content: [

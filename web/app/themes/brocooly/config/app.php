@@ -10,6 +10,7 @@ use Theme\Models\WP\Page;
 use Theme\Models\WP\Post;
 
 use Theme\Providers\ThemeServiceProvider;
+use Theme\Containers\FrontPageSection\Providers\MainScreenProvider;
 
 return [
 
@@ -52,6 +53,7 @@ return [
 	 */
 	'providers'  => [
 		ThemeServiceProvider::class,
+		MainScreenProvider::class,
 	],
 
 	/**

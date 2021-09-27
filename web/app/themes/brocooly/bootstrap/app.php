@@ -1,12 +1,12 @@
 <?php
 /**
- * Set PHP DI Container and run Application
+ * Set PHP-DI Container and run Application
  *
  * ! Please do NOT change anything
  * unless you know what are you doing
  *
  * @package Brocooly
- * @since 0.1.0
+ * @since 0.1.0DI
  */
 
 /**
@@ -15,6 +15,8 @@
  * --------------------------------------------------------------------------
  *
  * Include DI container
+ *
+ * @link https://php-di.org/doc/
  */
 $container = require_once BROCOOLY_CORE_PATH . '/container.php';
 
