@@ -1,11 +1,16 @@
 # Changelog
 
+## Release 0.16.2
+
+* **[Feat]**: added support to extend allowed mime types
+
+Release Date: October 4, 2021
 ## Release 0.16.1
 
 * **[Feat]**: added parent `Comment` and `User` classes to extend from
 * **[Feat]**: more config options for `brocooly.config.js`
 
-Release Date: September 24, 2021
+Release Date: October 4, 2021
 
 ## Release 0.16.0
 
