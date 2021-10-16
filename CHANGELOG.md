@@ -1,10 +1,17 @@
 # Changelog
 
+## Release 0.16.3
+
+* **[Docs]**: added docs
+
+Release Date: October 16, 2021
+
 ## Release 0.16.2
 
 * **[Feat]**: added support to extend allowed mime types
 
 Release Date: October 4, 2021
+
 ## Release 0.16.1
 
 * **[Feat]**: added parent `Comment` and `User` classes to extend from

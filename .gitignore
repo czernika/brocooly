@@ -1,5 +1,8 @@
 # Created by https://www.toptal.com/developers/gitignore
 
+### PHP docs ###
+.phpdoc
+
 ### WordPress ###
 # Created by https://www.toptal.com/developers/gitignore/api/wordpress
 # Edit at https://www.toptal.com/developers/gitignore?templates=WordPress
