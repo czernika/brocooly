@@ -32,6 +32,8 @@
 					"screen"
 				]
 			}
-		]
+		],
+		"max-nesting-depth": 5,
+		"selector-max-id": null
 	}
 }

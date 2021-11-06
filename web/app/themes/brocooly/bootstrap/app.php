@@ -22,6 +22,34 @@ $container = require_once BROCOOLY_CORE_PATH . '/container.php';
 
 /**
  * --------------------------------------------------------------------------
+ * Include Kirki Framework
+ * --------------------------------------------------------------------------
+ *
+ * Only if there are no Kirki plugin installed
+ */
+if ( ! class_exists( 'Kirki' ) ) {
+	require_once APP_PATH . '/web/app/vendor/aristath/kirki/kirki.php';
+}
+
+/**
+ * --------------------------------------------------------------------------
+ * Enqueue tinyMCE editor
+ * --------------------------------------------------------------------------
+ *
+ * TODO: Currently bugged - any editor inside customizer section cannot be instantiated
+ * So we do it manually
+ */
+if ( is_customize_preview() ) {
+	add_action(
+		'admin_enqueue_scripts',
+		function() {
+			wp_enqueue_editor();
+		}
+	);
+}
+
+/**
+ * --------------------------------------------------------------------------
  * Call The Application
  * --------------------------------------------------------------------------
  *

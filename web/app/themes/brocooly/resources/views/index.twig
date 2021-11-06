@@ -35,6 +35,11 @@
 		<link rel="stylesheet" href="{{ theme.link }}/style.css">
 	{% endblock %}
 
+	<!-- Alpine JS -->
+	<link rel="dns-prefetch" href="https://unpkg.com" />
+	<style>[x-cloak] { display: none !important; }</style>
+	<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
 	{{ fn('wp_head') }}
 </head>
 <body
@@ -60,7 +65,7 @@
 	{% block footer %}
 		{% include '@components/footer.twig' %}
 	{% endblock %}
-
+	
 	{{ fn('wp_footer') }}
 
 	{% block scripts %}{% endblock %}

@@ -19,9 +19,9 @@
         "roots/wordpress": "5.8.1",
         "roots/wp-config": "1.0.0",
         "roots/wp-password-bcrypt": "1.0.0",
-        "wpackagist-plugin/kirki": "^3.1",
         "wpackagist-plugin/query-monitor": "^3.6",
-        "wpackagist-plugin/clean-image-filenames": "^1.3"
+        "wpackagist-plugin/clean-image-filenames": "^1.3",
+        "aristath/kirki": "v4.0-beta.2"
     },
     "require-dev": {
         "brain/monkey": "2.*",
@@ -48,7 +48,8 @@
                 "type:wordpress-theme"
             ],
             "web/app/vendor/{$vendor}/{$name}": [
-                "htmlburger/carbon-fields"
+                "htmlburger/carbon-fields",
+                "aristath/kirki"
             ]
         },
         "wordpress-install-dir": "web/wp"
@@ -75,8 +76,6 @@
             "url": "https://github.com/czernika/brocooly-core.git"
         }
     ],
-    "minimum-stability": "stable",
-    "prefer-stable": true,
     "scripts": {
         "post-root-package-install": [
             "php -r \"copy('.env.example', '.env');\""

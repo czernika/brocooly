@@ -18,6 +18,7 @@ module.exports = {
 	},
 	globals: {
 		'wp': true,
+		'Alpine': true,
 	},
 	rules: {
 		'no-console': isProd ? 'error' : 'off',
