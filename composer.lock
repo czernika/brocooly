@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fe6ad61b8582d809c3f5802b530531fb",
+    "content-hash": "3b79803ccbdab3133e27f84843b63a3f",
     "packages": [
         {
             "name": "altorouter/altorouter",
@@ -329,7 +329,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/czernika/brocooly-core.git",
-                "reference": "3f716a9c6107a64378cd995ee2f3e306e70536aa"
+                "reference": "bee1eb88ff5724e260d74bb48387f0870779d878"
             },
             "require": {
                 "composer/installers": "^1.10",
@@ -375,7 +375,7 @@
                 }
             ],
             "description": "Core engine for Brocooly Framework",
-            "time": "2021-11-07T11:39:01+00:00"
+            "time": "2021-11-07T16:43:14+00:00"
         },
         {
             "name": "djboris88/timber-commented-include",
@@ -10522,9 +10522,10 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": {
         "czernika/brocooly-core": 20,
+        "aristath/kirki": 10,
         "roave/security-advisories": 20
     },
     "prefer-stable": false,
