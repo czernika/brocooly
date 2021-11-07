@@ -9,6 +9,7 @@
  */
 
 use Brocooly\Support\Facades\File;
+use Brocooly\Router\RequestHandler;
 
 /**
  * --------------------------------------------------------------------------
@@ -32,6 +33,20 @@ $bootstrappers = glob( wp_normalize_path( BROCOOLY_THEME_BOOT_PATH . '/[^app]*.p
 foreach ( $bootstrappers as $file ) {
 	File::requireOnce( $file );
 }
+
+/**
+ * --------------------------------------------------------------------------
+ * Handle AJAX requests
+ * --------------------------------------------------------------------------
+ *
+ * This file requires ti be included inside of functions.php.
+ * Otherwise ajax routes are invisible.
+ * TODO - fix that logic
+ *
+ * @since 0.18.0
+ */
+File::requireOnce( BROCOOLY_THEME_PATH . 'routes/ajax.php' );
+RequestHandler::handleAjaxRequest();
 
 /**
  * ==========================================================================
