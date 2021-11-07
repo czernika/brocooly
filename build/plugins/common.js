@@ -35,6 +35,7 @@ const plugins = [
 	new WebpackNotifierPlugin({
 		title: themeName,
 		excludeWarnings: true,
+		contentImage: path.resolve(themeFolder, 'resources/static/brocooly.png')
 	}),
 
 	new WebpackAssetsManifest({

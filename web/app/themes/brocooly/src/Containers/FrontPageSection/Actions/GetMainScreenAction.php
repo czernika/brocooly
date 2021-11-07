@@ -11,7 +11,7 @@ class GetMainScreenAction implements GetMainScreenActionContract
 {
 	public function getHelloWorld() : string
 	{
-		$helloWorld = task( GetHelloWorld::class );
+		$helloWorld = task( GetHelloWorld:s:class );
 		return $helloWorld;
 	}
 }

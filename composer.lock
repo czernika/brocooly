@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3b79803ccbdab3133e27f84843b63a3f",
+    "content-hash": "fe6ad61b8582d809c3f5802b530531fb",
     "packages": [
         {
             "name": "altorouter/altorouter",
@@ -10522,10 +10522,9 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {
         "czernika/brocooly-core": 20,
-        "aristath/kirki": 10,
         "roave/security-advisories": 20
     },
     "prefer-stable": false,

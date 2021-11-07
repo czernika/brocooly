@@ -1,5 +1,12 @@
 # Changelog
 
+## Release 0.18.1
+
+* **[Refactor]**: refactored broccoli console file
+* **[Fix]**: fixed login page link
+
+Release Date: November 7, 2021
+
 ## Release 0.18.0
 
 * **[Refactor]**: refactor console commands
