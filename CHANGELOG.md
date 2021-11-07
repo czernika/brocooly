@@ -1,5 +1,19 @@
 # Changelog
 
+## Release 0.18.0
+
+* **[Refactor]**: refactor console commands
+* **[Refactor]**: added base AjaxController
+* **[Refactor]**: added base ThemeRequest
+
+Release Date: November 7, 2021
+
+## Release 0.17.0
+
+* **[Refactor]**: minor changes
+
+Release Date: November 6, 2021
+
 ## Release 0.16.3
 
 * **[Docs]**: added docs

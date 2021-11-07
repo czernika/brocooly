@@ -9,6 +9,21 @@
 use Timber\Site;
 use Carbon\Carbon;
 
+if ( ! function_exists( 'clearPhone' ) ) {
+
+	/**
+	 * Remove non-digits from phone number.
+	 * Only plus sign allowed also.
+	 *
+	 * @param string $phone | phone number to clear.
+	 * @return string
+	 */
+	function clearPhone( string $phone ) : string
+	{
+		return preg_replace( '/[^0-9+]/', '', esc_attr( $phone ) );
+	}
+}
+
 if ( ! function_exists( 'copyrights' ) ) {
 
 	/**
