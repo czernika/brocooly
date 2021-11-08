@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "php": ">=7.4",
+        "php": "^8.0",
         "composer/installers": "^1.10",
         "czernika/brocooly-core": "dev-master",
         "mnsami/composer-custom-directory-installer": "^2.0",
