@@ -2,11 +2,11 @@
 /**
  * Set PHP-DI Container and run Application
  *
- * ! Please do NOT change anything
+ * NOTE: Please do NOT change anything
  * unless you know what are you doing
  *
  * @package Brocooly
- * @since 0.1.0DI
+ * @since 0.1.0
  */
 
 /**
@@ -26,6 +26,7 @@ $container = require_once BROCOOLY_CORE_PATH . '/container.php';
  * --------------------------------------------------------------------------
  *
  * Only if there are no Kirki plugin installed
+ * FIXME
  */
 if ( ! class_exists( 'Kirki' ) ) {
 	require_once APP_PATH . '/web/app/vendor/aristath/kirki/kirki.php';

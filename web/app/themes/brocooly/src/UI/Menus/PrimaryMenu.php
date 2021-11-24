@@ -17,7 +17,6 @@ class PrimaryMenu extends AbstractMenu
 
 	/**
 	 * Menu name
-	 * Will be available in twig files as `primary_menu`
 	 *
 	 * @var string
 	 */

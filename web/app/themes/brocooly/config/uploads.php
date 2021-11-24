@@ -11,9 +11,7 @@ return [
 	/**
 	 * Add allowed mime types
 	 */
-	'allowed' => [
-		'ies' => 'text/plain',
-	],
+	'allowed'    => [],
 
 	/**
 	 * Remove from allowed mime types list

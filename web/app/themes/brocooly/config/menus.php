@@ -21,21 +21,4 @@ return [
 		PrimaryMenu::class,
 	],
 
-	/**
-	 * --------------------------------------------------------------------------
-	 * Menu postfix
-	 * --------------------------------------------------------------------------
-	 *
-	 * Every theme menu location will get this postfix
-	 * And will be available under this name in view files
-	 *
-	 * @example
-	 * ```
-	 * `primary` menu will be available as:
-	 *
-	 * {{ dump(primary_menu) }} - contain \Timber\Menu object
-	 * ```
-	 */
-	'postfix' => '_menu',
-
 ];

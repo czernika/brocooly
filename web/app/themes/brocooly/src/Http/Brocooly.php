@@ -64,6 +64,16 @@ class Brocooly
 
 			/**
 			 * --------------------------------------------------------------------------
+			 * App Providers
+			 * --------------------------------------------------------------------------
+			 * Define a batch of entries for theme Actions and Services
+			 *
+			 * @see https://php-di.org/doc/php-definitions.html#wildcards
+			 */
+			'Theme\Containers\*\Contracts\Actions\*ActionContract' => create( 'Theme\Containers\*\Actions\*Action' ),
+
+			/**
+			 * --------------------------------------------------------------------------
 			 * Set debug handler
 			 * --------------------------------------------------------------------------
 			 *

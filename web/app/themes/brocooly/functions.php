@@ -39,9 +39,9 @@ foreach ( $bootstrappers as $file ) {
  * Handle AJAX requests
  * --------------------------------------------------------------------------
  *
- * This file requires ti be included inside of functions.php.
- * Otherwise ajax routes are invisible.
- * TODO - fix that logic
+ * This file requires to be included inside of functions.php.
+ * Otherwise ajax routes are 'invisible'.
+ * FIXME
  *
  * @since 0.18.0
  */
