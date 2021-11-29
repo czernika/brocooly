@@ -40,61 +40,12 @@
     port: "$FTP_PORT"
     authentication_mode: "PUBLIC_KEY"
     commands:
-    - "wp db import databases/prod.sql"
+    - "wp db import databases/dumps/prod.sql"
     run_as_script: true
     shell: "BASH"
     trigger_conditions:
     - trigger_condition: "ON_CHANGE_AT_PATH"
       trigger_condition_paths:
-      - "databases/prod.sql"
+      - "databases/dumps/prod.sql"
   trigger_conditions:
   - trigger_condition: "ALWAYS"
-- pipeline: "Stage Deploy"
-  on: "EVENT"
-  events:
-  - type: "PUSH"
-    refs:
-    - "refs/heads/dev"
-  priority: "NORMAL"
-  fetch_all_refs: true
-  fail_on_prepare_env_warning: true
-  actions:
-  - action: "Upload files"
-    type: "SFTP"
-    input_type: "SCM_REPOSITORY"
-    local_path: "/"
-    remote_path: "$STAGE_FTP_PATH"
-    login: "$FTP_LOGIN"
-    host: "$STAGE_FTP_HOST"
-    port: "$FTP_PORT"
-    authentication_mode: "PUBLIC_KEY"
-  - action: "Install composer packages and dependencies"
-    type: "SSH_COMMAND"
-    working_directory: "$STAGE_FTP_PATH"
-    login: "$FTP_LOGIN"
-    host: "$STAGE_FTP_HOST"
-    port: "$FTP_PORT"
-    authentication_mode: "PUBLIC_KEY"
-    commands:
-    - "php ~/bin/composer update"
-    run_as_script: true
-    shell: "BASH"
-    trigger_conditions:
-    - trigger_condition: "ON_CHANGE_AT_PATH"
-      trigger_condition_paths:
-      - "composer.json"
-  - action: "Import database"
-    type: "SSH_COMMAND"
-    working_directory: "$STAGE_FTP_PATH"
-    login: "$FTP_LOGIN"
-    host: "$STAGE_FTP_HOST"
-    port: "$FTP_PORT"
-    authentication_mode: "PUBLIC_KEY"
-    commands:
-    - "wp db import databases/test.sql"
-    run_as_script: true
-    shell: "BASH"
-    trigger_conditions:
-    - trigger_condition: "ON_CHANGE_AT_PATH"
-      trigger_condition_paths:
-      - "databases/test.sql"
