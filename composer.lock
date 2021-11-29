@@ -329,13 +329,14 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/czernika/brocooly-core.git",
-                "reference": "0e8014a2404d3e34aa1b55d82785306391a68955"
+                "reference": "1e58dcb58432bc4a8b424dab13f6874ea0ee2980"
             },
             "require": {
                 "aristath/kirki": "v4.0-beta.3",
                 "composer/installers": "^1.10",
                 "djboris88/timber-commented-include": "^1.1",
                 "elegantweb/sanitizer": "^1.1",
+                "fakerphp/faker": "^1.16",
                 "filp/whoops": "^2.13",
                 "hellonico/twig-dump-extension": "^1.1",
                 "htmlburger/carbon-fields": "^3.2",
@@ -380,7 +381,7 @@
                 }
             ],
             "description": "Core engine for Brocooly Framework",
-            "time": "2021-11-24T09:44:53+00:00"
+            "time": "2021-11-29T14:21:09+00:00"
         },
         {
             "name": "djboris88/timber-commented-include",
@@ -798,6 +799,71 @@
                 "source": "https://github.com/elegantweb/sanitizer/tree/v1.1.0"
             },
             "time": "2021-07-11T14:49:06+00:00"
+        },
+        {
+            "name": "fakerphp/faker",
+            "version": "v1.16.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FakerPHP/Faker.git",
+                "reference": "271d384d216e5e5c468a6b28feedf95d49f83b35"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FakerPHP/Faker/zipball/271d384d216e5e5c468a6b28feedf95d49f83b35",
+                "reference": "271d384d216e5e5c468a6b28feedf95d49f83b35",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1 || ^8.0",
+                "psr/container": "^1.0 || ^2.0",
+                "symfony/deprecation-contracts": "^2.2"
+            },
+            "conflict": {
+                "fzaninotto/faker": "*"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.4.1",
+                "ext-intl": "*",
+                "symfony/phpunit-bridge": "^4.4 || ^5.2"
+            },
+            "suggest": {
+                "ext-curl": "Required by Faker\\Provider\\Image to download images.",
+                "ext-dom": "Required by Faker\\Provider\\HtmlLorem for generating random HTML.",
+                "ext-iconv": "Required by Faker\\Provider\\ru_RU\\Text::realText() for generating real Russian text.",
+                "ext-mbstring": "Required for multibyte Unicode string functionality."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "v1.16-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Faker\\": "src/Faker/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "François Zaninotto"
+                }
+            ],
+            "description": "Faker is a PHP library that generates fake data for you.",
+            "keywords": [
+                "data",
+                "faker",
+                "fixtures"
+            ],
+            "support": {
+                "issues": "https://github.com/FakerPHP/Faker/issues",
+                "source": "https://github.com/FakerPHP/Faker/tree/v1.16.0"
+            },
+            "time": "2021-09-06T14:53:37+00:00"
         },
         {
             "name": "filp/whoops",
@@ -2117,16 +2183,16 @@
         },
         {
             "name": "kirki-framework/control-dimension",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/control-dimension.git",
-                "reference": "3e53137ccce54fb86d40eabdd07923eea2fd693f"
+                "reference": "49a84573fa07b41a293f129317bbdb6421235990"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/control-dimension/zipball/3e53137ccce54fb86d40eabdd07923eea2fd693f",
-                "reference": "3e53137ccce54fb86d40eabdd07923eea2fd693f",
+                "url": "https://api.github.com/repos/kirki-framework/control-dimension/zipball/49a84573fa07b41a293f129317bbdb6421235990",
+                "reference": "49a84573fa07b41a293f129317bbdb6421235990",
                 "shasum": ""
             },
             "require": {
@@ -2162,9 +2228,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/control-dimension/issues",
-                "source": "https://github.com/kirki-framework/control-dimension/tree/v1.0.0"
+                "source": "https://github.com/kirki-framework/control-dimension/tree/v1.0.1"
             },
-            "time": "2021-09-24T07:16:46+00:00"
+            "time": "2021-11-24T14:18:14+00:00"
         },
         {
             "name": "kirki-framework/control-editor",
@@ -2422,16 +2488,16 @@
         },
         {
             "name": "kirki-framework/control-react-colorful",
-            "version": "v1.0.2",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/control-react-colorful.git",
-                "reference": "00156fb7299d08da094dff745f7f87bc866e38b9"
+                "reference": "91f3e1cb6f0e92c69ee4e88a539abf6689a87d9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/control-react-colorful/zipball/00156fb7299d08da094dff745f7f87bc866e38b9",
-                "reference": "00156fb7299d08da094dff745f7f87bc866e38b9",
+                "url": "https://api.github.com/repos/kirki-framework/control-react-colorful/zipball/91f3e1cb6f0e92c69ee4e88a539abf6689a87d9f",
+                "reference": "91f3e1cb6f0e92c69ee4e88a539abf6689a87d9f",
                 "shasum": ""
             },
             "require": {
@@ -2467,9 +2533,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/control-react-colorful/issues",
-                "source": "https://github.com/kirki-framework/control-react-colorful/tree/v1.0.2"
+                "source": "https://github.com/kirki-framework/control-react-colorful/tree/v1.0.3"
             },
-            "time": "2021-11-17T10:44:31+00:00"
+            "time": "2021-11-25T18:47:16+00:00"
         },
         {
             "name": "kirki-framework/control-react-select",
@@ -2632,16 +2698,16 @@
         },
         {
             "name": "kirki-framework/control-slider",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/control-slider.git",
-                "reference": "39ec5f5fc043d7d98401d1d7e7f70a33c0c2a30c"
+                "reference": "963ba880ba467cfb8bc89fa716c7c442846554f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/control-slider/zipball/39ec5f5fc043d7d98401d1d7e7f70a33c0c2a30c",
-                "reference": "39ec5f5fc043d7d98401d1d7e7f70a33c0c2a30c",
+                "url": "https://api.github.com/repos/kirki-framework/control-slider/zipball/963ba880ba467cfb8bc89fa716c7c442846554f1",
+                "reference": "963ba880ba467cfb8bc89fa716c7c442846554f1",
                 "shasum": ""
             },
             "require": {
@@ -2668,9 +2734,9 @@
             "description": "Range slider control for the Kirki Customizer Framework",
             "support": {
                 "issues": "https://github.com/kirki-framework/control-slider/issues",
-                "source": "https://github.com/kirki-framework/control-slider/tree/v1.0.0"
+                "source": "https://github.com/kirki-framework/control-slider/tree/v1.0.1"
             },
-            "time": "2021-10-12T16:33:13+00:00"
+            "time": "2021-11-29T09:32:51+00:00"
         },
         {
             "name": "kirki-framework/control-sortable",
@@ -3073,16 +3139,16 @@
         },
         {
             "name": "kirki-framework/field-typography",
-            "version": "v1.0.1",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/field-typography.git",
-                "reference": "ea5913b85574f291e8c244c85f6d42011779747b"
+                "reference": "49d6e04b3040042fce0751335f7d4ababc15af53"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/field-typography/zipball/ea5913b85574f291e8c244c85f6d42011779747b",
-                "reference": "ea5913b85574f291e8c244c85f6d42011779747b",
+                "url": "https://api.github.com/repos/kirki-framework/field-typography/zipball/49d6e04b3040042fce0751335f7d4ababc15af53",
+                "reference": "49d6e04b3040042fce0751335f7d4ababc15af53",
                 "shasum": ""
             },
             "require": {
@@ -3124,22 +3190,22 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/field-typography/issues",
-                "source": "https://github.com/kirki-framework/field-typography/tree/v1.0.1"
+                "source": "https://github.com/kirki-framework/field-typography/tree/v1.0.3"
             },
-            "time": "2021-11-02T16:21:20+00:00"
+            "time": "2021-11-25T17:42:07+00:00"
         },
         {
             "name": "kirki-framework/googlefonts",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/googlefonts.git",
-                "reference": "ffbc6de3a3cff69277b5960136c8d9b576203846"
+                "reference": "f4c742072125e8cd6efee221b4627771a6c7bdba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/googlefonts/zipball/ffbc6de3a3cff69277b5960136c8d9b576203846",
-                "reference": "ffbc6de3a3cff69277b5960136c8d9b576203846",
+                "url": "https://api.github.com/repos/kirki-framework/googlefonts/zipball/f4c742072125e8cd6efee221b4627771a6c7bdba",
+                "reference": "f4c742072125e8cd6efee221b4627771a6c7bdba",
                 "shasum": ""
             },
             "require": {
@@ -3174,9 +3240,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/googlefonts/issues",
-                "source": "https://github.com/kirki-framework/googlefonts/tree/v1.0.1"
+                "source": "https://github.com/kirki-framework/googlefonts/tree/v1.0.2"
             },
-            "time": "2021-11-18T12:53:20+00:00"
+            "time": "2021-11-25T15:46:47+00:00"
         },
         {
             "name": "kirki-framework/l10n",
@@ -3766,16 +3832,16 @@
         },
         {
             "name": "kirki-framework/util",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/util.git",
-                "reference": "7ead5a4bf6875aa1afb96cbb4e747c59c163b2a3"
+                "reference": "b0ac108b58a401b8c176c04a86799d929df7cd5f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/util/zipball/7ead5a4bf6875aa1afb96cbb4e747c59c163b2a3",
-                "reference": "7ead5a4bf6875aa1afb96cbb4e747c59c163b2a3",
+                "url": "https://api.github.com/repos/kirki-framework/util/zipball/b0ac108b58a401b8c176c04a86799d929df7cd5f",
+                "reference": "b0ac108b58a401b8c176c04a86799d929df7cd5f",
                 "shasum": ""
             },
             "require": {
@@ -3808,9 +3874,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/util/issues",
-                "source": "https://github.com/kirki-framework/util/tree/v1.0.0"
+                "source": "https://github.com/kirki-framework/util/tree/v1.0.1"
             },
-            "time": "2021-09-09T21:02:44+00:00"
+            "time": "2021-11-25T17:57:47+00:00"
         },
         {
             "name": "linkorb/jsmin-php",
@@ -4118,16 +4184,16 @@
         },
         {
             "name": "nette/php-generator",
-            "version": "v3.6.4",
+            "version": "v3.6.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/php-generator.git",
-                "reference": "b8375ac20760c62b6816f8c2eaeabbbca305eed7"
+                "reference": "9370403f9d9c25b51c4596ded1fbfe70347f7c82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/php-generator/zipball/b8375ac20760c62b6816f8c2eaeabbbca305eed7",
-                "reference": "b8375ac20760c62b6816f8c2eaeabbbca305eed7",
+                "url": "https://api.github.com/repos/nette/php-generator/zipball/9370403f9d9c25b51c4596ded1fbfe70347f7c82",
+                "reference": "9370403f9d9c25b51c4596ded1fbfe70347f7c82",
                 "shasum": ""
             },
             "require": {
@@ -4180,22 +4246,22 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/php-generator/issues",
-                "source": "https://github.com/nette/php-generator/tree/v3.6.4"
+                "source": "https://github.com/nette/php-generator/tree/v3.6.5"
             },
-            "time": "2021-10-15T10:28:31+00:00"
+            "time": "2021-11-24T16:23:44+00:00"
         },
         {
             "name": "nette/utils",
-            "version": "v3.2.5",
+            "version": "v3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/utils.git",
-                "reference": "9cd80396ca58d7969ab44fc7afcf03624dfa526e"
+                "reference": "2f261e55bd6a12057442045bf2c249806abc1d02"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/utils/zipball/9cd80396ca58d7969ab44fc7afcf03624dfa526e",
-                "reference": "9cd80396ca58d7969ab44fc7afcf03624dfa526e",
+                "url": "https://api.github.com/repos/nette/utils/zipball/2f261e55bd6a12057442045bf2c249806abc1d02",
+                "reference": "2f261e55bd6a12057442045bf2c249806abc1d02",
                 "shasum": ""
             },
             "require": {
@@ -4206,7 +4272,7 @@
             },
             "require-dev": {
                 "nette/tester": "~2.0",
-                "phpstan/phpstan": "^0.12",
+                "phpstan/phpstan": "^1.0",
                 "tracy/tracy": "^2.3"
             },
             "suggest": {
@@ -4265,9 +4331,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/utils/issues",
-                "source": "https://github.com/nette/utils/tree/v3.2.5"
+                "source": "https://github.com/nette/utils/tree/v3.2.6"
             },
-            "time": "2021-09-20T10:50:11+00:00"
+            "time": "2021-11-24T15:47:23+00:00"
         },
         {
             "name": "nochso/html-compress-twig",
@@ -6922,16 +6988,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v2.14.7",
+            "version": "v2.14.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "8e202327ee1ed863629de9b18a5ec70ac614d88f"
+                "reference": "06b450a2326aa879faa2061ff72fe1588b3ab043"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/8e202327ee1ed863629de9b18a5ec70ac614d88f",
-                "reference": "8e202327ee1ed863629de9b18a5ec70ac614d88f",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/06b450a2326aa879faa2061ff72fe1588b3ab043",
+                "reference": "06b450a2326aa879faa2061ff72fe1588b3ab043",
                 "shasum": ""
             },
             "require": {
@@ -6985,7 +7051,7 @@
             ],
             "support": {
                 "issues": "https://github.com/twigphp/Twig/issues",
-                "source": "https://github.com/twigphp/Twig/tree/v2.14.7"
+                "source": "https://github.com/twigphp/Twig/tree/v2.14.8"
             },
             "funding": [
                 {
@@ -6997,7 +7063,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-09-17T08:39:54+00:00"
+            "time": "2021-11-25T13:38:06+00:00"
         },
         {
             "name": "upstatement/routes",
@@ -8999,12 +9065,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "3c18e868d2e33447e52c8bedef51e51c2c368ee2"
+                "reference": "6f99479932347855a56d07958f3ac52e8261dda3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/3c18e868d2e33447e52c8bedef51e51c2c368ee2",
-                "reference": "3c18e868d2e33447e52c8bedef51e51c2c368ee2",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/6f99479932347855a56d07958f3ac52e8261dda3",
+                "reference": "6f99479932347855a56d07958f3ac52e8261dda3",
                 "shasum": ""
             },
             "conflict": {
@@ -9236,8 +9302,8 @@
                 "scheb/two-factor-bundle": ">=0,<3.26|>=4,<4.11",
                 "sensiolabs/connect": "<4.2.3",
                 "serluck/phpwhois": "<=4.2.6",
-                "shopware/core": "<=6.4.3",
-                "shopware/platform": "<=6.4.3",
+                "shopware/core": "<=6.4.6",
+                "shopware/platform": "<=6.4.6",
                 "shopware/production": "<=6.3.5.2",
                 "shopware/shopware": "<5.7.6",
                 "showdoc/showdoc": "<=2.9.12",
@@ -9287,7 +9353,7 @@
                 "symfony/form": ">=2.3,<2.3.35|>=2.4,<2.6.12|>=2.7,<2.7.50|>=2.8,<2.8.49|>=3,<3.4.20|>=4,<4.0.15|>=4.1,<4.1.9|>=4.2,<4.2.1",
                 "symfony/framework-bundle": ">=2,<2.3.18|>=2.4,<2.4.8|>=2.5,<2.5.2|>=2.7,<2.7.51|>=2.8,<2.8.50|>=3,<3.4.26|>=4,<4.1.12|>=4.2,<4.2.7",
                 "symfony/http-foundation": ">=2,<2.8.52|>=3,<3.4.35|>=4,<4.2.12|>=4.3,<4.3.8|>=4.4,<4.4.7|>=5,<5.0.7",
-                "symfony/http-kernel": ">=2,<2.8.52|>=3,<3.4.35|>=4,<4.2.12|>=4.3,<4.4.13|>=5,<5.1.5",
+                "symfony/http-kernel": ">=2,<2.8.52|>=3,<3.4.35|>=4,<4.2.12|>=4.3,<4.4.13|>=5,<5.1.5|>=5.2,<5.3.12",
                 "symfony/intl": ">=2.7,<2.7.38|>=2.8,<2.8.31|>=3,<3.2.14|>=3.3,<3.3.13",
                 "symfony/maker-bundle": ">=1.27,<1.29.2|>=1.30,<1.31.1",
                 "symfony/mime": ">=4.3,<4.3.8",
@@ -9297,13 +9363,13 @@
                 "symfony/proxy-manager-bridge": ">=2.7,<2.7.51|>=2.8,<2.8.50|>=3,<3.4.26|>=4,<4.1.12|>=4.2,<4.2.7",
                 "symfony/routing": ">=2,<2.0.19",
                 "symfony/security": ">=2,<2.7.51|>=2.8,<3.4.49|>=4,<4.4.24|>=5,<5.2.8",
-                "symfony/security-bundle": ">=2,<2.7.48|>=2.8,<2.8.41|>=3,<3.3.17|>=3.4,<3.4.11|>=4,<4.0.11",
+                "symfony/security-bundle": ">=2,<2.7.48|>=2.8,<2.8.41|>=3,<3.3.17|>=3.4,<3.4.11|>=4,<4.0.11|>=5.3,<5.3.12",
                 "symfony/security-core": ">=2.4,<2.6.13|>=2.7,<2.7.9|>=2.7.30,<2.7.32|>=2.8,<3.4.49|>=4,<4.4.24|>=5,<5.2.9",
                 "symfony/security-csrf": ">=2.4,<2.7.48|>=2.8,<2.8.41|>=3,<3.3.17|>=3.4,<3.4.11|>=4,<4.0.11",
                 "symfony/security-guard": ">=2.8,<3.4.48|>=4,<4.4.23|>=5,<5.2.8",
                 "symfony/security-http": ">=2.3,<2.3.41|>=2.4,<2.7.51|>=2.8,<3.4.48|>=4,<4.4.23|>=5,<5.2.8|>=5.3,<5.3.2",
-                "symfony/serializer": ">=2,<2.0.11",
-                "symfony/symfony": ">=2,<3.4.49|>=4,<4.4.24|>=5,<5.2.9|>=5.3,<5.3.2",
+                "symfony/serializer": ">=2,<2.0.11|>=4.1,<4.4.35|>=5,<5.3.12",
+                "symfony/symfony": ">=2,<3.4.49|>=4,<4.4.35|>=5,<5.3.12",
                 "symfony/translation": ">=2,<2.0.17",
                 "symfony/validator": ">=2,<2.0.24|>=2.1,<2.1.12|>=2.2,<2.2.5|>=2.3,<2.3.3",
                 "symfony/var-exporter": ">=4.2,<4.2.12|>=4.3,<4.3.8",
@@ -9415,7 +9481,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-11-23T19:10:30+00:00"
+            "time": "2021-11-24T20:15:37+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -10270,7 +10336,6 @@
                     "type": "github"
                 }
             ],
-            "abandoned": true,
             "time": "2020-09-28T06:45:17+00:00"
         },
         {

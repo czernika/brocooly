@@ -13,7 +13,7 @@ WordPress starter boilerplate with an improved folder structure (by [Bedrock](ht
 ## Requirements
 
 1. [Composer](https://getcomposer.org/)
-2. PHP version 7.4 or greater
+2. PHP version 8.0 or greater
 3. [Node.js](https://nodejs.org/)
 
 ## Getting Started
@@ -52,6 +52,5 @@ See [here](https://czernika.gitbook.io/brocooly/). **Work in progress**
 
 1. During installation process you may see **WordPress database error: Table doesn't exist** error. It is appears as database is not set but you're already connected to it with `.env` file credentials.
 2. Fatal error with `sqlite3` PHP module. No PHP downgrade allowed so the only option is to disable SQLite3 extension.
-3. First time login - may not redirect to admin-panel although successfully being authenticated.
+3. First time login by 'wp-admin' - may not redirect to admin-panel although successfully being authenticated. If login by 'wp-login.php' - no problem.
 4. Errors within `functions.php` bypassing maintenance mode
-5. TinyMCE Editor may not be initialized. Init it by `wp_enqueue_editor()` on `admin_enqueue_scripts`

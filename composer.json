@@ -55,7 +55,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Theme\\": "web/app/themes/brocooly/src"
+            "Theme\\": "web/app/themes/brocooly/src",
+            "Databases\\": "databases"
         },
         "files": [
             "web/app/themes/brocooly/src/helpers.php"
