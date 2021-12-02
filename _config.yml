@@ -1,1 +1,6 @@
 theme: jekyll-theme-cayman
+---
+layout: routing
+title: "PAGE TITLE"
+permalink: /routing/
+---
