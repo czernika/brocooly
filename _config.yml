@@ -1,5 +1,8 @@
 theme: jekyll-theme-cayman
 ---
+layout: post
+title: Blogging Like a Hacker
+---
 layout: routing
 title: "PAGE TITLE"
 permalink: /routing/
