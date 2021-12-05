@@ -40,10 +40,10 @@ foreach ( $bootstrappers as $file ) {
  * --------------------------------------------------------------------------
  *
  * This file requires to be included inside of functions.php.
- * Otherwise POST routes are 'invisible'.
+ * Otherwise POST and AJAX routes are 'invisible'.
  * FIXME
  *
- * @since 0.18.0
+ * @since 0.23.0
  */
 File::requireOnce( BROCOOLY_THEME_PATH . 'routes/ajax.php' );
 RequestHandler::handleAjaxRequest();

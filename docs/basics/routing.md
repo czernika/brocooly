@@ -211,11 +211,11 @@ but the second one shorter while first is more universal - as being said **ONLY*
 
 ### Post Routing
 
-All routes must be defined not inside `routes/web.php` but `routes/ajax.php`.
+POST routing is a different other than GET - as it is not about rendering content but handling the requests. This route is used mostly for submission forms handling like create post, send message etc.
 
-POST routing is a different other than GET - as it is not about rendering content but handling the requests. This route is used for Submission Forms handling
+!> All routes must be defined not inside `routes/web.php` but `routes/ajax.php`.
 
-Syntax is same but first parameter is actually action name for a `handler` function inside `twig` template as an `action` attribute inside form. Sounds complicated? So here is an example
+Syntax is same as for GET but first parameter is actually action name for a `handler` function inside `twig` template as an `action` attribute inside form. Sounds complicated? So here is an example
 
 ```php
 Route::post( 'actionName', /** callback **/ );
@@ -232,19 +232,21 @@ or
     <input type="hidden" name="actionName">
 ```
 
-On a form submission callback function will be fired accordingly to its action name. The logic inside handler method is all up to you, but it should end in a redirect back or for a specific page.
+`handler()` function is just echoing path to `admin-post.php` file with `actionName` as `action` - nothing special. On a form submission callback function will be fired accordingly to its action name. The logic inside handler method is all up to you, but it should end in a redirect or rendering extra content.
+
+This route basically registering `add_action( 'admin_post_actionName', /** callback **/ )` and `add_action( 'admin_post_nopriv_actionName', /** callback **/ )` hooks.
 
 ### AJAX Routing
 
-AJAX routing is very similar to POST but more complex compare to others as it involves not only PHP script but Javascript also.
+AJAX routing is very similar to POST but more complex as it involves not only PHP script but Javascript also.
 
-First of all routes must be defined not inside `routes/web.php` but `routes/ajax.php`. Second as a first param this requires action name which you should pass with Javascript data inside your AJAX request. Inside callback it should end with `wp_die()`.
+First of all routes must be defined not inside `routes/web.php` but `routes/ajax.php` as for POST routes. Second as a first param this requires action name which you should pass with Javascript data inside your AJAX request named `action`. Inside callback it should ends with `wp_die()` WordPress function.
 
 ```php
 Route::ajax( 'actionName', /** callback **/ );
 ```
 
-As a helper there is a `AjaxController` class present - it may be extended by your own controller. In this case it is better to call `index` method as a callback but handle logic inside protected `handle()` method. This way `wp_die()` will be handled by parent controller
+As a helper there is an `AjaxController` class present - it may be extended by your own controller. In this case it is better to call `index()` method as a callback inside `Route` but handle logic within protected `handle()` method. This way `wp_die()` will be handled by parent controller
 
 ```php
 Route::ajax( 'actionName', [ PostAjaxController::class, 'index' ] );
@@ -261,6 +263,6 @@ class PostAjaxController extends AjaxController
 }
 ```
 
-Under the hood this work like `add_action( 'wp_ajax_actionName', /** callback **/ )` and `add_action( 'wp_ajax_nopriv_actionName', /** callback **/ )`
+Under the hood this work like `add_action( 'wp_ajax_actionName', /** callback **/ )` and `add_action( 'wp_ajax_nopriv_actionName', /** callback **/ )`.
 
-!> There is no separation currently between this two hooks in a version 0.22
+!> Currently there is no separation currently between private and public hooks for both POST and AJAX. If you wish to separate it you may do it in an old fashion way via Hooks.
