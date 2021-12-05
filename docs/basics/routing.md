@@ -234,7 +234,7 @@ or
 
 `handler()` function is just echoing path to `admin-post.php` file with `actionName` as `action` - nothing special. On a form submission callback function will be fired accordingly to its action name. The logic inside handler method is all up to you, but it should end in a redirect or rendering extra content.
 
-This route basically registering `add_action( 'admin_post_actionName', /** callback **/ )` and `add_action( 'admin_post_nopriv_actionName', /** callback **/ )` hooks.
+This route basically registering `add_action( 'admin_post_actionName', /** callback **/ )`.
 
 ### AJAX Routing
 
@@ -263,6 +263,11 @@ class PostAjaxController extends AjaxController
 }
 ```
 
-Under the hood this work like `add_action( 'wp_ajax_actionName', /** callback **/ )` and `add_action( 'wp_ajax_nopriv_actionName', /** callback **/ )`.
+Under the hood this work like `add_action( 'wp_ajax_actionName', /** callback **/ )`.
 
-!> Currently there is no separation currently between private and public hooks for both POST and AJAX. If you wish to separate it you may do it in an old fashion way via Hooks.
+If you want to allow unauthorized users be available to use these methods, chain route with `noPriv()` method, so both actions took place. This applied to POST routes also.
+
+```php
+Route::post( 'actionName', [ PostController::class, 'index' ] )->noPriv();
+Route::ajax( 'actionName', [ PostAjaxController::class, 'index' ] )->noPriv();
+```
