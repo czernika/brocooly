@@ -211,6 +211,8 @@ but the second one shorter while first is more universal - as being said **ONLY*
 
 ### Post Routing
 
+All routes must be defined not inside `routes/web.php` but `routes/ajax.php`.
+
 POST routing is a different other than GET - as it is not about rendering content but handling the requests. This route is used for Submission Forms handling
 
 Syntax is same but first parameter is actually action name for a `handler` function inside `twig` template as an `action` attribute inside form. Sounds complicated? So here is an example
@@ -223,11 +225,18 @@ Route::post( 'actionName', /** callback **/ );
 <form action="{{ handler( 'actionName' ) }}">
 ```
 
+or
+
+```twig
+<form action="{{ site.site_url ~ 'admin-post.php' }}">
+    <input type="hidden" name="actionName">
+```
+
 On a form submission callback function will be fired accordingly to its action name. The logic inside handler method is all up to you, but it should end in a redirect back or for a specific page.
 
 ### AJAX Routing
 
-AJAX routing complex compare to others as it involves not only PHP script but Javascript also.
+AJAX routing is very similar to POST but more complex compare to others as it involves not only PHP script but Javascript also.
 
 First of all routes must be defined not inside `routes/web.php` but `routes/ajax.php`. Second as a first param this requires action name which you should pass with Javascript data inside your AJAX request. Inside callback it should end with `wp_die()`.
 
