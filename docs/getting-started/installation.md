@@ -29,4 +29,4 @@ You will starter screen
 
 ![Starter screen](/_media/starter-screen.png)
 
-That's it. Happy publishing!
+Login into admin-panel with `wp/wp-login.php` amd that's it. Happy publishing!

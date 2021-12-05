@@ -7,4 +7,5 @@
 
 * The Basics
     * [Routing](basics/routing.md)
+    * [Middleware](basics/middleware.md)
     * [Controllers](basics/controllers.md)

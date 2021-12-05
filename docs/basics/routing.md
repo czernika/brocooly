@@ -265,9 +265,40 @@ class PostAjaxController extends AjaxController
 
 Under the hood this work like `add_action( 'wp_ajax_actionName', /** callback **/ )`.
 
+## Advanced
+
+### No Priv Route
+
 If you want to allow unauthorized users be available to use these methods, chain route with `noPriv()` method, so both actions took place. This applied to POST routes also.
 
 ```php
 Route::post( 'actionName', [ PostController::class, 'index' ] )->noPriv();
 Route::ajax( 'actionName', [ PostAjaxController::class, 'index' ] )->noPriv();
 ```
+
+### Middleware
+
+You may specify [Middleware](basics/middleware.md) to your route also. Just chain it with `middleware()` method which accepts string or array of middleware classes 
+
+```php
+Route::get( 'is_single', [ PostController::class, 'index' ] )->middleware( UserLoggedIn::class );
+```
+
+```php
+
+namespace Theme\Http\Middleware;
+
+use Brocooly\Support\Facades\Redirect;
+use Brocooly\Http\Middleware\AbstractMiddleware;
+
+class UserLoggedIn extends AbstractMiddleware
+{
+	public function handle() {
+		if ( ! is_user_logged_in() ) {
+			return Redirect::home();
+		}
+	}
+}
+```
+
+For example in this case we allow to see single posts only for logged in users.
