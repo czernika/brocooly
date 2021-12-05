@@ -54,15 +54,4 @@ return [
 		ThemeServiceProvider::class,
 	],
 
-	/**
-	 * -------------------------------------------------------------------------
-	 * Middleware
-	 * -------------------------------------------------------------------------
-	 *
-	 * Custom middleware. Used to pre-handle request
-	 *
-	 * @since 0.8.0
-	 */
-	'middleware' => [],
-
 ];

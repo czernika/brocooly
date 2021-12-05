@@ -25,8 +25,14 @@ This will create database named `DB_NAME` with `DB_PREFIX` prefixes for all tabl
 
 Next go to `WP_HOME` address and finish the installation of WordPress or do it with `wp core install ...` command.
 
-You will starter screen
+You will see starter screen
 
 ![Starter screen](/_media/starter-screen.png)
 
-Login into admin-panel with `wp/wp-login.php` amd that's it. Happy publishing!
+To start development server at `localhost:3000` run
+
+```bash
+npm run watch
+```
+
+Login into admin-panel with `wp/wp-login.php` and that's it. Happy publishing!

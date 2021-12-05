@@ -1,6 +1,6 @@
 # Routing
 
-All routes configuration files are inside `routes` folder where `web.php` is used to handle simple GET and POST requests, while `ajax.php` is for [WordPress AJAX requests](https://codex.wordpress.org/AJAX_in_Plugins) via `wp_ajax_` hooks
+All routes configuration files are inside `routes` folder where `web.php` is used to handle simple GET requests, while `ajax.php` is for [WordPress AJAX requests](https://codex.wordpress.org/AJAX_in_Plugins) via `wp_ajax_` hooks and POST requests.
 
 ## Basics
 
@@ -22,7 +22,7 @@ But what does condition actually mean?
 
 Most of the routing systems are close to URI-based routing, like if you're in a `http://site.com/hello-world` page, the route would be 'hello-world'. That is not how Brocooly routing work.
 
-WordPress has it's own routing dynamic system (as it CMS not framework) based on root templates. For example, any post will be rendered by `single.php` or `singular.php` or `index.php`. Even more, WordPress template hierarchy provides much more options and flexibility. So there is no extra need to ruin it and even more - Brocooly routing system cares about it. It will handle same conditions as a first param. 
+WordPress has it's own routing dynamic system (as it CMS not framework) based on root templates. For example, any post will be rendered by `single.php` or `singular.php` or `index.php`. Even more, WordPress template hierarchy provides much more options and flexibility. So there is no need to ruin it - Brocooly routing system cares about it. It will handle same conditions as a first param. 
 
 ```php
 Route::get( 'is_single', /** callback **/ );
@@ -73,7 +73,7 @@ Here we will see 'Hello Page' not 'Hello Singular' - as it is higher. Not in Wor
 
 ### Callback
 
-Callback - any callable simple as that. But at the same time there few rules and extra examples you may find useful.
+Callback - any callable simple as that. But at the same time there are few rules and extra examples you may find useful.
 
 As you mentioned before you may pass as a callback any function or function name as a string and it's will be fine. Brocooly prefers MVC and we're handling callbacks inside [Controllers](basics/controllers.md) and its methods.
 
@@ -198,7 +198,7 @@ The syntax is straight as it is - render `content/404.twig` template on `is_404(
 
 ### Conditional Routing
 
-As you may noticed there is specific syntax in a table bellow for `Route::$condition( $callback )` - what does that mean? Basically as Brocooly grows it have been noticed that most common used case will be `is_page`, `is_page`, `is_front_page` - those who doesn't require any param and they are simple as that. So `get-is_page` syntax became kinda irrelevant and this is where the story begins. 
+As you may noticed there is specific syntax in a table bellow for `Route::$condition( $callback )` - what does that mean? Basically as Brocooly grows it has been noticed that most common used case will be `is_page`, `is_page`, `is_front_page` - those who doesn't require any param and they are simple as that. So `get-is_page` syntax became kinda irrelevant and this is where the story begins. 
 
 If you pass WordPress conditional as a method name in a camelCase or snake_case it will do the trick. So basically next two lines are do the same
 
@@ -223,12 +223,10 @@ Route::post( 'actionName', /** callback **/ );
 
 ```twig
 <form action="{{ handler( 'actionName' ) }}">
-```
 
 or
 
-```twig
-<form action="{{ site.site_url ~ 'admin-post.php' }}">
+<form action="{{ site.site_url ~ '/admin-post.php' }}">
     <input type="hidden" name="actionName">
 ```
 
