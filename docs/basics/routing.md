@@ -108,7 +108,8 @@ and your controller would be like
 ```php
 class PostController
 {
-    public function __invoke() {
+    public function __invoke()
+    {
         // render the content
     }
 }
@@ -131,7 +132,8 @@ That being said how to render the content? Well simple enough it is just a plain
 ```php
 class PostController
 {
-    public function index() {
+    public function index()
+    {
         ?>
             <h1>Posts</h1>
             <ul>
@@ -147,7 +149,8 @@ Does it have any sense? Nope. So this where twig template engine comes in help. 
 ```php
 class PostController
 {
-    public function index() {
+    public function index()
+    {
         $foo = 'bar';
         return view( 'content/post/index.twig', [ 'context_foo' => $foo ] );
     }
@@ -255,7 +258,8 @@ use Theme\Http\Controllers\AjaxController;
 
 class PostAjaxController extends AjaxController
 {
-    protected function handle() {
+    protected function handle()
+    {
         // AJAX request logic
     }
 }
@@ -291,7 +295,8 @@ use Brocooly\Http\Middleware\AbstractMiddleware;
 
 class UserLoggedIn extends AbstractMiddleware
 {
-	public function handle() {
+	public function handle()
+    {
 		if ( ! is_user_logged_in() ) {
 			return Redirect::home();
 		}

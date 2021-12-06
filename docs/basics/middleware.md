@@ -19,16 +19,6 @@ php broccoli new:middleware MyMiddleware/IsIhar
 Inside `src` folder you will find `MyMiddleware` folder with `IsIhar.php` file inside with generated data:
 
 ```php
-<?php
-
-/**
- * IsIhar - custom theme middleware
- *
- * @package Brocooly
- */
-
-declare(strict_types=1);
-
 namespace Theme\MyMiddleware;
 
 use Brocooly\Http\Middleware\AbstractMiddleware;
@@ -43,6 +33,18 @@ class IsIhar extends AbstractMiddleware
 ```
 
 where `Brocooly\Http\Middleware\AbstractMiddleware` is just abstract parent and **doesn't** required to be extended. For now.
+
+Inside `handle()` method provide some action or conditions to pass
+
+```php
+public function handle()
+{
+    $user = wp_get_current_user();
+    if ( 'Ihar' !== $user->user_firstname ) {
+        echo 'This is not Ihar';
+    }
+}
+```
 
 ### Base Middleware
 
