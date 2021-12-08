@@ -10,11 +10,11 @@
     * [Middleware](basics/middleware.md)
     * [Controllers](basics/controllers.md)
     * [Views](basics/views.md)
-    * [Request Validation](basics/request.md)
-    * [Models](basics/models.md)
     * [Site Options and Customizer](basics/customizer.md)
     * [Hooks](basics/hooks.md)
+    * [Models](basics/models.md)
     * [Mailable](basics/mailable.md)
+    * [Request Validation](basics/request.md)
 
 * Front-End
     * [Basic Concepts](front/basic.md)
