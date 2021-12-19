@@ -15,8 +15,6 @@ declare(strict_types=1);
 namespace Theme\Http;
 
 use Brocooly\Http\Request\WPRequest;
-use Whoops\Handler\PlainTextHandler;
-use Whoops\Handler\PrettyPageHandler;
 
 use function DI\create;
 
@@ -71,18 +69,6 @@ class Brocooly
 			 * @see https://php-di.org/doc/php-definitions.html#wildcards
 			 */
 			'Theme\Containers\*\Contracts\Actions\*ActionContract' => create( 'Theme\Containers\*\Actions\*Action' ),
-
-			/**
-			 * --------------------------------------------------------------------------
-			 * Set debug handler
-			 * --------------------------------------------------------------------------
-			 *
-			 * PrettyPageHandler may cause some problems with `sqlite3` PHP extension.
-			 * Alternatively you may disable extension itself (recommended).
-			 *
-			 * @since 0.8.9
-			 */
-			'handler'         => create( PrettyPageHandler::class ),
 
 			/**
 			 * --------------------------------------------------------------------------
