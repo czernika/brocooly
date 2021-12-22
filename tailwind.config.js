@@ -6,16 +6,11 @@ const {
 const themeFolder = `web/app/themes/${themeName}`;
 
 module.exports = {
-	mode: 'jit',
 
-	darkMode: false,
-
-	purge: {
-		content: [
-			`${themeFolder}/resources/views/**/*.twig`,
-			`${themeFolder}/resources/assets/js/**/*.js`,
-		],
-	},
+	content: [
+		`${themeFolder}/resources/views/**/*.twig`,
+		`${themeFolder}/resources/assets/js/**/*.js`,
+	],
 
 	theme: {
 		screens: {

@@ -1,0 +1,49 @@
+<mjml>
+
+	<mj-head>
+		<mj-preview>
+			{{ __('Greetings!', 'brocooly') }}
+		</mj-preview>
+	</mj-head>
+
+	<mj-body>
+
+		<mj-section background-color="#ffffff">
+			<mj-column>
+
+				<mj-image width="60px" src="{{ asset('static/brocooly.png') }}" alt="{{ site.name }}" href="{{ site.link }}"></mj-image>
+
+			</mj-column>
+		</mj-section>
+
+		<mj-section background-color="#ececec">
+			<mj-column>
+				<mj-text align="center" font-size="20px">
+					{{ __('Brocooly Framework', 'brocooly') }}
+				</mj-text>
+			</mj-column>
+		</mj-section>
+
+		<mj-section background-color="#ffffff">
+			<mj-column>
+				<mj-text align="center">
+					<h1>
+						{{ __('Hello World', 'brocooly') }}
+					</h1>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo consequatur facere consectetur corporis sequi rem ab animi laboriosam, minima enim aspernatur natus aut ratione nihil voluptatum nulla dignissimos earum. Laborum?
+					</p>
+				</mj-text>
+			</mj-column>
+		</mj-section>
+
+		<mj-section background-color="#56b30d">
+			<mj-column>
+				<mj-text align="center" font-size="12px" color="#ffffff">
+					{{ __('Copyrights', 'brocooly') }}
+				</mj-text>
+			</mj-column>
+		</mj-section>
+
+	</mj-body>
+</mjml>

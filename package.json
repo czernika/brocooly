@@ -90,6 +90,7 @@
     "focus-visible": "^5.2.0",
     "hamburgers": "github:czernika/hamburgers",
     "lozad": "^1.16.0",
-    "tailwindcss": "^2.2.2"
+    "mjml": "^4.11.0",
+    "tailwindcss": "^3.0.7"
   }
 }
