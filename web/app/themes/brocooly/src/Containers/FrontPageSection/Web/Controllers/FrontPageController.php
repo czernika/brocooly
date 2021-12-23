@@ -18,6 +18,6 @@ class FrontPageController extends Controller
 
 	public function __invoke() {
 		$hello = $this->mainScreen->getHelloWorld();
-		return view( 'content/front-page.twig', compact( 'hello' ) );
+		return view( $this->render( 'pages.front' ), compact( 'hello' ) );
 	}
 }

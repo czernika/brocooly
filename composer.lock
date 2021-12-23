@@ -329,7 +329,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/czernika/brocooly-core.git",
-                "reference": "53ccd0f07b10803d87d3f2ef658ced2e3d83dd37"
+                "reference": "8916dd2f98512e4666e40b9ccdd88998d5c2f410"
             },
             "require": {
                 "aristath/kirki": "v4.0-beta.3",
@@ -381,7 +381,7 @@
                 }
             ],
             "description": "Core engine for Brocooly Framework",
-            "time": "2021-12-19T10:47:43+00:00"
+            "time": "2021-12-23T13:18:58+00:00"
         },
         {
             "name": "djboris88/timber-commented-include",
@@ -1182,16 +1182,16 @@
         },
         {
             "name": "illuminate/collections",
-            "version": "v8.76.2",
+            "version": "v8.77.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/collections.git",
-                "reference": "f7dc6269a1d773f1d7a2a71034f32d2b60eaac42"
+                "reference": "bafdbd033a717aed94e4d023512f2c9eb3e8cd77"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/collections/zipball/f7dc6269a1d773f1d7a2a71034f32d2b60eaac42",
-                "reference": "f7dc6269a1d773f1d7a2a71034f32d2b60eaac42",
+                "url": "https://api.github.com/repos/illuminate/collections/zipball/bafdbd033a717aed94e4d023512f2c9eb3e8cd77",
+                "reference": "bafdbd033a717aed94e4d023512f2c9eb3e8cd77",
                 "shasum": ""
             },
             "require": {
@@ -1232,11 +1232,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-12-15T13:57:47+00:00"
+            "time": "2021-12-16T15:00:27+00:00"
         },
         {
             "name": "illuminate/container",
-            "version": "v8.76.2",
+            "version": "v8.77.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
@@ -1287,7 +1287,7 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v8.76.2",
+            "version": "v8.77.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -1335,16 +1335,16 @@
         },
         {
             "name": "illuminate/filesystem",
-            "version": "v8.76.2",
+            "version": "v8.77.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
-                "reference": "b8f4b43a65d0e93312d8599bc4e86e21f68f7ccf"
+                "reference": "48f9d61b5da49f0fa8d9f28db8ae8c0d89e367a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/filesystem/zipball/b8f4b43a65d0e93312d8599bc4e86e21f68f7ccf",
-                "reference": "b8f4b43a65d0e93312d8599bc4e86e21f68f7ccf",
+                "url": "https://api.github.com/repos/illuminate/filesystem/zipball/48f9d61b5da49f0fa8d9f28db8ae8c0d89e367a6",
+                "reference": "48f9d61b5da49f0fa8d9f28db8ae8c0d89e367a6",
                 "shasum": ""
             },
             "require": {
@@ -1393,11 +1393,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-11-30T14:13:40+00:00"
+            "time": "2021-12-20T20:07:00+00:00"
         },
         {
             "name": "illuminate/macroable",
-            "version": "v8.76.2",
+            "version": "v8.77.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/macroable.git",
@@ -1443,16 +1443,16 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v8.76.2",
+            "version": "v8.77.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "9429d41f950d3461910fd51a4df90b2ac93a9f3a"
+                "reference": "789b5c9a28884bc6b07841574cc86abdec7c5f68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/9429d41f950d3461910fd51a4df90b2ac93a9f3a",
-                "reference": "9429d41f950d3461910fd51a4df90b2ac93a9f3a",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/789b5c9a28884bc6b07841574cc86abdec7c5f68",
+                "reference": "789b5c9a28884bc6b07841574cc86abdec7c5f68",
                 "shasum": ""
             },
             "require": {
@@ -1507,11 +1507,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-12-14T16:49:40+00:00"
+            "time": "2021-12-21T14:59:41+00:00"
         },
         {
             "name": "illuminate/translation",
-            "version": "v8.76.2",
+            "version": "v8.77.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/translation.git",
@@ -1563,16 +1563,16 @@
         },
         {
             "name": "illuminate/validation",
-            "version": "v8.76.2",
+            "version": "v8.77.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/validation.git",
-                "reference": "cf3dbf8f01b8edd151a223ab4a7e12ac62b9c112"
+                "reference": "e5530f7c88d620848205cb17afc105520ac37be1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/validation/zipball/cf3dbf8f01b8edd151a223ab4a7e12ac62b9c112",
-                "reference": "cf3dbf8f01b8edd151a223ab4a7e12ac62b9c112",
+                "url": "https://api.github.com/repos/illuminate/validation/zipball/e5530f7c88d620848205cb17afc105520ac37be1",
+                "reference": "e5530f7c88d620848205cb17afc105520ac37be1",
                 "shasum": ""
             },
             "require": {
@@ -1619,7 +1619,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-12-14T14:38:22+00:00"
+            "time": "2021-12-20T15:12:15+00:00"
         },
         {
             "name": "johnbillion/extended-cpts",
@@ -9076,12 +9076,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "fff53639bf1fa25f311c3e54932ac8c827f9a343"
+                "reference": "31d9d9e2977ae7d796d82271be09e46f4bdf41b3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/fff53639bf1fa25f311c3e54932ac8c827f9a343",
-                "reference": "fff53639bf1fa25f311c3e54932ac8c827f9a343",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/31d9d9e2977ae7d796d82271be09e46f4bdf41b3",
+                "reference": "31d9d9e2977ae7d796d82271be09e46f4bdf41b3",
                 "shasum": ""
             },
             "conflict": {
@@ -9324,7 +9324,7 @@
                 "shopware/production": "<=6.3.5.2",
                 "shopware/shopware": "<5.7.6",
                 "showdoc/showdoc": "<=2.9.13",
-                "silverstripe/admin": "<4.8.1",
+                "silverstripe/admin": ">=1,<1.8.1",
                 "silverstripe/assets": ">=1,<1.4.7|>=1.5,<1.5.2",
                 "silverstripe/cms": "<4.3.6|>=4.4,<4.4.4",
                 "silverstripe/comments": ">=1.3,<1.9.99|>=2,<2.9.99|>=3,<3.1.1",
@@ -9500,7 +9500,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-12-17T20:13:17+00:00"
+            "time": "2021-12-22T21:13:38+00:00"
         },
         {
             "name": "sebastian/cli-parser",

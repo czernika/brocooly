@@ -86,13 +86,13 @@ If for some reason you pass incorrect template name or just forgot to do it Broc
 
 Timber stores next default context which will be available in every template. Unless you specified twig's `only` within `{% include 'template.twig' with { data } only %}`
 
-| Data | Condition | Definition |
-| ------ | ------ | ------ |
-| http_host | globally |  |
-| wp_title | globally | site title |
-| body_class | globally | body classes |
-| site | globally | site information |
-| request | globally | GET and POST request data |
-| user | if user authorized - otherwise will return `false` | current user object |
-| theme | globally | theme object |
-| posts | globally | default PostQuery |
+| Data       | Condition                                          | Definition                |
+|------------|----------------------------------------------------|---------------------------|
+| http_host  | globally                                           |                           |
+| wp_title   | globally                                           | site title                |
+| body_class | globally                                           | body classes              |
+| site       | globally                                           | site information          |
+| request    | globally                                           | GET and POST request data |
+| user       | if user authorized - otherwise will return `false` | current user object       |
+| theme      | globally                                           | theme object              |
+| posts      | globally                                           | default PostQuery         |

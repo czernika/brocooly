@@ -46,7 +46,11 @@ foreach ( $bootstrappers as $file ) {
  * @since 0.23.0
  */
 File::requireOnce( BROCOOLY_THEME_PATH . 'routes/ajax.php' );
-RequestHandler::handleAjaxRequest();
+
+if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
+	RequestHandler::handleAjaxRequest();
+}
+
 RequestHandler::handlePostRequest();
 
 /**
