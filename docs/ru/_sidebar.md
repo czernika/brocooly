@@ -1,4 +1,4 @@
-* [О фреймворке](ru//)
+* [О фреймворке](ru/)
 
 * Начало работы
     * [Минимальные требования](ru/getting-started/requirements.md)
@@ -40,3 +40,6 @@
     * [Оптимизация](ru/advanced/optimization.md)
     * [Деплой проекта](ru/advanced/deployment.md)
     * [Интеграция с плагинами](ru/advanced/integration.md)
+
+* Оффтоп
+    * [Рекрутерам](ru/extra/hrs.md)

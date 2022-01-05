@@ -329,7 +329,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/czernika/brocooly-core.git",
-                "reference": "8916dd2f98512e4666e40b9ccdd88998d5c2f410"
+                "reference": "98e7997608e4ee23f6acc9bbb4172d2a525cbc1e"
             },
             "require": {
                 "aristath/kirki": "v4.0-beta.3",
@@ -381,7 +381,7 @@
                 }
             ],
             "description": "Core engine for Brocooly Framework",
-            "time": "2021-12-23T13:18:58+00:00"
+            "time": "2021-12-24T17:51:08+00:00"
         },
         {
             "name": "djboris88/timber-commented-include",
@@ -1692,16 +1692,16 @@
         },
         {
             "name": "kirki-framework/compatibility",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/compatibility.git",
-                "reference": "af735b6ffd791bd122023a45ced8ac3ae7b8d731"
+                "reference": "e3c8acaec0a4f7df3f2163bad7b353fe8bf410c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/compatibility/zipball/af735b6ffd791bd122023a45ced8ac3ae7b8d731",
-                "reference": "af735b6ffd791bd122023a45ced8ac3ae7b8d731",
+                "url": "https://api.github.com/repos/kirki-framework/compatibility/zipball/e3c8acaec0a4f7df3f2163bad7b353fe8bf410c0",
+                "reference": "e3c8acaec0a4f7df3f2163bad7b353fe8bf410c0",
                 "shasum": ""
             },
             "require": {
@@ -1734,9 +1734,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/compatibility/issues",
-                "source": "https://github.com/kirki-framework/compatibility/tree/v1.0.1"
+                "source": "https://github.com/kirki-framework/compatibility/tree/v1.0.2"
             },
-            "time": "2021-12-07T12:24:48+00:00"
+            "time": "2021-12-23T14:23:26+00:00"
         },
         {
             "name": "kirki-framework/control-base",
@@ -2890,16 +2890,16 @@
         },
         {
             "name": "kirki-framework/field",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/field.git",
-                "reference": "aa2acfe588c775328a268a4f092495df6b116773"
+                "reference": "a7fb4aa43d64902dac5231107cabde34a104bc87"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/field/zipball/aa2acfe588c775328a268a4f092495df6b116773",
-                "reference": "aa2acfe588c775328a268a4f092495df6b116773",
+                "url": "https://api.github.com/repos/kirki-framework/field/zipball/a7fb4aa43d64902dac5231107cabde34a104bc87",
+                "reference": "a7fb4aa43d64902dac5231107cabde34a104bc87",
                 "shasum": ""
             },
             "require": {
@@ -2931,9 +2931,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/field/issues",
-                "source": "https://github.com/kirki-framework/field/tree/v1.0.0"
+                "source": "https://github.com/kirki-framework/field/tree/v1.0.1"
             },
-            "time": "2021-09-20T18:48:29+00:00"
+            "time": "2021-12-23T17:55:26+00:00"
         },
         {
             "name": "kirki-framework/field-background",
