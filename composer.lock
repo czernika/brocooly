@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dbc10401b8fe8a38dee7591455ed7c8a",
+    "content-hash": "690f2c0c5e59aee17b1368d9ff73f70a",
     "packages": [
         {
             "name": "altorouter/altorouter",
@@ -68,16 +68,16 @@
         },
         {
             "name": "aristath/kirki",
-            "version": "v4.0-beta.3",
+            "version": "v4.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/kirki.git",
-                "reference": "6f38e54b797c199a06590af4c70b74b632cff61e"
+                "reference": "95e8208b1fe7dc4abce535719330ce0bfc1023c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/kirki/zipball/6f38e54b797c199a06590af4c70b74b632cff61e",
-                "reference": "6f38e54b797c199a06590af4c70b74b632cff61e",
+                "url": "https://api.github.com/repos/kirki-framework/kirki/zipball/95e8208b1fe7dc4abce535719330ce0bfc1023c7",
+                "reference": "95e8208b1fe7dc4abce535719330ce0bfc1023c7",
                 "shasum": ""
             },
             "require": {
@@ -124,7 +124,7 @@
                 "kirki-framework/module-webfonts": "*",
                 "kirki-framework/url-getter": "*",
                 "kirki-framework/util": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "require-dev": {
                 "composer/installers": "*",
@@ -144,10 +144,8 @@
             ],
             "authors": [
                 {
-                    "name": "aristath",
-                    "email": "aristath@gmail.com",
-                    "homepage": "https://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Extending the WordPress customizer",
@@ -158,7 +156,7 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/kirki/issues",
-                "source": "https://github.com/kirki-framework/kirki/tree/v4.0-beta.3"
+                "source": "https://github.com/kirki-framework/kirki/tree/v4.0.3"
             },
             "funding": [
                 {
@@ -170,7 +168,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-11-18T15:15:43+00:00"
+            "time": "2021-12-30T15:53:48+00:00"
         },
         {
             "name": "composer/installers",
@@ -329,10 +327,10 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/czernika/brocooly-core.git",
-                "reference": "98e7997608e4ee23f6acc9bbb4172d2a525cbc1e"
+                "reference": "a416b53a930cafa4c4f3b5d7fd5e5c943e0a7663"
             },
             "require": {
-                "aristath/kirki": "v4.0-beta.3",
+                "aristath/kirki": "^4.0",
                 "composer/installers": "^1.10",
                 "djboris88/timber-commented-include": "^1.1",
                 "elegantweb/sanitizer": "^1.1",
@@ -359,7 +357,9 @@
                 "webmozart/assert": "^1.10"
             },
             "require-dev": {
-                "ergebnis/composer-normalize": "^2.16"
+                "ergebnis/composer-normalize": "^2.16",
+                "squizlabs/php_codesniffer": "^3.6",
+                "wp-coding-standards/wpcs": "^2.3"
             },
             "default-branch": true,
             "type": "library",
@@ -381,7 +381,7 @@
                 }
             ],
             "description": "Core engine for Brocooly Framework",
-            "time": "2021-12-24T17:51:08+00:00"
+            "time": "2022-01-06T16:15:47+00:00"
         },
         {
             "name": "djboris88/timber-commented-include",
@@ -1182,16 +1182,16 @@
         },
         {
             "name": "illuminate/collections",
-            "version": "v8.77.1",
+            "version": "v8.78.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/collections.git",
-                "reference": "bafdbd033a717aed94e4d023512f2c9eb3e8cd77"
+                "reference": "e8c1cbd7a4cc8fb0e6a8978a55ef6d49c90bea59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/collections/zipball/bafdbd033a717aed94e4d023512f2c9eb3e8cd77",
-                "reference": "bafdbd033a717aed94e4d023512f2c9eb3e8cd77",
+                "url": "https://api.github.com/repos/illuminate/collections/zipball/e8c1cbd7a4cc8fb0e6a8978a55ef6d49c90bea59",
+                "reference": "e8c1cbd7a4cc8fb0e6a8978a55ef6d49c90bea59",
                 "shasum": ""
             },
             "require": {
@@ -1232,11 +1232,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-12-16T15:00:27+00:00"
+            "time": "2022-01-04T18:54:15+00:00"
         },
         {
             "name": "illuminate/container",
-            "version": "v8.77.1",
+            "version": "v8.78.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
@@ -1287,7 +1287,7 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v8.77.1",
+            "version": "v8.78.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -1335,16 +1335,16 @@
         },
         {
             "name": "illuminate/filesystem",
-            "version": "v8.77.1",
+            "version": "v8.78.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
-                "reference": "48f9d61b5da49f0fa8d9f28db8ae8c0d89e367a6"
+                "reference": "def8901b69cd04902de0c2752683bab5e4d121b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/filesystem/zipball/48f9d61b5da49f0fa8d9f28db8ae8c0d89e367a6",
-                "reference": "48f9d61b5da49f0fa8d9f28db8ae8c0d89e367a6",
+                "url": "https://api.github.com/repos/illuminate/filesystem/zipball/def8901b69cd04902de0c2752683bab5e4d121b5",
+                "reference": "def8901b69cd04902de0c2752683bab5e4d121b5",
                 "shasum": ""
             },
             "require": {
@@ -1393,11 +1393,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-12-20T20:07:00+00:00"
+            "time": "2022-01-05T14:40:14+00:00"
         },
         {
             "name": "illuminate/macroable",
-            "version": "v8.77.1",
+            "version": "v8.78.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/macroable.git",
@@ -1443,16 +1443,16 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v8.77.1",
+            "version": "v8.78.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "789b5c9a28884bc6b07841574cc86abdec7c5f68"
+                "reference": "0c2a4db0c60b33d30af0ae6bc2b31159d6c49361"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/789b5c9a28884bc6b07841574cc86abdec7c5f68",
-                "reference": "789b5c9a28884bc6b07841574cc86abdec7c5f68",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/0c2a4db0c60b33d30af0ae6bc2b31159d6c49361",
+                "reference": "0c2a4db0c60b33d30af0ae6bc2b31159d6c49361",
                 "shasum": ""
             },
             "require": {
@@ -1507,11 +1507,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-12-21T14:59:41+00:00"
+            "time": "2022-01-04T16:02:54+00:00"
         },
         {
             "name": "illuminate/translation",
-            "version": "v8.77.1",
+            "version": "v8.78.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/translation.git",
@@ -1563,16 +1563,16 @@
         },
         {
             "name": "illuminate/validation",
-            "version": "v8.77.1",
+            "version": "v8.78.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/validation.git",
-                "reference": "e5530f7c88d620848205cb17afc105520ac37be1"
+                "reference": "4712f28f5f57fdb2d03e0e4f58b3e236ad704381"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/validation/zipball/e5530f7c88d620848205cb17afc105520ac37be1",
-                "reference": "e5530f7c88d620848205cb17afc105520ac37be1",
+                "url": "https://api.github.com/repos/illuminate/validation/zipball/4712f28f5f57fdb2d03e0e4f58b3e236ad704381",
+                "reference": "4712f28f5f57fdb2d03e0e4f58b3e236ad704381",
                 "shasum": ""
             },
             "require": {
@@ -1619,7 +1619,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-12-20T15:12:15+00:00"
+            "time": "2021-12-22T20:12:10+00:00"
         },
         {
             "name": "johnbillion/extended-cpts",
@@ -1692,20 +1692,20 @@
         },
         {
             "name": "kirki-framework/compatibility",
-            "version": "v1.0.2",
+            "version": "v1.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/compatibility.git",
-                "reference": "e3c8acaec0a4f7df3f2163bad7b353fe8bf410c0"
+                "reference": "c8a41761a9d4312b3ed92ca2984a56ccd0b9dd19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/compatibility/zipball/e3c8acaec0a4f7df3f2163bad7b353fe8bf410c0",
-                "reference": "e3c8acaec0a4f7df3f2163bad7b353fe8bf410c0",
+                "url": "https://api.github.com/repos/kirki-framework/compatibility/zipball/c8a41761a9d4312b3ed92ca2984a56ccd0b9dd19",
+                "reference": "c8a41761a9d4312b3ed92ca2984a56ccd0b9dd19",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -1719,14 +1719,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Compatibility package for themes using the Kirki v3.x API.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org",
             "keywords": [
                 "customizer",
                 "framework",
@@ -1734,27 +1732,27 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/compatibility/issues",
-                "source": "https://github.com/kirki-framework/compatibility/tree/v1.0.2"
+                "source": "https://github.com/kirki-framework/compatibility/tree/v1.0.7"
             },
-            "time": "2021-12-23T14:23:26+00:00"
+            "time": "2022-01-04T19:16:43+00:00"
         },
         {
             "name": "kirki-framework/control-base",
-            "version": "v1.0.0",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/control-base.git",
-                "reference": "cf0d6e4f3aa5576e2a1c56d9f63caad2fa3df580"
+                "reference": "d204f596cc5b90d8945b1183ca68becfe2b7387d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/control-base/zipball/cf0d6e4f3aa5576e2a1c56d9f63caad2fa3df580",
-                "reference": "cf0d6e4f3aa5576e2a1c56d9f63caad2fa3df580",
+                "url": "https://api.github.com/repos/kirki-framework/control-base/zipball/d204f596cc5b90d8945b1183ca68becfe2b7387d",
+                "reference": "d204f596cc5b90d8945b1183ca68becfe2b7387d",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/url-getter": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -1768,14 +1766,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
-            "description": "The Base Class for other Kirki Customizer Controls.",
-            "homepage": "https://aristath.github.io/kirki",
+            "description": "The base class for other Kirki's controls.",
+            "homepage": "https://kirki.org",
             "keywords": [
                 "customizer",
                 "framework",
@@ -1783,28 +1779,28 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/control-base/issues",
-                "source": "https://github.com/kirki-framework/control-base/tree/v1.0.0"
+                "source": "https://github.com/kirki-framework/control-base/tree/v1.0.2"
             },
-            "time": "2021-10-07T04:13:38+00:00"
+            "time": "2021-12-29T13:18:01+00:00"
         },
         {
             "name": "kirki-framework/control-checkbox",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/control-checkbox.git",
-                "reference": "769f2ce5dc0eb89e12886dc6d16cf10a1c181405"
+                "reference": "ea0e0b724634df9ecce4c6536b4de2135d15620d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/control-checkbox/zipball/769f2ce5dc0eb89e12886dc6d16cf10a1c181405",
-                "reference": "769f2ce5dc0eb89e12886dc6d16cf10a1c181405",
+                "url": "https://api.github.com/repos/kirki-framework/control-checkbox/zipball/ea0e0b724634df9ecce4c6536b4de2135d15620d",
+                "reference": "ea0e0b724634df9ecce4c6536b4de2135d15620d",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/control-base": "*",
                 "kirki-framework/url-getter": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -1819,14 +1815,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Checkbox control for the Kirki Customizer framework.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org",
             "keywords": [
                 "customizer",
                 "framework",
@@ -1834,27 +1828,27 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/control-checkbox/issues",
-                "source": "https://github.com/kirki-framework/control-checkbox/tree/v1.0.1"
+                "source": "https://github.com/kirki-framework/control-checkbox/tree/v1.0.2"
             },
-            "time": "2021-12-17T16:32:40+00:00"
+            "time": "2021-12-29T13:19:58+00:00"
         },
         {
             "name": "kirki-framework/control-code",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/control-code.git",
-                "reference": "c1ff86254792e8d6d03cf5ef0c848a29a6d7f879"
+                "reference": "29909ae3f62210b9b5937c798086ce8495e77d72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/control-code/zipball/c1ff86254792e8d6d03cf5ef0c848a29a6d7f879",
-                "reference": "c1ff86254792e8d6d03cf5ef0c848a29a6d7f879",
+                "url": "https://api.github.com/repos/kirki-framework/control-code/zipball/29909ae3f62210b9b5937c798086ce8495e77d72",
+                "reference": "29909ae3f62210b9b5937c798086ce8495e77d72",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/field": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -1869,14 +1863,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Code control for the Kirki Customizer framework.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org",
             "keywords": [
                 "customizer",
                 "framework",
@@ -1884,27 +1876,27 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/control-code/issues",
-                "source": "https://github.com/kirki-framework/control-code/tree/v1.0.0"
+                "source": "https://github.com/kirki-framework/control-code/tree/v1.0.1"
             },
-            "time": "2019-07-06T20:20:23+00:00"
+            "time": "2021-12-29T12:56:00+00:00"
         },
         {
             "name": "kirki-framework/control-color",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/control-color.git",
-                "reference": "facd7f051f0ec6be498cbfff5aa6d3d698b68f18"
+                "reference": "5820fa89e0e8dc69dd4864575074552434193e11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/control-color/zipball/facd7f051f0ec6be498cbfff5aa6d3d698b68f18",
-                "reference": "facd7f051f0ec6be498cbfff5aa6d3d698b68f18",
+                "url": "https://api.github.com/repos/kirki-framework/control-color/zipball/5820fa89e0e8dc69dd4864575074552434193e11",
+                "reference": "5820fa89e0e8dc69dd4864575074552434193e11",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/control-react-colorful": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -1919,14 +1911,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Color control for the Kirki Customizer framework.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org",
             "keywords": [
                 "customizer",
                 "framework",
@@ -1934,9 +1924,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/control-color/issues",
-                "source": "https://github.com/kirki-framework/control-color/tree/v1.0.0"
+                "source": "https://github.com/kirki-framework/control-color/tree/v1.0.1"
             },
-            "time": "2021-09-21T04:19:34+00:00"
+            "time": "2021-12-29T13:22:22+00:00"
         },
         {
             "name": "kirki-framework/control-color-palette",
@@ -1982,20 +1972,20 @@
         },
         {
             "name": "kirki-framework/control-cropped-image",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/control-cropped-image.git",
-                "reference": "368b8e49c3238100ce832d688fcb684e4d68e69b"
+                "reference": "549e7ddfe1a9fe2305fe6c1bc6cc80489d647452"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/control-cropped-image/zipball/368b8e49c3238100ce832d688fcb684e4d68e69b",
-                "reference": "368b8e49c3238100ce832d688fcb684e4d68e69b",
+                "url": "https://api.github.com/repos/kirki-framework/control-cropped-image/zipball/549e7ddfe1a9fe2305fe6c1bc6cc80489d647452",
+                "reference": "549e7ddfe1a9fe2305fe6c1bc6cc80489d647452",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -2009,14 +1999,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Cropped-Image control for the Kirki Customizer framework.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org",
             "keywords": [
                 "customizer",
                 "framework",
@@ -2024,27 +2012,27 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/control-cropped-image/issues",
-                "source": "https://github.com/kirki-framework/control-cropped-image/tree/v1.0.0"
+                "source": "https://github.com/kirki-framework/control-cropped-image/tree/v1.0.1"
             },
-            "time": "2019-08-17T07:01:03+00:00"
+            "time": "2021-12-29T13:27:21+00:00"
         },
         {
             "name": "kirki-framework/control-custom",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/control-custom.git",
-                "reference": "134a69a61fdbc95a7d6c081b324eba262db80729"
+                "reference": "103f4f813f1919c23ec41e81c81cfbf83ab0e78f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/control-custom/zipball/134a69a61fdbc95a7d6c081b324eba262db80729",
-                "reference": "134a69a61fdbc95a7d6c081b324eba262db80729",
+                "url": "https://api.github.com/repos/kirki-framework/control-custom/zipball/103f4f813f1919c23ec41e81c81cfbf83ab0e78f",
+                "reference": "103f4f813f1919c23ec41e81c81cfbf83ab0e78f",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/control-base": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -2059,14 +2047,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Custom control for the Kirki Customizer framework.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org",
             "keywords": [
                 "customizer",
                 "framework",
@@ -2074,28 +2060,28 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/control-custom/issues",
-                "source": "https://github.com/kirki-framework/control-custom/tree/v1.0.0"
+                "source": "https://github.com/kirki-framework/control-custom/tree/v1.0.1"
             },
-            "time": "2019-07-06T20:23:00+00:00"
+            "time": "2021-12-29T14:02:22+00:00"
         },
         {
             "name": "kirki-framework/control-dashicons",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/control-dashicons.git",
-                "reference": "5dd8e3fa00c4bea817d8cfaf27af760180c53772"
+                "reference": "90210466bd4a53b6ab4468330064eabeaf242fd9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/control-dashicons/zipball/5dd8e3fa00c4bea817d8cfaf27af760180c53772",
-                "reference": "5dd8e3fa00c4bea817d8cfaf27af760180c53772",
+                "url": "https://api.github.com/repos/kirki-framework/control-dashicons/zipball/90210466bd4a53b6ab4468330064eabeaf242fd9",
+                "reference": "90210466bd4a53b6ab4468330064eabeaf242fd9",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/control-base": "*",
                 "kirki-framework/url-getter": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -2111,14 +2097,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Dashicons control for the Kirki Customizer framework.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org",
             "keywords": [
                 "customizer",
                 "framework",
@@ -2126,28 +2110,28 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/control-dashicons/issues",
-                "source": "https://github.com/kirki-framework/control-dashicons/tree/v1.0.0"
+                "source": "https://github.com/kirki-framework/control-dashicons/tree/v1.0.1"
             },
-            "time": "2021-09-24T07:15:08+00:00"
+            "time": "2021-12-29T14:05:30+00:00"
         },
         {
             "name": "kirki-framework/control-date",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/control-date.git",
-                "reference": "ef61d9b261a1a73ada7fa33c06a047a336e6aae1"
+                "reference": "71e7fb60b5789d77579b12b202e5487cd2bd5dc2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/control-date/zipball/ef61d9b261a1a73ada7fa33c06a047a336e6aae1",
-                "reference": "ef61d9b261a1a73ada7fa33c06a047a336e6aae1",
+                "url": "https://api.github.com/repos/kirki-framework/control-date/zipball/71e7fb60b5789d77579b12b202e5487cd2bd5dc2",
+                "reference": "71e7fb60b5789d77579b12b202e5487cd2bd5dc2",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/control-base": "*",
                 "kirki-framework/url-getter": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -2162,14 +2146,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Date control for the Kirki Customizer framework.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org",
             "keywords": [
                 "customizer",
                 "framework",
@@ -2177,28 +2159,28 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/control-date/issues",
-                "source": "https://github.com/kirki-framework/control-date/tree/v1.0.0"
+                "source": "https://github.com/kirki-framework/control-date/tree/v1.0.1"
             },
-            "time": "2021-10-01T14:29:43+00:00"
+            "time": "2021-12-29T14:08:35+00:00"
         },
         {
             "name": "kirki-framework/control-dimension",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/control-dimension.git",
-                "reference": "49a84573fa07b41a293f129317bbdb6421235990"
+                "reference": "7a64c587fd57fb5bdbeceb393b621457c4d9f515"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/control-dimension/zipball/49a84573fa07b41a293f129317bbdb6421235990",
-                "reference": "49a84573fa07b41a293f129317bbdb6421235990",
+                "url": "https://api.github.com/repos/kirki-framework/control-dimension/zipball/7a64c587fd57fb5bdbeceb393b621457c4d9f515",
+                "reference": "7a64c587fd57fb5bdbeceb393b621457c4d9f515",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/control-base": "*",
                 "kirki-framework/url-getter": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -2213,14 +2195,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Dimension control for the Kirki Customizer framework.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org",
             "keywords": [
                 "customizer",
                 "framework",
@@ -2228,28 +2208,28 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/control-dimension/issues",
-                "source": "https://github.com/kirki-framework/control-dimension/tree/v1.0.1"
+                "source": "https://github.com/kirki-framework/control-dimension/tree/v1.0.2"
             },
-            "time": "2021-11-24T14:18:14+00:00"
+            "time": "2021-12-29T14:13:14+00:00"
         },
         {
             "name": "kirki-framework/control-editor",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/control-editor.git",
-                "reference": "933fb34ec7bd6a162f437c164480337ddb7c1693"
+                "reference": "5e27c3cc7b10eb317321790a5d8ddf57304cf2a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/control-editor/zipball/933fb34ec7bd6a162f437c164480337ddb7c1693",
-                "reference": "933fb34ec7bd6a162f437c164480337ddb7c1693",
+                "url": "https://api.github.com/repos/kirki-framework/control-editor/zipball/5e27c3cc7b10eb317321790a5d8ddf57304cf2a2",
+                "reference": "5e27c3cc7b10eb317321790a5d8ddf57304cf2a2",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/control-base": "*",
                 "kirki-framework/url-getter": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -2264,14 +2244,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Editor control for the Kirki Customizer framework.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org",
             "keywords": [
                 "customizer",
                 "framework",
@@ -2279,28 +2257,28 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/control-editor/issues",
-                "source": "https://github.com/kirki-framework/control-editor/tree/v1.0.0"
+                "source": "https://github.com/kirki-framework/control-editor/tree/v1.0.1"
             },
-            "time": "2021-09-24T07:18:39+00:00"
+            "time": "2021-12-29T14:31:06+00:00"
         },
         {
             "name": "kirki-framework/control-generic",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/control-generic.git",
-                "reference": "c84bf46575df2b635efe3bb3345bf923dfaaa58f"
+                "reference": "82643cbfc2cd48dc1d047ca7e32ca7ed98650611"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/control-generic/zipball/c84bf46575df2b635efe3bb3345bf923dfaaa58f",
-                "reference": "c84bf46575df2b635efe3bb3345bf923dfaaa58f",
+                "url": "https://api.github.com/repos/kirki-framework/control-generic/zipball/82643cbfc2cd48dc1d047ca7e32ca7ed98650611",
+                "reference": "82643cbfc2cd48dc1d047ca7e32ca7ed98650611",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/control-base": "*",
                 "kirki-framework/url-getter": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -2315,14 +2293,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Generic control for the Kirki Customizer framework.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org",
             "keywords": [
                 "customizer",
                 "framework",
@@ -2330,28 +2306,28 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/control-generic/issues",
-                "source": "https://github.com/kirki-framework/control-generic/tree/v1.0.0"
+                "source": "https://github.com/kirki-framework/control-generic/tree/v1.0.1"
             },
-            "time": "2021-09-24T07:19:15+00:00"
+            "time": "2021-12-29T14:33:52+00:00"
         },
         {
             "name": "kirki-framework/control-image",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/control-image.git",
-                "reference": "355fb103d429160d7cf629722b0ee131d82c4ebc"
+                "reference": "d9adfbede5a2349d3aa7eb1c885c581681b4e450"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/control-image/zipball/355fb103d429160d7cf629722b0ee131d82c4ebc",
-                "reference": "355fb103d429160d7cf629722b0ee131d82c4ebc",
+                "url": "https://api.github.com/repos/kirki-framework/control-image/zipball/d9adfbede5a2349d3aa7eb1c885c581681b4e450",
+                "reference": "d9adfbede5a2349d3aa7eb1c885c581681b4e450",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/control-base": "*",
                 "kirki-framework/url-getter": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -2366,14 +2342,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Image control for the Kirki Customizer framework.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org",
             "keywords": [
                 "customizer",
                 "framework",
@@ -2381,28 +2355,28 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/control-image/issues",
-                "source": "https://github.com/kirki-framework/control-image/tree/v1.0.0"
+                "source": "https://github.com/kirki-framework/control-image/tree/v1.0.1"
             },
-            "time": "2021-09-24T07:20:07+00:00"
+            "time": "2021-12-29T14:36:31+00:00"
         },
         {
             "name": "kirki-framework/control-multicheck",
-            "version": "v1.0.0",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/control-multicheck.git",
-                "reference": "59f7a990af47d928f3c34c37c7ce2609bee16573"
+                "reference": "90098008c1988e7cd2b84c75ece68bbcd3bbeb70"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/control-multicheck/zipball/59f7a990af47d928f3c34c37c7ce2609bee16573",
-                "reference": "59f7a990af47d928f3c34c37c7ce2609bee16573",
+                "url": "https://api.github.com/repos/kirki-framework/control-multicheck/zipball/90098008c1988e7cd2b84c75ece68bbcd3bbeb70",
+                "reference": "90098008c1988e7cd2b84c75ece68bbcd3bbeb70",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/control-base": "*",
                 "kirki-framework/url-getter": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -2417,14 +2391,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Multicheck control for the Kirki Customizer framework.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org",
             "keywords": [
                 "customizer",
                 "framework",
@@ -2432,27 +2404,27 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/control-multicheck/issues",
-                "source": "https://github.com/kirki-framework/control-multicheck/tree/v1.0.0"
+                "source": "https://github.com/kirki-framework/control-multicheck/tree/v1.0.2"
             },
-            "time": "2021-09-24T07:20:52+00:00"
+            "time": "2021-12-30T15:32:42+00:00"
         },
         {
             "name": "kirki-framework/control-radio",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/control-radio.git",
-                "reference": "300c4e4ed77a7403ec5b2e10ca7b0215d6b95998"
+                "reference": "1e47f185f8d95005c83e0ffbf3ff09faecea8eac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/control-radio/zipball/300c4e4ed77a7403ec5b2e10ca7b0215d6b95998",
-                "reference": "300c4e4ed77a7403ec5b2e10ca7b0215d6b95998",
+                "url": "https://api.github.com/repos/kirki-framework/control-radio/zipball/1e47f185f8d95005c83e0ffbf3ff09faecea8eac",
+                "reference": "1e47f185f8d95005c83e0ffbf3ff09faecea8eac",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/control-base": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -2467,14 +2439,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Radio controls for the Kirki Customizer framework.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org",
             "keywords": [
                 "customizer",
                 "framework",
@@ -2482,29 +2452,29 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/control-radio/issues",
-                "source": "https://github.com/kirki-framework/control-radio/tree/v1.0.1"
+                "source": "https://github.com/kirki-framework/control-radio/tree/v1.0.2"
             },
-            "time": "2021-10-21T13:06:10+00:00"
+            "time": "2021-12-29T14:41:33+00:00"
         },
         {
             "name": "kirki-framework/control-react-colorful",
-            "version": "v1.0.5",
+            "version": "v1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/control-react-colorful.git",
-                "reference": "79723a571f6b5a1b17d8fe8508bb2c9cd4024ec7"
+                "reference": "c826815a402cb84fb924ddf55b1ffffd32f1be38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/control-react-colorful/zipball/79723a571f6b5a1b17d8fe8508bb2c9cd4024ec7",
-                "reference": "79723a571f6b5a1b17d8fe8508bb2c9cd4024ec7",
+                "url": "https://api.github.com/repos/kirki-framework/control-react-colorful/zipball/c826815a402cb84fb924ddf55b1ffffd32f1be38",
+                "reference": "c826815a402cb84fb924ddf55b1ffffd32f1be38",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/control-base": "*",
                 "kirki-framework/field": "*",
                 "kirki-framework/url-getter": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -2519,9 +2489,8 @@
             ],
             "authors": [
                 {
-                    "name": "Kirki",
-                    "homepage": "https://kirki.org/",
-                    "role": "Organization"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Color control for the Kirki Customizer framework using react-colorful.",
@@ -2533,28 +2502,28 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/control-react-colorful/issues",
-                "source": "https://github.com/kirki-framework/control-react-colorful/tree/v1.0.5"
+                "source": "https://github.com/kirki-framework/control-react-colorful/tree/v1.0.6"
             },
-            "time": "2021-12-07T16:57:50+00:00"
+            "time": "2021-12-29T14:43:45+00:00"
         },
         {
             "name": "kirki-framework/control-react-select",
-            "version": "v1.1.1",
+            "version": "v1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/control-react-select.git",
-                "reference": "9b508565398cbecd463251568cc758bcd118df0f"
+                "reference": "0601c2a25ff91d8ee509ba746885b72298abdf09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/control-react-select/zipball/9b508565398cbecd463251568cc758bcd118df0f",
-                "reference": "9b508565398cbecd463251568cc758bcd118df0f",
+                "url": "https://api.github.com/repos/kirki-framework/control-react-select/zipball/0601c2a25ff91d8ee509ba746885b72298abdf09",
+                "reference": "0601c2a25ff91d8ee509ba746885b72298abdf09",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/control-base": "*",
                 "kirki-framework/url-getter": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -2569,14 +2538,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Select control for the Kirki Customizer framework.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org/",
             "keywords": [
                 "customizer",
                 "framework",
@@ -2584,22 +2551,22 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/control-react-select/issues",
-                "source": "https://github.com/kirki-framework/control-react-select/tree/v1.1.1"
+                "source": "https://github.com/kirki-framework/control-react-select/tree/v1.1.2"
             },
-            "time": "2021-11-03T17:13:22+00:00"
+            "time": "2021-12-29T14:52:48+00:00"
         },
         {
             "name": "kirki-framework/control-repeater",
-            "version": "v1.0.2",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/control-repeater.git",
-                "reference": "5b79c254bbbdb9d7343a11e03135eb1abf74983f"
+                "reference": "b24e7ae8641867616cc12038eda0a6e990399bbd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/control-repeater/zipball/5b79c254bbbdb9d7343a11e03135eb1abf74983f",
-                "reference": "5b79c254bbbdb9d7343a11e03135eb1abf74983f",
+                "url": "https://api.github.com/repos/kirki-framework/control-repeater/zipball/b24e7ae8641867616cc12038eda0a6e990399bbd",
+                "reference": "b24e7ae8641867616cc12038eda0a6e990399bbd",
                 "shasum": ""
             },
             "require": {
@@ -2627,14 +2594,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Repeater control for the Kirki Customizer framework.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org/",
             "keywords": [
                 "customizer",
                 "framework",
@@ -2642,28 +2607,28 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/control-repeater/issues",
-                "source": "https://github.com/kirki-framework/control-repeater/tree/v1.0.2"
+                "source": "https://github.com/kirki-framework/control-repeater/tree/v1.0.3"
             },
-            "time": "2021-12-07T15:26:16+00:00"
+            "time": "2021-12-29T14:55:08+00:00"
         },
         {
             "name": "kirki-framework/control-select",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/control-select.git",
-                "reference": "1f4abff6dc6549720624bc8a1d0930a61cf52a50"
+                "reference": "01abe2cbce62b7a566c890697a32506b94910156"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/control-select/zipball/1f4abff6dc6549720624bc8a1d0930a61cf52a50",
-                "reference": "1f4abff6dc6549720624bc8a1d0930a61cf52a50",
+                "url": "https://api.github.com/repos/kirki-framework/control-select/zipball/01abe2cbce62b7a566c890697a32506b94910156",
+                "reference": "01abe2cbce62b7a566c890697a32506b94910156",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/control-base": "*",
                 "kirki-framework/url-getter": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -2678,14 +2643,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Select control for the Kirki Customizer framework.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org/",
             "keywords": [
                 "customizer",
                 "framework",
@@ -2693,27 +2656,27 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/control-select/issues",
-                "source": "https://github.com/kirki-framework/control-select/tree/master"
+                "source": "https://github.com/kirki-framework/control-select/tree/v1.0.1"
             },
-            "time": "2019-10-05T14:12:03+00:00"
+            "time": "2021-12-29T14:56:51+00:00"
         },
         {
             "name": "kirki-framework/control-slider",
-            "version": "v1.0.1",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/control-slider.git",
-                "reference": "963ba880ba467cfb8bc89fa716c7c442846554f1"
+                "reference": "4d0e4c7292431040beaaff03c524a033f7ae42c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/control-slider/zipball/963ba880ba467cfb8bc89fa716c7c442846554f1",
-                "reference": "963ba880ba467cfb8bc89fa716c7c442846554f1",
+                "url": "https://api.github.com/repos/kirki-framework/control-slider/zipball/4d0e4c7292431040beaaff03c524a033f7ae42c7",
+                "reference": "4d0e4c7292431040beaaff03c524a033f7ae42c7",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/control-base": "*",
-                "php": ">=7"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -2733,30 +2696,31 @@
                 }
             ],
             "description": "Range slider control for the Kirki Customizer Framework",
+            "homepage": "https://kirki.org/",
             "support": {
                 "issues": "https://github.com/kirki-framework/control-slider/issues",
-                "source": "https://github.com/kirki-framework/control-slider/tree/v1.0.1"
+                "source": "https://github.com/kirki-framework/control-slider/tree/v1.0.3"
             },
-            "time": "2021-11-29T09:32:51+00:00"
+            "time": "2021-12-31T01:05:21+00:00"
         },
         {
             "name": "kirki-framework/control-sortable",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/control-sortable.git",
-                "reference": "28b15cb3eb2661be84842b40272ac400118145dc"
+                "reference": "ea4659bb2118c57ec6e24cd2ab06f36a3a528d26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/control-sortable/zipball/28b15cb3eb2661be84842b40272ac400118145dc",
-                "reference": "28b15cb3eb2661be84842b40272ac400118145dc",
+                "url": "https://api.github.com/repos/kirki-framework/control-sortable/zipball/ea4659bb2118c57ec6e24cd2ab06f36a3a528d26",
+                "reference": "ea4659bb2118c57ec6e24cd2ab06f36a3a528d26",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/control-base": "*",
                 "kirki-framework/url-getter": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -2771,14 +2735,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Sortable control for the Kirki Customizer framework.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org/",
             "keywords": [
                 "customizer",
                 "framework",
@@ -2786,28 +2748,28 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/control-sortable/issues",
-                "source": "https://github.com/kirki-framework/control-sortable/tree/v1.0.0"
+                "source": "https://github.com/kirki-framework/control-sortable/tree/v1.0.1"
             },
-            "time": "2021-09-13T03:39:54+00:00"
+            "time": "2021-12-29T15:17:42+00:00"
         },
         {
             "name": "kirki-framework/control-upload",
-            "version": "v1.0.2",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/control-upload.git",
-                "reference": "17592f5f6025f4c635ab0b0501e89f81b9cd85ea"
+                "reference": "13ea09c9330c6eb1d4452d5948866f226b0f8a0f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/control-upload/zipball/17592f5f6025f4c635ab0b0501e89f81b9cd85ea",
-                "reference": "17592f5f6025f4c635ab0b0501e89f81b9cd85ea",
+                "url": "https://api.github.com/repos/kirki-framework/control-upload/zipball/13ea09c9330c6eb1d4452d5948866f226b0f8a0f",
+                "reference": "13ea09c9330c6eb1d4452d5948866f226b0f8a0f",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/control-base": "*",
                 "kirki-framework/field": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -2822,14 +2784,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Upload control for the Kirki Customizer framework.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org/",
             "keywords": [
                 "customizer",
                 "framework",
@@ -2837,26 +2797,26 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/control-upload/issues",
-                "source": "https://github.com/kirki-framework/control-upload/tree/v1.0.2"
+                "source": "https://github.com/kirki-framework/control-upload/tree/v1.0.3"
             },
-            "time": "2021-12-07T15:24:17+00:00"
+            "time": "2021-12-29T15:19:32+00:00"
         },
         {
             "name": "kirki-framework/data-option",
-            "version": "v1.0.0",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/data-option.git",
-                "reference": "ee8efd9a572c8df70e86d068058ad391800a754f"
+                "reference": "af1ce8f0b890ae005566fcb4d7f44bebb2c17b0c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/data-option/zipball/ee8efd9a572c8df70e86d068058ad391800a754f",
-                "reference": "ee8efd9a572c8df70e86d068058ad391800a754f",
+                "url": "https://api.github.com/repos/kirki-framework/data-option/zipball/af1ce8f0b890ae005566fcb4d7f44bebb2c17b0c",
+                "reference": "af1ce8f0b890ae005566fcb4d7f44bebb2c17b0c",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -2870,40 +2830,38 @@
             ],
             "authors": [
                 {
-                    "name": "aristath",
-                    "email": "aristath@gmail.com",
-                    "homepage": "https://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Hooks and tweaks to allow Kirki Fields to save options.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org/",
             "keywords": [
                 "customizer",
                 "wordpress"
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/data-option/issues",
-                "source": "https://github.com/kirki-framework/data-option/tree/v1.0.0"
+                "source": "https://github.com/kirki-framework/data-option/tree/v1.0.2"
             },
-            "time": "2021-08-24T13:54:13+00:00"
+            "time": "2022-01-03T18:05:56+00:00"
         },
         {
             "name": "kirki-framework/field",
-            "version": "v1.0.1",
+            "version": "v1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/field.git",
-                "reference": "a7fb4aa43d64902dac5231107cabde34a104bc87"
+                "reference": "1ce92e6cd5845468094fea84733f2dc8994a26e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/field/zipball/a7fb4aa43d64902dac5231107cabde34a104bc87",
-                "reference": "a7fb4aa43d64902dac5231107cabde34a104bc87",
+                "url": "https://api.github.com/repos/kirki-framework/field/zipball/1ce92e6cd5845468094fea84733f2dc8994a26e5",
+                "reference": "1ce92e6cd5845468094fea84733f2dc8994a26e5",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -2917,36 +2875,34 @@
             ],
             "authors": [
                 {
-                    "name": "aristath",
-                    "email": "aristath@gmail.com",
-                    "homepage": "https://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Customizer API abstraction used by Kirki Controls.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org/",
             "keywords": [
                 "customizer",
                 "wordpress"
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/field/issues",
-                "source": "https://github.com/kirki-framework/field/tree/v1.0.1"
+                "source": "https://github.com/kirki-framework/field/tree/v1.0.6"
             },
-            "time": "2021-12-23T17:55:26+00:00"
+            "time": "2022-01-06T15:57:04+00:00"
         },
         {
             "name": "kirki-framework/field-background",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/field-background.git",
-                "reference": "d16f53564b0b5c0c2f94626098540e86d6aa8e50"
+                "reference": "875b5e42c3de8a77d0a15c7dd55c8467cbf18373"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/field-background/zipball/d16f53564b0b5c0c2f94626098540e86d6aa8e50",
-                "reference": "d16f53564b0b5c0c2f94626098540e86d6aa8e50",
+                "url": "https://api.github.com/repos/kirki-framework/field-background/zipball/875b5e42c3de8a77d0a15c7dd55c8467cbf18373",
+                "reference": "875b5e42c3de8a77d0a15c7dd55c8467cbf18373",
                 "shasum": ""
             },
             "require": {
@@ -2954,7 +2910,7 @@
                 "kirki-framework/control-react-colorful": "*",
                 "kirki-framework/control-select": "*",
                 "kirki-framework/url-getter": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -2968,14 +2924,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Background field for the Kirki Customizer framework.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org/",
             "keywords": [
                 "customizer",
                 "framework",
@@ -2983,28 +2937,28 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/field-background/issues",
-                "source": "https://github.com/kirki-framework/field-background/tree/v1.0.0"
+                "source": "https://github.com/kirki-framework/field-background/tree/v1.0.1"
             },
-            "time": "2021-10-14T17:30:33+00:00"
+            "time": "2021-12-29T15:27:23+00:00"
         },
         {
             "name": "kirki-framework/field-dimensions",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/field-dimensions.git",
-                "reference": "0f2411214894dcb993c2df0a22e2b8f175f99a5c"
+                "reference": "e59bfb68eb44ad09292eae0f9e99af39eb279d99"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/field-dimensions/zipball/0f2411214894dcb993c2df0a22e2b8f175f99a5c",
-                "reference": "0f2411214894dcb993c2df0a22e2b8f175f99a5c",
+                "url": "https://api.github.com/repos/kirki-framework/field-dimensions/zipball/e59bfb68eb44ad09292eae0f9e99af39eb279d99",
+                "reference": "e59bfb68eb44ad09292eae0f9e99af39eb279d99",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/control-dimension": "*",
                 "kirki-framework/url-getter": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -3018,14 +2972,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Dimensions field for the Kirki Customizer framework.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org/",
             "keywords": [
                 "customizer",
                 "framework",
@@ -3033,28 +2985,28 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/field-dimensions/issues",
-                "source": "https://github.com/kirki-framework/field-dimensions/tree/v1.0.1"
+                "source": "https://github.com/kirki-framework/field-dimensions/tree/v1.0.2"
             },
-            "time": "2021-10-21T15:39:59+00:00"
+            "time": "2021-12-29T15:32:15+00:00"
         },
         {
             "name": "kirki-framework/field-fontawesome",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/field-fontawesome.git",
-                "reference": "ddcdec292f5d302a39fdb86ca81ce326403bcc27"
+                "reference": "64d8954039eef1ff03429cdd13c81e4e6b278321"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/field-fontawesome/zipball/ddcdec292f5d302a39fdb86ca81ce326403bcc27",
-                "reference": "ddcdec292f5d302a39fdb86ca81ce326403bcc27",
+                "url": "https://api.github.com/repos/kirki-framework/field-fontawesome/zipball/64d8954039eef1ff03429cdd13c81e4e6b278321",
+                "reference": "64d8954039eef1ff03429cdd13c81e4e6b278321",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/control-select": "*",
                 "kirki-framework/url-getter": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -3068,14 +3020,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Font-Awesome field for the Kirki Customizer framework.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org/",
             "keywords": [
                 "customizer",
                 "framework",
@@ -3083,29 +3033,29 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/field-fontawesome/issues",
-                "source": "https://github.com/kirki-framework/field-fontawesome/tree/master"
+                "source": "https://github.com/kirki-framework/field-fontawesome/tree/v1.0.1"
             },
-            "time": "2019-06-16T08:30:36+00:00"
+            "time": "2021-12-29T15:34:45+00:00"
         },
         {
             "name": "kirki-framework/field-multicolor",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/field-multicolor.git",
-                "reference": "fb40978fc9617e6c9634eadcb0751d0c71f8cea6"
+                "reference": "fcb68ed3a1508ac5ffa4d62f6034dce35be7cd87"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/field-multicolor/zipball/fb40978fc9617e6c9634eadcb0751d0c71f8cea6",
-                "reference": "fb40978fc9617e6c9634eadcb0751d0c71f8cea6",
+                "url": "https://api.github.com/repos/kirki-framework/field-multicolor/zipball/fcb68ed3a1508ac5ffa4d62f6034dce35be7cd87",
+                "reference": "fcb68ed3a1508ac5ffa4d62f6034dce35be7cd87",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/control-base": "*",
                 "kirki-framework/control-react-colorful": "*",
                 "kirki-framework/url-getter": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -3120,14 +3070,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Multicolor control for the Kirki Customizer framework.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org/",
             "keywords": [
                 "customizer",
                 "framework",
@@ -3135,22 +3083,22 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/field-multicolor/issues",
-                "source": "https://github.com/kirki-framework/field-multicolor/tree/v1.0.0"
+                "source": "https://github.com/kirki-framework/field-multicolor/tree/v1.0.1"
             },
-            "time": "2021-10-14T20:44:09+00:00"
+            "time": "2021-12-29T15:39:15+00:00"
         },
         {
             "name": "kirki-framework/field-typography",
-            "version": "v1.0.4",
+            "version": "v1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/field-typography.git",
-                "reference": "eb1d797ec4dd2cf24f18121de0ad8b599a5ec2da"
+                "reference": "df2c8a9d3db8a3407a3835453de3c85641198c10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/field-typography/zipball/eb1d797ec4dd2cf24f18121de0ad8b599a5ec2da",
-                "reference": "eb1d797ec4dd2cf24f18121de0ad8b599a5ec2da",
+                "url": "https://api.github.com/repos/kirki-framework/field-typography/zipball/df2c8a9d3db8a3407a3835453de3c85641198c10",
+                "reference": "df2c8a9d3db8a3407a3835453de3c85641198c10",
                 "shasum": ""
             },
             "require": {
@@ -3162,7 +3110,7 @@
                 "kirki-framework/googlefonts": "*",
                 "kirki-framework/module-webfonts": "*",
                 "kirki-framework/url-getter": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -3177,14 +3125,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Typography field for the Kirki Customizer framework.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org/",
             "keywords": [
                 "customizer",
                 "framework",
@@ -3192,26 +3138,26 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/field-typography/issues",
-                "source": "https://github.com/kirki-framework/field-typography/tree/v1.0.4"
+                "source": "https://github.com/kirki-framework/field-typography/tree/v1.0.5"
             },
-            "time": "2021-12-08T12:05:59+00:00"
+            "time": "2021-12-29T15:41:59+00:00"
         },
         {
             "name": "kirki-framework/googlefonts",
-            "version": "v1.0.2",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/googlefonts.git",
-                "reference": "f4c742072125e8cd6efee221b4627771a6c7bdba"
+                "reference": "3fa0b6b5aacda3213ca7ccedcba3e6906aecb409"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/googlefonts/zipball/f4c742072125e8cd6efee221b4627771a6c7bdba",
-                "reference": "f4c742072125e8cd6efee221b4627771a6c7bdba",
+                "url": "https://api.github.com/repos/kirki-framework/googlefonts/zipball/3fa0b6b5aacda3213ca7ccedcba3e6906aecb409",
+                "reference": "3fa0b6b5aacda3213ca7ccedcba3e6906aecb409",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -3225,14 +3171,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Get a JSON file for all googlefonts. Initially built for the Kirki framework for the WordPress Customizer.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org/",
             "keywords": [
                 "customizer",
                 "framework",
@@ -3242,26 +3186,26 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/googlefonts/issues",
-                "source": "https://github.com/kirki-framework/googlefonts/tree/v1.0.2"
+                "source": "https://github.com/kirki-framework/googlefonts/tree/1.0.4"
             },
-            "time": "2021-11-25T15:46:47+00:00"
+            "time": "2021-12-30T16:19:47+00:00"
         },
         {
             "name": "kirki-framework/l10n",
-            "version": "v1.0.0",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/l10n.git",
-                "reference": "6aa25316f3a11f6ec491389cdd7d6dee13edbef8"
+                "reference": "5a40875434ca075a09c81952547e3ccc7eeef704"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/l10n/zipball/6aa25316f3a11f6ec491389cdd7d6dee13edbef8",
-                "reference": "6aa25316f3a11f6ec491389cdd7d6dee13edbef8",
+                "url": "https://api.github.com/repos/kirki-framework/l10n/zipball/5a40875434ca075a09c81952547e3ccc7eeef704",
+                "reference": "5a40875434ca075a09c81952547e3ccc7eeef704",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -3275,14 +3219,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Allows loading a 2nd textdomain inside a theme.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org/",
             "keywords": [
                 "customizer",
                 "framework",
@@ -3290,27 +3232,27 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/l10n/issues",
-                "source": "https://github.com/kirki-framework/l10n/tree/master"
+                "source": "https://github.com/kirki-framework/l10n/tree/v1.0.2"
             },
-            "time": "2019-07-01T18:57:20+00:00"
+            "time": "2021-12-29T18:35:09+00:00"
         },
         {
             "name": "kirki-framework/module-css",
-            "version": "v1.0.2",
+            "version": "v1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/module-css.git",
-                "reference": "3afb562272ef44eeb30fe7b5aff9ba41aac657b9"
+                "reference": "1056b274b5927cb935183342d593c2b8da1d487e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/module-css/zipball/3afb562272ef44eeb30fe7b5aff9ba41aac657b9",
-                "reference": "3afb562272ef44eeb30fe7b5aff9ba41aac657b9",
+                "url": "https://api.github.com/repos/kirki-framework/module-css/zipball/1056b274b5927cb935183342d593c2b8da1d487e",
+                "reference": "1056b274b5927cb935183342d593c2b8da1d487e",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/util": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -3324,14 +3266,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "CSS Module for the Kirki WordPress plugin.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org/",
             "keywords": [
                 "customizer",
                 "framework",
@@ -3339,29 +3279,29 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/module-css/issues",
-                "source": "https://github.com/kirki-framework/module-css/tree/v1.0.2"
+                "source": "https://github.com/kirki-framework/module-css/tree/v1.0.4"
             },
-            "time": "2021-11-02T17:09:23+00:00"
+            "time": "2022-01-04T19:19:22+00:00"
         },
         {
             "name": "kirki-framework/module-editor-styles",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/module-editor-styles.git",
-                "reference": "fde4dcc61727bd19c5a7e9dfcc9c079cf7ee3437"
+                "reference": "d30622f500cfcc4e0145790d4aeca541d6c73319"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/module-editor-styles/zipball/fde4dcc61727bd19c5a7e9dfcc9c079cf7ee3437",
-                "reference": "fde4dcc61727bd19c5a7e9dfcc9c079cf7ee3437",
+                "url": "https://api.github.com/repos/kirki-framework/module-editor-styles/zipball/d30622f500cfcc4e0145790d4aeca541d6c73319",
+                "reference": "d30622f500cfcc4e0145790d4aeca541d6c73319",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/module-css": "*",
                 "kirki-framework/module-webfonts": "*",
                 "kirki-framework/util": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -3375,14 +3315,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Loading Animation Module for the Kirki WordPress plugin.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org/",
             "keywords": [
                 "customizer",
                 "framework",
@@ -3390,27 +3328,27 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/module-editor-styles/issues",
-                "source": "https://github.com/kirki-framework/module-editor-styles/tree/v1.0.0"
+                "source": "https://github.com/kirki-framework/module-editor-styles/tree/v1.0.1"
             },
-            "time": "2021-09-23T06:55:43+00:00"
+            "time": "2021-12-29T15:59:48+00:00"
         },
         {
             "name": "kirki-framework/module-field-dependencies",
-            "version": "v1.0.2",
+            "version": "v1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/module-field-dependencies.git",
-                "reference": "31e1788fbe7bef910698a7362f9ce7bfc78bb304"
+                "reference": "5bf94bdce480d8405136cd5f0013ef42a775f167"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/module-field-dependencies/zipball/31e1788fbe7bef910698a7362f9ce7bfc78bb304",
-                "reference": "31e1788fbe7bef910698a7362f9ce7bfc78bb304",
+                "url": "https://api.github.com/repos/kirki-framework/module-field-dependencies/zipball/5bf94bdce480d8405136cd5f0013ef42a775f167",
+                "reference": "5bf94bdce480d8405136cd5f0013ef42a775f167",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/url-getter": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -3424,14 +3362,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Field-Dependencies Module for the Kirki WordPress plugin.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org/",
             "keywords": [
                 "customizer",
                 "framework",
@@ -3439,27 +3375,27 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/module-field-dependencies/issues",
-                "source": "https://github.com/kirki-framework/module-field-dependencies/tree/v1.0.2"
+                "source": "https://github.com/kirki-framework/module-field-dependencies/tree/v1.0.6"
             },
-            "time": "2021-09-23T13:46:04+00:00"
+            "time": "2022-01-03T16:41:08+00:00"
         },
         {
             "name": "kirki-framework/module-panels",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/module-panels.git",
-                "reference": "3e754b04b09ddb38c9e72d7d1d536372152eb0f5"
+                "reference": "1599dd344c15c49a837b5fdbddb1e37544bef979"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/module-panels/zipball/3e754b04b09ddb38c9e72d7d1d536372152eb0f5",
-                "reference": "3e754b04b09ddb38c9e72d7d1d536372152eb0f5",
+                "url": "https://api.github.com/repos/kirki-framework/module-panels/zipball/1599dd344c15c49a837b5fdbddb1e37544bef979",
+                "reference": "1599dd344c15c49a837b5fdbddb1e37544bef979",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/url-getter": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -3473,14 +3409,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Panels API & Custom Panel Types for the Kirki WordPress Plugin.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org/",
             "keywords": [
                 "customizer",
                 "framework",
@@ -3488,28 +3422,28 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/module-panels/issues",
-                "source": "https://github.com/kirki-framework/module-panels/tree/master"
+                "source": "https://github.com/kirki-framework/module-panels/tree/v1.0.1"
             },
-            "time": "2019-07-14T09:28:59+00:00"
+            "time": "2021-12-29T16:04:04+00:00"
         },
         {
             "name": "kirki-framework/module-postmessage",
-            "version": "v1.0.2",
+            "version": "v1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/module-postMessage.git",
-                "reference": "fda89740079626acc35f6dd61b89b72b96a38f5b"
+                "reference": "21dc54238435137181a43fccf248f4d2bc655a13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/module-postMessage/zipball/fda89740079626acc35f6dd61b89b72b96a38f5b",
-                "reference": "fda89740079626acc35f6dd61b89b72b96a38f5b",
+                "url": "https://api.github.com/repos/kirki-framework/module-postMessage/zipball/21dc54238435137181a43fccf248f4d2bc655a13",
+                "reference": "21dc54238435137181a43fccf248f4d2bc655a13",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/url-getter": "*",
                 "kirki-framework/util": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -3523,14 +3457,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "postMessage Module for the Kirki WordPress plugin.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org/",
             "keywords": [
                 "customizer",
                 "framework",
@@ -3538,27 +3470,27 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/module-postMessage/issues",
-                "source": "https://github.com/kirki-framework/module-postMessage/tree/v1.0.2"
+                "source": "https://github.com/kirki-framework/module-postMessage/tree/v1.0.4"
             },
-            "time": "2021-09-20T18:52:20+00:00"
+            "time": "2022-01-03T09:09:28+00:00"
         },
         {
             "name": "kirki-framework/module-preset",
-            "version": "v1.0.2",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/module-preset.git",
-                "reference": "c968bbeae70145409628d7ac624b8ffb6f378652"
+                "reference": "b4862fbeb9e441ed4ccd15f29a1d17d6f300f6a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/module-preset/zipball/c968bbeae70145409628d7ac624b8ffb6f378652",
-                "reference": "c968bbeae70145409628d7ac624b8ffb6f378652",
+                "url": "https://api.github.com/repos/kirki-framework/module-preset/zipball/b4862fbeb9e441ed4ccd15f29a1d17d6f300f6a9",
+                "reference": "b4862fbeb9e441ed4ccd15f29a1d17d6f300f6a9",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/url-getter": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -3572,14 +3504,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Preset Module for the Kirki WordPress plugin.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org/",
             "keywords": [
                 "customizer",
                 "framework",
@@ -3587,27 +3517,27 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/module-preset/issues",
-                "source": "https://github.com/kirki-framework/module-preset/tree/v1.0.2"
+                "source": "https://github.com/kirki-framework/module-preset/tree/v1.0.3"
             },
-            "time": "2019-09-22T14:18:59+00:00"
+            "time": "2021-12-29T16:13:19+00:00"
         },
         {
             "name": "kirki-framework/module-sections",
-            "version": "v1.0.3",
+            "version": "v1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/module-sections.git",
-                "reference": "f1b35deeb320f8806e6ad257986425ec75c187bf"
+                "reference": "ee8c9120ddd7fe63e1ca39db93714b9b4e5d477c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/module-sections/zipball/f1b35deeb320f8806e6ad257986425ec75c187bf",
-                "reference": "f1b35deeb320f8806e6ad257986425ec75c187bf",
+                "url": "https://api.github.com/repos/kirki-framework/module-sections/zipball/ee8c9120ddd7fe63e1ca39db93714b9b4e5d477c",
+                "reference": "ee8c9120ddd7fe63e1ca39db93714b9b4e5d477c",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/url-getter": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -3621,14 +3551,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Sections API & Custom Section Types for the Kirki WordPress Plugin.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org/",
             "keywords": [
                 "customizer",
                 "framework",
@@ -3636,26 +3564,26 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/module-sections/issues",
-                "source": "https://github.com/kirki-framework/module-sections/tree/v1.0.3"
+                "source": "https://github.com/kirki-framework/module-sections/tree/v1.0.4"
             },
-            "time": "2021-12-16T09:33:49+00:00"
+            "time": "2021-12-29T16:14:58+00:00"
         },
         {
             "name": "kirki-framework/module-selective-refresh",
-            "version": "v1.0.2",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/module-selective-refresh.git",
-                "reference": "1fe1326c09df7cda2e3b29bae878369c9ef82e11"
+                "reference": "bfeb430cb7eff60f5ba79e0785cf413905202c42"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/module-selective-refresh/zipball/1fe1326c09df7cda2e3b29bae878369c9ef82e11",
-                "reference": "1fe1326c09df7cda2e3b29bae878369c9ef82e11",
+                "url": "https://api.github.com/repos/kirki-framework/module-selective-refresh/zipball/bfeb430cb7eff60f5ba79e0785cf413905202c42",
+                "reference": "bfeb430cb7eff60f5ba79e0785cf413905202c42",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -3669,14 +3597,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Preset Module for the Kirki WordPress plugin.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org/",
             "keywords": [
                 "customizer",
                 "framework",
@@ -3684,27 +3610,27 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/module-selective-refresh/issues",
-                "source": "https://github.com/kirki-framework/module-selective-refresh/tree/v1.0.2"
+                "source": "https://github.com/kirki-framework/module-selective-refresh/tree/v1.0.3"
             },
-            "time": "2021-09-24T13:58:38+00:00"
+            "time": "2021-12-29T16:17:19+00:00"
         },
         {
             "name": "kirki-framework/module-tooltips",
-            "version": "v1.0.3",
+            "version": "v1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/module-tooltips.git",
-                "reference": "becd264e50ec81314b6a3e373332629bd9e662ef"
+                "reference": "5891eccc885a56e9747f567bbd39b1834e724e87"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/module-tooltips/zipball/becd264e50ec81314b6a3e373332629bd9e662ef",
-                "reference": "becd264e50ec81314b6a3e373332629bd9e662ef",
+                "url": "https://api.github.com/repos/kirki-framework/module-tooltips/zipball/5891eccc885a56e9747f567bbd39b1834e724e87",
+                "reference": "5891eccc885a56e9747f567bbd39b1834e724e87",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/url-getter": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -3718,14 +3644,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Tooltips Module for the Kirki WordPress plugin.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org/",
             "keywords": [
                 "customizer",
                 "framework",
@@ -3733,27 +3657,27 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/module-tooltips/issues",
-                "source": "https://github.com/kirki-framework/module-tooltips/tree/v1.0.3"
+                "source": "https://github.com/kirki-framework/module-tooltips/tree/v1.0.4"
             },
-            "time": "2021-09-23T11:04:36+00:00"
+            "time": "2021-12-29T16:21:09+00:00"
         },
         {
             "name": "kirki-framework/module-webfonts",
-            "version": "v1.0.3",
+            "version": "v1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/module-webfonts.git",
-                "reference": "9f2529affaf9f20a7a2f913ecff00fd1f0282651"
+                "reference": "ec12372bb67230ab5558a6b3d8b7f98300d2e2a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/module-webfonts/zipball/9f2529affaf9f20a7a2f913ecff00fd1f0282651",
-                "reference": "9f2529affaf9f20a7a2f913ecff00fd1f0282651",
+                "url": "https://api.github.com/repos/kirki-framework/module-webfonts/zipball/ec12372bb67230ab5558a6b3d8b7f98300d2e2a6",
+                "reference": "ec12372bb67230ab5558a6b3d8b7f98300d2e2a6",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/googlefonts": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -3767,14 +3691,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Webfonts Module for the Kirki WordPress plugin.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org/",
             "keywords": [
                 "customizer",
                 "framework",
@@ -3782,26 +3704,26 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/module-webfonts/issues",
-                "source": "https://github.com/kirki-framework/module-webfonts/tree/v1.0.3"
+                "source": "https://github.com/kirki-framework/module-webfonts/tree/v1.0.4"
             },
-            "time": "2021-11-17T10:25:22+00:00"
+            "time": "2021-12-29T16:23:32+00:00"
         },
         {
             "name": "kirki-framework/url-getter",
-            "version": "v1.0.4",
+            "version": "v1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/url-getter.git",
-                "reference": "2b1b464b4ba7d2a3d37094669dd66f20d39fa9e3"
+                "reference": "cfe7ea5b51c5e9b5e7d706ed56694f54a972fae2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/url-getter/zipball/2b1b464b4ba7d2a3d37094669dd66f20d39fa9e3",
-                "reference": "2b1b464b4ba7d2a3d37094669dd66f20d39fa9e3",
+                "url": "https://api.github.com/repos/kirki-framework/url-getter/zipball/cfe7ea5b51c5e9b5e7d706ed56694f54a972fae2",
+                "reference": "cfe7ea5b51c5e9b5e7d706ed56694f54a972fae2",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -3815,39 +3737,37 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Helper component to get the URL of a file in WordPress.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org/",
             "keywords": [
                 "wordpress"
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/url-getter/issues",
-                "source": "https://github.com/kirki-framework/url-getter/tree/master"
+                "source": "https://github.com/kirki-framework/url-getter/tree/v1.0.5"
             },
-            "time": "2019-09-08T18:32:10+00:00"
+            "time": "2021-12-29T16:27:31+00:00"
         },
         {
             "name": "kirki-framework/util",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/util.git",
-                "reference": "b0ac108b58a401b8c176c04a86799d929df7cd5f"
+                "reference": "fa3deaafe48055b56aedf80501817e3d9e83211c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/util/zipball/b0ac108b58a401b8c176c04a86799d929df7cd5f",
-                "reference": "b0ac108b58a401b8c176c04a86799d929df7cd5f",
+                "url": "https://api.github.com/repos/kirki-framework/util/zipball/fa3deaafe48055b56aedf80501817e3d9e83211c",
+                "reference": "fa3deaafe48055b56aedf80501817e3d9e83211c",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -3861,14 +3781,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "The Kirki WordPress plugin core classes.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org",
             "keywords": [
                 "customizer",
                 "framework",
@@ -3876,9 +3794,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/util/issues",
-                "source": "https://github.com/kirki-framework/util/tree/v1.0.1"
+                "source": "https://github.com/kirki-framework/util/tree/v1.0.2"
             },
-            "time": "2021-11-25T17:57:47+00:00"
+            "time": "2021-12-29T16:32:57+00:00"
         },
         {
             "name": "linkorb/jsmin-php",
@@ -5391,16 +5309,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v5.4.1",
+            "version": "v5.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "9130e1a0fc93cb0faadca4ee917171bd2ca9e5f4"
+                "reference": "a2c6b7ced2eb7799a35375fb9022519282b5405e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/9130e1a0fc93cb0faadca4ee917171bd2ca9e5f4",
-                "reference": "9130e1a0fc93cb0faadca4ee917171bd2ca9e5f4",
+                "url": "https://api.github.com/repos/symfony/console/zipball/a2c6b7ced2eb7799a35375fb9022519282b5405e",
+                "reference": "a2c6b7ced2eb7799a35375fb9022519282b5405e",
                 "shasum": ""
             },
             "require": {
@@ -5470,7 +5388,7 @@
                 "terminal"
             ],
             "support": {
-                "source": "https://github.com/symfony/console/tree/v5.4.1"
+                "source": "https://github.com/symfony/console/tree/v5.4.2"
             },
             "funding": [
                 {
@@ -5486,7 +5404,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-12-09T11:22:43+00:00"
+            "time": "2021-12-20T16:11:12+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -5557,16 +5475,16 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v5.4.0",
+            "version": "v5.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "d2f29dac98e96a98be467627bd49c2efb1bc2590"
+                "reference": "e77046c252be48c48a40816187ed527703c8f76c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/d2f29dac98e96a98be467627bd49c2efb1bc2590",
-                "reference": "d2f29dac98e96a98be467627bd49c2efb1bc2590",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/e77046c252be48c48a40816187ed527703c8f76c",
+                "reference": "e77046c252be48c48a40816187ed527703c8f76c",
                 "shasum": ""
             },
             "require": {
@@ -5600,7 +5518,7 @@
             "description": "Finds files and directories via an intuitive fluent interface",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/finder/tree/v5.4.0"
+                "source": "https://github.com/symfony/finder/tree/v5.4.2"
             },
             "funding": [
                 {
@@ -5616,20 +5534,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-11-28T15:25:38+00:00"
+            "time": "2021-12-15T11:06:13+00:00"
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v5.4.1",
+            "version": "v5.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "5dad3780023a707f4c24beac7d57aead85c1ce3c"
+                "reference": "ce952af52877eaf3eab5d0c08cc0ea865ed37313"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/5dad3780023a707f4c24beac7d57aead85c1ce3c",
-                "reference": "5dad3780023a707f4c24beac7d57aead85c1ce3c",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/ce952af52877eaf3eab5d0c08cc0ea865ed37313",
+                "reference": "ce952af52877eaf3eab5d0c08cc0ea865ed37313",
                 "shasum": ""
             },
             "require": {
@@ -5673,7 +5591,7 @@
             "description": "Defines an object-oriented layer for the HTTP specification",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/http-foundation/tree/v5.4.1"
+                "source": "https://github.com/symfony/http-foundation/tree/v5.4.2"
             },
             "funding": [
                 {
@@ -5689,20 +5607,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-12-09T12:46:57+00:00"
+            "time": "2021-12-28T17:15:56+00:00"
         },
         {
             "name": "symfony/mime",
-            "version": "v5.4.0",
+            "version": "v5.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/mime.git",
-                "reference": "d4365000217b67c01acff407573906ff91bcfb34"
+                "reference": "1bfd938cf9562822c05c4d00e8f92134d3c8e42d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/mime/zipball/d4365000217b67c01acff407573906ff91bcfb34",
-                "reference": "d4365000217b67c01acff407573906ff91bcfb34",
+                "url": "https://api.github.com/repos/symfony/mime/zipball/1bfd938cf9562822c05c4d00e8f92134d3c8e42d",
+                "reference": "1bfd938cf9562822c05c4d00e8f92134d3c8e42d",
                 "shasum": ""
             },
             "require": {
@@ -5756,7 +5674,7 @@
                 "mime-type"
             ],
             "support": {
-                "source": "https://github.com/symfony/mime/tree/v5.4.0"
+                "source": "https://github.com/symfony/mime/tree/v5.4.2"
             },
             "funding": [
                 {
@@ -5772,24 +5690,27 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-11-23T10:19:22+00:00"
+            "time": "2021-12-28T17:15:56+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.23.0",
+            "version": "v1.24.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
-                "reference": "46cd95797e9df938fdd2b03693b5fca5e64b01ce"
+                "reference": "30885182c981ab175d4d034db0f6f469898070ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/46cd95797e9df938fdd2b03693b5fca5e64b01ce",
-                "reference": "46cd95797e9df938fdd2b03693b5fca5e64b01ce",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/30885182c981ab175d4d034db0f6f469898070ab",
+                "reference": "30885182c981ab175d4d034db0f6f469898070ab",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.1"
+            },
+            "provide": {
+                "ext-ctype": "*"
             },
             "suggest": {
                 "ext-ctype": "For best performance"
@@ -5835,7 +5756,7 @@
                 "portable"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.23.0"
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.24.0"
             },
             "funding": [
                 {
@@ -5851,20 +5772,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-02-19T12:13:01+00:00"
+            "time": "2021-10-20T20:35:02+00:00"
         },
         {
             "name": "symfony/polyfill-intl-grapheme",
-            "version": "v1.23.1",
+            "version": "v1.24.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-grapheme.git",
-                "reference": "16880ba9c5ebe3642d1995ab866db29270b36535"
+                "reference": "81b86b50cf841a64252b439e738e97f4a34e2783"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-grapheme/zipball/16880ba9c5ebe3642d1995ab866db29270b36535",
-                "reference": "16880ba9c5ebe3642d1995ab866db29270b36535",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-grapheme/zipball/81b86b50cf841a64252b439e738e97f4a34e2783",
+                "reference": "81b86b50cf841a64252b439e738e97f4a34e2783",
                 "shasum": ""
             },
             "require": {
@@ -5916,7 +5837,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-grapheme/tree/v1.23.1"
+                "source": "https://github.com/symfony/polyfill-intl-grapheme/tree/v1.24.0"
             },
             "funding": [
                 {
@@ -5932,20 +5853,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-05-27T12:26:48+00:00"
+            "time": "2021-11-23T21:10:46+00:00"
         },
         {
             "name": "symfony/polyfill-intl-idn",
-            "version": "v1.23.0",
+            "version": "v1.24.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-idn.git",
-                "reference": "65bd267525e82759e7d8c4e8ceea44f398838e65"
+                "reference": "749045c69efb97c70d25d7463abba812e91f3a44"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-idn/zipball/65bd267525e82759e7d8c4e8ceea44f398838e65",
-                "reference": "65bd267525e82759e7d8c4e8ceea44f398838e65",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-idn/zipball/749045c69efb97c70d25d7463abba812e91f3a44",
+                "reference": "749045c69efb97c70d25d7463abba812e91f3a44",
                 "shasum": ""
             },
             "require": {
@@ -6003,7 +5924,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-idn/tree/v1.23.0"
+                "source": "https://github.com/symfony/polyfill-intl-idn/tree/v1.24.0"
             },
             "funding": [
                 {
@@ -6019,11 +5940,11 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-05-27T09:27:20+00:00"
+            "time": "2021-09-14T14:02:44+00:00"
         },
         {
             "name": "symfony/polyfill-intl-normalizer",
-            "version": "v1.23.0",
+            "version": "v1.24.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-normalizer.git",
@@ -6087,7 +6008,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.23.0"
+                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.24.0"
             },
             "funding": [
                 {
@@ -6107,20 +6028,23 @@
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.23.1",
+            "version": "v1.24.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "9174a3d80210dca8daa7f31fec659150bbeabfc6"
+                "reference": "0abb51d2f102e00a4eefcf46ba7fec406d245825"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/9174a3d80210dca8daa7f31fec659150bbeabfc6",
-                "reference": "9174a3d80210dca8daa7f31fec659150bbeabfc6",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/0abb51d2f102e00a4eefcf46ba7fec406d245825",
+                "reference": "0abb51d2f102e00a4eefcf46ba7fec406d245825",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.1"
+            },
+            "provide": {
+                "ext-mbstring": "*"
             },
             "suggest": {
                 "ext-mbstring": "For best performance"
@@ -6167,7 +6091,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.23.1"
+                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.24.0"
             },
             "funding": [
                 {
@@ -6183,11 +6107,11 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-05-27T12:26:48+00:00"
+            "time": "2021-11-30T18:21:41+00:00"
         },
         {
             "name": "symfony/polyfill-php72",
-            "version": "v1.23.0",
+            "version": "v1.24.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php72.git",
@@ -6243,7 +6167,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php72/tree/v1.23.0"
+                "source": "https://github.com/symfony/polyfill-php72/tree/v1.24.0"
             },
             "funding": [
                 {
@@ -6263,16 +6187,16 @@
         },
         {
             "name": "symfony/polyfill-php73",
-            "version": "v1.23.0",
+            "version": "v1.24.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php73.git",
-                "reference": "fba8933c384d6476ab14fb7b8526e5287ca7e010"
+                "reference": "cc5db0e22b3cb4111010e48785a97f670b350ca5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php73/zipball/fba8933c384d6476ab14fb7b8526e5287ca7e010",
-                "reference": "fba8933c384d6476ab14fb7b8526e5287ca7e010",
+                "url": "https://api.github.com/repos/symfony/polyfill-php73/zipball/cc5db0e22b3cb4111010e48785a97f670b350ca5",
+                "reference": "cc5db0e22b3cb4111010e48785a97f670b350ca5",
                 "shasum": ""
             },
             "require": {
@@ -6322,7 +6246,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php73/tree/v1.23.0"
+                "source": "https://github.com/symfony/polyfill-php73/tree/v1.24.0"
             },
             "funding": [
                 {
@@ -6338,20 +6262,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-02-19T12:13:01+00:00"
+            "time": "2021-06-05T21:20:04+00:00"
         },
         {
             "name": "symfony/polyfill-php80",
-            "version": "v1.23.1",
+            "version": "v1.24.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php80.git",
-                "reference": "1100343ed1a92e3a38f9ae122fc0eb21602547be"
+                "reference": "57b712b08eddb97c762a8caa32c84e037892d2e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/1100343ed1a92e3a38f9ae122fc0eb21602547be",
-                "reference": "1100343ed1a92e3a38f9ae122fc0eb21602547be",
+                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/57b712b08eddb97c762a8caa32c84e037892d2e9",
+                "reference": "57b712b08eddb97c762a8caa32c84e037892d2e9",
                 "shasum": ""
             },
             "require": {
@@ -6405,7 +6329,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php80/tree/v1.23.1"
+                "source": "https://github.com/symfony/polyfill-php80/tree/v1.24.0"
             },
             "funding": [
                 {
@@ -6421,7 +6345,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-07-28T13:41:28+00:00"
+            "time": "2021-09-13T13:58:33+00:00"
         },
         {
             "name": "symfony/service-contracts",
@@ -6507,16 +6431,16 @@
         },
         {
             "name": "symfony/string",
-            "version": "v6.0.1",
+            "version": "v6.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/string.git",
-                "reference": "0cfed595758ec6e0a25591bdc8ca733c1896af32"
+                "reference": "bae261d0c3ac38a1f802b4dfed42094296100631"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/string/zipball/0cfed595758ec6e0a25591bdc8ca733c1896af32",
-                "reference": "0cfed595758ec6e0a25591bdc8ca733c1896af32",
+                "url": "https://api.github.com/repos/symfony/string/zipball/bae261d0c3ac38a1f802b4dfed42094296100631",
+                "reference": "bae261d0c3ac38a1f802b4dfed42094296100631",
                 "shasum": ""
             },
             "require": {
@@ -6572,7 +6496,7 @@
                 "utf8"
             ],
             "support": {
-                "source": "https://github.com/symfony/string/tree/v6.0.1"
+                "source": "https://github.com/symfony/string/tree/v6.0.2"
             },
             "funding": [
                 {
@@ -6588,20 +6512,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-12-08T15:13:44+00:00"
+            "time": "2021-12-16T22:13:01+00:00"
         },
         {
             "name": "symfony/translation",
-            "version": "v6.0.1",
+            "version": "v6.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "b7956e00c6e03546f2ba489fc50f7c47933e76b8"
+                "reference": "a16c33f93e2fd62d259222aebf792158e9a28a77"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/b7956e00c6e03546f2ba489fc50f7c47933e76b8",
-                "reference": "b7956e00c6e03546f2ba489fc50f7c47933e76b8",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/a16c33f93e2fd62d259222aebf792158e9a28a77",
+                "reference": "a16c33f93e2fd62d259222aebf792158e9a28a77",
                 "shasum": ""
             },
             "require": {
@@ -6667,7 +6591,7 @@
             "description": "Provides tools to internationalize your application",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/translation/tree/v6.0.1"
+                "source": "https://github.com/symfony/translation/tree/v6.0.2"
             },
             "funding": [
                 {
@@ -6683,7 +6607,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-12-08T15:13:44+00:00"
+            "time": "2021-12-25T20:10:03+00:00"
         },
         {
             "name": "symfony/translation-contracts",
@@ -6765,16 +6689,16 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v5.4.1",
+            "version": "v5.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "2366ac8d8abe0c077844613c1a4f0c0a9f522dcc"
+                "reference": "1b56c32c3679002b3a42384a580e16e2600f41c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/2366ac8d8abe0c077844613c1a4f0c0a9f522dcc",
-                "reference": "2366ac8d8abe0c077844613c1a4f0c0a9f522dcc",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/1b56c32c3679002b3a42384a580e16e2600f41c1",
+                "reference": "1b56c32c3679002b3a42384a580e16e2600f41c1",
                 "shasum": ""
             },
             "require": {
@@ -6834,7 +6758,7 @@
                 "dump"
             ],
             "support": {
-                "source": "https://github.com/symfony/var-dumper/tree/v5.4.1"
+                "source": "https://github.com/symfony/var-dumper/tree/v5.4.2"
             },
             "funding": [
                 {
@@ -6850,7 +6774,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-12-01T15:04:08+00:00"
+            "time": "2021-12-29T10:10:35+00:00"
         },
         {
             "name": "timber/timber",
@@ -6997,22 +6921,23 @@
         },
         {
             "name": "twig/twig",
-            "version": "v2.14.8",
+            "version": "v2.14.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "06b450a2326aa879faa2061ff72fe1588b3ab043"
+                "reference": "95fb194cd4dd6ac373a27af2bde2bad5d3f27aba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/06b450a2326aa879faa2061ff72fe1588b3ab043",
-                "reference": "06b450a2326aa879faa2061ff72fe1588b3ab043",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/95fb194cd4dd6ac373a27af2bde2bad5d3f27aba",
+                "reference": "95fb194cd4dd6ac373a27af2bde2bad5d3f27aba",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.2.5",
+                "php": ">=7.1.3",
                 "symfony/polyfill-ctype": "^1.8",
-                "symfony/polyfill-mbstring": "^1.3"
+                "symfony/polyfill-mbstring": "^1.3",
+                "symfony/polyfill-php72": "^1.8"
             },
             "require-dev": {
                 "psr/container": "^1.0",
@@ -7060,7 +6985,7 @@
             ],
             "support": {
                 "issues": "https://github.com/twigphp/Twig/issues",
-                "source": "https://github.com/twigphp/Twig/tree/v2.14.8"
+                "source": "https://github.com/twigphp/Twig/tree/v2.14.10"
             },
             "funding": [
                 {
@@ -7072,7 +6997,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-11-25T13:38:06+00:00"
+            "time": "2022-01-03T21:13:26+00:00"
         },
         {
             "name": "upstatement/routes",
@@ -7420,15 +7345,15 @@
         },
         {
             "name": "wpackagist-plugin/query-monitor",
-            "version": "3.7.1",
+            "version": "3.8.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/query-monitor/",
-                "reference": "tags/3.7.1"
+                "reference": "tags/3.8.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/query-monitor.3.7.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/query-monitor.3.8.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -7683,35 +7608,35 @@
         },
         {
             "name": "ergebnis/composer-normalize",
-            "version": "2.18.0",
+            "version": "2.23.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ergebnis/composer-normalize.git",
-                "reference": "294fcd40aa2ee991dfdfbd6a106dbee25f54c658"
+                "reference": "8139e8efbdb481e8907e03fca09c2507fe560751"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ergebnis/composer-normalize/zipball/294fcd40aa2ee991dfdfbd6a106dbee25f54c658",
-                "reference": "294fcd40aa2ee991dfdfbd6a106dbee25f54c658",
+                "url": "https://api.github.com/repos/ergebnis/composer-normalize/zipball/8139e8efbdb481e8907e03fca09c2507fe560751",
+                "reference": "8139e8efbdb481e8907e03fca09c2507fe560751",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^2.0.0",
-                "ergebnis/json-normalizer": "^1.0.3",
-                "ergebnis/json-printer": "^3.1.1",
+                "ergebnis/json-normalizer": "^2.1.0",
+                "ergebnis/json-printer": "^3.2.0",
                 "justinrainbow/json-schema": "^5.2.11",
                 "localheinz/diff": "^1.1.1",
-                "php": "^7.2 || ^8.0"
+                "php": "^7.4 || ^8.0"
             },
             "require-dev": {
-                "composer/composer": "^2.1.14",
-                "ergebnis/license": "^1.1.0",
-                "ergebnis/php-cs-fixer-config": "^2.14.0",
-                "ergebnis/test-util": "^1.5.0",
-                "phpunit/phpunit": "^8.5.21",
+                "composer/composer": "^2.2.3",
+                "ergebnis/license": "^1.2.0",
+                "ergebnis/php-cs-fixer-config": "^3.4.0",
+                "fakerphp/faker": "^1.17.0",
+                "phpunit/phpunit": "^9.5.11",
                 "psalm/plugin-phpunit": "~0.16.1",
                 "symfony/filesystem": "^5.4.0",
-                "vimeo/psalm": "^4.14.0"
+                "vimeo/psalm": "^4.17.0"
             },
             "type": "composer-plugin",
             "extra": {
@@ -7754,43 +7679,38 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-12-08T09:16:32+00:00"
+            "time": "2022-01-04T11:37:51+00:00"
         },
         {
             "name": "ergebnis/json-normalizer",
-            "version": "1.0.3",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ergebnis/json-normalizer.git",
-                "reference": "4a7f064ce34d5a2e382564565cdd433dbc5b9494"
+                "reference": "2039eb11131a243b9204bf51219baa08935e6b1d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ergebnis/json-normalizer/zipball/4a7f064ce34d5a2e382564565cdd433dbc5b9494",
-                "reference": "4a7f064ce34d5a2e382564565cdd433dbc5b9494",
+                "url": "https://api.github.com/repos/ergebnis/json-normalizer/zipball/2039eb11131a243b9204bf51219baa08935e6b1d",
+                "reference": "2039eb11131a243b9204bf51219baa08935e6b1d",
                 "shasum": ""
             },
             "require": {
-                "ergebnis/json-printer": "^3.1.1",
+                "ergebnis/json-printer": "^3.2.0",
+                "ergebnis/json-schema-validator": "^2.0.0",
                 "ext-json": "*",
-                "justinrainbow/json-schema": "^5.2.10",
-                "php": "^7.2 || ^8.0"
+                "justinrainbow/json-schema": "^5.2.11",
+                "php": "^7.4 || ^8.0"
             },
             "require-dev": {
-                "ergebnis/license": "^1.1.0",
-                "ergebnis/php-cs-fixer-config": "^2.10.0",
-                "ergebnis/phpstan-rules": "~0.15.3",
-                "ergebnis/test-util": "^1.4.0",
-                "infection/infection": "~0.15.3",
-                "jangregor/phpstan-prophecy": "~0.8.1",
-                "phpstan/extension-installer": "^1.1.0",
-                "phpstan/phpstan": "~0.12.80",
-                "phpstan/phpstan-deprecation-rules": "~0.12.6",
-                "phpstan/phpstan-phpunit": "~0.12.17",
-                "phpstan/phpstan-strict-rules": "~0.12.9",
-                "phpunit/phpunit": "^8.5.14",
-                "psalm/plugin-phpunit": "~0.12.2",
-                "vimeo/psalm": "^3.18"
+                "ergebnis/data-provider": "^1.0.0",
+                "ergebnis/license": "^1.2.0",
+                "ergebnis/php-cs-fixer-config": "^3.4.0",
+                "fakerphp/faker": "^1.17.0",
+                "infection/infection": "~0.25.5",
+                "phpunit/phpunit": "^9.5.11",
+                "psalm/plugin-phpunit": "~0.16.1",
+                "vimeo/psalm": "^4.17.0"
             },
             "type": "library",
             "autoload": {
@@ -7824,41 +7744,35 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-03-06T13:33:57+00:00"
+            "time": "2022-01-04T11:19:55+00:00"
         },
         {
             "name": "ergebnis/json-printer",
-            "version": "3.1.1",
+            "version": "3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ergebnis/json-printer.git",
-                "reference": "e4190dadd9937a77d8afcaf2b6c42a528ab367d6"
+                "reference": "651cab2b7604a6b338d0d16749f5ea0851a68005"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ergebnis/json-printer/zipball/e4190dadd9937a77d8afcaf2b6c42a528ab367d6",
-                "reference": "e4190dadd9937a77d8afcaf2b6c42a528ab367d6",
+                "url": "https://api.github.com/repos/ergebnis/json-printer/zipball/651cab2b7604a6b338d0d16749f5ea0851a68005",
+                "reference": "651cab2b7604a6b338d0d16749f5ea0851a68005",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "ext-mbstring": "*",
-                "php": "^7.2 || ^8.0"
+                "php": "^7.4 || ^8.0"
             },
             "require-dev": {
-                "ergebnis/license": "^1.0.0",
-                "ergebnis/php-cs-fixer-config": "^2.2.1",
-                "ergebnis/phpstan-rules": "~0.15.2",
-                "ergebnis/test-util": "^1.1.0",
-                "infection/infection": "~0.15.3",
-                "phpstan/extension-installer": "^1.0.4",
-                "phpstan/phpstan": "~0.12.40",
-                "phpstan/phpstan-deprecation-rules": "~0.12.5",
-                "phpstan/phpstan-phpunit": "~0.12.16",
-                "phpstan/phpstan-strict-rules": "~0.12.4",
-                "phpunit/phpunit": "^8.5.8",
-                "psalm/plugin-phpunit": "~0.11.0",
-                "vimeo/psalm": "^3.14.2"
+                "ergebnis/license": "^1.1.0",
+                "ergebnis/php-cs-fixer-config": "^3.4.0",
+                "fakerphp/faker": "^1.17.0",
+                "infection/infection": "~0.25.5",
+                "phpunit/phpunit": "^9.5.11",
+                "psalm/plugin-phpunit": "~0.16.1",
+                "vimeo/psalm": "^4.16.1"
             },
             "type": "library",
             "autoload": {
@@ -7893,7 +7807,78 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-08-30T12:17:03+00:00"
+            "time": "2021-12-27T12:39:13+00:00"
+        },
+        {
+            "name": "ergebnis/json-schema-validator",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ergebnis/json-schema-validator.git",
+                "reference": "dacd8a47c1cc2c426ec71e952da3609ebe901fac"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ergebnis/json-schema-validator/zipball/dacd8a47c1cc2c426ec71e952da3609ebe901fac",
+                "reference": "dacd8a47c1cc2c426ec71e952da3609ebe901fac",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "justinrainbow/json-schema": "^5.2.10",
+                "php": "^7.4 || ^8.0"
+            },
+            "require-dev": {
+                "ergebnis/composer-normalize": "^2.18.0",
+                "ergebnis/data-provider": "^1.0.0",
+                "ergebnis/license": "^1.1.0",
+                "ergebnis/php-cs-fixer-config": "~3.4.0",
+                "fakerphp/faker": "^1.17.0",
+                "infection/infection": "~0.25.3",
+                "phpunit/phpunit": "~9.5.10",
+                "psalm/plugin-phpunit": "~0.16.1",
+                "vimeo/psalm": "^4.15.0"
+            },
+            "type": "library",
+            "extra": {
+                "composer-normalize": {
+                    "indent-size": 2,
+                    "indent-style": "space"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ergebnis\\Json\\SchemaValidator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andreas Möller",
+                    "email": "am@localheinz.com"
+                }
+            ],
+            "description": "Provides a JSON schema validator, building on top of justinrainbow/json-schema.",
+            "homepage": "https://github.com/ergebnis/json-schema-validator",
+            "keywords": [
+                "json",
+                "schema",
+                "validator"
+            ],
+            "support": {
+                "issues": "https://github.com/ergebnis/json-schema-validator/issues",
+                "source": "https://github.com/ergebnis/json-schema-validator"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/localheinz",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-12-13T16:54:56+00:00"
         },
         {
             "name": "friendsoftwig/twigcs",
@@ -8534,16 +8519,16 @@
         },
         {
             "name": "phpdocumentor/type-resolver",
-            "version": "1.5.1",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/TypeResolver.git",
-                "reference": "a12f7e301eb7258bb68acd89d4aefa05c2906cae"
+                "reference": "93ebd0014cab80c4ea9f5e297ea48672f1b87706"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/a12f7e301eb7258bb68acd89d4aefa05c2906cae",
-                "reference": "a12f7e301eb7258bb68acd89d4aefa05c2906cae",
+                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/93ebd0014cab80c4ea9f5e297ea48672f1b87706",
+                "reference": "93ebd0014cab80c4ea9f5e297ea48672f1b87706",
                 "shasum": ""
             },
             "require": {
@@ -8578,9 +8563,9 @@
             "description": "A PSR-5 based resolver of Class names, Types and Structural Element Names",
             "support": {
                 "issues": "https://github.com/phpDocumentor/TypeResolver/issues",
-                "source": "https://github.com/phpDocumentor/TypeResolver/tree/1.5.1"
+                "source": "https://github.com/phpDocumentor/TypeResolver/tree/1.6.0"
             },
-            "time": "2021-10-02T14:08:47+00:00"
+            "time": "2022-01-04T19:58:01+00:00"
         },
         {
             "name": "phpspec/prophecy",
@@ -8969,16 +8954,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.5.10",
+            "version": "9.5.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "c814a05837f2edb0d1471d6e3f4ab3501ca3899a"
+                "reference": "2406855036db1102126125537adb1406f7242fdd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c814a05837f2edb0d1471d6e3f4ab3501ca3899a",
-                "reference": "c814a05837f2edb0d1471d6e3f4ab3501ca3899a",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/2406855036db1102126125537adb1406f7242fdd",
+                "reference": "2406855036db1102126125537adb1406f7242fdd",
                 "shasum": ""
             },
             "require": {
@@ -9056,11 +9041,11 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.5.10"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.5.11"
             },
             "funding": [
                 {
-                    "url": "https://phpunit.de/donate.html",
+                    "url": "https://phpunit.de/sponsors.html",
                     "type": "custom"
                 },
                 {
@@ -9068,7 +9053,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-09-25T07:38:51+00:00"
+            "time": "2021-12-25T07:07:57+00:00"
         },
         {
             "name": "roave/security-advisories",
@@ -9076,12 +9061,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "31d9d9e2977ae7d796d82271be09e46f4bdf41b3"
+                "reference": "cf076bc797a0051c51e958f3be7065d5c4c1b802"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/31d9d9e2977ae7d796d82271be09e46f4bdf41b3",
-                "reference": "31d9d9e2977ae7d796d82271be09e46f4bdf41b3",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/cf076bc797a0051c51e958f3be7065d5c4c1b802",
+                "reference": "cf076bc797a0051c51e958f3be7065d5c4c1b802",
                 "shasum": ""
             },
             "conflict": {
@@ -9093,6 +9078,7 @@
                 "amphp/artax": "<1.0.6|>=2,<2.0.6",
                 "amphp/http": "<1.0.1",
                 "amphp/http-client": ">=4,<4.4",
+                "anchorcms/anchor-cms": "<=0.12.7",
                 "api-platform/core": ">=2.2,<2.2.10|>=2.3,<2.3.6",
                 "area17/twill": "<1.2.5|>=2,<2.5.3",
                 "asymmetricrypt/asymmetricrypt": ">=0,<9.9.99",
@@ -9118,6 +9104,7 @@
                 "cesnet/simplesamlphp-module-proxystatistics": "<3.1",
                 "codeception/codeception": "<3.1.3|>=4,<4.1.22",
                 "codeigniter/framework": "<=3.0.6",
+                "codeigniter4/framework": "<4.1.6",
                 "codiad/codiad": "<=2.8.4",
                 "composer/composer": "<1.10.23|>=2-alpha.1,<2.1.9",
                 "concrete5/concrete5": "<8.5.5",
@@ -9293,7 +9280,7 @@
                 "phpunit/phpunit": ">=4.8.19,<4.8.28|>=5.0.10,<5.6.3",
                 "phpwhois/phpwhois": "<=4.2.5",
                 "phpxmlrpc/extras": "<0.6.1",
-                "pimcore/pimcore": "<10.2.6",
+                "pimcore/pimcore": "<10.2.7",
                 "pocketmine/pocketmine-mp": "<4.0.3",
                 "pressbooks/pressbooks": "<5.18",
                 "prestashop/autoupgrade": ">=4,<4.10.1",
@@ -9311,7 +9298,7 @@
                 "pusher/pusher-php-server": "<2.2.1",
                 "pwweb/laravel-core": "<=0.3.6-beta",
                 "rainlab/debugbar-plugin": "<3.1",
-                "remdex/livehelperchat": "<=3.90",
+                "remdex/livehelperchat": "<3.91",
                 "rmccue/requests": ">=1.6,<1.8",
                 "robrichards/xmlseclibs": "<3.0.4",
                 "sabberworm/php-css-parser": ">=1,<1.0.1|>=2,<2.0.1|>=3,<3.0.1|>=4,<4.0.1|>=5,<5.0.9|>=5.1,<5.1.3|>=5.2,<5.2.1|>=6,<6.0.2|>=7,<7.0.4|>=8,<8.0.1|>=8.1,<8.1.1|>=8.2,<8.2.1|>=8.3,<8.3.1",
@@ -9500,7 +9487,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-12-22T21:13:38+00:00"
+            "time": "2022-01-05T21:13:39+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -10689,7 +10676,7 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "beta",
+    "minimum-stability": "stable",
     "stability-flags": {
         "czernika/brocooly-core": 20,
         "roave/security-advisories": 20

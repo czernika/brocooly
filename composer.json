@@ -81,6 +81,6 @@
             "php -r \"copy('.env.example', '.env');\""
         ]
     },
-    "minimum-stability": "beta",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }
