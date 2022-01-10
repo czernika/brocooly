@@ -327,7 +327,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/czernika/brocooly-core.git",
-                "reference": "dd05f252bb73a849f558c63dce3eb97d2ba8f7a4"
+                "reference": "27cf0b0a338de65dc4722dc98fb7ef7d16073fb7"
             },
             "require": {
                 "aristath/kirki": "^4.0",
@@ -381,7 +381,7 @@
                 }
             ],
             "description": "Core engine for Brocooly Framework",
-            "time": "2022-01-10T12:58:59+00:00"
+            "time": "2022-01-10T17:04:17+00:00"
         },
         {
             "name": "djboris88/timber-commented-include",
@@ -3238,16 +3238,16 @@
         },
         {
             "name": "kirki-framework/module-css",
-            "version": "v1.0.4",
+            "version": "v1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/module-css.git",
-                "reference": "1056b274b5927cb935183342d593c2b8da1d487e"
+                "reference": "529a074553df5d979ce2708d3cc9ad67fee4dad5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/module-css/zipball/1056b274b5927cb935183342d593c2b8da1d487e",
-                "reference": "1056b274b5927cb935183342d593c2b8da1d487e",
+                "url": "https://api.github.com/repos/kirki-framework/module-css/zipball/529a074553df5d979ce2708d3cc9ad67fee4dad5",
+                "reference": "529a074553df5d979ce2708d3cc9ad67fee4dad5",
                 "shasum": ""
             },
             "require": {
@@ -3279,9 +3279,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/module-css/issues",
-                "source": "https://github.com/kirki-framework/module-css/tree/v1.0.4"
+                "source": "https://github.com/kirki-framework/module-css/tree/v1.0.5"
             },
-            "time": "2022-01-04T19:19:22+00:00"
+            "time": "2022-01-10T13:15:55+00:00"
         },
         {
             "name": "kirki-framework/module-editor-styles",

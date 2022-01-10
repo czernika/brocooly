@@ -16,7 +16,7 @@ class RouteServiceProvider extends AbstractService
 {
 	public function register()
 	{
-		//...
+
 	}
 
 	public function boot()

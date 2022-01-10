@@ -34,8 +34,6 @@ add_filter(
 	}
 );
 
-$container = require_once BROCOOLY_CORE_PATH . '/container.php';
-
 /**
  * --------------------------------------------------------------------------
  * Include Kirki Framework
@@ -52,30 +50,13 @@ if ( ! class_exists( 'Kirki' ) ) {
 
 /**
  * --------------------------------------------------------------------------
- * Enqueue tinyMCE editor
- * --------------------------------------------------------------------------
- *
- * TODO: Currently bugged - any editor inside customizer section cannot be instantiated
- * So we do it manually
- */
-if ( is_customize_preview() ) {
-	add_action(
-		'admin_enqueue_scripts',
-		function() {
-			wp_enqueue_editor();
-		}
-	);
-}
-
-/**
- * --------------------------------------------------------------------------
  * Call The Application
  * --------------------------------------------------------------------------
  *
  * Call App class.
  * We are gonna register and load all Providers for application.
  */
-$brocooly = $container->make(
+$brocooly = container()->make(
 	\Brocooly\Contracts\AppContainerInterface::class
 );
 

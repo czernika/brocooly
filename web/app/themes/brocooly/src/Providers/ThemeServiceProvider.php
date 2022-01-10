@@ -40,13 +40,30 @@ class ThemeServiceProvider extends AbstractService
 	 * @return void
 	 */
 	public function boot() {
-		add_action( 'after_setup_theme', [ $this, 'registerFeatures' ] );
+		add_action( 'after_setup_theme', [ $this, 'addThemeSupport' ] );
+
+		/**
+		 * --------------------------------------------------------------------------
+		 * Enqueue tinyMCE editor
+		 * --------------------------------------------------------------------------
+		 *
+		 * TODO: Currently bugged - any editor inside customizer section cannot be instantiated
+		 * So we do it manually
+		 */
+		if ( is_customize_preview() ) {
+			add_action(
+				'admin_enqueue_scripts',
+				function() {
+					wp_enqueue_editor();
+				}
+			);
+		}
 	}
 
 	/**
 	 * Register main theme features
 	 */
-	public function registerFeatures() {
+	public function addThemeSupport() {
 		// Add custom theme logo support.
 		add_theme_support(
 			'custom-logo',
