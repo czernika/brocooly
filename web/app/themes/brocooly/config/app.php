@@ -8,7 +8,7 @@
 
 use Theme\Models\WP\Page;
 use Theme\Models\WP\Post;
-
+use Theme\Providers\RouteServiceProvider;
 use Theme\Providers\ThemeServiceProvider;
 
 return [
@@ -51,6 +51,7 @@ return [
 	 * Custom service providers. Use them to bind some value into Container, register or just boot some grouped features within
 	 */
 	'providers'  => [
+		RouteServiceProvider::class,
 		ThemeServiceProvider::class,
 	],
 

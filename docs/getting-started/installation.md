@@ -25,6 +25,8 @@ This will create database named `DB_NAME` with `DB_PREFIX` prefixes for all tabl
 
 Next go to `WP_HOME` address and finish the installation of WordPress or do it with `wp core install ...` command.
 
+> You may generate WordPress salts - simply go to [https://roots.io/salts.html](https://roots.io/salts.html) and paste generated keys into `.env` file or use `wp dotenv salts generate` command with [this](https://github.com/aaemnnosttv/wp-cli-dotenv-command) WP CLI package 
+
 You will see starter screen
 
 ![Starter screen](/_media/starter-screen.png)
@@ -35,4 +37,4 @@ To start development server at `localhost:3000` run
 npm run watch
 ```
 
-Login into admin-panel with `wp/wp-login.php` and that's it. Happy publishing!
+Login into admin-panel with `wp/wp-login.php` and that's it. Happy coding!

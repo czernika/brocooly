@@ -49,7 +49,7 @@ return [
 		/**
 		 * SMTP
 		 */
-		'mailtrap'    => [
+		'mailtrap'  => [
 			'transport'  => 'smtp',
 			'host'       => env( 'MAIL_HOST' ) ?? 'smtp.mailtrap.io',
 			'port'       => env( 'MAIL_PORT' ) ?? 2525,

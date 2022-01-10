@@ -17,7 +17,7 @@ return [
 	 *
 	 * Register theme menu location and add it to global context
 	 */
-	'menus'   => [
+	'menus' => [
 		PrimaryMenu::class,
 	],
 

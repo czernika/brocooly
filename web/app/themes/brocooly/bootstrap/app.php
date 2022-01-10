@@ -18,6 +18,20 @@
  *
  * @link https://php-di.org/doc/
  */
+add_filter(
+	'brocooly_container_builder',
+	function( $builder ) {
+
+		/**
+		 * Custom container configuration
+		 * Kinda useless if you think as ALL definitions within core are dynamic and autowired
+		 *
+		 * @link https://php-di.org/doc/container-configuration.html
+		 */
+		return $builder;
+	}
+);
+
 $container = require_once BROCOOLY_CORE_PATH . '/container.php';
 
 /**
@@ -26,6 +40,8 @@ $container = require_once BROCOOLY_CORE_PATH . '/container.php';
  * --------------------------------------------------------------------------
  *
  * Only if there are no Kirki plugin installed
+ * Not 100% sure why it has to be required directly
+ *
  * FIXME
  */
 if ( ! class_exists( 'Kirki' ) ) {

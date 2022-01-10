@@ -128,3 +128,56 @@ It contains two general methods - `options()` and `controls()`. First one is for
 If you uncomment `Mod` facade with `example_setting` inside Customizer panels you will see
 
 ## Site options
+
+Options - is an "orphan" setting without custom section - in fact, no option can be set without section, so the only use case where it will be useful to generate option - is to register it within native WordPress customizer section such as "Title and tagline" etc
+
+To generate it simply run
+```php
+php broccoli new:customizer:option <OptionName>
+```
+
+```php
+namespace Theme\Customizer\Options;
+
+use Brocooly\Customizer\AbstractOption;
+use Brocooly\Customizer\WPSection;
+use Brocooly\Support\Facades\Mod;
+
+class HappyNewYear extends AbstractOption
+{
+	/**
+	 * Create option instance
+	 *
+	 * This will create simple text option
+	 * You need to specify WordPress section id
+	 * For `Site Title & Tagline` it is `title_tagline`
+	 *
+	 * @link https://kirki.org/docs/controls/
+	 * @link https://developer.wordpress.org/themes/customize-api/customizer-objects/#sections
+	 * @return array
+	 */
+	public function settings(): array
+	{
+		return Mod::text(
+			'example_text',
+			[
+				// 'section' => WPSection::TITLE_TAGLINE,
+				'label'   => esc_html__( 'Example text', 'brocooly' ),
+			],
+		);
+	}
+}
+```
+
+This will generate text option inside "Title adn Tagline" section. The full list of nativae sections is
+
+| Constant | Section id |
+| ----- | ----- |
+| `TITLE_TAGLINE` | `title_tagline` |
+| `COLORS` | `colors` |
+| `HEADER_IMAGE` | `header_image` |
+| `BACKGROUND_IMAGE` | `background_image` |
+| `NAV_MENUS` | `nav_menus` |
+| `WIDGETS` | `widgets` |
+| `STATIC_FRONT_PAGE` | `static_front_page` |
+| `CUSTOM_CSS` | `custom_css` |
