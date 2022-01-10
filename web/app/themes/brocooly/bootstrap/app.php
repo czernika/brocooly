@@ -23,9 +23,11 @@ add_filter(
 	function( $builder ) {
 
 		/**
-		 * Custom container configuration
-		 * Kinda useless if you think as ALL definitions within core are dynamic and autowired
+		 * Change container configuration
 		 *
+		 * ! This will NOT work with dynamic container via `set()` method of App instance
+		 *
+		 * @since 0.26.0
 		 * @link https://php-di.org/doc/container-configuration.html
 		 */
 		return $builder;

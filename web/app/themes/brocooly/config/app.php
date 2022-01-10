@@ -32,6 +32,17 @@ return [
 
 	/**
 	 * --------------------------------------------------------------------------
+	 * Autowire post type slug to its object or not
+	 * --------------------------------------------------------------------------
+	 *
+	 * This may be useful for production, but it requires you to bind model and it's post type within `definitions()` method of Brocooly class as `Post::POST_TYPE => create( Post::class )`
+	 *
+	 * @since 0.26.0
+	 */
+	'autowire_post_types' => false,
+
+	/**
+	 * --------------------------------------------------------------------------
 	 * Custom hooks
 	 * --------------------------------------------------------------------------
 	 *
