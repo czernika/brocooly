@@ -1,7 +1,8 @@
 <?php
 /**
- * Set all your routes here
- * In example below we will handle some basic WordPress requests
+ * Set all your web routes here
+ * In example below we will handle basic WordPress request for front page
+ *
  * Note that is_404() conditional resolved automatically
  * but you are free to override this behavior here.
  *

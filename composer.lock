@@ -327,7 +327,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/czernika/brocooly-core.git",
-                "reference": "27cf0b0a338de65dc4722dc98fb7ef7d16073fb7"
+                "reference": "4a199f0cb9d349d543886e95705decb0551dd146"
             },
             "require": {
                 "aristath/kirki": "^4.0",
@@ -381,7 +381,7 @@
                 }
             ],
             "description": "Core engine for Brocooly Framework",
-            "time": "2022-01-10T17:04:17+00:00"
+            "time": "2022-01-11T14:24:04+00:00"
         },
         {
             "name": "djboris88/timber-commented-include",
@@ -1692,16 +1692,16 @@
         },
         {
             "name": "kirki-framework/compatibility",
-            "version": "v1.0.7",
+            "version": "v1.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/compatibility.git",
-                "reference": "c8a41761a9d4312b3ed92ca2984a56ccd0b9dd19"
+                "reference": "2e1ee739f9339a8a9878ea7638eea4affb3bf593"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/compatibility/zipball/c8a41761a9d4312b3ed92ca2984a56ccd0b9dd19",
-                "reference": "c8a41761a9d4312b3ed92ca2984a56ccd0b9dd19",
+                "url": "https://api.github.com/repos/kirki-framework/compatibility/zipball/2e1ee739f9339a8a9878ea7638eea4affb3bf593",
+                "reference": "2e1ee739f9339a8a9878ea7638eea4affb3bf593",
                 "shasum": ""
             },
             "require": {
@@ -1732,9 +1732,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/compatibility/issues",
-                "source": "https://github.com/kirki-framework/compatibility/tree/v1.0.7"
+                "source": "https://github.com/kirki-framework/compatibility/tree/v1.0.8"
             },
-            "time": "2022-01-04T19:16:43+00:00"
+            "time": "2022-01-10T17:10:50+00:00"
         },
         {
             "name": "kirki-framework/control-base",

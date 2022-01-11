@@ -305,3 +305,27 @@ class UserLoggedIn extends AbstractMiddleware
 ```
 
 For example in this case we allow to see single posts only for logged in users.
+
+### Dependency Injection
+
+Brocooly Framework supports simple dependency injection **ONLY** for one passed parameter directly
+
+```php
+Route::get( 'is_front_page', function( ThemeRequest $request ) {
+    dd( $request );
+} );
+```
+
+In this case you will `ThemeRequest` object. Same is valid for Controllers - no need to pass param within Route facade, just bind it directly into controller method 
+
+```php
+Route::get( 'is_front_page', [ PostController::class, 'index' ] );
+
+class PostController
+{
+    public function index( ThemeRequest $request )
+    {
+        dd( $request );
+    }
+}
+```

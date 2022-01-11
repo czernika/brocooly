@@ -6,12 +6,6 @@ Controllers - is a class which may help you to organize requests and responses i
 
 To create simple controller run the following command:
 
-```
-php broccoli new:middleware <Class/Name/Within/Folder>
-```
-
-Let's say you want to create `IsIhar` middleware inside `MyMiddleware` folder the command will be
-
 ```bash
 php broccoli new:controller SimpleController
 ```
@@ -48,7 +42,9 @@ abstract class SimpleController extends BaseController
 }
 ```
 
-Sometimes you need to extend not `BaseController` but `AjaxController` - it has its own place inside theme folder. So the command would be 
+Sometimes you need to extend not `BaseController` but `AjaxController` - it has its own place inside theme folder. So the command would be
+
+!> AjaxController is currently in development mode so it can be easily changed by core itself. Yeap
 
 ```bash
 php broccoli new:controller SimpleController -a
@@ -176,6 +172,22 @@ class PostController
     public function single( IndexRequest $request )
     {
         // dd( $request );
+    }
+}
+```
+
+### Dependency Injection
+
+As was mentioned [before](basics/routing.md?id=dependency-injection) Brocooly supports single element dependency injection inside callback methods no need to pass param within Route facade, just bind it directly into controller method 
+
+```php
+Route::get( 'is_front_page', [ PostController::class, 'index' ] );
+
+class PostController
+{
+    public function index( ThemeRequest $request )
+    {
+        dd( $request );
     }
 }
 ```

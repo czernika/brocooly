@@ -19,13 +19,13 @@
 * Front-End
     * [Basic Concepts](front/basic.md)
     * [Styles](front/styles.md)
-    * [Scripts](front/styles.md)
+    * [Scripts](front/scripts.md)
     * [Images](front/images.md)
-    * [Menus](basics/menus.md)
-    * [Gutenberg Blocks](advanced/blocks.md)
-    * [Sidebars and Widgets](advanced/widgets.md)
-    * [Shortcodes](advanced/shortcodes.md)
-    * [Templates](advanced/templates.md)
+    * [Menus](front/menus.md)
+    * [Gutenberg Blocks](front/blocks.md)
+    * [Sidebars and Widgets](front/widgets.md)
+    * [Shortcodes](front/shortcodes.md)
+    * [Templates](front/templates.md)
     * [Helpers](front/helpers.md)
 
 * Digging Deeper
@@ -36,7 +36,7 @@
     * [Raw DB Queries](advanced/db.md)
     * [Service Container](advanced/container.md)
     * [Modular Structure](advanced/modular.md)
-    * [Database Dumps and Seeding](advanced/db.md)
+    * [Database Dumps and Seeding](advanced/seeds.md)
     * [Optimization](advanced/optimization.md)
     * [Deployment](advanced/deployment.md)
     * [Plugins Integration](advanced/integration.md)
