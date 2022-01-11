@@ -67,6 +67,7 @@
     "stylelint-config-standard": "^24.0.0",
     "stylelint-scss": "^4.1.0",
     "svg-spritemap-webpack-plugin": "^4.4.0",
+    "tinify-loader": "^1.0.0",
     "webp-in-css": "^0.7.0",
     "webpack": "^5.65.0",
     "webpack-assets-manifest": "^5.0.6",

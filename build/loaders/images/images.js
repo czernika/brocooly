@@ -14,9 +14,17 @@ const loader = {
 	},
 	parser: {
 		dataUrlCondition: {
-			maxSize: 8 * 1024, // 8kb
+			maxSize: 2 * 1024, // 8kb
 		},
 	},
+	use: [
+		{
+			loader: 'tinify-loader',
+			options: {
+				apikey: process.env.TINYPNG_KEY,
+			}
+		}
+	]
 };
 
 module.exports = loader;
