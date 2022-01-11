@@ -68,16 +68,16 @@
         },
         {
             "name": "aristath/kirki",
-            "version": "v4.0.3",
+            "version": "v4.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/kirki.git",
-                "reference": "95e8208b1fe7dc4abce535719330ce0bfc1023c7"
+                "reference": "c70f1bc0c677e8e963d271d8bb18c7d1c6e5d07b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/kirki/zipball/95e8208b1fe7dc4abce535719330ce0bfc1023c7",
-                "reference": "95e8208b1fe7dc4abce535719330ce0bfc1023c7",
+                "url": "https://api.github.com/repos/kirki-framework/kirki/zipball/c70f1bc0c677e8e963d271d8bb18c7d1c6e5d07b",
+                "reference": "c70f1bc0c677e8e963d271d8bb18c7d1c6e5d07b",
                 "shasum": ""
             },
             "require": {
@@ -118,6 +118,7 @@
                 "kirki-framework/module-panels": "*",
                 "kirki-framework/module-postmessage": "*",
                 "kirki-framework/module-preset": "*",
+                "kirki-framework/module-section-icons": "*",
                 "kirki-framework/module-sections": "*",
                 "kirki-framework/module-selective-refresh": "*",
                 "kirki-framework/module-tooltips": "*",
@@ -156,7 +157,7 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/kirki/issues",
-                "source": "https://github.com/kirki-framework/kirki/tree/v4.0.3"
+                "source": "https://github.com/kirki-framework/kirki/tree/v4.0.13"
             },
             "funding": [
                 {
@@ -168,7 +169,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-12-30T15:53:48+00:00"
+            "time": "2022-01-11T17:14:59+00:00"
         },
         {
             "name": "composer/installers",
@@ -327,7 +328,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/czernika/brocooly-core.git",
-                "reference": "4a199f0cb9d349d543886e95705decb0551dd146"
+                "reference": "56c72f646ed79c003cd147cb894e15b5d6455ef6"
             },
             "require": {
                 "aristath/kirki": "^4.0",
@@ -381,7 +382,7 @@
                 }
             ],
             "description": "Core engine for Brocooly Framework",
-            "time": "2022-01-11T14:24:04+00:00"
+            "time": "2022-01-11T19:47:36+00:00"
         },
         {
             "name": "djboris88/timber-commented-include",
@@ -2312,16 +2313,16 @@
         },
         {
             "name": "kirki-framework/control-image",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/control-image.git",
-                "reference": "d9adfbede5a2349d3aa7eb1c885c581681b4e450"
+                "reference": "32e2a2aff8a7e5d6ff9dfe530563a4381dc82e61"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/control-image/zipball/d9adfbede5a2349d3aa7eb1c885c581681b4e450",
-                "reference": "d9adfbede5a2349d3aa7eb1c885c581681b4e450",
+                "url": "https://api.github.com/repos/kirki-framework/control-image/zipball/32e2a2aff8a7e5d6ff9dfe530563a4381dc82e61",
+                "reference": "32e2a2aff8a7e5d6ff9dfe530563a4381dc82e61",
                 "shasum": ""
             },
             "require": {
@@ -2355,9 +2356,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/control-image/issues",
-                "source": "https://github.com/kirki-framework/control-image/tree/v1.0.1"
+                "source": "https://github.com/kirki-framework/control-image/tree/v1.0.2"
             },
-            "time": "2021-12-29T14:36:31+00:00"
+            "time": "2022-01-11T15:22:22+00:00"
         },
         {
             "name": "kirki-framework/control-multicheck",
@@ -2848,16 +2849,16 @@
         },
         {
             "name": "kirki-framework/field",
-            "version": "v1.0.6",
+            "version": "v1.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/field.git",
-                "reference": "1ce92e6cd5845468094fea84733f2dc8994a26e5"
+                "reference": "6ffe23727a33246eb7ffc2c636b6b5af1d6ea53f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/field/zipball/1ce92e6cd5845468094fea84733f2dc8994a26e5",
-                "reference": "1ce92e6cd5845468094fea84733f2dc8994a26e5",
+                "url": "https://api.github.com/repos/kirki-framework/field/zipball/6ffe23727a33246eb7ffc2c636b6b5af1d6ea53f",
+                "reference": "6ffe23727a33246eb7ffc2c636b6b5af1d6ea53f",
                 "shasum": ""
             },
             "require": {
@@ -2887,9 +2888,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/field/issues",
-                "source": "https://github.com/kirki-framework/field/tree/v1.0.6"
+                "source": "https://github.com/kirki-framework/field/tree/v1.0.7"
             },
-            "time": "2022-01-06T15:57:04+00:00"
+            "time": "2022-01-11T17:04:56+00:00"
         },
         {
             "name": "kirki-framework/field-background",
@@ -3520,6 +3521,54 @@
                 "source": "https://github.com/kirki-framework/module-preset/tree/v1.0.3"
             },
             "time": "2021-12-29T16:13:19+00:00"
+        },
+        {
+            "name": "kirki-framework/module-section-icons",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kirki-framework/module-section-icons.git",
+                "reference": "0e77b904692772974e5e291143f45056a5ab3665"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kirki-framework/module-section-icons/zipball/0e77b904692772974e5e291143f45056a5ab3665",
+                "reference": "0e77b904692772974e5e291143f45056a5ab3665",
+                "shasum": ""
+            },
+            "require": {
+                "kirki-framework/url-getter": "*",
+                "kirki-framework/util": "*",
+                "php": ">=7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Kirki\\Module\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
+                }
+            ],
+            "description": "Section-Icons Module for the Kirki WordPress plugin.",
+            "homepage": "https://kirki.org/",
+            "keywords": [
+                "customizer",
+                "framework",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/kirki-framework/module-section-icons/issues",
+                "source": "https://github.com/kirki-framework/module-section-icons/tree/v0.1.0"
+            },
+            "time": "2022-01-10T15:25:39+00:00"
         },
         {
             "name": "kirki-framework/module-sections",

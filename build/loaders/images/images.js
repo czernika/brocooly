@@ -1,7 +1,6 @@
-const path                 = require('path');
-const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
+const path            = require('path');
 
-const { themeFolder }      = require('../../theme.config');
+const { themeFolder } = require('../../theme.config');
 
 const loader = {
 	test: /\.(jp(e?)g|png|gif|ico|webp)$/i,
@@ -18,21 +17,6 @@ const loader = {
 			maxSize: 8 * 1024, // 8kb
 		},
 	},
-	use: [
-		{
-			loader: ImageMinimizerPlugin.loader,
-			options: {
-				severityError: 'warning',
-				minimizerOptions: {
-					plugins: [
-						['gifsicle', { interlaced: true, optimizationLevel: 3 }],
-						['mozjpeg', { quality: 80 }],
-						['pngquant', { quality: [0.6, 0.8] }],
-					],
-				},
-			},
-		},
-	],
 };
 
 module.exports = loader;

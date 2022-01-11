@@ -2,7 +2,6 @@ const path                        = require('path');
 const CopyPlugin                  = require('copy-webpack-plugin');
 const WebpackBar                  = require('webpackbar');
 const ESLintPlugin                = require('eslint-webpack-plugin');
-const StyleLintPlugin             = require('stylelint-webpack-plugin');
 const SVGSpritemapPlugin          = require('svg-spritemap-webpack-plugin');
 const MiniCssExtractPlugin        = require('mini-css-extract-plugin');
 const WebpackNotifierPlugin       = require('webpack-notifier');
@@ -54,15 +53,6 @@ const plugins = [
 	}),
 
 	new FriendlyErrorsWebpackPlugin(),
-
-	new StyleLintPlugin({
-		exclude: [
-			'/node_modules/',
-			path.resolve(themeFolder, publicFolder, 'css'), // compiled css files.
-			path.resolve(themeFolder, 'style.css'), // style.css.
-		],
-		failOnError: false,
-	}),
 ];
 
 module.exports = plugins;
