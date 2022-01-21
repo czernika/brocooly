@@ -45,7 +45,7 @@ add_filter(
  * FIXME
  */
 if ( ! class_exists( 'Kirki' ) ) {
-	require_once APP_PATH . '/web/app/vendor/aristath/kirki/kirki.php';
+	require_once WP_CONTENT_DIR . '/vendor/aristath/kirki/kirki.php';
 }
 
 /**

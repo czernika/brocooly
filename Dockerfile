@@ -1,8 +1,49 @@
-FROM urre/wordpress-nginx-docker-compose-image
+FROM php:8.0-fpm
 
-# Forward Message to mailhog
-RUN curl --location --output /usr/local/bin/mhsendmail https://github.com/mailhog/mhsendmail/releases/download/v0.2.0/mhsendmail_linux_amd64 && \
-    chmod +x /usr/local/bin/mhsendmail
-RUN echo 'sendmail_path="/usr/local/bin/mhsendmail --smtp-addr=mailhog:1025 --from=no-reply@gbp.lo"' > /usr/local/etc/php/conf.d/mailhog.ini
+RUN apt-get update \
+  && apt-get install -y \
+             apt-utils \
+             man \
+             curl \
+             git \
+             bash \
+             vim \
+             zip unzip \
+             acl \
+             iproute2 \
+             dnsutils \
+             fonts-freefont-ttf \
+             fontconfig \
+             dbus \
+             openssh-client \
+             sendmail \
+             libfreetype6-dev \
+             libjpeg62-turbo-dev \
+             icu-devtools \
+             libicu-dev \
+             libmcrypt4 \
+             libmcrypt-dev \
+             libpng-dev \
+             zlib1g-dev \
+             libxml2-dev \
+             libzip-dev \
+             libonig-dev \
+             graphviz \
+             libcurl4-openssl-dev \
+             pkg-config \
+             libldap2-dev \
+             libpq-dev
 
-# Note: Use docker-compose up -d --force-recreate --build when Dockerfile has changed.
+RUN docker-php-ext-configure intl --enable-intl && \
+    docker-php-ext-configure gd --with-freetype --with-jpeg && \
+    docker-php-ext-install -j$(nproc) gd && \
+    docker-php-ext-install pdo \
+        mysqli pdo_mysql \
+        intl iconv mbstring \
+        zip pcntl \
+        exif opcache \
+    && docker-php-source delete
+
+RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+
+RUN chmod +x wp-cli.phar && mv wp-cli.phar /usr/local/bin/wp
